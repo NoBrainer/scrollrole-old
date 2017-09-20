@@ -2,13 +2,19 @@ var Backbone = require('backbone');
 
 var ClassModel = Backbone.Model.extend({
     defaults: {
-        name: null
+        baseHealth: null,
+        features: [],
+        hitDice: null,
+        name: null,
+        proficiencies: [],
+        savingThrows: [],
+        startingEquipment: []
     },
 
     initialize: function(attrs, options) {},
 
     getName: function() {
-        return this.get(BackgroundModel.fields.NAME);
+        return this.get(ClassModel.fields.NAME);
     }
 },{
     fields: {
