@@ -19,3 +19,9 @@ Run these commands from the root of the project.
 - Build and deploy to the `dist` directory:
     - `npm run deploy`
 - For other scripts, check the package.json file.
+
+## Resources
+- 5e D&amp;D SRD
+- font-awesome
+- npm
+- YAML
