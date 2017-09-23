@@ -1,31 +1,20 @@
-var Backbone = require('backbone');
+var _ = require('underscore');
+var BaseModel = require('./baseModel');
 
-var ProficiencyModel = Backbone.Model.extend({
-    defaults: {
-        description: null,
-        name: null,
+var ProficiencyModel = BaseModel.extend({
+    defaults: _.extend({}, BaseModel.defaults, {
         type: null
-    },
+    }),
 
     initialize: function(attrs, options) {},
-
-    getDescription: function() {
-        return this.get(ProficiencyModel.fields.DESCRIPTION);
-    },
-
-    getName: function() {
-        return this.get(ProficiencyModel.fields.NAME);
-    },
 
     getType: function() {
         return this.get(ProficiencyModel.fields.TYPE);
     }
 },{
-    fields: {
-        DESCRIPTION: 'description',
-        NAME: 'name',
+    fields: _.extend({}, BaseModel.fields, {
         TYPE: 'type'
-    }
+    })
 });
 
 module.exports = ProficiencyModel;

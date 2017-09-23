@@ -1,25 +1,28 @@
-var Backbone = require('backbone');
+var _ = require('underscore');
+var BaseModel = require('./baseModel');
 
-var ClassModel = Backbone.Model.extend({
-    defaults: {
+var ClassModel = BaseModel.extend({
+    defaults: _.extend({}, BaseModel.defaults, {
         baseHealth: null,
         features: [],
         hitDice: null,
-        name: null,
         proficiencies: [],
         savingThrows: [],
-        startingEquipment: []
-    },
+        startingEquipment: [],
+        unlockables: []
+    }),
 
-    initialize: function(attrs, options) {},
-
-    getName: function() {
-        return this.get(ClassModel.fields.NAME);
-    }
+    initialize: function(attrs, options) {}
 },{
-    fields: {
-        NAME: 'name'
-    }
+    fields: _.extend({}, BaseModel.fields, {
+        BASE_HEALTH: 'baseHealth',
+        FEATURES: 'features',
+        HIT_DICE: 'hitDice',
+        PROFICIENCIES: 'proficiencies',
+        SAVING_THROWS: 'savingThrows',
+        STARTING_EQUIPMENT: 'startingEquipment',
+        UNLOCKABLES: 'unlockables'
+    })
 });
 
 module.exports = ClassModel;

@@ -1,25 +1,12 @@
-var Backbone = require('backbone');
+var _ = require('underscore');
+var BaseModel = require('./baseModel');
 
-var FeatureModel = Backbone.Model.extend({
-    defaults: {
-        description: null,
-        name: null
-    },
+var FeatureModel = BaseModel.extend({
+    defaults: _.extend({}, BaseModel.defaults, {}),
 
-    initialize: function(attrs, options) {},
-
-    getDescription: function() {
-        return this.get(FeatureModel.fields.DESCRIPTION);
-    },
-
-    getName: function() {
-        return this.get(FeatureModel.fields.NAME);
-    }
+    initialize: function(attrs, options) {}
 },{
-    fields: {
-        DESCRIPTION: 'description',
-        NAME: 'name'
-    }
+    fields: _.extend({}, BaseModel.fields, {})
 });
 
 module.exports = FeatureModel;

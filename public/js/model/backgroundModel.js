@@ -1,11 +1,11 @@
-var Backbone = require('backbone');
+var _ = require('underscore');
+var BaseModel = require('./baseModel');
 
-var BackgroundModel = Backbone.Model.extend({
-    defaults: {
+var BackgroundModel = BaseModel.extend({
+    defaults: _.extend({}, BaseModel.defaults, {
         features: [],
-        name: null,
         proficiencies: []
-    },
+    }),
 
     initialize: function(attrs, options) {},
 
@@ -13,19 +13,14 @@ var BackgroundModel = Backbone.Model.extend({
         return this.get(BackgroundModel.fields.FEATURES);
     },
 
-    getName: function() {
-        return this.get(BackgroundModel.fields.NAME);
-    },
-
     getProficiencies: function() {
         return this.get(BackgroundModel.fields.PROFICIENCIES);
     }
 },{
-    fields: {
+    fields: _.extend({}, BaseModel.fields, {
         FEATURES: 'features',
-        NAME: 'name',
         PROFICIENCIES: 'proficiencies'
-    }
+    })
 });
 
 module.exports = BackgroundModel;

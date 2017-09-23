@@ -1,7 +1,8 @@
-var Backbone = require('backbone');
+var _ = require('underscore');
+var BaseModel = require('./baseModel');
 
-var RaceModel = Backbone.Model.extend({
-    defaults: {
+var RaceModel = BaseModel.extend({
+    defaults: _.extend({}, BaseModel.defaults, {
         avgLifespan: null,
         features: [],
         maxHeight: null,
@@ -9,20 +10,23 @@ var RaceModel = Backbone.Model.extend({
         minHeight: null,
         minWeight: null,
         languages: [],
-        name: null,
         speed: null,
         subraces: []
-    },
+    }),
 
-    initialize: function(attrs, options) {},
-
-    getName: function() {
-        return this.get(RaceModel.fields.NAME);
-    }
+    initialize: function(attrs, options) {}
 },{
-    fields: {
-        NAME: 'name'
-    }
+    fields: _.extend({}, BaseModel.fields, {
+        AVG_LIFESPAN: 'avgLifespan',
+        FEATURES: 'features',
+        MAX_HEIGHT: 'maxHeight',
+        MAX_WEIGHT: 'maxWeight',
+        MIN_HEIGHT: 'minHeight',
+        MIN_WEIGHT: 'minWeight',
+        LANGUAGES: 'languages',
+        SPEED: 'speed',
+        SUBRACES: 'subraces'
+    })
 });
 
 module.exports = RaceModel;
