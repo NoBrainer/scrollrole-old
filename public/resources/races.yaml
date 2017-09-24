@@ -1,0 +1,80 @@
+%YAML 1.2
+
+## DWARF
+- name: Dwarf
+  description: Your dwarf character has an assortment of inborn abilities, part and parcel of dwarven nature.
+  abilityScoreAdjustment:
+    - name: Constitution
+      description: Your Constitution score increases by 2.
+      attribute: CON
+      modifier: +2
+  age:
+    description: >
+      Dwarves mature at the same rate as humans, but they're considered young until they reach the age of 50. On average,
+      they live about 350 years.
+    adultAge: 50
+    avgLifespan: 350
+  alignment: >
+    Most dwarves are lawful, believing firmly in the benefits of a well-ordered society. They tend toward good as
+    well, with a strong sense of fair play and a belief that everyone deserves to share in the benefits of a just order.
+  size:
+    description: Dwarves stand between 4 and 5 feet tall and average about 150 pounds. Your size is medium.
+    minHeight: 48
+    maxHeight: 60
+    avgWeight: 150
+    size: medium
+  speed: 25
+  features:
+    - name: Darkvision
+      description: >
+        Accustomed to life underground, you have superior vision in dark and dim conditions. You can see in dim light
+        within 60 feet of you as if it were bright light, and in darkness as if it were dim light. You can't discern
+        color in darkness, only shades of gray.
+      shortDescription: darkvision 60ft
+    - name: Dwarven Resilience
+      description: You have advantage on saving throws against poison, and you have resistance against poison damage.
+      shortDescription: ADV on poison saving throws, resistance to poison
+    - name: Stonecunning
+      description: >
+        Whenever you make an Intelligence (History) check related to the origin of stonework, you are considered
+        proficient in the History skill and add double your proficiency bonus to the check, instead of your normal
+        proficiency bonus.
+      shortDescription: 2x proficiency bonus + ADV on History checks involving origin of stonework
+  proficiencies:
+    - name: Dwarven Combat Training
+      description: You gain proficiency with the battleaxe, handaxe, light hammer, and warhammer.
+      type: weapon
+      items:
+        - battleaxe
+        - handaxe
+        - light hammer
+        - warhammer
+    - name: Tool Proficiency
+      description: >
+        You gain proficiency with the artisan's tool of your choice: smith's tools, brewer's supplies, or mason's tools.
+      type: tool
+      pick1:
+        - smith's tools
+        - brewer's supplies
+        - mason's tools
+  languages:
+    description: >
+      You can speak, read, and write Common and Dwarvish. Dwarvish is full of hard consonants and guttural sounds, and
+      those characteristics spill over into whatever other language a dwarf might speak.
+    items:
+      - Common
+      - Dwarvish
+  subraces:
+    - name: Hill Dwarf
+      description: As a hill dwarf, you have keen senses, deep intuition, and remarkable resilience.
+      abilityScoreAdjustment:
+        - name: Wisdom
+          description: Your Wisdom score increases by 1.
+          attribute: WIS
+          modifier: +1
+      features:
+        - name: Dwarven Toughness
+          description: Your hit point maximum increases by 1, and it increases 1 every time you gain a level.
+          stat: hp
+          modifier: +1
+          per: level
