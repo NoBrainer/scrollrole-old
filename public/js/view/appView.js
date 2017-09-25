@@ -1,5 +1,3 @@
-var $ = require('jquery');
-var Backbone = require('backbone');
 var templates = require('./appView.html');
 
 var AppView = Backbone.View.extend({

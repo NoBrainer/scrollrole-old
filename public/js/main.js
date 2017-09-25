@@ -1,12 +1,13 @@
 var $ = require('jquery');
 var _ = require('underscore');
-var AppView = require('./view/appView');
 var Backbone = require('backbone');
 
+// Set the global variables
 window.$ = $;
 window._ = _;
 window.Backbone = Backbone;
 
+var AppView = require('./view/appView');
 var YamlController = require('./controller/yamlController');
 
 (function() {

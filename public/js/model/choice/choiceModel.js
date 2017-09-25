@@ -1,4 +1,3 @@
-var _ = require('underscore');
 var BaseModel = require('../baseModel');
 
 var ChoiceModel = BaseModel.extend({

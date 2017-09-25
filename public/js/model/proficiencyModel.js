@@ -1,4 +1,3 @@
-var _ = require('underscore');
 var BaseModel = require('./baseModel');
 
 var ProficiencyModel = BaseModel.extend({
