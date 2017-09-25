@@ -37,7 +37,7 @@
         Whenever you make an Intelligence (History) check related to the origin of stonework, you are considered
         proficient in the History skill and add double your proficiency bonus to the check, instead of your normal
         proficiency bonus.
-      shortDescription: 2x proficiency bonus + ADV on History checks involving origin of stonework
+      shortDescription: x2 proficiency bonus + ADV on History checks involving origin of stonework
   proficiencies:
     - name: Dwarven Combat Training
       description: You gain proficiency with the battleaxe, handaxe, light hammer, and warhammer.

@@ -23,8 +23,8 @@
     "build:css": "lessc public/stylesheets/style.less > public/stylesheets/style.css",
     "build:html": "jade views/index.jade --out dist/api",
     "build:js": "browserify bin/www > dist/index.js && browserify -t browserify-compile-templates --extension=.html public/js/main.js > public/js/bundle.js",
-    "deploy:setup": "npm run build && mkdir dist/public && mkdir dist/public/js && mkdir dist/public/stylesheets",
-    "deploy": "npm run deploy:setup && cp public/js/bundle.js dist/public/js && cp public/index.html dist/public && cp public/stylesheets/style.css dist/public/stylesheets"
+    "deploy:setup": "npm run build && mkdir dist/public && mkdir dist/public/js && mkdir dist/public/stylesheets && mkdir dist/public/resources",
+    "deploy": "npm run deploy:setup && cp public/js/bundle.js dist/public/js && cp public/index.html dist/public && cp public/stylesheets/style.css dist/public/stylesheets && cp public/resources/* dist/public/resources/"
   },
   "dependencies": {
     "backbone": "1.3.3",
