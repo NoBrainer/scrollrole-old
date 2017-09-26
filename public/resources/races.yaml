@@ -43,10 +43,12 @@
       description: >
         You gain proficiency with the artisan's tool of your choice: smith's tools, brewer's supplies, or mason's tools.
       type: tool
-      pick1:
-        - smith's tools
-        - brewer's supplies
-        - mason's tools
+      choice:
+        quantity: 1
+        options:
+          - smith's tools
+          - brewer's supplies
+          - mason's tools
   languages:
     description: >
       You can speak, read, and write Common and Dwarvish. Dwarvish is full of hard consonants and guttural sounds, and
@@ -140,27 +142,29 @@
           description: You have proficiency with the longsword, shortsword, shortbow, and longbow.
           type: weapon
           items:
-            - longsword
-            - shortsword
-            - shortbow
             - longbow
+            - longsword
+            - shortbow
+            - shortsword
       languages:
         description: You can speak, read, and write one extra language of your choice.
-        pick1:
-          - Dwarvish
-          - Giant
-          - Gnomish
-          - Goblin
-          - Halfling
-          - Orc
-          - Abyssal
-          - Celestial
-          - Draconic
-          - Deep Speech
-          - Infernal
-          - Primordial
-          - Sylvan
-          - Undercommon
+        choice:
+          quantity: 1
+          options:
+            - Abyssal
+            - Celestial
+            - Deep Speech
+            - Draconic
+            - Dwarvish
+            - Giant
+            - Gnomish
+            - Goblin
+            - Halfling
+            - Infernal
+            - Orc
+            - Primordial
+            - Sylvan
+            - Undercommon
 
 ## HALFLING
 - name: Halfling
@@ -256,22 +260,24 @@
       borrowed from other tongues: Orc curses, Elvish musical expressions, Dwarvish military phrases, and so on.
     items:
       - Common
-    pick1:
-      - Dwarvish
-      - Elvish
-      - Giant
-      - Gnomish
-      - Goblin
-      - Halfling
-      - Orc
-      - Abyssal
-      - Celestial
-      - Draconic
-      - Deep Speech
-      - Infernal
-      - Primordial
-      - Sylvan
-      - Undercommon
+    choice:
+      quantity: 1
+      options:
+        - Abyssal
+        - Celestial
+        - Deep Speech
+        - Draconic
+        - Dwarvish
+        - Elvish
+        - Giant
+        - Gnomish
+        - Goblin
+        - Halfling
+        - Infernal
+        - Orc
+        - Primordial
+        - Sylvan
+        - Undercommon
 
 ## DRAGONBORN
 - name: Dragonborn
@@ -300,37 +306,39 @@
       description: >
         You have draconic ancestry. Choose one type of dragon from the Draconic Ancestry table. Your breath weapon and
         damage resistance are determined by the dragon type, as shown in the table
-      pick1:
-        - color: black
-          damageType: acid
-          breathWeapon: 5 by 30 ft line (DEX save)
-        - color: blue
-          damageType: lightning
-          breathWeapon: 5 by 30 ft line (DEX save)
-        - color: brass
-          damageType: fire
-          breathWeapon: 5 by 30 ft line (DEX save)
-        - color: bronze
-          damageType: lightning
-          breathWeapon: 5 by 30 ft line (DEX save)
-        - color: copper
-          damageType: acid
-          breathWeapon: 5 by 30 ft line (DEX save)
-        - color: gold
-          damageType: fire
-          breathWeapon: 15 ft cone (DEX save)
-        - color: green
-          damageType: poison
-          breathWeapon: 15 ft cone (CON save)
-        - color: red
-          damageType: fire
-          breathWeapon: 15 ft cone (DEX save)
-        - color: silver
-          damageType: cold
-          breathWeapon: 15 ft cone (CON save)
-        - color: white
-          damageType: cold
-          breathWeapon: 15 ft cone (CON save)
+      choice:
+        quantity: 1
+        options:
+          - color: black
+            damageType: acid
+            breathWeapon: 5 by 30 ft line (DEX save)
+          - color: blue
+            damageType: lightning
+            breathWeapon: 5 by 30 ft line (DEX save)
+          - color: brass
+            damageType: fire
+            breathWeapon: 5 by 30 ft line (DEX save)
+          - color: bronze
+            damageType: lightning
+            breathWeapon: 5 by 30 ft line (DEX save)
+          - color: copper
+            damageType: acid
+            breathWeapon: 5 by 30 ft line (DEX save)
+          - color: gold
+            damageType: fire
+            breathWeapon: 15 ft cone (DEX save)
+          - color: green
+            damageType: poison
+            breathWeapon: 15 ft cone (CON save)
+          - color: red
+            damageType: fire
+            breathWeapon: 15 ft cone (DEX save)
+          - color: silver
+            damageType: cold
+            breathWeapon: 15 ft cone (CON save)
+          - color: white
+            damageType: cold
+            breathWeapon: 15 ft cone (CON save)
     - name: Breath Weapon
       description: >
         You can use your action to exhave destructive energy. Your draconic ancestry determines the size, shape, and
@@ -408,20 +416,22 @@
             dismantle it; at that time, you can reclaim the materials used to create it. You can have up to three such
             devices active at one time.
           onUse:
-            pick1:
-              - name: Clockwork Toy
-                description: >
-                  This toy is a clockwork animal, monster, or person, such as a frog, mouse, bird, dragon, or soldier.
-                  When placed on the ground, the toy moves 5 feet across the ground on each of your turns in a random
-                  direction. It makes noises as appropriate to the creature it represents.
-              - name: Fire Starter
-                description: >
-                  The device produces a miniature flame, which you can use to light a candle, torch, or campfire. Using
-                  the device requires your action.
-              - name: Music Box
-                description: >
-                  When opened, this music box plays a single song at a moderate volume. The box stops playing when it
-                  reaches the song's end or when it is closed.
+            choice:
+              quantity: 1
+              options:
+                - name: Clockwork Toy
+                  description: >
+                    This toy is a clockwork animal, monster, or person, such as a frog, mouse, bird, dragon, or soldier.
+                    When placed on the ground, the toy moves 5 feet across the ground on each of your turns in a random
+                    direction. It makes noises as appropriate to the creature it represents.
+                - name: Fire Starter
+                  description: >
+                    The device produces a miniature flame, which you can use to light a candle, torch, or campfire. Using
+                    the device requires your action.
+                - name: Music Box
+                  description: >
+                    When opened, this music box plays a single song at a moderate volume. The box stops playing when it
+                    reaches the song's end or when it is closed.
       proficiencies:
         - name: Tinker
           description: >
@@ -440,8 +450,9 @@
       modifier: +2
     - name: Choices
       description: Two other ability scores of your choice increase by 1
-      attribute:
-        pick2:
+      choice:
+        quantity: 2
+        options:
           - STR
           - DEX
           - CON
@@ -470,46 +481,50 @@
   proficiencies:
     - name: Skill Versatility
       description: You gain proficiency in two skills of your choice.
-      pick2:
-        - Acrobatics
-        - Animal Handling
-        - Arcana
-        - Athletics
-        - Deception
-        - History
-        - Insight
-        - Intimidation
-        - Investigation
-        - Medicine
-        - Nature
-        - Perception
-        - Performance
-        - Persuasion
-        - Religion
-        - Sleight of Hand
-        - Stealth
-        - Survival
+      choice:
+        quantity: 2
+        options:
+          - Acrobatics
+          - Animal Handling
+          - Arcana
+          - Athletics
+          - Deception
+          - History
+          - Insight
+          - Intimidation
+          - Investigation
+          - Medicine
+          - Nature
+          - Perception
+          - Performance
+          - Persuasion
+          - Religion
+          - Sleight of Hand
+          - Stealth
+          - Survival
   languages:
     description: You can speak, read, and write Common, Elvish, and one extra language of your choice.
     items:
       - Common
       - Elvish
-    pick1:
-      - Dwarvish
-      - Elvish
-      - Giant
-      - Gnomish
-      - Goblin
-      - Halfling
-      - Orc
-      - Abyssal
-      - Celestial
-      - Draconic
-      - Deep Speech
-      - Infernal
-      - Primordial
-      - Sylvan
-      - Undercommon
+    choice:
+      quantity: 1
+      options:
+        - Abyssal
+        - Celestial
+        - Deep Speech
+        - Draconic
+        - Dwarvish
+        - Elvish
+        - Giant
+        - Gnomish
+        - Goblin
+        - Halfling
+        - Infernal
+        - Orc
+        - Primordial
+        - Sylvan
+        - Undercommon
 
 ## HALF-ORC
 - name: Half-Orc
