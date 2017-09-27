@@ -2,8 +2,7 @@
 - name: Dwarf
   description: Your dwarf character has an assortment of inborn abilities, part and parcel of dwarven nature.
   abilityScoreAdjustments:
-    - [attribute, modifier, name]
-    - [CON,       +2,       Constitution]
+    - { attribute: CON, modifier: +2, name: Constitution }
   age: >
     Dwarves mature at the same rate as humans, but they're considered young until they reach the age of 50. On average,
     they live about 350 years.
@@ -53,16 +52,14 @@
       type: proficiency
       quantity: 1
       options:
-        - [type,  name]
-        - [tool,  smith's tools]
-        - [tool,  brewer's supplies]
-        - [tool,  mason's tools]
+        - { type: tool, name: smith's tools }
+        - { type: tool, name: brewer's supplies }
+        - { type: tool, name: mason's tools }
   subraces:
     - name: Hill Dwarf
       description: As a hill dwarf, you have keen senses, deep intuition, and remarkable resilience.
       abilityScoreAdjustments:
-        - [attribute, modifier, name]
-        - [WIS,       +1,       Wisdom]
+        - { attribute: WIS, modifier: +1, name: Wisdom }
       features:
         - name: Dwarven Toughness
           description: Your hit point maximum increases by 1, and it increases 1 every time you gain a level.
@@ -75,8 +72,7 @@
   description: >
     Your elf character has a variety of natural abilities, the result of thousands of years of elven refinement.
   abilityScoreAdjustments:
-    - [attribute, modifier, name]
-    - [DEX,       +2,       Dexterity]
+    - { attribute: DEX, modifier: +2, name: Dexterity }
   age: >
     Although elves reach physical maturity at about the same age as humans, the elven understanding of adulthood goes
     beyond physical growth to encompass worldly experience. An elf typically claims adulthood and an adult name around
@@ -126,8 +122,7 @@
         superior to non-elves and even other elves. The other type is more common and more friendly, and often
         encountered among humans and other races.
       abilityScoreAdjustments:
-        - [attribute, modifier, name]
-        - [INT,       +1,       Intelligence]
+        - { attribute: INT, modifier: +1, name: Intelligence }
       proficiencies:
         - name: Elf Weapon Training
           description: You have proficiency with the longsword, shortsword, shortbow, and longbow.
@@ -145,49 +140,46 @@
           type: feature
           quantity: 1
           options:
-            - [type,  name]
-            - [spell, Acid Splash]
-            - [spell, Chill Touch]
-            - [spell, Dancing Lights]
-            - [spell, Fire Bolt]
-            - [spell, Light]
-            - [spell, Mage Hand]
-            - [spell, Mending]
-            - [spell, Message]
-            - [spell, Minor Illusion]
-            - [spell, Poison Spray]
-            - [spell, Prestidigitation]
-            - [spell, Ray of Frost]
-            - [spell, Shocking Grasp]
-            - [spell, True Strike]
+            - { type: spell, level: 0, name: Acid Splash }
+            - { type: spell, level: 0, name: Chill Touch }
+            - { type: spell, level: 0, name: Dancing Lights }
+            - { type: spell, level: 0, name: Fire Bolt }
+            - { type: spell, level: 0, name: Light }
+            - { type: spell, level: 0, name: Mage Hand }
+            - { type: spell, level: 0, name: Mending }
+            - { type: spell, level: 0, name: Message }
+            - { type: spell, level: 0, name: Minor Illusion }
+            - { type: spell, level: 0, name: Poison Spray }
+            - { type: spell, level: 0, name: Prestidigitation }
+            - { type: spell, level: 0, name: Ray of Frost }
+            - { type: spell, level: 0, name: Shocking Grasp }
+            - { type: spell, level: 0, name: True Strike }
         - name: Languages
           description: You can speak, read, and write one extra language of your choice.
           quantity: 1
           type: proficiency
           options:
-            - [type,      name]
-            - [language,  Abyssal]
-            - [language,  Celestial]
-            - [language,  Deep Speech]
-            - [language,  Draconic]
-            - [language,  Dwarvish]
-            - [language,  Elvish]
-            - [language,  Giant]
-            - [language,  Gnomish]
-            - [language,  Goblin]
-            - [language,  Halfling]
-            - [language,  Infernal]
-            - [language,  Orc]
-            - [language,  Primordial]
-            - [language,  Sylvan]
-            - [language,  Undercommon]
+            - { type: language, name: Abyssal }
+            - { type: language, name: Celestial }
+            - { type: language, name: Deep Speech }
+            - { type: language, name: Draconic }
+            - { type: language, name: Dwarvish }
+            - { type: language, name: Elvish }
+            - { type: language, name: Giant }
+            - { type: language, name: Gnomish }
+            - { type: language, name: Goblin }
+            - { type: language, name: Halfling }
+            - { type: language, name: Infernal }
+            - { type: language, name: Orc }
+            - { type: language, name: Primordial }
+            - { type: language, name: Sylvan }
+            - { type: language, name: Undercommon }
 
 ## HALFLING
 - name: Halfling
   description: Your halfling character has a number of traits in common with all other halflings.
   abilityScoreAdjustments:
-    - [attribute, modifier, name]
-    - [DEX,       +2,       Dexterity]
+    - { attribute: DEX, modifier: +2, name: Dexterity }
   age: A halfling reaches adulthood at the age of 20 and generally lives into the middle of his or her second century.
   alignment: >
     Most halflings are lawful good. As a rule, they are good-hearted and kind, hate to see others in pain, and have no
@@ -225,8 +217,7 @@
         be affable and get along well with others. Lightfoots are more prone to wanderlust than other halflings, and
         often dwell alongside other races or take up a nomadic life.
       abilityScoreAdjustments:
-        - [attribute, modifier, name]
-        - [CHA,       +1,       Charisma]
+        - { attribute: CHA, modifier: +1, name: Charisma }
       features:
         - name: Naturally Stealthy
           description: >
@@ -237,13 +228,12 @@
 - name: Human
   description: It's hard to make generalizations about humans, but your human character has these traits.
   abilityScoreAdjustments:
-    - [attribute, modifier, name]
-    - [STR,       +1,       Strength]
-    - [DEX,       +1,       Dexterity]
-    - [CON,       +1,       Constitution]
-    - [INT,       +1,       Intelligence]
-    - [WIS,       +1,       Wisdom]
-    - [CHA,       +1,       Charisma]
+    - { attribute: STR, modifier: +1, name: Strength }
+    - { attribute: DEX, modifier: +1, name: Dexterity }
+    - { attribute: CON, modifier: +1, name: Constitution }
+    - { attribute: INT, modifier: +1, name: Intelligence }
+    - { attribute: WIS, modifier: +1, name: Wisdom }
+    - { attribute: CHA, modifier: +1, name: Charisma }
   age: Humans reach adulthood in their late teens and live less than a century.
   alignment: Humans tend toward no particular alignment. The best and the worst are found among them.
   size: >
@@ -268,30 +258,28 @@
       type: proficiency
       quantity: 1
       options:
-        - [type,      name]
-        - [language,  Abyssal]
-        - [language,  Celestial]
-        - [language,  Deep Speech]
-        - [language,  Draconic]
-        - [language,  Dwarvish]
-        - [language,  Elvish]
-        - [language,  Giant]
-        - [language,  Gnomish]
-        - [language,  Goblin]
-        - [language,  Halfling]
-        - [language,  Infernal]
-        - [language,  Orc]
-        - [language,  Primordial]
-        - [language,  Sylvan]
-        - [language,  Undercommon]
+        - { type: language, name: Abyssal }
+        - { type: language, name: Celestial }
+        - { type: language, name: Deep Speech }
+        - { type: language, name: Draconic }
+        - { type: language, name: Dwarvish }
+        - { type: language, name: Elvish }
+        - { type: language, name: Giant }
+        - { type: language, name: Gnomish }
+        - { type: language, name: Goblin }
+        - { type: language, name: Halfling }
+        - { type: language, name: Infernal }
+        - { type: language, name: Orc }
+        - { type: language, name: Primordial }
+        - { type: language, name: Sylvan }
+        - { type: language, name: Undercommon }
 
 ## DRAGONBORN
 - name: Dragonborn
   description: Your draconic heritage manifests in a variety of traits you share with other dragonborn.
   abilityScoreAdjustments:
-    - [attribute, modifier, name]
-    - [STR,       +2,       Strength]
-    - [CHA,       +1,       Charisma]
+    - { attribute: STR, modifier: +2, name: Strength }
+    - { attribute: CHA, modifier: +1, name: Charisma }
   age: >
     Young dragonborn grow quickly. They walk hours after hatching, attain the size and development of a 10-year-old
     human child by the age of 3, and reach adulthood by 15. They live to be around 80.
@@ -333,24 +321,22 @@
       type: feature
       quantity: 1
       options:
-        - [color,   damageType,   breathWeapon]
-        - [black,   acid,         5 by 30 ft line (DEX save)]
-        - [blue,    lightning,    5 by 30 ft line (DEX save)]
-        - [brass,   fire,         5 by 30 ft line (DEX save)]
-        - [bronze,  lightning,    5 by 30 ft line (DEX save)]
-        - [copper,  acid,         5 by 30 ft line (DEX save)]
-        - [gold,    fire,         15 ft cone (DEX save)]
-        - [green,   poison,       15 ft cone (CON save)]
-        - [red,     fire,         15 ft cone (DEX save)]
-        - [silver,  cold,         15 ft cone (CON save)]
-        - [white,   cold,         15 ft cone (CON save)]
+        - { color: black,   damageType: acid,       breathWeapon: 5 by 30 ft line (DEX save) }
+        - { color: blue,    damageType: lightning,  breathWeapon: 5 by 30 ft line (DEX save) }
+        - { color: brass,   damageType: fire,       breathWeapon: 5 by 30 ft line (DEX save) }
+        - { color: bronze,  damageType: lightning,  breathWeapon: 5 by 30 ft line (DEX save) }
+        - { color: copper,  damageType: acid,       breathWeapon: 5 by 30 ft line (DEX save) }
+        - { color: gold,    damageType: fire,       breathWeapon: 15 ft cone (DEX save) }
+        - { color: green,   damageType: poison,     breathWeapon: 15 ft cone (CON save) }
+        - { color: red,     damageType: fire,       breathWeapon: 15 ft cone (DEX save) }
+        - { color: silver,  damageType: cold,       breathWeapon: 15 ft cone (CON save) }
+        - { color: white,   damageType: cold,       breathWeapon: 15 ft cone (CON save) }
 
 ## GNOME
 - name: Gnome
   description: Your gnome character has certain characteristics in common with all other gnomes.
   abilityScoreAdjustments:
-    - [attribute, modifier, name]
-    - [INT,       +2,       Intelligence]
+    - { attribute: INT, modifier: +2, name: Intelligence }
   age: >
     Gnomes mature at the same rate humans do, and most are expected to settle down into an adult life by around age
     40. They can live 350 to almost 500 years.
@@ -383,8 +369,7 @@
     - name: Rock Gnome
       description: As a rock gnome, you have a natural inventiveness and hardiness beyond that of other gnomes.
       abilityScoreAdjustments:
-        - [attribute, modifier, name]
-        - [CON,       +1,       Constitution]
+        - { attribute: CON, modifier: +1, name: Constitution }
       features:
         - name: Artificer's Lore
           description: >
@@ -424,8 +409,7 @@
 - name: Half-Elf
   description: Your half-elf character has some qualities in common with elves and some that are unique to half-elves.
   abilityScoreAdjustments:
-    - [attribute, modifier, name]
-    - [CHA,       +2,       Charisma]
+    - { attribute: CHA, modifier: +2, name: Charisma }
   age: >
     Half-elves mature at the same rate humans do and reach adulthood around the age of 20. They live much longer than
     humans, however, often exceeding 180 years.
@@ -458,65 +442,61 @@
       type: abilityScoreAdjustment
       quantity: 2
       options:
-        - [attribute, modifier, name]
-        - [STR,       +1,       Strength]
-        - [DEX,       +1,       Dexterity]
-        - [CON,       +1,       Constitution]
-        - [INT,       +1,       Intelligence]
-        - [WIS,       +1,       Wisdom]
+        - { attribute: STR, modifier: +1, name: Strength }
+        - { attribute: DEX, modifier: +1, name: Dexterity }
+        - { attribute: CON, modifier: +1, name: Constitution }
+        - { attribute: INT, modifier: +1, name: Intelligence }
+        - { attribute: WIS, modifier: +1, name: Wisdom }
     - name: Languages
       description: You can speak, read, and write Common, Elvish, and one extra language of your choice.
       type: proficiency
       quantity: 1
       options:
-        - [type,      name]
-        - [language,  Abyssal]
-        - [language,  Celestial]
-        - [language,  Deep Speech]
-        - [language,  Draconic]
-        - [language,  Dwarvish]
-        - [language,  Elvish]
-        - [language,  Giant]
-        - [language,  Gnomish]
-        - [language,  Goblin]
-        - [language,  Halfling]
-        - [language,  Infernal]
-        - [language,  Orc]
-        - [language,  Primordial]
-        - [language,  Sylvan]
-        - [language,  Undercommon]
+        - { type: language, name: Abyssal }
+        - { type: language, name: Celestial }
+        - { type: language, name: Deep Speech }
+        - { type: language, name: Draconic }
+        - { type: language, name: Dwarvish }
+        - { type: language, name: Elvish }
+        - { type: language, name: Giant }
+        - { type: language, name: Gnomish }
+        - { type: language, name: Goblin }
+        - { type: language, name: Halfling }
+        - { type: language, name: Infernal }
+        - { type: language, name: Orc }
+        - { type: language, name: Primordial }
+        - { type: language, name: Sylvan }
+        - { type: language, name: Undercommon }
     - name: Skill Versatility
       description: You gain proficiency in two skills of your choice.
       type: proficiency
       quantity: 2
       options:
-        - [type,    name]
-        - [skill,   Acrobatics]
-        - [skill,   Animal Handling]
-        - [skill,   Arcana]
-        - [skill,   Athletics]
-        - [skill,   Deception]
-        - [skill,   History]
-        - [skill,   Insight]
-        - [skill,   Intimidation]
-        - [skill,   Investigation]
-        - [skill,   Medicine]
-        - [skill,   Nature]
-        - [skill,   Perception]
-        - [skill,   Performance]
-        - [skill,   Persuasion]
-        - [skill,   Religion]
-        - [skill,   Sleight of Hand]
-        - [skill,   Stealth]
-        - [skill,   Survival]
+        - { type: skill, name: Acrobatics }
+        - { type: skill, name: Animal Handling }
+        - { type: skill, name: Arcana }
+        - { type: skill, name: Athletics }
+        - { type: skill, name: Deception }
+        - { type: skill, name: History }
+        - { type: skill, name: Insight }
+        - { type: skill, name: Intimidation }
+        - { type: skill, name: Investigation }
+        - { type: skill, name: Medicine }
+        - { type: skill, name: Nature }
+        - { type: skill, name: Perception }
+        - { type: skill, name: Performance }
+        - { type: skill, name: Persuasion }
+        - { type: skill, name: Religion }
+        - { type: skill, name: Sleight of Hand }
+        - { type: skill, name: Stealth }
+        - { type: skill, name: Survival }
 
 ## HALF-ORC
 - name: Half-Orc
   description: Your half-orc character has certain traits deriving from your orc ancestry.
   abilityScoreAdjustments:
-    - [attribute, modifier, name]
-    - [STR,       +2,       Strength]
-    - [CON,       +1,       Constitution]
+    - { attribute: STR, modifier: +2, name: Strength }
+    - { attribute: CON, modifier: +1, name: Constitution }
   age: >
     Half-orcs mature a little faster than humans, reaching adulthood around age 14. They age noticeably faster and
     rarely live longer than 75 years.
@@ -563,9 +543,8 @@
 - name: Tiefling
   description: Tieflings share certain racial traits as a result of their infernal descent.
   abilityScoreAdjustments:
-    - [attribute, modifier, name]
-    - [INT,       +1,       Intelligence]
-    - [CHA,       +2,       Charisma]
+    - { attribute: INT, modifier: +1, name: Intelligence }
+    - { attribute: CHA, modifier: +2, name: Charisma }
   age: Tieflings mature at the same rate as humans but live a few years longer.
   alignment: >
     Tieflings might not have an innate tendency toward evil, but many of them end up there. Evil or not, an independent
