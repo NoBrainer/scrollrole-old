@@ -6,11 +6,12 @@ races:
     abilityScoreAdjustments:
       - { attribute: CON, modifier: +2, name: Constitution }
     age: >
-      Dwarves mature at the same rate as humans, but they're considered young until they reach the age of 50. On average,
-      they live about 350 years.
+      Dwarves mature at the same rate as humans, but they're considered young until they reach the age of 50. On
+      average, they live about 350 years.
     alignment: >
       Most dwarves are lawful, believing firmly in the benefits of a well-ordered society. They tend toward good as
-      well, with a strong sense of fair play and a belief that everyone deserves to share in the benefits of a just order.
+      well, with a strong sense of fair play and a belief that everyone deserves to share in the benefits of a just
+      order.
     size: Dwarves stand between 4 and 5 feet tall and average about 150 pounds. Your size is Medium.
     speed: 25
     features:
@@ -40,8 +41,8 @@ races:
           - warhammer
       - name: Languages
         description: >
-          You can speak, read, and write Common and Dwarvish. Dwarvish is full of hard consonants and guttural sounds, and
-          those characteristics spill over into whatever other language a dwarf might speak.
+          You can speak, read, and write Common and Dwarvish. Dwarvish is full of hard consonants and guttural sounds,
+          and those characteristics spill over into whatever other language a dwarf might speak.
         type: language
         items:
           - Common
@@ -87,9 +88,9 @@ races:
     features:
       - name: Darkvision
         description: >
-          Accustomed to twilit forests and the night sky, you have superior vision in dark and dim conditions. You can see
-          in dim light within 60 feet of you as if it were bright light, and in darkness as if it were dim light. You
-          can't discern color in darkness.
+          Accustomed to twilit forests and the night sky, you have superior vision in dark and dim conditions. You can
+          see in dim light within 60 feet of you as if it were bright light, and in darkness as if it were dim light.
+          You can't discern color in darkness.
         shortDescription: darkvision 60ft
       - name: Fey Ancestry
         description: You have advantage on saving throws against being charmed, and magic can't put you to sleep.
@@ -109,9 +110,9 @@ races:
           - perception
       - name: Languages
         description: >
-          You can speak, read, and write Common and Elvish. Elvish is fluid, with subtle intonations and intricate grammar.
-          Elven literature is rich and varied, and their songs and poems are famous among other races. Many bards learn
-          their language so they can add Elvish ballads to their repetoires.
+          You can speak, read, and write Common and Elvish. Elvish is fluid, with subtle intonations and intricate
+          grammar. Elven literature is rich and varied, and their songs and poems are famous among other races. Many
+          bards learn their language so they can add Elvish ballads to their repetoires.
         type: language
         items:
           - Common
@@ -192,8 +193,8 @@ races:
     features:
       - name: Lucky
         description: >
-          When you roll a 1 on the d20 for an attack roll, ability check, or saving throw, you can reroll the die and must
-          use the new roll.
+          When you roll a 1 on the d20 for an attack roll, ability check, or saving throw, you can reroll the die and
+          must use the new roll.
         shortDescription: free d20 reroll for attack, ability check, or saving throw
       - name: Brave
         description: You have advantage on saving throws against being frightened.
@@ -204,10 +205,10 @@ races:
     proficiencies:
       - name: Languages
         description: >
-          You can speak, read, and write Common and Halfling. The Halfling language isn't secret, but halflings are loath to
-          share it with others. They write very little, so they don't have a rich body of literature. Their oral tradition,
-          however, is very strong. Almost all halflings speak Common to converse with the people in whose lands they dwell
-          or through which they are traveling.
+          You can speak, read, and write Common and Halfling. The Halfling language isn't secret, but halflings are
+          loath to share it with others. They write very little, so they don't have a rich body of literature. Their
+          oral tradition, however, is very strong. Almost all halflings speak Common to converse with the people in
+          whose lands they dwell or through which they are traveling.
         type: language
         items:
           - Common
@@ -223,8 +224,8 @@ races:
         features:
           - name: Naturally Stealthy
             description: >
-              You can attempt to hide even when you are obscured only by a creature that is at least one size larger than
-              you.
+              You can attempt to hide even when you are obscured only by a creature that is at least one size larger
+              than you.
 
   ## HUMAN
   - name: Human
@@ -245,9 +246,10 @@ races:
     proficiencies:
       - name: languages
         description: >
-          You can speak, read, and write Common and one extra language of your choice. Humans typically learn the languages
-          of other peoples they deal with, including obscure dialects. They are fond of sprinkling their speech with words
-          borrowed from other tongues: Orc curses, Elvish musical expressions, Dwarvish military phrases, and so on.
+          You can speak, read, and write Common and one extra language of your choice. Humans typically learn the
+          languages of other peoples they deal with, including obscure dialects. They are fond of sprinkling their
+          speech with words borrowed from other tongues: Orc curses, Elvish musical expressions, Dwarvish military
+          phrases, and so on.
         items:
           - Common
     choices:
@@ -286,8 +288,8 @@ races:
       Young dragonborn grow quickly. They walk hours after hatching, attain the size and development of a 10-year-old
       human child by the age of 3, and reach adulthood by 15. They live to be around 80.
     alignment: >
-      Dragonborn tend to extremes, making a conscious choice for one side or the other in the cosmic war between good and
-      evil. Most dragonborn are good, but those who side with evil can be terrible villains.
+      Dragonborn tend to extremes, making a conscious choice for one side or the other in the cosmic war between good
+      and evil. Most dragonborn are good, but those who side with evil can be terrible villains.
     size: >
       Dragonborn are taller and heavier than humans, standing well over 6 feet tall and averaging almost 250 pounds.
       Your size is Medium.
@@ -297,20 +299,22 @@ races:
         description: >
           You can use your action to exhave destructive energy. Your draconic ancestry determines the size, shape, and
           damage type of the exhalation.
+          \n\n
           When you use your breath weapon, each creature in the area of exhalation must
           make a saving throw, the type of which is determined by your draconic ancestry. the DC for this saving throw
           equals 8 + your Constitution modifier + your proficiency bonus. A creature takes 2d6 damage on a failed save,
           and half as much damage on a successful one. The damage increases to 3d6 at 6th level, 4d6 at 11th level, and
           5d6 at 16th level.
+          \n\n
           After you use your breath weapon, you can't use it again until you complete a short or long rest.
       - name: Damage Resistance
         description: You have resistance to the damage type associated with your draconic ancestry.
     proficiencies:
       - name: Languages
         description: >
-          You can speak, read, and write Common and Draconic. Draconic is thought to be one of the oldest languages and is
-          often used in the study of magic. The language sounds harsh to most other creatures and includes numerous hard
-          consonants and sibilants.
+          You can speak, read, and write Common and Draconic. Draconic is thought to be one of the oldest languages and
+          is often used in the study of magic. The language sounds harsh to most other creatures and includes numerous
+          hard consonants and sibilants.
         type: language
         items:
           - Common
@@ -343,8 +347,8 @@ races:
       Gnomes mature at the same rate humans do, and most are expected to settle down into an adult life by around age
       40. They can live 350 to almost 500 years.
     alignment: >
-      Gnomes are most often good. Those who tend toward law are sages, engineers, researchers, scholars, investigators, or
-      inventors. Those who tend toward chaos are minstrels, tricksters, wanderers, or fanciful jewelers. Gnomes are
+      Gnomes are most often good. Those who tend toward law are sages, engineers, researchers, scholars, investigators,
+      or inventors. Those who tend toward chaos are minstrels, tricksters, wanderers, or fanciful jewelers. Gnomes are
       good-hearted, and even the tricksters among them are more playful than vicious.
     size: Gnomes are between 3 and 4 feet tall and average about 40 pounds. Your size is Small.
     speed: 25
@@ -380,11 +384,11 @@ races:
               normally apply.
           - name: Tinker
             description: >
-              You have proficiency with artisan's tools (tinker's tools). Using these tools, you can spend 1 hour and 10gp
-              worth of materials to construct a Tiny clockwork device (AC5, 1hp). The device ceases to function after 24
-              hours (unless you spend 1 hour repairing it to keep the device functioning), or when you use your action to
-              dismantle it; at that time, you can reclaim the materials used to create it. You can have up to three such
-              devices active at one time.
+              You have proficiency with artisan's tools (tinker's tools). Using these tools, you can spend 1 hour and
+              10gp worth of materials to construct a Tiny clockwork device (AC5, 1hp). The device ceases to function
+              after 24 hours (unless you spend 1 hour repairing it to keep the device functioning), or when you use your
+              action to dismantle it; at that time, you can reclaim the materials used to create it. You can have up to
+              three such devices active at one time.
             options:
               - name: Clockwork Toy
                 description: >
@@ -416,9 +420,9 @@ races:
       Half-elves mature at the same rate humans do and reach adulthood around the age of 20. They live much longer than
       humans, however, often exceeding 180 years.
     alignment: >
-      Half-elves share the chaotic bent of their elven heritage. They value both personal freedom and creative expression,
-      demonstrating neither love of leaders nor desire for followers. They chafe at rules, resent others' demands and
-      sometimes prove unreliable, or at least unpredictable.
+      Half-elves share the chaotic bent of their elven heritage. They value both personal freedom and creative
+      expression, demonstrating neither love of leaders nor desire for followers. They chafe at rules, resent others'
+      demands and sometimes prove unreliable, or at least unpredictable.
     size: Half-elves are about the same size as humans, ranging from 5 to 6 feet tall. Your size is Medium.
     speed: 30
     features:
@@ -503,11 +507,11 @@ races:
       Half-orcs mature a little faster than humans, reaching adulthood around age 14. They age noticeably faster and
       rarely live longer than 75 years.
     alignment: >
-      Half-orcs inherit tendency toward chaos from their orc parents and are not strongly inclined toward good. Half-orcs
-      raised among orcs and willing to live out their lives among them are usually evil.
+      Half-orcs inherit tendency toward chaos from their orc parents and are not strongly inclined toward good.
+      Half-orcs raised among orcs and willing to live out their lives among them are usually evil.
     size: >
-      Half-orcs are somewhat larger and bulkier than humans, and they range from 5 to well over 6 feet tall. Your size is
-      Medium.
+      Half-orcs are somewhat larger and bulkier than humans, and they range from 5 to well over 6 feet tall. Your size
+      is Medium.
     speed: 30
     features:
       - name: Darkvision
@@ -518,8 +522,8 @@ races:
         shortDescription: darkvision 60ft
       - name: Relentless Endurance
         description: >
-          When you are reduced to 0 hit points but not killed outright, you can drop to 1 hit point instead. You can't use
-          this feature again until you finish a long rest.
+          When you are reduced to 0 hit points but not killed outright, you can drop to 1 hit point instead. You can't
+          use this feature again until you finish a long rest.
         shortDescription: drop to 1hp instead of 0 if not outright killed, once per long rest
       - name: Savage Attacks
         description: >
@@ -534,8 +538,8 @@ races:
           - Intimidation
       - name: Languages
         description: >
-          You can speak, read, and write Common and Orc. Orc is a harsh, grating language with hard consonants. It has no
-          script of its own but is written in the Dwarvish script.
+          You can speak, read, and write Common and Orc. Orc is a harsh, grating language with hard consonants. It has
+          no script of its own but is written in the Dwarvish script.
         type: language
         items:
           - Common
@@ -549,27 +553,27 @@ races:
       - { attribute: CHA, modifier: +2, name: Charisma }
     age: Tieflings mature at the same rate as humans but live a few years longer.
     alignment: >
-      Tieflings might not have an innate tendency toward evil, but many of them end up there. Evil or not, an independent
-      nature inclines many tieflings toward a chaotic alignment.
+      Tieflings might not have an innate tendency toward evil, but many of them end up there. Evil or not, an
+      independent nature inclines many tieflings toward a chaotic alignment.
     size: >
       Tieflings are about the same size and build as humans. Your size is Medium.
     speed: 30
     features:
       - name: Darkvision
         description: >
-          Thanks to your infernal heritage, you have superior vision in dark and dim conditions. You can see in dim light
-          within 60 feet of you as if it were bright light, and in darkness as if it were dim light. You can't discern
-          color in darkness, only shades of gray.
+          Thanks to your infernal heritage, you have superior vision in dark and dim conditions. You can see in dim
+          light within 60 feet of you as if it were bright light, and in darkness as if it were dim light. You can't
+          discern color in darkness, only shades of gray.
         shortDescription: darkvision 60ft
       - name: Hellish Resistance
         description: You have resistance to fire damage.
         shortDescription: resistance to fire damage
       - name: Infernal Legacy
         description: >
-          You know the thaumaturgy cantrip. When you reach 3rd level, you can cast the hellish rebuke spell as a 2nd-level
-          spell once with this trait and regain the ability to do so when you finish a long rest. When you reach 5th
-          level, you can cast the darkness spell once with this trait and regain the ability to do so when you finish a
-          long rest. Charisma is your spellcasting ability for these spells.
+          You know the thaumaturgy cantrip. When you reach 3rd level, you can cast the hellish rebuke spell as a
+          2nd-level spell once with this trait and regain the ability to do so when you finish a long rest. When you
+          reach 5th level, you can cast the darkness spell once with this trait and regain the ability to do so when you
+          finish a long rest. Charisma is your spellcasting ability for these spells.
         shortDescription: >
           thaumaturgy cantrip; at 3rd level can cast hellish rebuke once per long rest; at 5th level can
           cast darkness once per long rest
