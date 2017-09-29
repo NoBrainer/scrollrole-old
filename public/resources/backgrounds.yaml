@@ -39,7 +39,7 @@ backgrounds:
     choices:
       - name: Languages
         type: proficiency
-        quantity: 2
+        pick: 2
         options:
           - { type: language, name: Abyssal }
           - { type: language, name: Celestial }
@@ -112,7 +112,7 @@ backgrounds:
       - name: Skills
         description: Choose any two skills.
         type: proficiency
-        quantity: 2
+        pick: 2
         options:
           - { type: skill, name: Acrobatics }
           - { type: skill, name: Animal Handling }
@@ -135,7 +135,7 @@ backgrounds:
       - name: Tool Proficiencies or Languages
         description: Choose a total of two tool proficiencies or languages.
         type: proficiency
-        quantity: 2
+        pick: 2
         options:
           - { type: language, name: Abyssal }
           - { type: language, name: Celestial }

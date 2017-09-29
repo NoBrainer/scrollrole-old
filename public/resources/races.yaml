@@ -53,7 +53,7 @@ races:
           You gain proficiency with the artisan's tool of your choice: smith's tools, brewer's supplies, or mason's
           tools.
         type: proficiency
-        quantity: 1
+        pick: 1
         options:
           - { type: tool, name: smith's tools }
           - { type: tool, name: brewer's supplies }
@@ -141,7 +141,7 @@ races:
               You know one cantrip of your choice from the wizard spell list. Intelligence is your spellcasting ability
               for it.
             type: feature
-            quantity: 1
+            pick: 1
             options:
               - { type: spell, level: 0, name: Acid Splash }
               - { type: spell, level: 0, name: Chill Touch }
@@ -159,7 +159,7 @@ races:
               - { type: spell, level: 0, name: True Strike }
           - name: Languages
             description: You can speak, read, and write one extra language of your choice.
-            quantity: 1
+            pick: 1
             type: proficiency
             options:
               - { type: language, name: Abyssal }
@@ -260,7 +260,7 @@ races:
           speech with words borrowed from other tongues: Orc curses, Elvish musical expressions, Dwarvish military
           phrases, and so on.
         type: proficiency
-        quantity: 1
+        pick: 1
         options:
           - { type: language, name: Abyssal }
           - { type: language, name: Celestial }
@@ -325,7 +325,7 @@ races:
           You have draconic ancestry. Choose one type of dragon from the Draconic Ancestry table. Your breath weapon and
           damage resistance are determined by the dragon type, as shown in the table.
         type: feature
-        quantity: 1
+        pick: 1
         options:
           - { color: black,   damageType: acid,       breathWeapon: 5 by 30 ft line (DEX save) }
           - { color: blue,    damageType: lightning,  breathWeapon: 5 by 30 ft line (DEX save) }
@@ -446,7 +446,7 @@ races:
       - name: Ability Score Adjustment
         description: Two other ability scores of your choice increase by 1.
         type: abilityScoreAdjustment
-        quantity: 2
+        pick: 2
         options:
           - { attribute: STR, modifier: +1, name: Strength }
           - { attribute: DEX, modifier: +1, name: Dexterity }
@@ -456,7 +456,7 @@ races:
       - name: Languages
         description: You can speak, read, and write Common, Elvish, and one extra language of your choice.
         type: proficiency
-        quantity: 1
+        pick: 1
         options:
           - { type: language, name: Abyssal }
           - { type: language, name: Celestial }
@@ -476,7 +476,7 @@ races:
       - name: Skill Versatility
         description: You gain proficiency in two skills of your choice.
         type: proficiency
-        quantity: 2
+        pick: 2
         options:
           - { type: skill, name: Acrobatics }
           - { type: skill, name: Animal Handling }
