@@ -1,0 +1,37 @@
+classes:
+
+  ## BARBARIAN
+  - name: Barbarian
+
+  ## BARD
+  - name: Bard
+
+  ## CLERIC
+  - name: Cleric
+
+  ## DRUID
+  - name: Druid
+
+  ## FIGHTER
+  - name: Fighter
+
+  ## MONK
+  - name: Monk
+
+  ## PALADIN
+  - name: Paladin
+
+  ## RANGER
+  - name: Ranger
+
+  ## ROGUE
+  - name: Rogue
+
+  ## SORCEROR
+  - name: Sorceror
+
+  ## WARLOCK
+  - name: Warlock
+
+  ## WIZARD
+  - name: Wizard
