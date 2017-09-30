@@ -368,28 +368,13 @@ classes:
             choice at higher levels, as shown in the Cantrips Known column of the Bard table.
         type: feature
         pick: 2
-        options:
-          - { type: spell, level: 0, name: Dancing Lights }
-          - { type: spell, level: 0, name: Light }
-          - { type: spell, level: 0, name: Mage Hand }
-          - { type: spell, level: 0, name: Mending }
-          - { type: spell, level: 0, name: Message }
-          - { type: spell, level: 0, name: Minor Illusion }
-          - { type: spell, level: 0, name: Prestidigitation }
-          - { type: spell, level: 0, name: True Strike }
-          - { type: spell, level: 0, name: Vicious Mockery }
+        from: { name: spellList, level: 0 }
       - name: Spells Known
         description:
           - You know four 1st-level spells of your choice from the bard spell list.
         type: feature
         pick: 4
-        options:
-          - { type: spell, level: 1, name: TODO }
-          - { type: spell, level: 1, name: TODO }
-          - { type: spell, level: 1, name: TODO }
-          - { type: spell, level: 1, name: TODO }
-          - { type: spell, level: 1, name: TODO }
-          - { type: spell, level: 1, name: TODO }
+        from: { name: spellList, level: 1 }
     spellList:
       - { type: spell, level: 0, name: Dancing Lights }
       - { type: spell, level: 0, name: Light }
@@ -400,15 +385,109 @@ classes:
       - { type: spell, level: 0, name: Prestidigitation }
       - { type: spell, level: 0, name: True Strike }
       - { type: spell, level: 0, name: Vicious Mockery }
-      - { type: spell, level: 1, name: TODO }
-      - { type: spell, level: 2, name: TODO }
-      - { type: spell, level: 3, name: TODO }
-      - { type: spell, level: 4, name: TODO }
-      - { type: spell, level: 5, name: TODO }
-      - { type: spell, level: 6, name: TODO }
-      - { type: spell, level: 7, name: TODO }
-      - { type: spell, level: 8, name: TODO }
-      - { type: spell, level: 9, name: TODO }
+      - { type: spell, level: 1, name: Animal Friendship }
+      - { type: spell, level: 1, name: Bane }
+      - { type: spell, level: 1, name: Charm Person }
+      - { type: spell, level: 1, name: Comprehend Languages }
+      - { type: spell, level: 1, name: Cure Wounds }
+      - { type: spell, level: 1, name: Detect Magic }
+      - { type: spell, level: 1, name: Disguise Self }
+      - { type: spell, level: 1, name: Faerie Fire }
+      - { type: spell, level: 1, name: Feather Fall }
+      - { type: spell, level: 1, name: Healing Word }
+      - { type: spell, level: 1, name: Heroism }
+      - { type: spell, level: 1, name: Hideous Laughter }
+      - { type: spell, level: 1, name: Identify }
+      - { type: spell, level: 1, name: Illusory Script }
+      - { type: spell, level: 1, name: Longstrider }
+      - { type: spell, level: 1, name: Silent Image }
+      - { type: spell, level: 1, name: Sleep }
+      - { type: spell, level: 1, name: Speak with Animals }
+      - { type: spell, level: 1, name: Thunderwave }
+      - { type: spell, level: 1, name: Unseen Servant }
+      - { type: spell, level: 2, name: Animal Messenger }
+      - { type: spell, level: 2, name: Blindness/Deafness }
+      - { type: spell, level: 2, name: Calm Emotions }
+      - { type: spell, level: 2, name: Detect Thoughts }
+      - { type: spell, level: 2, name: Enhance Ability }
+      - { type: spell, level: 2, name: Enthrall }
+      - { type: spell, level: 2, name: Heat Metal }
+      - { type: spell, level: 2, name: Hold Person }
+      - { type: spell, level: 2, name: Invisibility }
+      - { type: spell, level: 2, name: Knock }
+      - { type: spell, level: 2, name: Lesser Restoration }
+      - { type: spell, level: 2, name: Locate Animals or Plants }
+      - { type: spell, level: 2, name: Locate Object }
+      - { type: spell, level: 2, name: Magic Mouth }
+      - { type: spell, level: 2, name: See Invisibility }
+      - { type: spell, level: 2, name: Shatter }
+      - { type: spell, level: 2, name: Silence }
+      - { type: spell, level: 2, name: Suggestion }
+      - { type: spell, level: 2, name: Zone of Truth }
+      - { type: spell, level: 3, name: Bestow Curse }
+      - { type: spell, level: 3, name: Clairvoyance }
+      - { type: spell, level: 3, name: Dispel Magic }
+      - { type: spell, level: 3, name: Fear }
+      - { type: spell, level: 3, name: Glyph of Warding }
+      - { type: spell, level: 3, name: Hypnotic Pattern }
+      - { type: spell, level: 3, name: Major Image }
+      - { type: spell, level: 3, name: Nondetection }
+      - { type: spell, level: 3, name: Plant Growth }
+      - { type: spell, level: 3, name: Sending }
+      - { type: spell, level: 3, name: Speak with Dead }
+      - { type: spell, level: 3, name: Speak with Plants }
+      - { type: spell, level: 3, name: Stinking Cloud }
+      - { type: spell, level: 3, name: Tiny Hut }
+      - { type: spell, level: 3, name: Tongues }
+      - { type: spell, level: 4, name: Compulsion }
+      - { type: spell, level: 4, name: Confusion }
+      - { type: spell, level: 4, name: Dimension Door }
+      - { type: spell, level: 4, name: Freedom of Movement }
+      - { type: spell, level: 4, name: Greater Invisibility }
+      - { type: spell, level: 4, name: Hallucinatory Terrain }
+      - { type: spell, level: 4, name: Locate Creature }
+      - { type: spell, level: 4, name: Polymorph }
+      - { type: spell, level: 5, name: Animate Objects }
+      - { type: spell, level: 5, name: Awaken }
+      - { type: spell, level: 5, name: Dominate Person }
+      - { type: spell, level: 5, name: Dream }
+      - { type: spell, level: 5, name: Geas }
+      - { type: spell, level: 5, name: Greater Restoration }
+      - { type: spell, level: 5, name: Hold Monster }
+      - { type: spell, level: 5, name: Legend Lore }
+      - { type: spell, level: 5, name: Mass Cure Wounds }
+      - { type: spell, level: 5, name: Mislead }
+      - { type: spell, level: 5, name: Modify Memory }
+      - { type: spell, level: 5, name: Planar Binding }
+      - { type: spell, level: 5, name: Raise Dead }
+      - { type: spell, level: 5, name: Scrying }
+      - { type: spell, level: 5, name: Seeming }
+      - { type: spell, level: 5, name: Teleportation Circle }
+      - { type: spell, level: 6, name: Eyebite }
+      - { type: spell, level: 6, name: Find the Path }
+      - { type: spell, level: 6, name: Guards and Wards }
+      - { type: spell, level: 6, name: Irresistible Dance }
+      - { type: spell, level: 6, name: Mass Suggestion }
+      - { type: spell, level: 6, name: Programmed Illusion }
+      - { type: spell, level: 6, name: True Seeing }
+      - { type: spell, level: 7, name: Arcane Sword }
+      - { type: spell, level: 7, name: Etherealness }
+      - { type: spell, level: 7, name: Forcecage }
+      - { type: spell, level: 7, name: Magnificent Mansion }
+      - { type: spell, level: 7, name: Mirage Arcane }
+      - { type: spell, level: 7, name: Project Image }
+      - { type: spell, level: 7, name: Regenerate }
+      - { type: spell, level: 7, name: Resurrection }
+      - { type: spell, level: 7, name: Symbol }
+      - { type: spell, level: 7, name: Teleport }
+      - { type: spell, level: 8, name: Dominate Monster }
+      - { type: spell, level: 8, name: Feeblemind }
+      - { type: spell, level: 8, name: Glibness }
+      - { type: spell, level: 8, name: Mind Blank }
+      - { type: spell, level: 8, name: Power Word Stun }
+      - { type: spell, level: 9, name: Foresight }
+      - { type: spell, level: 9, name: Power Word Kill }
+      - { type: spell, level: 9, name: True Polymorph }
 
 
   ## CLERIC
