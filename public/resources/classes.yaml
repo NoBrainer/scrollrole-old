@@ -301,6 +301,41 @@ classes:
       - name: Spells Known
         count: 4
         spells: #this starts empty but will fill up based on choices
+      - name: Spellcasting Ability
+        description:
+          - >
+            Charisma is your spellcasting ability for your bard spells. Your magic comes from the heart and soul you
+            pour into the performance of your music or oration. You use your Charisma whenever a spell refers to your
+            spellcasting ability. In addition, you use your Charisma modifier when setting the saving throw DC for a
+            bard spell you cast and when making an attack roll with one.
+        spellSaveDC:
+          add: [ 8, proficiencyBonus, charismaModifier ]
+        spellAttackModifier:
+          add: [ proficiencyBonus, charismaModifier ]
+      - name: Ritual Casting
+        description:
+          - You can cast any bard spell you know as a ritual if that spell has the ritual tag.
+      - name: Spellcasting Focus
+        description:
+          - You can use a musical instrument as a spellcasting focus for your bard spells.
+      - name: Bardic Inspiration
+        description:
+          - >
+            You can inspire others through stirring words or music. To do so, you use a bonus action on your turn to
+            choose one creature other than yourself within 60 feet of you who can hear you. That creature gains one
+            Bardic Inspiration die, a d6.
+          - >
+            Once within the next 10 minutes, the creature can roll the die and add the number rolled to one ability
+            check, attack roll, or saving throw it makes. The creature can wait until after it rolls the d20 before
+            deciding to use the Bardic Inspiration die, but must decide before the GM says whether the roll succeeds
+            or fails. Once the Bardic Inspiration die is rolled, it is lost. A creature can have only one Bardic
+            Inspiration die at a time.
+          - >
+            You can use this feature a number of times equal to your Charisma modifier (a minimum of once). You
+            regain any expended uses when you finish a long rest.
+          - >
+            Your Bardic Inspiration die changes when you reach certain levels in this class. The die becomes a d8 at
+            5th level, a d10 at 10th level, and a d12 at 15th level.
     choices:
       - name: Musical instruments
         description:
