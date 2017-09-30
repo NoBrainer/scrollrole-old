@@ -102,7 +102,12 @@ classes:
                 your reaction to make a melee weapon attack against that creature.
       - condition: { level: 4 }
         features:
-          - name: Ability Score Improvement
+          - name: Ability Score Improvement 1
+            description:
+              - >
+                When you reach 4th level, and again at 8th, 12th, 16th, and 19th level, you can increase one ability
+                score of your choice by 2, or you can increase two ability scores of your choice by 1. As normal, you
+                can't increase an ability score above 20 using this feature.
       - condition: { level: 5 }
         proficiencyBonus: +3
         features:
@@ -117,7 +122,7 @@ classes:
           - name: Feral Instinct
       - condition: { level: 8 }
         features:
-          - name: Ability Score Improvement
+          - name: Ability Score Improvement 2
       - condition: { level: 9 }
         proficiencyBonus: +4
         features:
@@ -131,7 +136,7 @@ classes:
           - name: Relentless Rage
       - condition: { level: 12 }
         features:
-          - name: Ability Score Improvement
+          - name: Ability Score Improvement 3
           - { name: Rage, count: 5, damage: +3 }
       - condition: { level: 13 }
         proficiencyBonus: +5
@@ -145,7 +150,7 @@ classes:
           - name: Persistent Rage
       - condition: { level: 16 }
         features:
-          - name: Ability Score Improvement
+          - name: Ability Score Improvement 4
           - { name: Rage, count: 5, damage: +4 }
       - condition: { level: 17 }
         proficiencyBonus: +6
@@ -157,7 +162,7 @@ classes:
           - name: Indomitable Might
       - condition: { level: 19 }
         features:
-          - name: Ability Score Improvement
+          - name: Ability Score Improvement 5
       - condition: { level: 20 }
         features:
           - name: Primal Champion
@@ -277,30 +282,36 @@ classes:
     equipment:
       - leather armor
       - dagger
+    proficiencyBonus: +2
+    spellCasting:
+      description:
+        - >
+          You have learned to untangle and reshape the fabric of reality in harmony with your wishes and music. Your
+          spells are part of your vast repetoire, magic that can tune to different situations.
+        - >
+          The Spells Known column of the Bard table shows when you learn more bard spells of your choice. Each of these
+          spells must be of a level for which you have spell slots, as shown on the table. For instance, when you reach
+          3rd level in this class, you can learn one new spell of 1st or 2nd level.
+        - >
+          Additionally, when you gain a level in this class, you can choose one of the bard spells you know and replace
+          it with another spell from the bard spell list, which almost must be of a level for which you have spell
+          slots.
+      ability: Charisma
+      focus: You can use a musical instrument as a spellcasting focus for your bard spells.
+      cantripsKnown: 2
+      spellsKnown: 4
+      spells: #this will be populated based on choices
+      spellSlots:
+        description:
+          - >
+            To cast one of these spells, you must expend a slot of the spell's level or higher. You regain all expended
+            slots when you finish a long rest.
+        L1: 2
+      spellSaveDC:
+        add: [ 8, proficiencyBonus, charismaModifier ]
+      spellAttackModifier:
+        add: [ proficiencyBonus, charismaModifier ]
     features:
-      - name: Spellcasting
-        description:
-          - >
-            You have learned to untangle and reshape the fabric of reality in harmony with your wishes and music. Your
-            spells are part of your vast repetoire, magic that can tune to different situations.
-          - >
-            The Spells Known column of the Bard table shows when you learn more bard spells of your choice. Each of
-            these spells must be of a level for which you have spell slots, as shown on the table. For instance, when
-            you reach 3rd level in this class, you can learn one new spell of 1st or 2nd level.
-          - >
-            Additionally, when you gain a level in this class, you can choose one of the bard spells you know and
-            replace it with another spell from the bard spell list, which almost must be of a level for which you have
-            spell slots.
-      - name: Spell Slots
-        description:
-          - >
-            The Bard table shows how many spell slots you have to cast your spells of 1st level and higher. To cast one
-            of these spells, you must expend a slot of the spell's level or higher. You regain all expended slots when
-            you finish a long rest.
-            TODO: add attributes for spell slots of varying levels
-      - name: Spells Known
-        count: 4
-        spells: #this starts empty but will fill up based on choices
       - name: Spellcasting Ability
         description:
           - >
@@ -308,34 +319,11 @@ classes:
             pour into the performance of your music or oration. You use your Charisma whenever a spell refers to your
             spellcasting ability. In addition, you use your Charisma modifier when setting the saving throw DC for a
             bard spell you cast and when making an attack roll with one.
-        spellSaveDC:
-          add: [ 8, proficiencyBonus, charismaModifier ]
-        spellAttackModifier:
-          add: [ proficiencyBonus, charismaModifier ]
       - name: Ritual Casting
         description:
           - You can cast any bard spell you know as a ritual if that spell has the ritual tag.
-      - name: Spellcasting Focus
-        description:
-          - You can use a musical instrument as a spellcasting focus for your bard spells.
       - name: Bardic Inspiration
-        description:
-          - >
-            You can inspire others through stirring words or music. To do so, you use a bonus action on your turn to
-            choose one creature other than yourself within 60 feet of you who can hear you. That creature gains one
-            Bardic Inspiration die, a d6.
-          - >
-            Once within the next 10 minutes, the creature can roll the die and add the number rolled to one ability
-            check, attack roll, or saving throw it makes. The creature can wait until after it rolls the d20 before
-            deciding to use the Bardic Inspiration die, but must decide before the GM says whether the roll succeeds
-            or fails. Once the Bardic Inspiration die is rolled, it is lost. A creature can have only one Bardic
-            Inspiration die at a time.
-          - >
-            You can use this feature a number of times equal to your Charisma modifier (a minimum of once). You
-            regain any expended uses when you finish a long rest.
-          - >
-            Your Bardic Inspiration die changes when you reach certain levels in this class. The die becomes a d8 at
-            5th level, a d10 at 10th level, and a d12 at 15th level.
+        inspirationDice: 1d6
     choices:
       - name: Musical instruments
         description:
@@ -410,6 +398,226 @@ classes:
         type: feature
         pick: 4
         from: { name: spellList, level: 1 }
+    unlockables:
+      - condition: { level: 2 }
+        spellCasting:
+          spellsKnown: 5
+          spellSlots: { L1: 3 }
+        features:
+          - name: Jack of All Trades
+          - { name: Song of Rest, extraHitDice: 1d6 }
+      - condition: { level: 3 }
+        spellCasting:
+          spellsKnown: 6
+          spellSlots: { L1: 4, L2: 2 }
+        features:
+          - name: Bard College
+          - name: Expertise 1
+      - condition: { level: 4 }
+        spellCasting:
+          cantripsKnown: 3
+          spellsKnown: 7
+          spellSlots: { L2: 3 }
+        features:
+          - name: Ability Score Improvement 1
+      - condition: { level: 5 }
+        proficiencyBonus: +3
+        spellCasting:
+          spellsKnown: 8
+          spellSlots: { L3: 2 }
+        features:
+          - { name: Bardic Inspiration, inspirationDice: 1d8 }
+          - name: Font of Inspiration
+      - condition: { level: 6 }
+        spellCasting:
+          spellsKnown: 9
+          spellSlots: { L3: 3 }
+        features:
+          - name: Countercharm
+          - name: Bard College Feature
+      - condition: { level: 7 }
+        spellCasting:
+          spellsKnown: 10
+          spellSlots: { L4: 1 }
+      - condition: { level: 8 }
+        spellCasting:
+          spellsKnown: 11
+          spellSlots: { L4: 2 }
+        features:
+          - name: Ability Score Improvement 2
+      - condition: { level: 9 }
+        proficiencyBonus: +4
+        spellCasting:
+          spellsKnown: 12
+          spellSlots: { L4: 3, L5: 1 }
+        features:
+          - { name: Song of Rest, extraHitDice: 1d8 }
+      - condition: { level: 10 }
+        spellCasting:
+          cantripsKnown: 4
+          spellsKnown: 14
+          spellSlots: { L5: 2 }
+        features:
+          - { name: Bardic Inspiration, inspirationDice: 1d10 }
+          - name: Expertise 2
+          - name: Magical Secrets
+      - condition: { level: 11 }
+        spellCasting:
+          spellsKnown: 15
+          spellSlots: { L6: 1 }
+      - condition: { level: 12 }
+        spellCasting:
+          spellsKnown: 15
+        features:
+          - name: Ability Score Improvement 3
+      - condition: { level: 13 }
+        proficiencyBonus: +5
+        spellCasting:
+          spellsKnown: 16
+          spellSlots: { L7: 1 }
+        features:
+          - { name: Song of Rest, extraHitDice: 1d10 }
+      - condition: { level: 14 }
+        spellCasting:
+          spellsKnown: 18
+        features:
+          - name: Magical Secrets
+          - name: Bard College Feature
+      - condition: { level: 15 }
+        spellCasting:
+          spellsKnown: 19
+          spellSlots: { L8: 1 }
+        features:
+          - { name: Bardic Inspiration, inspirationDice: 1d12 }
+      - condition: { level: 16 }
+        spellCasting:
+          spellsKnown: 19
+        features:
+          - name: Ability Score Improvement 4
+      - condition: { level: 17 }
+        proficiencyBonus: +6
+        spellCasting:
+          spellsKnown: 20
+          spellSlots: { L9: 1 }
+        features:
+          - { name: Song of Rest, extraHitDice: 1d12 }
+      - condition: { level: 18 }
+        spellCasting:
+          spellsKnown: 22
+          spellSlots: { L5: 3 }
+        features:
+          - name: Magical Secrets
+      - condition: { level: 19 }
+        spellCasting:
+          spellSlots: { L6: 2 }
+        features:
+          - name: Ability Score Improvement 5
+      - condition: { level: 20 }
+        spellCasting:
+          spellsKnown: 22
+          spellSlots: { L7: 2 }
+        features:
+          - name: Superior Inspiration
+    featureDescriptions:
+      - name: Bardic Inspiration
+        description:
+          - >
+            You can inspire others through stirring words or music. To do so, you use a bonus action on your turn to
+            choose one creature other than yourself within 60 feet of you who can hear you. That creature gains one
+            Bardic Inspiration die, a d6.
+          - >
+            Once within the next 10 minutes, the creature can roll the die and add the number rolled to one ability
+            check, attack roll, or saving throw it makes. The creature can wait until after it rolls the d20 before
+            deciding to use the Bardic Inspiration die, but must decide before the GM says whether the roll succeeds
+            or fails. Once the Bardic Inspiration die is rolled, it is lost. A creature can have only one Bardic
+            Inspiration die at a time.
+          - >
+            You can use this feature a number of times equal to your Charisma modifier (a minimum of once). You
+            regain any expended uses when you finish a long rest.
+          - >
+            Your Bardic Inspiration die changes when you reach certain levels in this class. The die becomes a d8 at
+            5th level, a d10 at 10th level, and a d12 at 15th level.
+      - name: Jack of All Trades
+        description:
+          - >
+            Starting at 2nd level, you can add half your proficiency bonus, rounded down, to any ability check you make
+            that doesn't already include your proficiency bonus.
+      - name: Song of Rest
+        description:
+          - >
+            Beginning at 2nd level, you can use soothing music or oration to help revitalize your wounded allies during
+            a short rest. If you or any friendly creatures who can hear your performance regain hit points at the end
+            of the short rest by spending one or more Hit Dice, each of those creatures regain an extra 1d6 hit points.
+          - >
+            The extra hit points increase when you reach certain levels in this class: to 1d8 at 9th level, to 1d10 at
+            13th level, and to 1d12 at 17th level.
+      - name: Bard College
+        description:
+          - >
+            At 3rd level, you delve into the advanced techniques of a bard college of your choice, such as the College
+            of Lore. Your choice grants you features at 3rd level and again at 6th and 14th level.
+      - name: Expertise
+        description:
+          - >
+            At 3rd level, choose two of your skill proficiencies. Your proficiency bonus is doubled for any ability
+            check you make that uses either of the chosen proficiencies.
+          - >
+            At 10th level, you can choose another two skill proficiencies to gain this benefit.
+      - name: Ability Score Improvement
+        description:
+          - >
+            When you reach 4th level, and again at 8th, 12th, 16th, and 19th level, you can increase one ability
+            score of your choice by 2, or you can increase two ability scores of your choice by 1. As normal, you
+            can't increase an ability score above 20 using this feature.
+      - name: Font of Inspiration
+        description:
+          - >
+            Beginning when you reach 5th level, you regain all of your expended uses of Bardic Inspiration when you
+            finish a short or long rest.
+      - name: Countercharm
+        description:
+          - >
+            At 6th level, you gain the ability to use musical notes or words of power to disrupt mind-influencing
+            effects. As an action, you can start a performance that lasts until the end of your next turn. During that
+            time, you and any friendly creatures within 30 feet of you have advantage on saving throws against being
+            frightened or charmed. A creature must be able to hear you to gain this benefit. The performance ends early
+            if you are incapacitated or silenced or if you voluntarily end it (no action required).
+      - name: Magical Secrets
+        description:
+          - >
+            By 10th level, you have plundered magical knowledge from a wide spectrum of disciplines. Choose two spells
+            from any class, including this one. A spell you choose must be of a level you can cast, as shown on the
+            Bard table, or a cantrip.
+          - >
+            The chosen spells count as bard spells for you and are included in the number in the Spells Known column of
+            the Bard table.
+          - >
+            You learn two additional spells from any class at 14th level and again at 18th level.
+      - name: Superior Inspiration
+        description:
+          - At 20th level, when you roll initiative  and have no uses of Bardic Inspiration left, you regain one use.
+      - name: College of Lore
+        description:
+          - >
+            TODO
+      - name: College of Lore: Bonus Proficiencies
+        description:
+          - >
+            TODO
+      - name: College of Lore: Cutting Words
+        description:
+          - >
+            TODO
+      - name: College of Lore: Additional Magic Secrets
+        description:
+          - >
+            TODO
+      - name: College of Lore: Peerless Skill
+        description:
+          - >
+            TODO
+            
+      
     spellList:
       - { type: spell, level: 0, name: Dancing Lights }
       - { type: spell, level: 0, name: Light }
