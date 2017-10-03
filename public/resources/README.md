@@ -88,6 +88,7 @@ classes:
     equipment:
     features:
     spellList:
+    spellCasting:
     choices:
     unlockables:
     featureDescriptions:
@@ -103,10 +104,11 @@ classes:
 - `equipment`: List of starting equipment. Each piece of equipment is a String.
 - `features`: List of class features. (See: "Feature Object" in "GENERAL OBJECTS")
 - `spellList`: List of spells. (See: "Spell Object" in "GENERAL OBJECTS")
+- `spellCasting`: Object defining how spellcasting works. (See: "Spellcasting Object" in "GENERAL OBJECTS")
 - `choices`: List of class choices to be made at character creation. (See: "Choice Object" in "GENERAL OBJECTS")
 - `unlockables`: (REQUIRED) List of unlockable for later levels in the class. (See: "Unlockable Object" in "GENERAL
 OBJECTS")
-- `featureDescriptions`: List of feature descriptions (another place to put featuredescriptions; useful for unlockables
+- `featureDescriptions`: List of feature descriptions (another place to put feature descriptions; useful for unlockables
 and choices)
 
 
@@ -171,8 +173,8 @@ Each Choice Object represent a decision the player needs to make.
 
 - `name`: String
 - `description`: List of paragraph Strings
-- `type`: (REQUIRED) String for the type of thing being picked
-(`abilityScoreAdjustment`|`equipment`|`feature`|`proficiency`)
+- `type`: (REQUIRED) String for the type of thing being picked (`abilityScoreAdjustment` | `equipment` | `feature` |
+`proficiency`)
 - `pick`: (REQUIRED) Number of things to be picked
 - `options`: Object or String of things to pick from. If it's an Object, it can be an Ability Score Adjustment Object,
 Feature Object, or Proficiency Object. (Must have this or `from`.)
@@ -207,20 +209,66 @@ Each Feature Object represents any of the various background, class, or race fea
 - `description`: List of paragraph Strings
 - `shortDescription`: String abbreviation version of `description`
 
+### Math Object
+Each Math Object can replace any Number. It provides a way to have variable values. Each function is performed in order
+from first to last, and no nesting is supported.
+
+- `function`: String for the function (`add` | `subtract` | `multiply` | `divide`)
+- `params`: List of parameters (Number | `proficiencyBonus` | `level` | `strModifier` | `dexModifier` | `conModifier`|
+`wisModifier` | `intModifier` | `chaModifier`)
+
+Example:
+```yaml
+spellSaveDC:
+  math:
+    - function: add
+      params: [8, proficiencyBonus, charismaModifier]
+```
+
 ### Proficiency Object
 Each Proficiency Object represents being proficient in something. It can be a skill, language, tool, armor, weapon, or
 saving throw.
 
 - `name`: (REQUIRED) String
 - `description`: List of paragraph Strings
-- `type`: (REQUIRED) String for the proficiency type (`armor`|`language`|`saving throw`|`skill`|`tool`|`weapon`)
+- `type`: (REQUIRED) String for the proficiency type (`armor` | `language` | `saving throw` | `skill` | `tool` |
+`weapon`)
 - `items`: List of Strings
+
+### Spellcasting Object
+The Spellcasting Object defines how spellcasting works.
+
+- `description`: List of paragraph Strings
+- `ability`: (REQUIRED) String of the casting ability (`Strength` | `Dexterity` | `Constitution` | `Wisdom` |
+`Intelligence` | `Charisma`)
+- `focus`: String describing the spellcasting focus
+- `cantripsKnown`: Number of level 0 spells known
+- `spellsKnown`: Number of level 1+ spells known
+- `spells`: (REQUIRED) List of spells (See: "Spell Object" in "GENERAL OBJECTS")
+- `spellSlots`: Object defining how many slots are available and how they work (See: "Spell Slots Object" in "GENERAL
+OBJECTS")
+- `spellSaveDC`: (REQUIRED) 
+- `spellAttackModifier`: (REQUIRED) Number
 
 ### Spell Object
 Each Spell Object represents a spell that can be cast.
 
 - `name`: (REQUIRED) String
 - `level`: (REQUIRED) Number from 0 to 9. Level 0 is a cantrip.
+
+### Spell Slots Object
+Each Spell Slots Object defines how many spell slots are available and how they work.
+
+- `description`: (REQUIRED) List of paragraph Strings
+- `L1`: Number of level one spell slots
+- `L2`: Number of level two spell slots
+- `L3`: Number of level three spell slots
+- `L4`: Number of level four spell slots
+- `L5`: Number of level five spell slots
+- `L6`: Number of level six spell slots
+- `L7`: Number of level seven spell slots
+- `L8`: Number of level eight spell slots
+- `L9`: Number of level nine spell slots
 
 ### Unlockable Object
 Each Unlockable Object represents something that can be unlocked once a condition is met.
