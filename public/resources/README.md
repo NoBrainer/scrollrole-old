@@ -61,11 +61,10 @@ backgrounds:
 
 - `name`: (REQUIRED) String for the background name.
 - `description`: List of paragraph Strings for the background description.
-- `proficiencies`: List of armor, weapon, tool, language, and skill proficiencies. (See: "Proficiency Object" in
-"GENERAL OBJECTS")
+- `proficiencies`: List of armor, weapon, tool, language, and skill proficiencies. (See: [Proficiency Object](#proficiency-object))
 - `equipment`: List of starting equipment. Each piece of equipment is a String.
-- `features`: List of background features. (See: "Feature Object" in "GENERAL OBJECTS")
-- `choices`: List of background choices to be made at character creation. (See: "Choice Object" in "GENERAL OBJECTS")
+- `features`: List of background features. (See: [Feature Object](#feature-object))
+- `choices`: List of background choices to be made at character creation. (See: [Choice Object](#choice-object))
 - `suggestedCharacteristics`: Suggested `personalityTraits`, `ideals`, `flaws`, and `bonds` for the background.
   - `personalityTraits`
   - `ideals`
@@ -98,16 +97,14 @@ classes:
 - `description`: List of paragraph Strings for the class description.
 - `hitDice`: (REQUIRED) String for the hit dice. (1d6, 1d8, etc.)
 - `baseHitPoints`: (REQUIRED) Number for the base hit points for a level one character (before any modifiers).
-- `proficiencies`: List of armor, weapon, tool, language, and skill proficiencies. (See: "Proficiency Object" in
-"GENERAL OBJECTS")
+- `proficiencies`: List of armor, weapon, tool, language, and skill proficiencies. (See: [Proficiency Object](#proficiency-object))
 - `proficiencyBonus`: (REQUIRED) Number for the proficiency bonus.
 - `equipment`: List of starting equipment. Each piece of equipment is a String.
-- `features`: List of class features. (See: "Feature Object" in "GENERAL OBJECTS")
-- `spellList`: List of spells. (See: "Spell Object" in "GENERAL OBJECTS")
-- `spellCasting`: Object defining how spellcasting works. (See: "Spellcasting Object" in "GENERAL OBJECTS")
-- `choices`: List of class choices to be made at character creation. (See: "Choice Object" in "GENERAL OBJECTS")
-- `unlockables`: (REQUIRED) List of unlockable for later levels in the class. (See: "Unlockable Object" in "GENERAL
-OBJECTS")
+- `features`: List of class features. (See: [Feature Object](#feature-object))
+- `spellList`: List of spells. (See: [Spell Object](#spell-object))
+- `spellCasting`: Object defining how spellcasting works. (See: [Spellcasting Object](#spellcasting-object))
+- `choices`: List of class choices to be made at character creation. (See: [Choice Object](#choice-object))
+- `unlockables`: (REQUIRED) List of unlockable for later levels in the class. (See: [Unlockable Object](#unlockable-object))
 - `featureDescriptions`: List of feature descriptions (another place to put feature descriptions; useful for unlockables
 and choices)
 
@@ -133,16 +130,14 @@ races:
 
 - `name`: (REQUIRED) String for the race name.
 - `description`: List of paragraph Strings for the race description.
-- `abilityScoreAdjustments`: List of ability score adjustments. (See: "Ability Score Adjustment Object" in "GENERAL
-OBJECTS")
+- `abilityScoreAdjustments`: List of ability score adjustments. (See: [Ability Score Adjustment Object](#ability-score-adjustment-object))
 - `age`: String for the race's age description.
 - `alignment`: String for the race's typical alignment description.
 - `size`: String for the race's size description.
 - `speed`: Number for the movement speed in feet.
-- `features`: List of race features. (See: "Feature Object" in "GENERAL OBJECTS")
-- `proficiencies`: List of armor, weapon, tool, language, and skill proficiencies. (See: "Proficiency Object" in
-"GENERAL OBJECTS")
-- `choices`: List of race choices to be made at character creation. (See: "Choice Object" in "GENERAL OBJECTS")
+- `features`: List of race features. (See: [Feature Object](#feature-object))
+- `proficiencies`: List of armor, weapon, tool, language, and skill proficiencies. (See: [Proficiency Object](#proficiency-object))
+- `choices`: List of race choices to be made at character creation. (See: [Choice Object](#choice-object))
 - `subraces`: List of possible subraces. Each subrace is a Race object but with less options.
 
 
@@ -200,7 +195,7 @@ Each Condition Object represents the requirements for an unlockable being unlock
 
 - `level`: Number of the level required
 - `feature`: String name of a feature required
-- `proficiency`: Proficiency required (See: "Proficiency Object" in "GENERAL OBJECTS")
+- `proficiency`: Proficiency required (See: [Proficiency Object](#proficiency-object))
 
 ### Feature Object
 Each Feature Object represents any of the various background, class, or race features.
@@ -244,9 +239,8 @@ The Spellcasting Object defines how spellcasting works.
 - `focus`: String describing the spellcasting focus
 - `cantripsKnown`: Number of level 0 spells known
 - `spellsKnown`: Number of level 1+ spells known
-- `spells`: (REQUIRED) List of spells (See: "Spell Object" in "GENERAL OBJECTS")
-- `spellSlots`: Object defining how many slots are available and how they work (See: "Spell Slots Object" in "GENERAL
-OBJECTS")
+- `spells`: (REQUIRED) List of spells (See: [Spell Object](#spell-object))
+- `spellSlots`: Object defining how many slots are available and how they work (See: [Spell Slots Object](#spell-slots-object))
 - `spellSaveDC`: (REQUIRED) 
 - `spellAttackModifier`: (REQUIRED) Number
 
@@ -277,6 +271,5 @@ Each Unlockable Object represents something that can be unlocked once a conditio
 - `features`: List of features acquired by meeting the condition
 - `proficiencies`: List of proficiencies acquired by meeting the condition
 - `choices`: List of choices available by meeting the condition
-- `abilityScoreAdjustments`: List of ability score adjustments acquired by meeting the condition. (See: "Ability Score
-Adjustment Object" in "GENERAL OBJECTS")
+- `abilityScoreAdjustments`: List of ability score adjustments acquired by meeting the condition. (See: [Ability Score Adjustment Object](#ability-score-adjustment-object))
 - `speed`: Number for the movement speed (in feet) acquired by meeting the condition.
