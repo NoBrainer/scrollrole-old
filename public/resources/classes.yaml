@@ -17,8 +17,32 @@ classes:
       - 4 javelins
     proficiencyBonus: +2
     features:
-      - { name: Rage, count: 2, damage: +2 }
+      - name: Rage
+        description:
+          - >
+            In battle, you fight with primal ferocity. On your turn, you can enter a rage as a bonus action.
+          - >
+            While raging, you gain the following benefits if you aren't wearing heavy armor:\n
+            - You have advantage on Strength checks and Strength saving throws.\n
+            - When you make a melee weapon attack using Strength, you gain a bonus to the damage roll that increases as
+            you gain levels as a barbarian, as shown in the Rage Damage column of the Barbarian table.\n
+            - You have resistance to bludgeoning, piercing, and slashing damage.
+          - >
+            If you are able to cast spells, you can't cast them or concentrate on them while raging.
+          - >
+            Your rage lasts for 1 minute. It ends early if you are knocked unconscious or if your turn ends and you
+            haven't attacked a hostile creature since your last turn or taken damage since then. You can also end your
+            rage on your turn as a bonus action.
+          - >
+            Once you have raged the number of times shown for your barbarian level in the Rages column of the Barbarian
+            table, you must finish a long rest before you can rage again.
+        count: 2
+        damage: +2
       - name: Unarmored Defense
+        description:
+          - >
+            While you are not wearing any armor, your Armor Class equals 10 + your Dexterity modifier + your
+            Constitution modifier. You can use a shield and still gain this benefit.
     choices:
       - name: Skills
         description:
@@ -48,12 +72,30 @@ classes:
       - condition: { level: 2 }
         features:
           - name: Reckless Attack
+            description:
+              - >
+                Starting at 2nd level, you can throw aside all concern for defense to attack with fierce desperation.
+                When you make your first attack on your turn, you can decide to attack recklessly. Doing so gives you
+                advantage on melee weapon attack rolls using Strength during this turn, but attack rolls against you
+                have advantage until your next turn.
           - name: Danger Sense
+            description:
+              - >
+                At 2nd level, you gain an uncanny sense of when things nearby aren't as they should be, giving you an
+                edge when you dodge away from danger.
+              - >
+                You have advantage on Dexterity saving throws against effects that you can see, such as traps and
+                spells. To gain this benefit, you can't be blinded, deafened, or incapacitated.
       - condition: { level: 3 }
         features:
           - { name: Rage, count: 3, damage: +2 }
         choices:
           - name: Primal Path
+            description:
+              - >
+                At 3rd level, you choose a path that shapes the nature of your rage. Choose the Path of the Berserker or
+                the Path of the Totem Warrior, both detailed at the end of the class description. Your choice grants you
+                features at 3rd level and again at 6th, 10th, and 14th levels.
             type: feature
             pick: 1
             options:
@@ -112,7 +154,13 @@ classes:
         proficiencyBonus: +3
         features:
           - name: Extra Attack
+            description:
+              - >
+                Beginning at 5th level, you can attack twice, instead of once, whenever you take the Attack action on
+                your turn.
           - name: Fast Movement
+            description:
+              - Starting at 5th level, your speed increases by 10 feet while you aren't wearing heavy armor.
       - condition: { level: 6 }
         features:
           - name: Path Feature
@@ -120,13 +168,26 @@ classes:
       - condition: { level: 7 }
         features:
           - name: Feral Instinct
+            description:
+              - >
+                By 7th level, your instincts are so honed that you have advantage on initiative rolls.
+              - >
+                Additionally, if you are surprised at the beginning of combat and aren't incapacitated, you can act
+                normally on your first turn, but only if you enter your rage before doing anything else on that turn.
       - condition: { level: 8 }
         features:
           - name: Ability Score Improvement 2
       - condition: { level: 9 }
         proficiencyBonus: +4
         features:
-          - { name: Brutal Critical, dice: 1 }
+          - { name: Brutal Critical, dice: 1,
+              description:
+                - >
+                  Beginning at 9th level, you can roll one additional weapon damage die when determining the extra
+                  damage for a critical hit with a melee attack.
+                - >
+                  This increases to two additional dice at 13th level and three additional dice at 17th level.
+            }
           - { name: Rage, count: 4, damage: +3 }
       - condition: { level: 10 }
         features:
@@ -134,6 +195,14 @@ classes:
       - condition: { level: 11 }
         features:
           - name: Relentless Rage
+            description:
+              - >
+                Starting at 11th level, your rage can keep you fighting despite grievous wounds. If you drop to 0 hit
+                points while you're raging and don't die outright, you can make a DC 10 Constitution saving throw. If
+                you succeed, you drop to 1 hit point instead.
+              - >
+                Each time you use this feature after the first, the DC increases by 5. When you finish a short or long
+                rest, the DC resets to 10.
       - condition: { level: 12 }
         features:
           - name: Ability Score Improvement 3
@@ -148,6 +217,10 @@ classes:
       - condition: { level: 15 }
         features:
           - name: Persistent Rage
+            description:
+              - >
+                Beginning at 15th level, your rage is so fierce that it ends early only if you fall unconscious or if
+                you choose to end it.
       - condition: { level: 16 }
         features:
           - name: Ability Score Improvement 4
@@ -160,111 +233,23 @@ classes:
       - condition: { level: 18 }
         features:
           - name: Indomitable Might
+            description:
+              - >
+                Beginning at 18th level, if your total for a Strength check is less than your Strength score, you can
+                use that score in place of the total.
       - condition: { level: 19 }
         features:
           - name: Ability Score Improvement 5
       - condition: { level: 20 }
         features:
-          - name: Primal Champion
+          - { name: Primal Champion,
+              description:
+                - >
+                  At 20th level, you embody the power of the wilds. Your Strength and Constitution scores increase by 4.
+                  Your maximum for those scores is now 24.
+            }
           - { name: Rage, count: unlimited, damage: +4 }
-    featureDescriptions:
-      - name: Rage
-        description:
-          - >
-            In battle, you fight with primal ferocity. On your turn, you can enter a rage as a bonus action.
-          - >
-            While raging, you gain the following benefits if you aren't wearing heavy armor:\n
-            - You have advantage on Strength checks and Strength saving throws.\n
-            - When you make a melee weapon attack using Strength, you gain a bonus to the damage roll that increases as
-            you gain levels as a barbarian, as shown in the Rage Damage column of the Barbarian table.\n
-            - You have resistance to bludgeoning, piercing, and slashing damage.
-          - >
-            If you are able to cast spells, you can't cast them or concentrate on them while raging.
-          - >
-            Your rage lasts for 1 minute. It ends early if you are knocked unconscious or if your turn ends and you
-            haven't attacked a hostile creature since your last turn or taken damage since then. You can also end your
-            rage on your turn as a bonus action.
-          - >
-            Once you have raged the number of times shown for your barbarian level in the Rages column of the Barbarian
-            table, you must finish a long rest before you can rage again.
-      - name: Unarmored Defense
-        description:
-          - >
-            While you are not wearing any armor, your Armor Class equals 10 + your Dexterity modifier + your
-            Constitution modifier. You can use a shield and still gain this benefit.
-      - name: Reckless Attack
-        description:
-          - >
-            Starting at 2nd level, you can throw aside all concern for defense to attack with fierce desperation. When
-            you make your first attack on your turn, you can decide to attack recklessly. Doing so gives you advantage
-            on melee weapon attack rolls using Strength during this turn, but attack rolls against you have advantage
-            until your next turn.
-      - name: Danger Sense
-        description:
-          - >
-            At 2nd level, you gain an uncanny sense of when things nearby aren't as they should be, giving you an edge
-            when you dodge away from danger.
-          - >
-            You have advantage on Dexterity saving throws against effects that you can see, such as traps and spells. To
-            gain this benefit, you can't be blinded, deafened, or incapacitated.
-      - name: Primal Path
-        description:
-          - >
-            At 3rd level, you choose a path that shapes the nature of your rage. Choose the Path of the Berserker or the
-            Path of the Totem Warrior, both detailed at the end of the class description. Your choice grants you
-            features at 3rd level and again at 6th, 10th, and 14th levels.
-      - name: Ability Score Improvement
-        description:
-          - >
-            When you reach 4th level, and again at 8th, 12th, 16th, and 19th level, you can increase one ability score
-            of your choice by 2, or you can increase two ability scores of your choice by 1. As normal, you can't
-            increase an ability score above 20 using this feature.
-      - name: Extra Attack
-        description:
-          - >
-            Beginning at 5th level, you can attack twice, instead of once, whenever you take the Attack action on your
-            turn.
-      - name: Fast Movement
-        description:
-          - Starting at 5th level, your speed increases by 10 feet while you aren't wearing heavy armor.
-      - name: Feral Instinct
-        description:
-          - >
-            By 7th level, your instincts are so honed that you have advantage on initiative rolls.
-          - >
-            Additionally, if you are surprised at the beginning of combat and aren't incapacitated, you can act normally
-            on your first turn, but only if you enter your rage before doing anything else on that turn.
-      - name: Brutal Critical
-        description:
-          - >
-            Beginning at 9th level, you can roll one additional weapon damage die when determining the extra damage for
-            a critical hit with a melee attack.
-          - >
-            This increases to two additional dice at 13th level and three additional dice at 17th level.
-      - name: Relentless Rage
-        description:
-          - >
-            Starting at 11th level, your rage can keep you fighting despite grievous wounds. If you drop to 0 hit points
-            while you're raging and don't die outright, you can make a DC 10 Constitution saving throw. If you succeed,
-            you drop to 1 hit point instead.
-          - >
-            Each time you use this feature after the first, the DC increases by 5. When you finish a short or long rest,
-            the DC resets to 10.
-      - name: Persistent Rage
-        description:
-          - >
-            Beginning at 15th level, your rage is so fierce that it ends early only if you fall unconscious or if you
-            choose to end it.
-      - name: Indomitable Might
-        description:
-          - >
-            Beginning at 18th level, if your total for a Strength check is less than your Strength score, you can use
-            that score in place of the total.
-      - name: Primal Champion
-        description:
-          - >
-            At 20th level, you embody the power of the wilds. Your Strength and Constitution scores increase by 4. Your
-            maximum for those scores is now 24.
+
 
   ## BARD
   - name: Bard
@@ -319,6 +304,23 @@ classes:
         description:
           - You can cast any bard spell you know as a ritual if that spell has the ritual tag.
       - name: Bardic Inspiration
+        description:
+          - >
+            You can inspire others through stirring words or music. To do so, you use a bonus action on your turn to
+            choose one creature other than yourself within 60 feet of you who can hear you. That creature gains one
+            Bardic Inspiration die, a d6.
+          - >
+            Once within the next 10 minutes, the creature can roll the die and add the number rolled to one ability
+            check, attack roll, or saving throw it makes. The creature can wait until after it rolls the d20 before
+            deciding to use the Bardic Inspiration die, but must decide before the GM says whether the roll succeeds
+            or fails. Once the Bardic Inspiration die is rolled, it is lost. A creature can have only one Bardic
+            Inspiration die at a time.
+          - >
+            You can use this feature a number of times equal to your Charisma modifier (a minimum of once). You
+            regain any expended uses when you finish a long rest.
+          - >
+            Your Bardic Inspiration die changes when you reach certain levels in this class. The die becomes a d8 at
+            5th level, a d10 at 10th level, and a d12 at 15th level.
         inspirationDice: 1d6
     choices:
       - name: Musical instruments
@@ -400,15 +402,40 @@ classes:
           spellsKnown: 5
           spellSlots: { L1: 3 }
         features:
-          - name: Jack of All Trades
-          - { name: Song of Rest, extraHitDice: 1d6 }
+          - { name: Jack of All Trades,
+              description:
+                - >
+                  Starting at 2nd level, you can add half your proficiency bonus, rounded down, to any ability check you
+                  make that doesn't already include your proficiency bonus.
+            }
+          - { name: Song of Rest, extraHitDice: 1d6,
+              description:
+                - >
+                  Beginning at 2nd level, you can use soothing music or oration to help revitalize your wounded allies
+                  during a short rest. If you or any friendly creatures who can hear your performance regain hit points
+                  at the end of the short rest by spending one or more Hit Dice, each of those creatures regain an extra
+                  1d6 hit points.
+                - >
+                  The extra hit points increase when you reach certain levels in this class: to 1d8 at 9th level, to
+                  1d10 at 13th level, and to 1d12 at 17th level.
+            }
       - condition: { level: 3 }
         spellCasting:
           spellsKnown: 6
           spellSlots: { L1: 4, L2: 2 }
         features:
-          - name: Bard College
+          - name: Bard College 1
+            description:
+              - >
+                At 3rd level, you delve into the advanced techniques of a bard college of your choice, such as the
+                College of Lore. Your choice grants you features at 3rd level and again at 6th and 14th level.
           - name: Expertise 1
+            description:
+              - >
+                At 3rd level, choose two of your skill proficiencies. Your proficiency bonus is doubled for any ability
+                check you make that uses either of the chosen proficiencies.
+              - >
+                At 10th level, you can choose another two skill proficiencies to gain this benefit.
       - condition: { level: 4 }
         spellCasting:
           cantripsKnown: 3
@@ -416,6 +443,11 @@ classes:
           spellSlots: { L2: 3 }
         features:
           - name: Ability Score Improvement 1
+            description:
+              - >
+                When you reach 4th level, and again at 8th, 12th, 16th, and 19th level, you can increase one ability
+                score of your choice by 2, or you can increase two ability scores of your choice by 1. As normal, you
+                can't increase an ability score above 20 using this feature.
       - condition: { level: 5 }
         proficiencyBonus: +3
         spellCasting:
@@ -423,14 +455,26 @@ classes:
           spellSlots: { L3: 2 }
         features:
           - { name: Bardic Inspiration, inspirationDice: 1d8 }
-          - name: Font of Inspiration
+          - { name: Font of Inspiration,
+              description:
+                - >
+                  Beginning when you reach 5th level, you regain all of your expended uses of Bardic Inspiration when
+                  you finish a short or long rest.
+            }
       - condition: { level: 6 }
         spellCasting:
           spellsKnown: 9
           spellSlots: { L3: 3 }
         features:
           - name: Countercharm
-          - name: Bard College Feature
+            description:
+              - >
+                At 6th level, you gain the ability to use musical notes or words of power to disrupt mind-influencing
+                effects. As an action, you can start a performance that lasts until the end of your next turn. During
+                that time, you and any friendly creatures within 30 feet of you have advantage on saving throws against
+                being frightened or charmed. A creature must be able to hear you to gain this benefit. The performance
+                ends early if you are incapacitated or silenced or if you voluntarily end it (no action required).
+          - name: Bard College 2
       - condition: { level: 7 }
         spellCasting:
           spellsKnown: 10
@@ -456,7 +500,17 @@ classes:
         features:
           - { name: Bardic Inspiration, inspirationDice: 1d10 }
           - name: Expertise 2
-          - name: Magical Secrets
+          - name: Magical Secrets 1
+            description:
+              - >
+                By 10th level, you have plundered magical knowledge from a wide spectrum of disciplines. Choose two
+                spells from any class, including this one. A spell you choose must be of a level you can cast, as shown
+                on the Bard table, or a cantrip.
+              - >
+                The chosen spells count as bard spells for you and are included in the number in the Spells Known column
+                of the Bard table.
+              - >
+                You learn two additional spells from any class at 14th level and again at 18th level.
       - condition: { level: 11 }
         spellCasting:
           spellsKnown: 15
@@ -477,8 +531,8 @@ classes:
         spellCasting:
           spellsKnown: 18
         features:
-          - name: Magical Secrets
-          - name: Bard College Feature
+          - name: Magical Secrets 2
+          - name: Bard College 3
       - condition: { level: 15 }
         spellCasting:
           spellsKnown: 19
@@ -502,7 +556,7 @@ classes:
           spellsKnown: 22
           spellSlots: { L5: 3 }
         features:
-          - name: Magical Secrets
+          - name: Magical Secrets 3
       - condition: { level: 19 }
         spellCasting:
           spellSlots: { L6: 2 }
@@ -514,104 +568,31 @@ classes:
           spellSlots: { L7: 2 }
         features:
           - name: Superior Inspiration
-    featureDescriptions:
-      - name: Bardic Inspiration
-        description:
-          - >
-            You can inspire others through stirring words or music. To do so, you use a bonus action on your turn to
-            choose one creature other than yourself within 60 feet of you who can hear you. That creature gains one
-            Bardic Inspiration die, a d6.
-          - >
-            Once within the next 10 minutes, the creature can roll the die and add the number rolled to one ability
-            check, attack roll, or saving throw it makes. The creature can wait until after it rolls the d20 before
-            deciding to use the Bardic Inspiration die, but must decide before the GM says whether the roll succeeds
-            or fails. Once the Bardic Inspiration die is rolled, it is lost. A creature can have only one Bardic
-            Inspiration die at a time.
-          - >
-            You can use this feature a number of times equal to your Charisma modifier (a minimum of once). You
-            regain any expended uses when you finish a long rest.
-          - >
-            Your Bardic Inspiration die changes when you reach certain levels in this class. The die becomes a d8 at
-            5th level, a d10 at 10th level, and a d12 at 15th level.
-      - name: Jack of All Trades
-        description:
-          - >
-            Starting at 2nd level, you can add half your proficiency bonus, rounded down, to any ability check you make
-            that doesn't already include your proficiency bonus.
-      - name: Song of Rest
-        description:
-          - >
-            Beginning at 2nd level, you can use soothing music or oration to help revitalize your wounded allies during
-            a short rest. If you or any friendly creatures who can hear your performance regain hit points at the end
-            of the short rest by spending one or more Hit Dice, each of those creatures regain an extra 1d6 hit points.
-          - >
-            The extra hit points increase when you reach certain levels in this class: to 1d8 at 9th level, to 1d10 at
-            13th level, and to 1d12 at 17th level.
-      - name: Bard College
-        description:
-          - >
-            At 3rd level, you delve into the advanced techniques of a bard college of your choice, such as the College
-            of Lore. Your choice grants you features at 3rd level and again at 6th and 14th level.
-      - name: Expertise
-        description:
-          - >
-            At 3rd level, choose two of your skill proficiencies. Your proficiency bonus is doubled for any ability
-            check you make that uses either of the chosen proficiencies.
-          - >
-            At 10th level, you can choose another two skill proficiencies to gain this benefit.
-      - name: Ability Score Improvement
-        description:
-          - >
-            When you reach 4th level, and again at 8th, 12th, 16th, and 19th level, you can increase one ability
-            score of your choice by 2, or you can increase two ability scores of your choice by 1. As normal, you
-            can't increase an ability score above 20 using this feature.
-      - name: Font of Inspiration
-        description:
-          - >
-            Beginning when you reach 5th level, you regain all of your expended uses of Bardic Inspiration when you
-            finish a short or long rest.
-      - name: Countercharm
-        description:
-          - >
-            At 6th level, you gain the ability to use musical notes or words of power to disrupt mind-influencing
-            effects. As an action, you can start a performance that lasts until the end of your next turn. During that
-            time, you and any friendly creatures within 30 feet of you have advantage on saving throws against being
-            frightened or charmed. A creature must be able to hear you to gain this benefit. The performance ends early
-            if you are incapacitated or silenced or if you voluntarily end it (no action required).
-      - name: Magical Secrets
-        description:
-          - >
-            By 10th level, you have plundered magical knowledge from a wide spectrum of disciplines. Choose two spells
-            from any class, including this one. A spell you choose must be of a level you can cast, as shown on the
-            Bard table, or a cantrip.
-          - >
-            The chosen spells count as bard spells for you and are included in the number in the Spells Known column of
-            the Bard table.
-          - >
-            You learn two additional spells from any class at 14th level and again at 18th level.
-      - name: Superior Inspiration
-        description:
-          - At 20th level, when you roll initiative  and have no uses of Bardic Inspiration left, you regain one use.
-      - name: College of Lore
-        description:
-          - >
-            TODO
-      - name: College of Lore: Bonus Proficiencies
-        description:
-          - >
-            TODO
-      - name: College of Lore: Cutting Words
-        description:
-          - >
-            TODO
-      - name: College of Lore: Additional Magic Secrets
-        description:
-          - >
-            TODO
-      - name: College of Lore: Peerless Skill
-        description:
-          - >
-            TODO
+            description:
+              - >
+                At 20th level, when you roll initiative  and have no uses of Bardic Inspiration left, you regain one
+                use.
+#    featureDescriptions:
+#      - name: College of Lore
+#        description:
+#          - >
+#            TODO
+#      - name: College of Lore: Bonus Proficiencies
+#        description:
+#          - >
+#            TODO
+#      - name: College of Lore: Cutting Words
+#        description:
+#          - >
+#            TODO
+#      - name: College of Lore: Additional Magic Secrets
+#        description:
+#          - >
+#            TODO
+#      - name: College of Lore: Peerless Skill
+#        description:
+#          - >
+#            TODO
     spellList:
       - { level: 0, name: Dancing Lights }
       - { level: 0, name: Light }
