@@ -389,13 +389,13 @@ classes:
             choice at higher levels, as shown in the Cantrips Known column of the Bard table.
         type: feature
         pick: 2
-        from: { name: spellList, level: 0 }
+        from: { name: spellList, levels: [0] }
       - name: Spells Known
         description:
           - You know four 1st-level spells of your choice from the bard spell list.
         type: feature
         pick: 4
-        from: { name: spellList, level: 1 }
+        from: { name: spellList, levels: [1] }
     unlockables:
       - condition: { level: 2 }
         spellCasting:
@@ -424,11 +424,6 @@ classes:
           spellsKnown: 6
           spellSlots: { L1: 4, L2: 2 }
         features:
-          - name: Bard College 1
-            description:
-              - >
-                At 3rd level, you delve into the advanced techniques of a bard college of your choice, such as the
-                College of Lore. Your choice grants you features at 3rd level and again at 6th and 14th level.
           - name: Expertise 1
             description:
               - >
@@ -436,6 +431,91 @@ classes:
                 check you make that uses either of the chosen proficiencies.
               - >
                 At 10th level, you can choose another two skill proficiencies to gain this benefit.
+        choices:
+          - name: Bard College
+            description:
+              - >
+                At 3rd level, you delve into the advanced techniques of a bard college of your choice, such as the
+                College of Lore. Your choice grants you features at 3rd level and again at 6th and 14th level.
+            type: feature
+            pick: 1
+            options:
+              - name: College of Lore
+                description:
+                  - >
+                    Bards of the College of Lore know something about most things, collecting bits of knowledge from
+                    sources as diverse as scholarly tomes and peasant tales. Whether singing folk ballads in taverns or
+                    elaborate compositions in royal courts, these bards use their gifts to hold audiences spellbound.
+                    When the applause dies down, the audience members might find themselves questioning everything they
+                    held to be true, from their faith in the priesthood of the local temple to their loyalty to the
+                    king.
+                  - >
+                    The loyalty of these bards lies in the pursuit of beauty and truth, not in fealty to a monarch or
+                    following the tenets of a deity. A noble who keeps such a bard as a herald or advisor knows that the
+                    bard would rather be honest than politic.
+                  - >
+                    The college's members gather in libraries and sometimes in actual colleges, complete with classrooms
+                    and dormitories, to share their lore with one another. They also meet at festivals or affairs of
+                    state, where they can expose corruption, unravel lies, and poke fun at self-important figures of
+                    authority.
+      - condition: { level: 3, feature: College of Lore }
+        features:
+         - name: Cutting Words
+           description:
+             - >
+               Also at third level, you learn how to use your wit to distract, confuse, and otherwise sap the confidence
+               and competence of others. When a creature that you can see within 60 feet of you makes an attack roll, an
+               ability check, or a damage roll, you can use your reaction to expend one of your uses of Bardic
+               Inspiration, rolling a Bardic Inspiration die and subtracting the number rolled from the creature's roll.
+               You can choose to use this feature after the creature makes its roll, but before the GM determines
+               whether the attack roll or ability check succeeds or fails, or before the creature deals its damage. The
+               creature is immune if it can't hear you or if it's immune to being charmed.
+        choices:
+          - name: Bonus Proficiencies
+            description:
+              - When you join the College of Lore at 3rd level, you gain proficiency with three skills of your choice.
+            type: feature
+            pick: 3
+            options:
+              - { type: skill, name: Acrobatics }
+              - { type: skill, name: Animal Handling }
+              - { type: skill, name: Arcana }
+              - { type: skill, name: Athletics }
+              - { type: skill, name: Deception }
+              - { type: skill, name: History }
+              - { type: skill, name: Insight }
+              - { type: skill, name: Intimidation }
+              - { type: skill, name: Investigation }
+              - { type: skill, name: Medicine }
+              - { type: skill, name: Nature }
+              - { type: skill, name: Perception }
+              - { type: skill, name: Performance }
+              - { type: skill, name: Persuasion }
+              - { type: skill, name: Religion }
+              - { type: skill, name: Sleight of Hand }
+              - { type: skill, name: Stealth }
+              - { type: skill, name: Survival }
+      - condition: { level: 6, feature: College of Lore }
+        features:
+          - name: Additional Magic Secrets
+            description:
+              - >
+                At 6th level, you learn two spells of your choice from any class. A spell you choose must be of a level
+                you can cast, as shown on the Bard table, or a cantrip. The chosen spells count as bard spells for you
+                but don't count against the number of bard spells you know.
+        choices:
+          - name: Spells from Additional Magic Secrets
+            type: spell
+            pick: 2
+            from: { name: spellList, levels: [0, 1, 2, 3] }
+      - condition: { level: 14, feature: College of Lore }
+        feature:
+          - name: Peerless Skill
+            description:
+              - >
+                Starting at 14th level, when you make an ability check, you can expend one use of Bardic Inspiration.
+                Roll a Bardic Inspiration die and add the number rolled to your ability check. You can choose to do so
+                after you roll the die for the ability check, but before the GM tells you whether you succeed or fail.
       - condition: { level: 4 }
         spellCasting:
           cantripsKnown: 3
@@ -474,7 +554,6 @@ classes:
                 that time, you and any friendly creatures within 30 feet of you have advantage on saving throws against
                 being frightened or charmed. A creature must be able to hear you to gain this benefit. The performance
                 ends early if you are incapacitated or silenced or if you voluntarily end it (no action required).
-          - name: Bard College 2
       - condition: { level: 7 }
         spellCasting:
           spellsKnown: 10
@@ -500,6 +579,7 @@ classes:
         features:
           - { name: Bardic Inspiration, inspirationDice: 1d10 }
           - name: Expertise 2
+          #TODO: Turn all Magical Secrets into a 'choice'
           - name: Magical Secrets 1
             description:
               - >
@@ -531,8 +611,8 @@ classes:
         spellCasting:
           spellsKnown: 18
         features:
+          #TODO: Turn all Magical Secrets into a 'choice'
           - name: Magical Secrets 2
-          - name: Bard College 3
       - condition: { level: 15 }
         spellCasting:
           spellsKnown: 19
@@ -556,6 +636,7 @@ classes:
           spellsKnown: 22
           spellSlots: { L5: 3 }
         features:
+          #TODO: Turn all Magical Secrets into a 'choice'
           - name: Magical Secrets 3
       - condition: { level: 19 }
         spellCasting:
@@ -572,27 +653,6 @@ classes:
               - >
                 At 20th level, when you roll initiative  and have no uses of Bardic Inspiration left, you regain one
                 use.
-#    featureDescriptions:
-#      - name: College of Lore
-#        description:
-#          - >
-#            TODO
-#      - name: College of Lore: Bonus Proficiencies
-#        description:
-#          - >
-#            TODO
-#      - name: College of Lore: Cutting Words
-#        description:
-#          - >
-#            TODO
-#      - name: College of Lore: Additional Magic Secrets
-#        description:
-#          - >
-#            TODO
-#      - name: College of Lore: Peerless Skill
-#        description:
-#          - >
-#            TODO
     spellList:
       - { level: 0, name: Dancing Lights }
       - { level: 0, name: Light }

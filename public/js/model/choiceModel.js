@@ -1,7 +1,7 @@
 var ChoiceModel = Backbone.Model.extend({
     defaults: {
         description: [],//List of Strings
-        from: null,     //String
+        from: null,     //ListSelectorModel TODO: implement ListSelectorModel
         name: null,     //String
         options: [],    //List of Strings/Models
         pick: null,     //Number

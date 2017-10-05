@@ -172,7 +172,8 @@ Each Choice Object represent a decision the player needs to make.
 - `pick`: (REQUIRED) Number of things to be picked
 - `options`: Object or String of things to pick from. If it's an Object, it can be an Ability Score Adjustment Object,
 Feature Object, or Proficiency Object. (Must have this or `from`.)
-- `from`: String of a predefined List. (This is an alternative to `options`.)
+- `from`: Object defining part or all of a predefined List. This is an alternative to `options`. (See: 
+[List Selector Object](#list-selector-object))
 
 Example:
 ```yaml
@@ -202,6 +203,14 @@ Each Feature Object represents any of the various background, class, or race fea
 - `name`: (REQUIRED) String
 - `description`: List of paragraph Strings
 - `shortDescription`: String abbreviation version of `description`
+
+### List Selector Object
+Each List Selector Object represents a List query. It will query the List with the provided `name`. If additional fields
+are provided, the List will be filtered by level or type, accordingly.
+
+- `name`: (REQUIRED) String name of the predefined List
+- `levels`: List of Numbers for the levels of interest
+- `types`: List of Strings for the types of interest
 
 ### Proficiency Object
 Each Proficiency Object represents being proficient in something. It can be a skill, language, tool, armor, weapon, or
