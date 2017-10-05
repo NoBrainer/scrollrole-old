@@ -150,16 +150,15 @@ list of features, those features are added to your other List of features.
 All Lists default to an empty List if they are not required.
 
 ### Ability Score Adjustment Object
-Each Ability Score Adjustment Object represents an ability score modifiers from the base value.
+Each Ability Score Adjustment Object represents an ability score modifier from the base value.
 
-- `name`: (REQUIRED) String for the ability name
-- `attribute`: (REQUIRED) String abbreviation for the ability
+- `ability`: (REQUIRED) String for the ability (`STR` | `DEX` | `CON` | `WIS` | `INT` | `CHA`)
 - `modifier`: (REQUIRED) Number for the modifier
 
 Example:
 ```yaml
 abilityScoreAdjustments:
-  - { attribute: CON, modifier: +2, name: Constitution }
+  - { ability: CON, modifier: +2 }
   ...
 ```
 

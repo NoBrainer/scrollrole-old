@@ -1,38 +1,26 @@
 var AppStateModel = Backbone.Model.extend({
     defaults: {
-        backgroundModel: null,
-        classModel: null,
-        raceModel: null
+        currentCharacterModel: null,
+        currentEditClass: null,
+        mode: null
     },
 
-    getBackgroundModel: function() {
-        return this.get(AppStateModel.fields.BACKGROUND_MODEL);
+    getCurrentCharacterModel: function() {
+        return this.get(AppStateModel.fields.CURRENT_CHARACTER_MODEL);
     },
 
-    setBackgroundModel: function(backgroundModel) {
-        this.set(AppStateModel.fields.BACKGROUND_MODEL, backgroundModel);
+    getCurrentEditClass: function() {
+        return this.get(AppStateModel.fields.CURRENT_EDIT_CLASS);
     },
 
-    getClassModel: function() {
-        return this.get(AppStateModel.fields.CLASS_MODEL);
-    },
-
-    setClassModel: function(classModel) {
-        this.set(AppStateModel.fields.CLASS_MODEL, classModel);
-    },
-
-    getRaceModel: function() {
-        return this.get(AppStateModel.fields.RACE_MODEL);
-    },
-
-    setRaceModel: function(raceModel) {
-        this.set(AppStateModel.fields.RACE_MODEL, raceModel);
+    getMode: function() {
+        return this.get(AppStateModel.fields.MODE);
     }
 },{
     fields: {
-        BACKGROUND_MODEL: 'backgroundModel',
-        CLASS_MODEL: 'classModel',
-        RACE_MODEL: 'raceModel'
+        CURRENT_CHARACTER_MODEL: 'currentCharacterModel',
+        CURRENT_EDIT_CLASS: 'currentEditClass',
+        MODE: 'mode'
     }
 });
 var singletonInstance = new AppStateModel();

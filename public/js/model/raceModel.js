@@ -1,31 +1,79 @@
-var BaseModel = require('./baseModel');
+var RaceModel = Backbone.Model.extend({
+    defaults: {
+        abilityScoreAdjustments: [],//List of AbilityScoreAdjustmentModels
+        age: null,                  //String
+        alignment: null,            //String
+        choices: [],                //List of ChoiceModels
+        description: [],            //List of Strings
+        features: [],               //List of FeatureModels
+        name: null,                 //String
+        proficiencies: [],          //List of ProficiencyModels
+        size: null,                 //String
+        speed: null,                //Number
+        subraces: []                //List of SubraceModels
+    },
 
-var RaceModel = BaseModel.extend({
-    defaults: _.extend({}, BaseModel.defaults, {
-        avgLifespan: null,
-        features: [],
-        maxHeight: null,
-        maxWeight: null,
-        minHeight: null,
-        minWeight: null,
-        languages: [],
-        speed: null,
-        subraces: []
-    }),
+    initialize: function(attrs, options) {
+        //TODO: parse some parts into models
+    },
 
-    initialize: function(attrs, options) {}
+    getAbilityScoreAdjustments: function() {
+        return this.get(RaceModel.fields.ABILITY_SCORE_ADJUSTMENTS);
+    },
+
+    getAge: function() {
+        return this.get(RaceModel.fields.AGE);
+    },
+
+    getAlignment: function() {
+        return this.get(RaceModel.fields.ALIGNMENT);
+    },
+
+    getChoices: function() {
+        return this.get(RaceModel.fields.CHOICES);
+    },
+
+    getDescription: function() {
+        return this.get(RaceModel.fields.DESCRIPTION);
+    },
+
+    getFeatures: function() {
+        return this.get(RaceModel.fields.FEATURES);
+    },
+
+    getName: function() {
+        return this.get(RaceModel.fields.NAME);
+    },
+
+    getProficiencies: function() {
+        return this.get(RaceModel.fields.PROFICIENCIES);
+    },
+
+    getSize: function() {
+        return this.get(RaceModel.fields.SIZE);
+    },
+
+    getSpeed: function() {
+        return this.get(RaceModel.fields.SPEED);
+    },
+
+    getSubraces: function() {
+        return this.get(RaceModel.fields.SUBRACES);
+    }
 },{
-    fields: _.extend({}, BaseModel.fields, {
-        AVG_LIFESPAN: 'avgLifespan',
+    fields: {
+        ABILITY_SCORE_ADJUSTMENTS: 'abilityScoreAdjustments',
+        AGE: 'age',
+        ALIGNMENT: 'alignment',
+        CHOICES: 'choices',
+        DESCRIPTION: 'description',
         FEATURES: 'features',
-        MAX_HEIGHT: 'maxHeight',
-        MAX_WEIGHT: 'maxWeight',
-        MIN_HEIGHT: 'minHeight',
-        MIN_WEIGHT: 'minWeight',
-        LANGUAGES: 'languages',
+        NAME: 'name',
+        PROFICIENCIES: 'proficiencies',
+        SIZE: 'size',
         SPEED: 'speed',
         SUBRACES: 'subraces'
-    })
+    }
 });
 
 module.exports = RaceModel;
