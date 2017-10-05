@@ -296,7 +296,7 @@ classes:
           Additionally, when you gain a level in this class, you can choose one of the bard spells you know and replace
           it with another spell from the bard spell list, which almost must be of a level for which you have spell
           slots.
-      ability: Charisma
+      ability: CHA
       focus: You can use a musical instrument as a spellcasting focus for your bard spells.
       cantripsKnown: 2
       spellsKnown: 4
@@ -307,14 +307,6 @@ classes:
             To cast one of these spells, you must expend a slot of the spell's level or higher. You regain all expended
             slots when you finish a long rest.
         L1: 2
-      spellSaveDC:
-        math:
-          - function: add
-            params: [8, proficiencyBonus, charismaModifier]
-      spellAttackModifier:
-        math:
-          - function: add
-            params: [proficiencyBonus, charismaModifier]
     features:
       - name: Spellcasting Ability
         description:

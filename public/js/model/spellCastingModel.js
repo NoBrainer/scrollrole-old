@@ -4,15 +4,14 @@ var SpellCastingModel = Backbone.Model.extend({
         cantripsKnown: null,        //Number
         description: [],            //List of Strings
         focus: null,                //String
-        spellAttackModifier: null,  //SpellAttackModifierModel
         spells: [],                 //List of SpellModels
-        spellSaveDC: null,          //SpellSaveDCModel
         spellsKnown: null,          //Number
         spellSlots: null            //SpellSlotsModel
     },
 
     initialize: function(attrs, options) {
         //TODO: parse some parts into models
+        //TODO: listen to proficiencyBonus and abilityModifier changes
     },
 
     getAbility: function() {
@@ -32,7 +31,8 @@ var SpellCastingModel = Backbone.Model.extend({
     },
 
     getSpellAttackModifier: function() {
-        return this.get(SpellCastingModel.fields.SPELL_ATTACK_MODIFIER);
+        //TODO: proficiencyBonus + abilityModifier
+        return 2 + 0;
     },
 
     getSpells: function() {
@@ -40,7 +40,7 @@ var SpellCastingModel = Backbone.Model.extend({
     },
 
     getSpellSaveDC: function() {
-        return this.get(SpellCastingModel.fields.SPELL_SAVE_DC);
+        return this.getSpellAttackModifier() + 8;
     },
 
     getSpellsKnown: function() {
@@ -56,9 +56,7 @@ var SpellCastingModel = Backbone.Model.extend({
         CANTRIPS_KNOWN: 'cantripsKnown',
         DESCRIPTION: 'description',
         FOCUS: 'focus',
-        SPELL_ATTACK_MODIFIER: 'spellAttackModifier',
         SPELLS: 'spells',
-        SPELL_SAVE_DC: 'spellSaveDC',
         SPELLS_KNOWN: 'spellsKnown',
         SPELL_SLOTS: 'spellSlots'
     }

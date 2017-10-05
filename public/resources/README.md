@@ -203,22 +203,6 @@ Each Feature Object represents any of the various background, class, or race fea
 - `description`: List of paragraph Strings
 - `shortDescription`: String abbreviation version of `description`
 
-### Math Object
-Each Math Object can replace any Number. It provides a way to have variable values. Each function is performed in order
-from first to last, and no nesting is supported.
-
-- `function`: String for the function (`add` | `subtract` | `multiply` | `divide`)
-- `params`: List of parameters (Number | `proficiencyBonus` | `level` | `strModifier` | `dexModifier` | `conModifier`|
-`wisModifier` | `intModifier` | `chaModifier`)
-
-Example:
-```yaml
-spellSaveDC:
-  math:
-    - function: add
-      params: [8, proficiencyBonus, charismaModifier]
-```
-
 ### Proficiency Object
 Each Proficiency Object represents being proficient in something. It can be a skill, language, tool, armor, weapon, or
 saving throw.
@@ -233,23 +217,15 @@ saving throw.
 The Spellcasting Object defines how spellcasting works.
 
 - `description`: List of paragraph Strings
-- `ability`: (REQUIRED) String of the casting ability (`Strength` | `Dexterity` | `Constitution` | `Wisdom` |
-`Intelligence` | `Charisma`)
+- `ability`: (REQUIRED) String of the casting ability (`STR` | `DEX` | `CON` | `WIS` | `INT` | `CHA`)
 - `focus`: String describing the spellcasting focus
 - `cantripsKnown`: Number of level 0 spells known
 - `spellsKnown`: Number of level 1+ spells known
 - `spells`: (REQUIRED) List of spells (See: [Spell Object](#spell-object))
-- `spellSlots`: Object defining how many slots are available and how they work (See: [Spell Slots Object](#spell-slots-object))
-- `spellSaveDC`: (REQUIRED) 
-- `spellAttackModifier`: (REQUIRED) Number
+- `spellSlots`: Object defining how many slots are available and how they work (See:
+[Spell Slots Object](#spell-slots-object))
 
-### Spell Object
-Each Spell Object represents a spell that can be cast.
-
-- `name`: (REQUIRED) String
-- `level`: (REQUIRED) Number from 0 to 9. Level 0 is a cantrip.
-
-### Spell Slots Object
+#### Spell Slots Object
 Each Spell Slots Object defines how many spell slots are available and how they work.
 
 - `description`: (REQUIRED) List of paragraph Strings
@@ -262,6 +238,12 @@ Each Spell Slots Object defines how many spell slots are available and how they 
 - `L7`: Number of level seven spell slots
 - `L8`: Number of level eight spell slots
 - `L9`: Number of level nine spell slots
+
+### Spell Object
+Each Spell Object represents a spell that can be cast.
+
+- `name`: (REQUIRED) String
+- `level`: (REQUIRED) Number from 0 to 9. Level 0 is a cantrip.
 
 ### Unlockable Object
 Each Unlockable Object represents something that can be unlocked once a condition is met.
