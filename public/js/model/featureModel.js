@@ -3,6 +3,7 @@ var FeatureModel = Backbone.Model.extend({
         description: [],        //List of Strings
         name: null,             //String
         shortDescription: null  //String
+        //TODO: consider having 'unlockables' and 'choices' in here?
     },
 
     getDescription: function() {
