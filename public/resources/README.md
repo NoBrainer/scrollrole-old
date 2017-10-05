@@ -203,6 +203,8 @@ Each Feature Object represents any of the various background, class, or race fea
 - `name`: (REQUIRED) String
 - `description`: List of paragraph Strings
 - `shortDescription`: String abbreviation version of `description`
+- `choices`: List of Choice Objects available with this feature (See: [Choice Object](#choice-object))
+- `unlockables`: List of Unlockable Objects available with this feature (See: [Unlockable Object](#unlockable-object))
 
 ### List Selector Object
 Each List Selector Object represents a List query. It will query the List with the provided `name`. If additional fields
