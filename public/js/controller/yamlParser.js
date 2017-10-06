@@ -48,26 +48,6 @@ var YamlParser = {
         return deferred.promise();
     },
 
-    parseYamlFromServer: function(text) {
-        var deferred = $.Deferred();
-        var data = {text: text};
-        $.ajax({
-            type: 'POST',
-            url: '/api/yaml/parse',
-            data: JSON.stringify(data),
-            dataType: 'json',
-            contentType: 'application/json',
-            success: function(resp) {
-                resp = _.isArray(resp) ? resp[0] : resp;
-                deferred.resolve(resp);
-            },
-            error: function(e) {
-                deferred.reject(e);
-            }
-        });
-        return deferred.promise();
-    },
-
     writeYaml: function(json) {
         var deferred = $.Deferred();
         try {
