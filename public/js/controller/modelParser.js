@@ -10,7 +10,7 @@ var SpellModel = require('../model/spellModel');
 var SpellSlotsModel = require('../model/spellSlotsModel');
 var UnlockableModel = require('../model/unlockableModel');
 
-var ModelParserController = {
+var ModelParser = {
 
     parseBackground: function(json) {
         return new BackgroundModel(json);
@@ -19,7 +19,7 @@ var ModelParserController = {
     parseBackgrounds: function(json) {
         var arr = _.isObject(json) ? json.backgrounds : json;
         arr = _.isArray(arr) ? arr : [];
-        var models = _.map(arr, ModelParserController.parseBackground);
+        var models = _.map(arr, ModelParser.parseBackground);
         return { backgrounds: models };
     },
 
@@ -34,7 +34,7 @@ var ModelParserController = {
     parseClasses: function(json) {
         var arr = _.isObject(json) ? json.classes : json;
         arr = _.isArray(arr) ? arr : [];
-        var models = _.map(arr, ModelParserController.parseClass);
+        var models = _.map(arr, ModelParser.parseClass);
         return { classes: models };
     },
 
@@ -57,7 +57,7 @@ var ModelParserController = {
     parseRaces: function(json) {
         var arr = _.isObject(json) ? json.races : json;
         arr = _.isArray(arr) ? arr : [];
-        var models = _.map(arr, ModelParserController.parseRace);
+        var models = _.map(arr, ModelParser.parseRace);
         return { races: models };
     },
 
@@ -78,4 +78,4 @@ var ModelParserController = {
     }
 };
 
-module.exports = ModelParserController;
+module.exports = ModelParser;
