@@ -1,3 +1,4 @@
+var AbilityScoreAdjustmentModel = require('../model/abilityScoreAdjustmentModel');
 var BackgroundModel = require('../model/backgroundModel');
 var ChoiceModel = require('../model/choiceModel');
 var ClassModel = require('../model/classModel');
@@ -12,8 +13,12 @@ var UnlockableModel = require('../model/unlockableModel');
 
 var ModelParser = {
 
-    parseBackground: function(json) {
-        return new BackgroundModel(json);
+    parseAbilityScoreAdjustment: function(attrs, options) {
+        return new AbilityScoreAdjustmentModel(attrs, options);
+    },
+
+    parseBackground: function(attrs, options) {
+        return new BackgroundModel(attrs, options);
     },
 
     parseBackgrounds: function(json) {
@@ -23,12 +28,12 @@ var ModelParser = {
         return { backgrounds: models };
     },
 
-    parseChoice: function(json) {
-        return new ChoiceModel(json);
+    parseChoice: function(attrs, options) {
+        return new ChoiceModel(attrs, options);
     },
 
-    parseClass: function(json) {
-        return new ClassModel(json);
+    parseClass: function(attrs, options) {
+        return new ClassModel(attrs, options);
     },
 
     parseClasses: function(json) {
@@ -38,20 +43,20 @@ var ModelParser = {
         return { classes: models };
     },
 
-    parseCondition: function(json) {
-        return new ConditionModel(json);
+    parseCondition: function(attrs, options) {
+        return new ConditionModel(attrs, options);
     },
 
-    parseFeature: function(json) {
-        return new FeatureModel(json);
+    parseFeature: function(attrs, options) {
+        return new FeatureModel(attrs, options);
     },
 
-    parseProficiency: function(json) {
-        return new ProficiencyModel(json);
+    parseProficiency: function(attrs, options) {
+        return new ProficiencyModel(attrs, options);
     },
 
-    parseRace: function(json) {
-        return new RaceModel(json);
+    parseRace: function(attrs, options) {
+        return new RaceModel(attrs, options);
     },
 
     parseRaces: function(json) {
@@ -61,20 +66,20 @@ var ModelParser = {
         return { races: models };
     },
 
-    parseSpellCasting: function(json) {
-        return new SpellCastingModel(json);
+    parseSpellCasting: function(attrs, options) {
+        return new SpellCastingModel(attrs, options);
     },
 
-    parseSpell: function(json) {
-        return new SpellModel(json);
+    parseSpell: function(attrs, options) {
+        return new SpellModel(attrs, options);
     },
 
-    parseSpellSlots: function(json) {
-        return new SpellSlotsModel(json);
+    parseSpellSlots: function(attrs, options) {
+        return new SpellSlotsModel(attrs, options);
     },
 
-    parseUnlockable: function(json) {
-        return new UnlockableModel(json);
+    parseUnlockable: function(attrs, options) {
+        return new UnlockableModel(attrs, options);
     }
 };
 
