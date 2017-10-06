@@ -1,3 +1,5 @@
+var yaml = require('js-yaml');
+
 var AppStateModel = require('../model/appStateModel');
 var ModelParser = require('./modelParser');
 
@@ -8,14 +10,15 @@ var YamlController = {
 
         function updateCount() {
             remaining--;
-            if (remaining == 0) deferred.resolve();
+            if (remaining == 0) {
+                deferred.resolve();
+                console.log(AppStateModel.getRulesConfig());
+            }
         }
         setupBackgrounds()
-            .then(_.bind(ModelParser.parseBackgrounds, ModelParser))
             .done(_.bind(AppStateModel.updateRulesConfig, AppStateModel))
             .always(updateCount);
         setupClasses()
-            .then(_.bind(ModelParser.parseClasses, ModelParser))
             .done(_.bind(AppStateModel.updateRulesConfig, AppStateModel))
             .always(updateCount);
         setupLists()
@@ -25,20 +28,52 @@ var YamlController = {
             .done(_.bind(AppStateModel.updateRulesConfig, AppStateModel))
             .always(updateCount);
         setupRaces()
-            .then(_.bind(ModelParser.parseRaces, ModelParser))
             .done(_.bind(AppStateModel.updateRulesConfig, AppStateModel))
             .always(updateCount);
 
+        return deferred.promise();
+    },
+
+    parseYaml: function(text) {
+        var deferred = $.Deferred();
+        try {
+            var json = yaml.safeLoad(text);
+            deferred.resolve(json);
+        } catch(e) {
+            deferred.reject(e);
+        }
+        return deferred.promise();
+    },
+
+    parseYamlFromServer: function(text) {
+        var deferred = $.Deferred();
+        var data = {text: text};
+        $.ajax({
+            type: 'POST',
+            url: '/api/yaml/parse',
+            data: JSON.stringify(data),
+            dataType: 'json',
+            contentType: 'application/json',
+            success: function(resp) {
+                resp = _.isArray(resp) ? resp[0] : resp;
+                deferred.resolve(resp);
+            },
+            error: function(e) {
+                deferred.reject(e);
+            }
+        });
         return deferred.promise();
     }
 };
 
 function setupBackgrounds() {
-    return loadAndParse('/resources/backgrounds.yaml');
+    return loadAndParse('/resources/backgrounds.yaml')
+        .then(_.bind(ModelParser.parseBackgrounds, ModelParser));
 }
 
 function setupClasses() {
-    return loadAndParse('/resources/classes.yaml');
+    return loadAndParse('/resources/classes.yaml')
+        .then(_.bind(ModelParser.parseClasses, ModelParser));
 }
 
 function setupLists() {
@@ -50,38 +85,19 @@ function setupObjects() {
 }
 
 function setupRaces() {
-    return loadAndParse('/resources/races.yaml');
+    return loadAndParse('/resources/races.yaml')
+        .then(_.bind(ModelParser.parseRaces, ModelParser));
 }
 
 function loadAndParse(pathToFile) {
     var deferred = $.Deferred();
     $.get(pathToFile)
         .done(function(text) {
-            parseYaml(text).done(deferred.resolve).fail(deferred.reject);
+            YamlController.parseYaml(text).done(deferred.resolve).fail(deferred.reject);
         })
         .fail(function() {
             deferred.reject();
         });
-    return deferred.promise();
-}
-
-function parseYaml(text) {
-    var deferred = $.Deferred();
-    var data = {text: text};
-    $.ajax({
-        type: 'POST',
-        url: '/api/yaml/parse',
-        data: JSON.stringify(data),
-        dataType: 'json',
-        contentType: 'application/json',
-        success: function(resp) {
-            resp = _.isArray(resp) ? resp[0] : resp;
-            deferred.resolve(resp);
-        },
-        error: function(resp) {
-            deferred.reject();
-        }
-    });
     return deferred.promise();
 }
 
