@@ -1,8 +1,12 @@
 lists:
-  spellList:
-  #TODO {name, level}
 
-  proficiencyList:
+  equipment:
+  #TODO: {name, type, properties} FIGURE OUT IF WE WANT THIS
+
+  feats:
+  #TODO
+
+  proficiencies:
   #TODO: weapons + armor + skills + saving throws + tools + languages {name, type}
     - { type: language, name: Abyssal }
     - { type: language, name: Celestial }
@@ -49,8 +53,8 @@ lists:
     - { type: tool, name: Shawm }
     - { type: tool, name: Viol }
 
-  weaponList:
-  #TODO: {name, type, properties} FIGURE OUT IF WE WANT THIS
+  spells:
+  #TODO {name, level}
 
-  equipmentList:
+  weapons:
   #TODO: {name, type, properties} FIGURE OUT IF WE WANT THIS

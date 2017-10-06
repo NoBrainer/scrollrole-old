@@ -174,6 +174,9 @@ Each Choice Object represent a decision the player needs to make.
 Feature Object, or Proficiency Object. (Must have this or `from`.)
 - `from`: Object defining part or all of a predefined List. This is an alternative to `options`. (See: 
 [List Selector Object](#list-selector-object))
+- `allowDuplicate`: Boolean of whether or not to allow picking duplicates. (default: false)
+- `use`: Object to use instead of defining an Choice Object. The Object being used will be overridden by fields in the
+Choice Object using it.
 
 Example:
 ```yaml
@@ -188,6 +191,13 @@ choices:
     options:
       - { type: tool, name: smith's tools }
       ...
+```
+
+Example:
+```yaml
+choices:
+  - name: Ability Score Modifier 1
+    use: objects.abilityScoreImprovement
 ```
 
 ### Condition Object
