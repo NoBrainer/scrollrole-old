@@ -1,4 +1,5 @@
 var AppStateModel = require('../model/appStateModel');
+var ModelParserController = require('../controller/modelParserController');
 
 var YamlController = {
     setupConfig: function() {
@@ -10,9 +11,11 @@ var YamlController = {
             if (remaining == 0) deferred.resolve();
         }
         setupBackgrounds()
+            .then(_.bind(ModelParserController.parseBackgrounds, ModelParserController))
             .done(_.bind(AppStateModel.updateRulesConfig, AppStateModel))
             .always(updateCount);
         setupClasses()
+            .then(_.bind(ModelParserController.parseClasses, ModelParserController))
             .done(_.bind(AppStateModel.updateRulesConfig, AppStateModel))
             .always(updateCount);
         setupLists()
@@ -22,6 +25,7 @@ var YamlController = {
             .done(_.bind(AppStateModel.updateRulesConfig, AppStateModel))
             .always(updateCount);
         setupRaces()
+            .then(_.bind(ModelParserController.parseRaces, ModelParserController))
             .done(_.bind(AppStateModel.updateRulesConfig, AppStateModel))
             .always(updateCount);
 
