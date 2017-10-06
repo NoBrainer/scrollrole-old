@@ -3,20 +3,26 @@ var AppStateModel = require('../model/appStateModel');
 var YamlController = {
     setupConfig: function() {
         var deferred = $.Deferred();
-        var remaining = 3;
+        var remaining = 5;
 
         function updateCount() {
             remaining--;
             if (remaining == 0) deferred.resolve();
         }
         setupBackgrounds()
-            .done(_.bind(AppStateModel.setBackgroundModel, AppStateModel))
+            .done(_.bind(AppStateModel.updateRulesConfig, AppStateModel))
             .always(updateCount);
         setupClasses()
-            .done(_.bind(AppStateModel.setClassModel, AppStateModel))
+            .done(_.bind(AppStateModel.updateRulesConfig, AppStateModel))
+            .always(updateCount);
+        setupLists()
+            .done(_.bind(AppStateModel.updateRulesConfig, AppStateModel))
+            .always(updateCount);
+        setupObjects()
+            .done(_.bind(AppStateModel.updateRulesConfig, AppStateModel))
             .always(updateCount);
         setupRaces()
-            .done(_.bind(AppStateModel.setRaceModel, AppStateModel))
+            .done(_.bind(AppStateModel.updateRulesConfig, AppStateModel))
             .always(updateCount);
 
         return deferred.promise();
@@ -29,6 +35,14 @@ function setupBackgrounds() {
 
 function setupClasses() {
     return loadAndParse('/resources/classes.yaml');
+}
+
+function setupLists() {
+    return loadAndParse('/resources/lists.yaml');
+}
+
+function setupObjects() {
+    return loadAndParse('/resources/objects.yaml');
 }
 
 function setupRaces() {

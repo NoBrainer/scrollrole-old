@@ -61,7 +61,8 @@ backgrounds:
 
 - `name`: (REQUIRED) String for the background name.
 - `description`: List of paragraph Strings for the background description.
-- `proficiencies`: List of armor, weapon, tool, language, and skill proficiencies. (See: [Proficiency Object](#proficiency-object))
+- `proficiencies`: List of armor, weapon, tool, language, and skill proficiencies. (See:
+[Proficiency Object](#proficiency-object))
 - `equipment`: List of starting equipment. Each piece of equipment is a String.
 - `features`: List of background features. (See: [Feature Object](#feature-object))
 - `choices`: List of background choices to be made at character creation. (See: [Choice Object](#choice-object))
@@ -97,14 +98,16 @@ classes:
 - `description`: List of paragraph Strings for the class description.
 - `hitDice`: (REQUIRED) String for the hit dice. (1d6, 1d8, etc.)
 - `baseHitPoints`: (REQUIRED) Number for the base hit points for a level one character (before any modifiers).
-- `proficiencies`: List of armor, weapon, tool, language, and skill proficiencies. (See: [Proficiency Object](#proficiency-object))
+- `proficiencies`: List of armor, weapon, tool, language, and skill proficiencies. (See:
+[Proficiency Object](#proficiency-object))
 - `proficiencyBonus`: (REQUIRED) Number for the proficiency bonus.
 - `equipment`: List of starting equipment. Each piece of equipment is a String.
 - `features`: List of class features. (See: [Feature Object](#feature-object))
 - `spellList`: List of spells. (See: [Spell Object](#spell-object))
 - `spellCasting`: Object defining how spellcasting works. (See: [Spellcasting Object](#spellcasting-object))
 - `choices`: List of class choices to be made at character creation. (See: [Choice Object](#choice-object))
-- `unlockables`: (REQUIRED) List of unlockable for later levels in the class. (See: [Unlockable Object](#unlockable-object))
+- `unlockables`: (REQUIRED) List of unlockable for later levels in the class. (See:
+[Unlockable Object](#unlockable-object))
 - `featureDescriptions`: List of feature descriptions (another place to put feature descriptions; useful for unlockables
 and choices)
 
@@ -130,13 +133,15 @@ races:
 
 - `name`: (REQUIRED) String for the race name.
 - `description`: List of paragraph Strings for the race description.
-- `abilityScoreAdjustments`: List of ability score adjustments. (See: [Ability Score Adjustment Object](#ability-score-adjustment-object))
+- `abilityScoreAdjustments`: List of ability score adjustments. (See:
+[Ability Score Adjustment Object](#ability-score-adjustment-object))
 - `age`: String for the race's age description.
 - `alignment`: String for the race's typical alignment description.
 - `size`: String for the race's size description.
 - `speed`: Number for the movement speed in feet.
 - `features`: List of race features. (See: [Feature Object](#feature-object))
-- `proficiencies`: List of armor, weapon, tool, language, and skill proficiencies. (See: [Proficiency Object](#proficiency-object))
+- `proficiencies`: List of armor, weapon, tool, language, and skill proficiencies. (See:
+[Proficiency Object](#proficiency-object))
 - `choices`: List of race choices to be made at character creation. (See: [Choice Object](#choice-object))
 - `subraces`: List of possible subraces. Each subrace is a Race object but with less options.
 
@@ -273,5 +278,6 @@ Each Unlockable Object represents something that can be unlocked once a conditio
 - `features`: List of features acquired by meeting the condition
 - `proficiencies`: List of proficiencies acquired by meeting the condition
 - `choices`: List of choices available by meeting the condition
-- `abilityScoreAdjustments`: List of ability score adjustments acquired by meeting the condition. (See: [Ability Score Adjustment Object](#ability-score-adjustment-object))
+- `abilityScoreAdjustments`: List of ability score adjustments acquired by meeting the condition. (See:
+[Ability Score Adjustment Object](#ability-score-adjustment-object))
 - `speed`: Number for the movement speed (in feet) acquired by meeting the condition.
