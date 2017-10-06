@@ -3,10 +3,16 @@ var yaml = require('js-yaml');
 var AppStateModel = require('../model/appStateModel');
 var ModelParser = require('./modelParser');
 
-var YamlController = {
+var YamlParser = {
     setupConfig: function() {
         var deferred = $.Deferred();
         var remaining = 5;
+
+        //TODO: remove this
+        deferred.done(function() {
+            var rulesConfig = AppStateModel.getRulesConfig();
+            console.log(rulesConfig);
+        });
 
         function updateCount() {
             remaining--;
@@ -101,7 +107,7 @@ function loadAndParse(pathToFile) {
     var deferred = $.Deferred();
     $.get(pathToFile)
         .done(function(text) {
-            YamlController.parseYaml(text).done(deferred.resolve).fail(deferred.reject);
+            YamlParser.parseYaml(text).done(deferred.resolve).fail(deferred.reject);
         })
         .fail(function() {
             deferred.reject();
@@ -109,4 +115,4 @@ function loadAndParse(pathToFile) {
     return deferred.promise();
 }
 
-module.exports = YamlController;
+module.exports = YamlParser;
