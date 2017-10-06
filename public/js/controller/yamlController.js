@@ -10,10 +10,7 @@ var YamlController = {
 
         function updateCount() {
             remaining--;
-            if (remaining == 0) {
-                deferred.resolve();
-                console.log(AppStateModel.getRulesConfig());
-            }
+            if (remaining == 0) deferred.resolve();
         }
         setupBackgrounds()
             .done(_.bind(AppStateModel.updateRulesConfig, AppStateModel))
@@ -62,6 +59,17 @@ var YamlController = {
                 deferred.reject(e);
             }
         });
+        return deferred.promise();
+    },
+
+    writeYaml: function(json) {
+        var deferred = $.Deferred();
+        try {
+            var text = yaml.safeDump(json);
+            deferred.resolve(text);
+        } catch(e) {
+            deferred.reject(e);
+        }
         return deferred.promise();
     }
 };
