@@ -1,18 +1,32 @@
+var ChoiceCollection = require('../collection/choiceCollection');
+var UnlockableCollection = require('../collection/unlockableCollection');
+
 var FeatureModel = Backbone.Model.extend({
     defaults: {
-        choices: [],            //List of ChoiceModels
+        choices: null,          //ChoiceCollection
         description: [],        //List of Strings
         name: null,             //String
         shortDescription: null, //String
-        unlockables: []         //List of UnlockableModels
+        unlockables: null       //UnlockableCollection
     },
 
     initialize: function(attrs, options) {
-        //TODO: parse some parts into models
+        attrs = attrs || {};
+
+        var choiceModels = _.map(attrs.choices, ChoiceCollection.parseModel) || [];
+        this.set(FeatureModel.fields.CHOICES, new ChoiceCollection(choiceModels));
+
+        var unlockableModels = _.map(attrs.unlockables, UnlockableCollection.parseModel) || [];
+        this.set(FeatureModel.fields.UNLOCKABLES, new UnlockableCollection(unlockableModels));
     },
 
     getChoices: function() {
         return this.get(FeatureModel.fields.CHOICES);
+    },
+
+    setChoices: function(choiceModels) {
+        this.getChoices().reset(choiceModels || []);
+        return this;
     },
 
     getDescription: function() {
@@ -29,6 +43,11 @@ var FeatureModel = Backbone.Model.extend({
 
     getUnlockables: function() {
         return this.get(FeatureModel.fields.UNLOCKABLES);
+    },
+
+    setUnlockables: function(unlockableModels) {
+        this.getUnlockables().reset(unlockableModels || []);
+        return this;
     }
 },{
     fields: {

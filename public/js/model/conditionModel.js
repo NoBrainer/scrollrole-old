@@ -1,3 +1,5 @@
+var ProficiencyModel = require('../model/proficiencyModel');
+
 var ConditionModel = Backbone.Model.extend({
     defaults: {
         feature: null,      //String
@@ -6,7 +8,12 @@ var ConditionModel = Backbone.Model.extend({
     },
 
     initialize: function(attrs, options) {
-        //TODO: parse some parts into models
+        attrs = attrs || {};
+
+        if (_.isObject(attrs.proficiency)) {
+            var proficiencyModel = new ProficiencyModel(attrs.proficiency);
+            this.set(ConditionModel.fields.PROFICIENCY, proficiencyModel);
+        }
     },
 
     getFeature: function() {

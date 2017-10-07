@@ -11,7 +11,10 @@ var ChoiceModel = Backbone.Model.extend({
     },
 
     initialize: function(attrs, options) {
-        //TODO: parse some parts into models
+        attrs = attrs || {};
+
+        //TODO: parse options into models based on the type
+        //TODO: query the ListSelectorModel to populate options
     },
 
     getAllowDuplicate: function() {
