@@ -56,14 +56,17 @@ var ModelParser = {
             return json;
         }
         var lists = json.lists;
+        lists = {
+            equipment: _.isArray(lists.equipment) ? lists.equipment : [],
+            feats: _.isArray(lists.feats) ? lists.feats : [],
+            proficiencies: _.isArray(lists.proficiencies) ? lists.proficiencies : [],
+            spells: _.isArray(lists.spells) ? lists.spells : [],
+            weapons: _.isArray(lists.weapons) ? lists.weapons : []
+        };
 
         //TODO: equipment, feats, weapons
-        if (_.isArray(lists.proficiencies)) {
-            lists.proficiencies = _.map(lists.proficiencies, ModelParser.parseProficiency) || [];
-        }
-        if (_.isArray(lists.spells)) {
-            lists.spells = _.map(lists.spells, ModelParser.parseSpell) || [];
-        }
+        lists.proficiencies = _.map(lists.proficiencies, ModelParser.parseProficiency) || [];
+        lists.spells = _.map(lists.spells, ModelParser.parseSpell) || [];
         return { lists: lists };
     },
 
