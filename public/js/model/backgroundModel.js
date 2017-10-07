@@ -1,6 +1,6 @@
-var ChoiceCollection = require('../collections/choiceCollection');
-var FeatureCollection = require('../collections/featureCollection');
-var ProficiencyCollection = require('../collections/proficiencyCollection');
+var ChoiceCollection = require('../collection/choiceCollection');
+var FeatureCollection = require('../collection/featureCollection');
+var ProficiencyCollection = require('../collection/proficiencyCollection');
 
 var BackgroundModel = Backbone.Model.extend({
     defaults: {

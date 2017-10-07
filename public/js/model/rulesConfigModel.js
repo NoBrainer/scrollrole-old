@@ -1,9 +1,9 @@
 var AppStateModel = require('../model/appStateModel');
-var BackgroundCollection = require('../collections/backgroundCollection');
-var ClassCollection = require('../collections/classCollection');
-var ProficiencyCollection = require('../collections/proficiencyCollection');
-var RaceCollection = require('../collections/raceCollection');
-var SpellCollection = require('../collections/spellCollection');
+var BackgroundCollection = require('../collection/backgroundCollection');
+var ClassCollection = require('../collection/classCollection');
+var ProficiencyCollection = require('../collection/proficiencyCollection');
+var RaceCollection = require('../collection/raceCollection');
+var SpellCollection = require('../collection/spellCollection');
 var YamlParser = require('../controller/yamlParser');
 
 var RulesConfigModel = Backbone.Model.extend({
