@@ -12,10 +12,6 @@ var SpellSlotsModel = Backbone.Model.extend({
         L9: null        //Number
     },
 
-    initialize: function(attrs, options) {
-        //TODO: parse some parts into models
-    },
-
     getDescription: function() {
         return this.get(SpellSlotsModel.fields.DESCRIPTION);
     },
