@@ -1,21 +1,42 @@
+var ChoiceCollection = require('../collections/choiceCollection');
+var FeatureCollection = require('../collections/featureCollection');
+var ProficiencyCollection = require('../collections/proficiencyCollection');
+var SpellCollection = require('../collections/spellCollection');
+var UnlockableCollection = require('../collections/unlockableCollection');
+
 var ClassModel = Backbone.Model.extend({
     defaults: {
         baseHitPoints: null,    //Number
-        choices: [],            //List of ChoiceModels
+        choices: null,          //ChoiceCollection
         description: [],        //List of Strings
         equipment: [],          //List of Strings
-        features: [],           //List of FeatureModels
+        features: null,         //FeatureCollection
         hitDice: null,          //String
         name: null,             //String
-        proficiencies: [],      //List of ProficiencyModels
+        proficiencies: null,    //ProficiencyCollection
         proficiencyBonus: null, //Number
         spellCasting: null,     //SpellCastingModel
-        spellList: [],          //List of SpellModels
-        unlockables: []         //List of UnlockableModels
+        spellList: null,        //SpellCollection
+        unlockables: null       //UnlockableCollection
     },
 
     initialize: function(attrs, options) {
-        //TODO: parse some parts into models
+        attrs = attrs || {};
+
+        var choiceModels = _.map(attrs.choices, ChoiceCollection.parseModel) || [];
+        this.set(ClassModel.fields.CHOICES, new ChoiceCollection(choiceModels));
+
+        var featureModels = _.map(attrs.features, FeatureCollection.parseModel) || [];
+        this.set(ClassModel.fields.FEATURES, new FeatureCollection(featureModels));
+
+        var proficiencyModels = _.map(attrs.proficiencies, ProficiencyCollection.parseModel) || [];
+        this.set(ClassModel.fields.PROFICIENCIES, new ProficiencyCollection(proficiencyModels));
+
+        var spellModels = _.map(attrs.spellList, SpellCollection.parseModel) || [];
+        this.set(ClassModel.fields.SPELL_LIST, new SpellCollection(spellModels));
+
+        var unlockableModels = _.map(attrs.unlockables, UnlockableCollection.parseModel) || [];
+        this.set(ClassModel.fields.UNLOCKABLES, new UnlockableCollection(unlockableModels));
     },
 
     getBaseHitPoints: function() {
@@ -24,6 +45,11 @@ var ClassModel = Backbone.Model.extend({
 
     getChoices: function() {
         return this.get(ClassModel.fields.CHOICES);
+    },
+
+    setChoices: function(choiceModels) {
+        this.getChoices().reset(choiceModels || []);
+        return this;
     },
 
     getDescription: function() {
@@ -38,6 +64,11 @@ var ClassModel = Backbone.Model.extend({
         return this.get(ClassModel.fields.FEATURES);
     },
 
+    setFeatures: function(featureModels) {
+        this.getFeatures().reset(featureModels || []);
+        return this;
+    },
+
     getHitDice: function() {
         return this.get(ClassModel.fields.HIT_DICE);
     },
@@ -48,6 +79,11 @@ var ClassModel = Backbone.Model.extend({
 
     getProficiencies: function() {
         return this.get(ClassModel.fields.PROFICIENCIES);
+    },
+
+    setProficiencies: function(proficiencyModels) {
+        this.getProficiencies().reset(proficiencyModels || []);
+        return this;
     },
 
     getProficiencyBonus: function() {
@@ -62,8 +98,18 @@ var ClassModel = Backbone.Model.extend({
         return this.get(ClassModel.fields.SPELL_LIST);
     },
 
+    setSpellList: function(spellModels) {
+        this.getSpellList().reset(spellModels || []);
+        return this;
+    },
+
     getUnlockables: function() {
         return this.get(ClassModel.fields.UNLOCKABLES);
+    },
+
+    setUnlockables: function(unlockableModels) {
+        this.getUnlockables().reset(unlockableModels || []);
+        return this;
     }
 },{
     fields: {

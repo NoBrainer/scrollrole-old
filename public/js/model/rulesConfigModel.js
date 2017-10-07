@@ -1,8 +1,9 @@
 var AppStateModel = require('../model/appStateModel');
 var BackgroundCollection = require('../collections/backgroundCollection');
 var ClassCollection = require('../collections/classCollection');
-var ModelParser = require('../controller/modelParser');
+var ProficiencyCollection = require('../collections/proficiencyCollection');
 var RaceCollection = require('../collections/raceCollection');
+var SpellCollection = require('../collections/spellCollection');
 var YamlParser = require('../controller/yamlParser');
 
 var RulesConfigModel = Backbone.Model.extend({
@@ -15,9 +16,16 @@ var RulesConfigModel = Backbone.Model.extend({
     },
 
     initialize: function(attrs, options) {
-        this.set(RulesConfigModel.fields.BACKGROUNDS, new BackgroundCollection());
-        this.set(RulesConfigModel.fields.CLASSES, new ClassCollection());
-        this.set(RulesConfigModel.fields.RACES, new RaceCollection());
+        attrs = attrs || {};
+
+        var backgroundModels = _.map(attrs.backgrounds, BackgroundCollection.parseModel) || [];
+        this.set(RulesConfigModel.fields.BACKGROUNDS, new BackgroundCollection(backgroundModels));
+
+        var classModels = _.map(attrs.classes, ClassCollection.parseModel) || [];
+        this.set(RulesConfigModel.fields.CLASSES, new ClassCollection(classModels));
+
+        var raceModels = _.map(attrs.races, RaceCollection.parseModel) || [];
+        this.set(RulesConfigModel.fields.RACES, new RaceCollection(raceModels));
     },
 
     fetchDefaults: function() {
@@ -51,8 +59,8 @@ var RulesConfigModel = Backbone.Model.extend({
         return this.get(RulesConfigModel.fields.BACKGROUNDS);
     },
 
-    setBackgrounds: function(backgrounds) {
-        this.getBackgrounds().reset(backgrounds || []);
+    setBackgrounds: function(backgroundModels) {
+        this.getBackgrounds().reset(backgroundModels || []);
         return this;
     },
 
@@ -60,8 +68,8 @@ var RulesConfigModel = Backbone.Model.extend({
         return this.get(RulesConfigModel.fields.CLASSES);
     },
 
-    setClasses: function(classes) {
-        this.getClasses().reset(classes || []);
+    setClasses: function(classModels) {
+        this.getClasses().reset(classModels || []);
         return this;
     },
 
@@ -87,8 +95,8 @@ var RulesConfigModel = Backbone.Model.extend({
         return this.get(RulesConfigModel.fields.RACES);
     },
 
-    setRaces: function(races) {
-        this.getRaces().reset(races || []);
+    setRaces: function(raceModels) {
+        this.getRaces().reset(raceModels || []);
         return this;
     }
 },{
@@ -120,7 +128,7 @@ function setupBackgrounds() {
         .then(function(json) {
             var arr = _.isObject(json) ? json.backgrounds : json;
             arr = _.isArray(arr) ? arr : [];
-            return _.map(arr, ModelParser.parseBackground);
+            return _.map(arr, BackgroundCollection.parseModel);
         });
 }
 
@@ -129,7 +137,7 @@ function setupClasses() {
         .then(function(json) {
             var arr = _.isObject(json) ? json.classes : json;
             arr = _.isArray(arr) ? arr : [];
-            return _.map(arr, ModelParser.parseClass);
+            return _.map(arr, ClassCollection.parseModel);
         });
 }
 
@@ -149,8 +157,8 @@ function setupLists() {
             };
 
             //TODO: equipment, feats, weapons
-            lists.proficiencies = _.map(lists.proficiencies, ModelParser.parseProficiency) || [];
-            lists.spells = _.map(lists.spells, ModelParser.parseSpell) || [];
+            lists.proficiencies = _.map(lists.proficiencies, ProficiencyCollection.parseModel) || [];
+            lists.spells = _.map(lists.spells, SpellCollection.parseModel) || [];
             return lists;
         });
 }
@@ -164,7 +172,7 @@ function setupRaces() {
         .then(function(json) {
             var arr = _.isObject(json) ? json.races : json;
             arr = _.isArray(arr) ? arr : [];
-            return _.map(arr, ModelParser.parseRace);
+            return _.map(arr, RaceCollection.parseModel);
         });
 }
 
