@@ -21,26 +21,12 @@ var ModelParser = {
         return new BackgroundModel(attrs, options);
     },
 
-    parseBackgrounds: function(json) {
-        var arr = _.isObject(json) ? json.backgrounds : json;
-        arr = _.isArray(arr) ? arr : [];
-        var models = _.map(arr, ModelParser.parseBackground);
-        return { backgrounds: models };
-    },
-
     parseChoice: function(attrs, options) {
         return new ChoiceModel(attrs, options);
     },
 
     parseClass: function(attrs, options) {
         return new ClassModel(attrs, options);
-    },
-
-    parseClasses: function(json) {
-        var arr = _.isObject(json) ? json.classes : json;
-        arr = _.isArray(arr) ? arr : [];
-        var models = _.map(arr, ModelParser.parseClass);
-        return { classes: models };
     },
 
     parseCondition: function(attrs, options) {
@@ -51,38 +37,12 @@ var ModelParser = {
         return new FeatureModel(attrs, options);
     },
 
-    parseLists: function(json) {
-        if (!_.isObject(json) || _.isEmpty(json)) {
-            return json;
-        }
-        var lists = json.lists;
-        lists = {
-            equipment: _.isArray(lists.equipment) ? lists.equipment : [],
-            feats: _.isArray(lists.feats) ? lists.feats : [],
-            proficiencies: _.isArray(lists.proficiencies) ? lists.proficiencies : [],
-            spells: _.isArray(lists.spells) ? lists.spells : [],
-            weapons: _.isArray(lists.weapons) ? lists.weapons : []
-        };
-
-        //TODO: equipment, feats, weapons
-        lists.proficiencies = _.map(lists.proficiencies, ModelParser.parseProficiency) || [];
-        lists.spells = _.map(lists.spells, ModelParser.parseSpell) || [];
-        return { lists: lists };
-    },
-
     parseProficiency: function(attrs, options) {
         return new ProficiencyModel(attrs, options);
     },
 
     parseRace: function(attrs, options) {
         return new RaceModel(attrs, options);
-    },
-
-    parseRaces: function(json) {
-        var arr = _.isObject(json) ? json.races : json;
-        arr = _.isArray(arr) ? arr : [];
-        var models = _.map(arr, ModelParser.parseRace);
-        return { races: models };
     },
 
     parseSpellCasting: function(attrs, options) {

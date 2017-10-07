@@ -3,13 +3,7 @@ var AppStateModel = Backbone.Model.extend({
         currentCharacterModel: null,
         currentEditClass: null,
         mode: null,
-        rulesConfig: {
-            backgrounds: null,
-            classes: null,
-            lists: null,
-            objects: null,
-            races: null
-        }
+        rulesConfig: null
     },
 
     getCurrentCharacterModel: function() {
@@ -28,9 +22,10 @@ var AppStateModel = Backbone.Model.extend({
         return this.get(AppStateModel.fields.RULES_CONFIG);
     },
 
-    updateRulesConfig: function(configObj) {
-        var config = _.extend({}, this.getRulesConfig(), configObj);
-        this.set(AppStateModel.fields.RULES_CONFIG, config);
+    setRulesConfig: function(rulesConfigModel) {
+        console.log(rulesConfigModel);//TODO:REMOVE
+        this.set(AppStateModel.fields.RULES_CONFIG, rulesConfigModel);
+        return this;
     }
 },{
     fields: {
