@@ -1,17 +1,24 @@
 var AppStateModel = require('../model/appStateModel');
+var BackgroundCollection = require('../collections/backgroundCollection');
+var ClassCollection = require('../collections/classCollection');
 var ModelParser = require('../controller/modelParser');
+var RaceCollection = require('../collections/raceCollection');
 var YamlParser = require('../controller/yamlParser');
 
 var RulesConfigModel = Backbone.Model.extend({
     defaults: {
         backgrounds: null,  //BackgroundCollection
         classes: null,      //ClassCollection
-        lists: null,        //Object mapping
-        objects: null,      //Object mapping
+        lists: {},          //Object mapping
+        objects: {},        //Object mapping
         races: null         //RaceCollection
     },
 
-    initialize: function(attrs, options) {},
+    initialize: function(attrs, options) {
+        this.set(RulesConfigModel.fields.BACKGROUNDS, new BackgroundCollection());
+        this.set(RulesConfigModel.fields.CLASSES, new ClassCollection());
+        this.set(RulesConfigModel.fields.RACES, new RaceCollection());
+    },
 
     fetchDefaults: function() {
         var deferred = $.Deferred();
@@ -45,7 +52,7 @@ var RulesConfigModel = Backbone.Model.extend({
     },
 
     setBackgrounds: function(backgrounds) {
-        this.set(RulesConfigModel.fields.BACKGROUNDS, backgrounds);
+        this.getBackgrounds().reset(backgrounds || []);
         return this;
     },
 
@@ -54,7 +61,7 @@ var RulesConfigModel = Backbone.Model.extend({
     },
 
     setClasses: function(classes) {
-        this.set(RulesConfigModel.fields.CLASSES, classes);
+        this.getClasses().reset(classes || []);
         return this;
     },
 
@@ -81,7 +88,7 @@ var RulesConfigModel = Backbone.Model.extend({
     },
 
     setRaces: function(races) {
-        this.set(RulesConfigModel.fields.RACES, races);
+        this.getRaces().reset(races || []);
         return this;
     }
 },{
