@@ -87,7 +87,7 @@ classes:
     proficiencyBonus:
     equipment:
     features:
-    spellList:
+    spells:
     spellCasting:
     choices:
     unlockables:
@@ -103,7 +103,7 @@ classes:
 - `proficiencyBonus`: (REQUIRED) Number for the proficiency bonus.
 - `equipment`: List of starting equipment. Each piece of equipment is a String.
 - `features`: List of class features. (See: [Feature Object](#feature-object))
-- `spellList`: List of spells. (See: [Spell Object](#spell-object))
+- `spells`: List of spells. (See: [Spell Object](#spell-object))
 - `spellCasting`: Object defining how spellcasting works. (See: [Spellcasting Object](#spellcasting-object))
 - `choices`: List of class choices to be made at character creation. (See: [Choice Object](#choice-object))
 - `unlockables`: (REQUIRED) List of unlockable for later levels in the class. (See:

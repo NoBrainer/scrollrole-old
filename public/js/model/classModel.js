@@ -16,7 +16,7 @@ var ClassModel = Backbone.Model.extend({
         proficiencies: null,    //ProficiencyCollection
         proficiencyBonus: null, //Number
         spellCasting: null,     //SpellCastingModel
-        spellList: null,        //SpellCollection
+        spells: null,           //SpellCollection
         unlockables: null       //UnlockableCollection
     },
 
@@ -32,8 +32,8 @@ var ClassModel = Backbone.Model.extend({
         var proficiencyModels = _.map(attrs.proficiencies, ProficiencyCollection.parseModel) || [];
         this.set(ClassModel.fields.PROFICIENCIES, new ProficiencyCollection(proficiencyModels));
 
-        var spellModels = _.map(attrs.spellList, SpellCollection.parseModel) || [];
-        this.set(ClassModel.fields.SPELL_LIST, new SpellCollection(spellModels));
+        var spellModels = _.map(attrs.spells, SpellCollection.parseModel) || [];
+        this.set(ClassModel.fields.SPELLS, new SpellCollection(spellModels));
 
         var unlockableModels = _.map(attrs.unlockables, UnlockableCollection.parseModel) || [];
         this.set(ClassModel.fields.UNLOCKABLES, new UnlockableCollection(unlockableModels));
@@ -94,12 +94,12 @@ var ClassModel = Backbone.Model.extend({
         return this.get(ClassModel.fields.SPELL_CASTING);
     },
 
-    getSpellList: function() {
-        return this.get(ClassModel.fields.SPELL_LIST);
+    getSpells: function() {
+        return this.get(ClassModel.fields.SPELLS);
     },
 
-    setSpellList: function(spellModels) {
-        this.getSpellList().reset(spellModels || []);
+    setSpells: function(spellModels) {
+        this.getSpells().reset(spellModels || []);
         return this;
     },
 
@@ -123,7 +123,7 @@ var ClassModel = Backbone.Model.extend({
         PROFICIENCIES: 'proficiencies',
         PROFICIENCY_BONUS: 'proficiencyBonus',
         SPELL_CASTING: 'spellCasting',
-        SPELL_LIST: 'spellList',
+        SPELLS: 'spells',
         UNLOCKABLES: 'unlockables'
     }
 });
