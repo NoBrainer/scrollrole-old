@@ -51,6 +51,22 @@ var ModelParser = {
         return new FeatureModel(attrs, options);
     },
 
+    parseLists: function(json) {
+        if (!_.isObject(json) || _.isEmpty(json)) {
+            return json;
+        }
+        var lists = json.lists;
+
+        //TODO: equipment, feats, weapons
+        if (_.isArray(lists.proficiencies)) {
+            lists.proficiencies = _.map(lists.proficiencies, ModelParser.parseProficiency) || [];
+        }
+        if (_.isArray(lists.spells)) {
+            lists.spells = _.map(lists.spells, ModelParser.parseSpell) || [];
+        }
+        return { lists: lists };
+    },
+
     parseProficiency: function(attrs, options) {
         return new ProficiencyModel(attrs, options);
     },

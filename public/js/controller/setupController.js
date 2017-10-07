@@ -48,7 +48,8 @@ function setupClasses() {
 }
 
 function setupLists() {
-    return loadAndParse('/resources/lists.yaml');
+    return loadAndParse('/resources/lists.yaml')
+        .then(_.bind(ModelParser.parseLists, ModelParser));
 }
 
 function setupObjects() {
