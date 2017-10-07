@@ -1,24 +1,48 @@
+var AbilityScoreAdjustmentCollection = require('../collections/abilityScoreAdjustmentCollection');
+var ChoiceCollection = require('../collections/choiceCollection');
+var FeatureCollection = require('../collections/featureCollection');
+var ProficiencyCollection = require('../collections/proficiencyCollection');
+
 var RaceModel = Backbone.Model.extend({
     defaults: {
-        abilityScoreAdjustments: [],//List of AbilityScoreAdjustmentModels
-        age: null,                  //String
-        alignment: null,            //String
-        choices: [],                //List of ChoiceModels
-        description: [],            //List of Strings
-        features: [],               //List of FeatureModels
-        name: null,                 //String
-        proficiencies: [],          //List of ProficiencyModels
-        size: null,                 //String
-        speed: null,                //Number
-        subraces: []                //List of SubraceModels
+        abilityScoreAdjustments: null,  //AbilityScoreAdjustmentCollection
+        age: null,                      //String
+        alignment: null,                //String
+        choices: null,                  //ChoiceCollection
+        description: [],                //List of Strings
+        features: null,                 //FeatureCollection
+        name: null,                     //String
+        proficiencies: null,            //ProficiencyCollection
+        size: null,                     //String
+        speed: null,                    //Number
+        subraces: null                  //SubRaceCollection TODO
     },
 
     initialize: function(attrs, options) {
-        //TODO: parse some parts into models
+        attrs = attrs || {};
+
+        var abilityScoreAdjustmentModels = _.map(attrs.abilityScoreAdjustments,
+                AbilityScoreAdjustmentCollection.parseModel) || [];
+        this.set(RaceModel.fields.ABILITY_SCORE_ADJUSTMENTS,
+                new AbilityScoreAdjustmentCollection(abilityScoreAdjustmentModels));
+
+        var choiceModels = _.map(attrs.choices, ChoiceCollection.parseModel) || [];
+        this.set(RaceModel.fields.CHOICES, new ChoiceCollection(choiceModels));
+
+        var featureModels = _.map(attrs.features, FeatureCollection.parseModel) || [];
+        this.set(RaceModel.fields.FEATURES, new FeatureCollection(featureModels));
+
+        var proficiencyModels = _.map(attrs.proficiencies, ProficiencyCollection.parseModel) || [];
+        this.set(RaceModel.fields.PROFICIENCIES, new ProficiencyCollection(proficiencyModels));
     },
 
     getAbilityScoreAdjustments: function() {
         return this.get(RaceModel.fields.ABILITY_SCORE_ADJUSTMENTS);
+    },
+
+    setAbilityScoreAdjustments: function(abilityScoreAdjustmentModels) {
+        this.getAbilityScoreAdjustments().reset(abilityScoreAdjustmentModels || []);
+        return this;
     },
 
     getAge: function() {
@@ -33,6 +57,11 @@ var RaceModel = Backbone.Model.extend({
         return this.get(RaceModel.fields.CHOICES);
     },
 
+    setChoices: function(choiceModels) {
+        this.getChoices().reset(choiceModels || []);
+        return this;
+    },
+
     getDescription: function() {
         return this.get(RaceModel.fields.DESCRIPTION);
     },
@@ -41,12 +70,22 @@ var RaceModel = Backbone.Model.extend({
         return this.get(RaceModel.fields.FEATURES);
     },
 
+    setFeatures: function(featureModels) {
+        this.getFeatures().reset(featureModels || []);
+        return this;
+    },
+
     getName: function() {
         return this.get(RaceModel.fields.NAME);
     },
 
     getProficiencies: function() {
         return this.get(RaceModel.fields.PROFICIENCIES);
+    },
+
+    setProficiencies: function(proficiencyModels) {
+        this.getProficiencies().reset(proficiencyModels || []);
+        return this;
     },
 
     getSize: function() {
