@@ -1,12 +1,14 @@
+_ = require('underscore');
+
+var bodyParser = require('body-parser');
+var cookieParser = require('cookie-parser');
 var express = require('express');
-var path = require('path');
 var favicon = require('serve-favicon');
 var logger = require('morgan');
-var cookieParser = require('cookie-parser');
-var bodyParser = require('body-parser');
+var path = require('path');
 
-var index = require('./api/index');
 var download = require('./api/download');
+var index = require('./api/index');
 var users = require('./api/users');
 var yaml = require('./api/yaml');
 
