@@ -38,28 +38,6 @@ classes:
             table, you must finish a long rest before you can rage again.
         count: 2
         damage: +2
-        unlockables:
-          - condition: { level: 3 }
-            features:
-              - { name: Rage, count: 3, damage: +2 }
-          - condition: { level: 6 }
-            features:
-              - { name: Rage, count: 4, damage: +2 }
-          - condition: { level: 9 }
-            features:
-              - { name: Rage, count: 4, damage: +3 }
-          - condition: { level: 12 }
-            features:
-              - { name: Rage, count: 5, damage: +3 }
-          - condition: { level: 16 }
-            features:
-              - { name: Rage, count: 5, damage: +4 }
-          - condition: { level: 17 }
-            features:
-              - { name: Rage, count: 6, damage: +4 }
-          - condition: { level: 20 }
-            features:
-              - { name: Rage, count: unlimited, damage: +4 }
       - name: Unarmored Defense
         description:
           - >
@@ -109,6 +87,8 @@ classes:
                 You have advantage on Dexterity saving throws against effects that you can see, such as traps and
                 spells. To gain this benefit, you can't be blinded, deafened, or incapacitated.
       - condition: { level: 3 }
+        features:
+          - { name: Rage, count: 3, damage: +2 }
         choices:
           - name: Primal Path
             description:
@@ -125,46 +105,45 @@ classes:
                     For some barbarians, rage is a means to an end - that end being violence. The Path of the Berserker
                     is a path of untrammeled fury, slick with blood. As you enter the berserker's rage, you thrill in
                     the chaos of battle, heedless of your own health or well-being.
-                unlockables:
-                  - condition: { level: 3 }
-                    features:
-                      - name: Frenzy
-                        description:
-                          - >
-                            Starting when you choose this path at 3rd level, you can go into a frenzy when you rage. If
-                            you do so, for the duration of your rage you can make a single melee weapon attack as a
-                            bonus action on each of your turns after this one. When your rage ends, you suffer one level
-                            of exhaustion (as described in appendix PH-A).
-                  - condition: { level: 6 }
-                    features:
-                      - name: Mindless Rage
-                        description:
-                          - >
-                            Beginning at 6th level, you can't be charmed or frightened while raging. If you are charmed
-                            or frightened when you enter your rage, the effect is suspended for the duration of the
-                            rage.
-                  - condition: { level: 10 }
-                    features:
-                      - name: Intimidating Presence
-                        description:
-                          - >
-                            Beginning at 10th level, you can use your action to frighten someone with your menacing
-                            presence. When you do so, choose one creature that you can see within 30 feet of you. If the
-                            creature can see or hear you, it must succeed a Wisdom saving throw (DC equal to 8 + your
-                            proficiency bonus + your Charisma modifier) or be frightened of you until the end of your
-                            next turn. On subsequent turns, you can use your action to extend the duration of this
-                            effect on the frightened creature until the end of your next turn. This effect ends if the
-                            creature ends its turn out of line of sight or more than 60 feet away from you.
-                          - >
-                            If the creature succeeds on its saving throw, you can't use this feature on that creature
-                            again for 24 hours.
-                  - condition: { level: 14, feature: Path of the Berserker }
-                    features:
-                      - name: Retaliation
-                        description:
-                          - >
-                            Starting at 14th level, when you take damage from a creature that is within 5 feet of you,
-                            you can use your reaction to make a melee weapon attack against that creature.
+      - condition: { level: 3, feature: Path of the Berserker }
+        features:
+          - name: Frenzy
+            description:
+              - >
+                Starting when you choose this path at 3rd level, you can go into a frenzy when you rage. If
+                you do so, for the duration of your rage you can make a single melee weapon attack as a
+                bonus action on each of your turns after this one. When your rage ends, you suffer one level
+                of exhaustion (as described in appendix PH-A).
+      - condition: { level: 6, feature: Path of the Berserker }
+        features:
+          - name: Mindless Rage
+            description:
+              - >
+                Beginning at 6th level, you can't be charmed or frightened while raging. If you are charmed
+                or frightened when you enter your rage, the effect is suspended for the duration of the
+                rage.
+      - condition: { level: 10, feature: Path of the Berserker }
+        features:
+          - name: Intimidating Presence
+            description:
+              - >
+                Beginning at 10th level, you can use your action to frighten someone with your menacing
+                presence. When you do so, choose one creature that you can see within 30 feet of you. If the
+                creature can see or hear you, it must succeed a Wisdom saving throw (DC equal to 8 + your
+                proficiency bonus + your Charisma modifier) or be frightened of you until the end of your
+                next turn. On subsequent turns, you can use your action to extend the duration of this
+                effect on the frightened creature until the end of your next turn. This effect ends if the
+                creature ends its turn out of line of sight or more than 60 feet away from you.
+              - >
+                If the creature succeeds on its saving throw, you can't use this feature on that creature
+                again for 24 hours.
+      - condition: { level: 14, feature: Path of the Berserker }
+        features:
+          - name: Retaliation
+            description:
+              - >
+                Starting at 14th level, when you take damage from a creature that is within 5 feet of you,
+                you can use your reaction to make a melee weapon attack against that creature.
       - condition: { level: 4 }
         choices:
           - name: Ability Score Improvement 1
@@ -180,6 +159,9 @@ classes:
           - name: Fast Movement
             description:
               - Starting at 5th level, your speed increases by 10 feet while you aren't wearing heavy armor.
+      - condition: { level: 6 }
+        features:
+          - { name: Rage, count: 4, damage: +2 }
       - condition: { level: 7 }
         features:
           - name: Feral Instinct
@@ -196,6 +178,7 @@ classes:
       - condition: { level: 9 }
         proficiencyBonus: +4
         features:
+          - { name: Rage, count: 4, damage: +3 }
           - name: Brutal Critical
             dice: 1
             description:
@@ -216,6 +199,8 @@ classes:
                 Each time you use this feature after the first, the DC increases by 5. When you finish a short or long
                 rest, the DC resets to 10.
       - condition: { level: 12 }
+        features:
+          - { name: Rage, count: 5, damage: +3 }
         choices:
           - name: Ability Score Improvement 3
             use: objects.abilityScoreImprovement
@@ -231,12 +216,15 @@ classes:
                 Beginning at 15th level, your rage is so fierce that it ends early only if you fall unconscious or if
                 you choose to end it.
       - condition: { level: 16 }
+        features:
+          - { name: Rage, count: 5, damage: +4 }
         choices:
           - name: Ability Score Improvement 4
             use: objects.abilityScoreImprovement
       - condition: { level: 17 }
         proficiencyBonus: +6
         features:
+          - { name: Rage, count: 6, damage: +4 }
           - { name: Brutal Critical, dice: 2 }
       - condition: { level: 18 }
         features:
@@ -251,6 +239,7 @@ classes:
             use: objects.abilityScoreImprovement
       - condition: { level: 20 }
         features:
+          - { name: Rage, count: unlimited, damage: +4 }
           - name: Primal Champion
             abilityScoreAdjustments:
               - { attribute: STR, modifier: +4 }
