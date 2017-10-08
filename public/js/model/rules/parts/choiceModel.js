@@ -1,5 +1,7 @@
 var AbilityScoreAdjustmentCollection = require('../../../collection/rules/parts/abilityScoreAdjustmentCollection');
+var AppStateModel = require('../../../model/appStateModel');
 var FeatureCollection = require('../../../collection/rules/parts/featureCollection');
+var ListSelectorModel = require('../../../model/rules/parts/listSelectorModel');
 var ProficiencyCollection = require('../../../collection/rules/parts/proficiencyCollection');
 
 var ChoiceModel = Backbone.Model.extend({
@@ -17,24 +19,46 @@ var ChoiceModel = Backbone.Model.extend({
     initialize: function(attrs, options) {
         attrs = attrs || {};
 
-        //TODO: handle 'from' and 'use'
+        if (attrs.from) {
+            this.parseFromList(attrs.from);
+        } else if (attrs.use) {
+            this.parseUseObject(attrs.use);
+        } else {
+            this.parseOptions(attrs.options);
+        }
+    },
 
+    parseOptions: function(choiceOptions) {
         var CollectionClass = null;
-        if (attrs.type === ChoiceModel.types.ABILITY_SCORE_ADJUSTMENT) {
+        if (this.isTypeAbilityScoreAdjustment()) {
             CollectionClass = AbilityScoreAdjustmentCollection;
-        } else if (attrs.type === ChoiceModel.types.FEATURE) {
+        } else if (this.isTypeFeature()) {
             CollectionClass = FeatureCollection;
-        } else if (attrs.type === ChoiceModel.types.PROFICIENCY) {
+        } else if (this.isTypeProficiency()) {
             CollectionClass = ProficiencyCollection;
         }
 
         if (CollectionClass) {
-            var models = _.map(attrs.options, CollectionClass.parseModel) || [];
+            var models = _.map(choiceOptions, CollectionClass.parseModel) || [];
             this.set(ChoiceModel.fields.OPTIONS, new CollectionClass(models));
         } else {
             this.set(ChoiceModel.fields.TYPE, ChoiceModel.types.EQUIPMENT);
-            this.set(ChoiceModel.fields.OPTIONS, attrs.options);
+            this.set(ChoiceModel.fields.OPTIONS, choiceOptions);
         }
+    },
+
+    parseFromList: function(from) {
+        var listSelectorModel = new ListSelectorModel(from);
+        this.set(ChoiceModel.fields.FROM, listSelectorModel);
+
+        // Parse from the list as soon as the setup has finished
+        AppStateModel.getInitialSetupPromise().done(_.bind(function() {
+            this.parseOptions(listSelectorModel.buildList());
+        }, this));
+    },
+
+    parseUseObject: function(use) {
+        //TODO: handle 'use'
     },
 
     getAllowDuplicate: function() {
@@ -72,6 +96,18 @@ var ChoiceModel = Backbone.Model.extend({
 
     getType: function() {
         return this.get(ChoiceModel.fields.TYPE);
+    },
+
+    isTypeAbilityScoreAdjustment: function() {
+        return this.getType() === ChoiceModel.types.ABILITY_SCORE_ADJUSTMENT;
+    },
+
+    isTypeFeature: function() {
+        return this.getType() === ChoiceModel.types.FEATURE;
+    },
+
+    isTypeProficiency: function() {
+        return this.getType() === ChoiceModel.types.PROFICIENCY;
     },
 
     getUse: function() {

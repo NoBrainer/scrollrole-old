@@ -53,8 +53,120 @@ lists:
     - { type: tool, name: Shawm }
     - { type: tool, name: Viol }
 
+  #TODO: finish the list
   spells:
-  #TODO {name, level}
+    - { level: 0, name: Dancing Lights }
+    - { level: 0, name: Light }
+    - { level: 0, name: Mage Hand }
+    - { level: 0, name: Mending }
+    - { level: 0, name: Message }
+    - { level: 0, name: Minor Illusion }
+    - { level: 0, name: Prestidigitation }
+    - { level: 0, name: True Strike }
+    - { level: 0, name: Vicious Mockery }
+    - { level: 1, name: Animal Friendship }
+    - { level: 1, name: Bane }
+    - { level: 1, name: Charm Person }
+    - { level: 1, name: Comprehend Languages }
+    - { level: 1, name: Cure Wounds }
+    - { level: 1, name: Detect Magic }
+    - { level: 1, name: Disguise Self }
+    - { level: 1, name: Faerie Fire }
+    - { level: 1, name: Feather Fall }
+    - { level: 1, name: Healing Word }
+    - { level: 1, name: Heroism }
+    - { level: 1, name: Hideous Laughter }
+    - { level: 1, name: Identify }
+    - { level: 1, name: Illusory Script }
+    - { level: 1, name: Longstrider }
+    - { level: 1, name: Silent Image }
+    - { level: 1, name: Sleep }
+    - { level: 1, name: Speak with Animals }
+    - { level: 1, name: Thunderwave }
+    - { level: 1, name: Unseen Servant }
+    - { level: 2, name: Animal Messenger }
+    - { level: 2, name: Blindness/Deafness }
+    - { level: 2, name: Calm Emotions }
+    - { level: 2, name: Detect Thoughts }
+    - { level: 2, name: Enhance Ability }
+    - { level: 2, name: Enthrall }
+    - { level: 2, name: Heat Metal }
+    - { level: 2, name: Hold Person }
+    - { level: 2, name: Invisibility }
+    - { level: 2, name: Knock }
+    - { level: 2, name: Lesser Restoration }
+    - { level: 2, name: Locate Animals or Plants }
+    - { level: 2, name: Locate Object }
+    - { level: 2, name: Magic Mouth }
+    - { level: 2, name: See Invisibility }
+    - { level: 2, name: Shatter }
+    - { level: 2, name: Silence }
+    - { level: 2, name: Suggestion }
+    - { level: 2, name: Zone of Truth }
+    - { level: 3, name: Bestow Curse }
+    - { level: 3, name: Clairvoyance }
+    - { level: 3, name: Dispel Magic }
+    - { level: 3, name: Fear }
+    - { level: 3, name: Glyph of Warding }
+    - { level: 3, name: Hypnotic Pattern }
+    - { level: 3, name: Major Image }
+    - { level: 3, name: Nondetection }
+    - { level: 3, name: Plant Growth }
+    - { level: 3, name: Sending }
+    - { level: 3, name: Speak with Dead }
+    - { level: 3, name: Speak with Plants }
+    - { level: 3, name: Stinking Cloud }
+    - { level: 3, name: Tiny Hut }
+    - { level: 3, name: Tongues }
+    - { level: 4, name: Compulsion }
+    - { level: 4, name: Confusion }
+    - { level: 4, name: Dimension Door }
+    - { level: 4, name: Freedom of Movement }
+    - { level: 4, name: Greater Invisibility }
+    - { level: 4, name: Hallucinatory Terrain }
+    - { level: 4, name: Locate Creature }
+    - { level: 4, name: Polymorph }
+    - { level: 5, name: Animate Objects }
+    - { level: 5, name: Awaken }
+    - { level: 5, name: Dominate Person }
+    - { level: 5, name: Dream }
+    - { level: 5, name: Geas }
+    - { level: 5, name: Greater Restoration }
+    - { level: 5, name: Hold Monster }
+    - { level: 5, name: Legend Lore }
+    - { level: 5, name: Mass Cure Wounds }
+    - { level: 5, name: Mislead }
+    - { level: 5, name: Modify Memory }
+    - { level: 5, name: Planar Binding }
+    - { level: 5, name: Raise Dead }
+    - { level: 5, name: Scrying }
+    - { level: 5, name: Seeming }
+    - { level: 5, name: Teleportation Circle }
+    - { level: 6, name: Eyebite }
+    - { level: 6, name: Find the Path }
+    - { level: 6, name: Guards and Wards }
+    - { level: 6, name: Irresistible Dance }
+    - { level: 6, name: Mass Suggestion }
+    - { level: 6, name: Programmed Illusion }
+    - { level: 6, name: True Seeing }
+    - { level: 7, name: Arcane Sword }
+    - { level: 7, name: Etherealness }
+    - { level: 7, name: Forcecage }
+    - { level: 7, name: Magnificent Mansion }
+    - { level: 7, name: Mirage Arcane }
+    - { level: 7, name: Project Image }
+    - { level: 7, name: Regenerate }
+    - { level: 7, name: Resurrection }
+    - { level: 7, name: Symbol }
+    - { level: 7, name: Teleport }
+    - { level: 8, name: Dominate Monster }
+    - { level: 8, name: Feeblemind }
+    - { level: 8, name: Glibness }
+    - { level: 8, name: Mind Blank }
+    - { level: 8, name: Power Word Stun }
+    - { level: 9, name: Foresight }
+    - { level: 9, name: Power Word Kill }
+    - { level: 9, name: True Polymorph }
 
   weapons:
   #TODO: {name, type, properties} FIGURE OUT IF WE WANT THIS

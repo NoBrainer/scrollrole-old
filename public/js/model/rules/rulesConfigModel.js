@@ -1,9 +1,7 @@
 var AppStateModel = require('../appStateModel');
 var BackgroundCollection = require('../../collection/rules/backgroundCollection');
 var ClassCollection = require('../../collection/rules/classCollection');
-var ProficiencyCollection = require('../../collection/rules/parts/proficiencyCollection');
 var RaceCollection = require('../../collection/rules/raceCollection');
-var SpellCollection = require('../../collection/rules/parts/spellCollection');
 var YamlParser = require('../../controller/yamlParser');
 
 var RulesConfigModel = Backbone.Model.extend({
@@ -147,6 +145,7 @@ function setupLists() {
             if (!_.isObject(json) || _.isEmpty(json)) {
                 return json;
             }
+            //Note: Not parsed into Models to be lightweight and simple
             var lists = json.lists;
             lists = {
                 equipment: _.isArray(lists.equipment) ? lists.equipment : [],
@@ -155,10 +154,6 @@ function setupLists() {
                 spells: _.isArray(lists.spells) ? lists.spells : [],
                 weapons: _.isArray(lists.weapons) ? lists.weapons : []
             };
-
-            //TODO: equipment, feats, weapons
-            lists.proficiencies = _.map(lists.proficiencies, ProficiencyCollection.parseModel) || [];
-            lists.spells = _.map(lists.spells, SpellCollection.parseModel) || [];
             return lists;
         });
 }

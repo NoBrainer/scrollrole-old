@@ -6,12 +6,20 @@ var AppStateModel = Backbone.Model.extend({
         rulesConfig: null
     },
 
+    initialize: function(attrs, options) {
+        this.initialSetupDeferred = $.Deferred();
+    },
+
     getCurrentCharacterModel: function() {
         return this.get(AppStateModel.fields.CURRENT_CHARACTER_MODEL);
     },
 
     getCurrentEditClass: function() {
         return this.get(AppStateModel.fields.CURRENT_EDIT_CLASS);
+    },
+
+    getInitialSetupPromise: function() {
+        return this.initialSetupDeferred.promise();
     },
 
     getMode: function() {
@@ -25,6 +33,7 @@ var AppStateModel = Backbone.Model.extend({
     setRulesConfig: function(rulesConfigModel) {
         console.log(rulesConfigModel);//TODO:REMOVE
         this.set(AppStateModel.fields.RULES_CONFIG, rulesConfigModel);
+        this.initialSetupDeferred.resolve(rulesConfigModel);
         return this;
     }
 },{
