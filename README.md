@@ -23,7 +23,7 @@ Run these commands from the root of the project.
 - For other scripts, check the package.json file.
 
 ## Resources
-- 5e D&amp;D SRD
+- 5e D&D SRD
 - font-awesome
 - npm
 - YAML
