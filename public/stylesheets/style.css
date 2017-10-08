@@ -43,3 +43,6 @@ a {
   background-color: #404949;
   color: #efefef;
 }
+.footer-view .section {
+  padding: 20px 15px;
+}
