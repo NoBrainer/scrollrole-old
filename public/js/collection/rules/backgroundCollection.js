@@ -1,4 +1,4 @@
-var BackgroundModel = require('../model/backgroundModel');
+var BackgroundModel = require('../../model/rules/backgroundModel');
 
 var BackgroundCollection = Backbone.Collection.extend({
     model: BackgroundModel

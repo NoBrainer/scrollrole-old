@@ -1,6 +1,6 @@
-var AbilityScoreAdjustmentCollection = require('../collection/abilityScoreAdjustmentCollection');
-var FeatureCollection = require('../collection/featureCollection');
-var ProficiencyCollection = require('../collection/proficiencyCollection');
+var AbilityScoreAdjustmentCollection = require('../../../collection/rules/parts/abilityScoreAdjustmentCollection');
+var FeatureCollection = require('../../../collection/rules/parts/featureCollection');
+var ProficiencyCollection = require('../../../collection/rules/parts/proficiencyCollection');
 
 var ChoiceModel = Backbone.Model.extend({
     defaults: {

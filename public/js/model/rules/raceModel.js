@@ -1,7 +1,7 @@
-var AbilityScoreAdjustmentCollection = require('../collection/abilityScoreAdjustmentCollection');
-var ChoiceCollection = require('../collection/choiceCollection');
-var FeatureCollection = require('../collection/featureCollection');
-var ProficiencyCollection = require('../collection/proficiencyCollection');
+var AbilityScoreAdjustmentCollection = require('../../collection/rules/parts/abilityScoreAdjustmentCollection');
+var ChoiceCollection = require('../../collection/rules/parts/choiceCollection');
+var FeatureCollection = require('../../collection/rules/parts/featureCollection');
+var ProficiencyCollection = require('../../collection/rules/parts/proficiencyCollection');
 
 var RaceModel = Backbone.Model.extend({
     defaults: {

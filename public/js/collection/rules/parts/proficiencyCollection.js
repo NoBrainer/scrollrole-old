@@ -1,4 +1,4 @@
-var ProficiencyModel = require('../model/proficiencyModel');
+var ProficiencyModel = require('../../../model/rules/parts/proficiencyModel');
 
 var ProficiencyCollection = Backbone.Collection.extend({
     model: ProficiencyModel

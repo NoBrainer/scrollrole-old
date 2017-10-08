@@ -1,4 +1,4 @@
-var SpellModel = require('../model/spellModel');
+var SpellModel = require('../../../model/rules/parts/spellModel');
 
 var SpellCollection = Backbone.Collection.extend({
     model: SpellModel

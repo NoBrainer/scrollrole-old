@@ -1,4 +1,4 @@
-var ChoiceModel = require('../model/choiceModel');
+var ChoiceModel = require('../../../model/rules/parts/choiceModel');
 
 var ChoiceCollection = Backbone.Collection.extend({
     model: ChoiceModel

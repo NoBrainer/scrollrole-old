@@ -1,8 +1,8 @@
-var ChoiceCollection = require('../collection/choiceCollection');
-var FeatureCollection = require('../collection/featureCollection');
-var ProficiencyCollection = require('../collection/proficiencyCollection');
-var SpellCollection = require('../collection/spellCollection');
-var UnlockableCollection = require('../collection/unlockableCollection');
+var ChoiceCollection = require('../../collection/rules/parts/choiceCollection');
+var FeatureCollection = require('../../collection/rules/parts/featureCollection');
+var ProficiencyCollection = require('../../collection/rules/parts/proficiencyCollection');
+var SpellCollection = require('../../collection/rules/parts/spellCollection');
+var UnlockableCollection = require('../../collection/rules/parts/unlockableCollection');
 
 var ClassModel = Backbone.Model.extend({
     defaults: {

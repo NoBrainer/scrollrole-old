@@ -1,4 +1,4 @@
-var RaceModel = require('../model/raceModel');
+var RaceModel = require('../../model/rules/raceModel');
 
 var RaceCollection = Backbone.Collection.extend({
     model: RaceModel

@@ -1,4 +1,4 @@
-var UnlockableModel = require('../model/unlockableModel');
+var UnlockableModel = require('../../../model/rules/parts/unlockableModel');
 
 var UnlockableCollection = Backbone.Collection.extend({
     model: UnlockableModel

@@ -8,7 +8,7 @@ window._ = _;
 window.Backbone = Backbone;
 
 var AppView = require('./view/appView');
-var RulesConfigModel = require('./model/rulesConfigModel');
+var RulesConfigModel = require('./model/rules/rulesConfigModel');
 
 (function() {
     // Render the app view to the page

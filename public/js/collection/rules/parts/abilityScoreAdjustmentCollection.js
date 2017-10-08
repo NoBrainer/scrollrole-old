@@ -1,4 +1,4 @@
-var AbilityScoreAdjustmentModel = require('../model/abilityScoreAdjustmentModel');
+var AbilityScoreAdjustmentModel = require('../../../model/rules/parts/abilityScoreAdjustmentModel');
 
 var AbilityScoreAdjustmentCollection = Backbone.Collection.extend({
     model: AbilityScoreAdjustmentModel

@@ -1,4 +1,4 @@
-var FeatureModel = require('../model/featureModel');
+var FeatureModel = require('../../../model/rules/parts/featureModel');
 
 var FeatureCollection = Backbone.Collection.extend({
     model: FeatureModel

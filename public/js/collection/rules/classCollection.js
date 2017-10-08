@@ -1,4 +1,4 @@
-var ClassModel = require('../model/classModel');
+var ClassModel = require('../../model/rules/classModel');
 
 var ClassCollection = Backbone.Collection.extend({
     model: ClassModel

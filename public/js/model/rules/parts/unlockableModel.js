@@ -1,8 +1,8 @@
-var AbilityScoreAdjustmentCollection = require('../collection/abilityScoreAdjustmentCollection');
-var ChoiceCollection = require('../collection/choiceCollection');
-var ConditionModel = require('../model/conditionModel');
-var FeatureCollection = require('../collection/featureCollection');
-var ProficiencyCollection = require('../collection/proficiencyCollection');
+var AbilityScoreAdjustmentCollection = require('../../../collection/rules/parts/abilityScoreAdjustmentCollection');
+var ChoiceCollection = require('../../../collection/rules/parts/choiceCollection');
+var ConditionModel = require('./conditionModel');
+var FeatureCollection = require('../../../collection/rules/parts/featureCollection');
+var ProficiencyCollection = require('../../../collection/rules/parts/proficiencyCollection');
 
 var UnlockableModel = UnlockableModel = Backbone.Model.extend({
     defaults: {

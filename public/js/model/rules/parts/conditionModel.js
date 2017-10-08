@@ -1,4 +1,4 @@
-var ProficiencyModel = require('../model/proficiencyModel');
+var ProficiencyModel = require('./proficiencyModel');
 
 var ConditionModel = Backbone.Model.extend({
     defaults: {
