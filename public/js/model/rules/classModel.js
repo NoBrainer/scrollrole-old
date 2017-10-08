@@ -1,6 +1,7 @@
 var ChoiceCollection = require('../../collection/rules/parts/choiceCollection');
 var FeatureCollection = require('../../collection/rules/parts/featureCollection');
 var ProficiencyCollection = require('../../collection/rules/parts/proficiencyCollection');
+var SpellCastingModel = require('../../model/rules/parts/spellCastingModel');
 var SpellCollection = require('../../collection/rules/parts/spellCollection');
 var UnlockableCollection = require('../../collection/rules/parts/unlockableCollection');
 
@@ -31,6 +32,9 @@ var ClassModel = Backbone.Model.extend({
 
         var proficiencyModels = _.map(attrs.proficiencies, ProficiencyCollection.parseModel) || [];
         this.set(ClassModel.fields.PROFICIENCIES, new ProficiencyCollection(proficiencyModels));
+
+        var spellCastingModel = new SpellCastingModel(attrs.spellCasting);
+        this.set(ClassModel.fields.SPELL_CASTING, spellCastingModel);
 
         var spellModels = _.map(attrs.spells, SpellCollection.parseModel) || [];
         this.set(ClassModel.fields.SPELLS, new SpellCollection(spellModels));

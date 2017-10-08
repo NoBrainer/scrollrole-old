@@ -1,17 +1,25 @@
+var SpellCollection = require('../../../collection/rules/parts/spellCollection');
+var SpellSlotsModel = require('../../../model/rules/parts/spellSlotsModel');
+
 var SpellCastingModel = Backbone.Model.extend({
     defaults: {
         ability: null,              //String
         cantripsKnown: null,        //Number
         description: [],            //List of Strings
         focus: null,                //String
-        spells: [],                 //List of SpellModels
+        spells: null,               //SpellCollection
         spellsKnown: null,          //Number
         spellSlots: null            //SpellSlotsModel
     },
 
     initialize: function(attrs, options) {
-        //TODO: parse some parts into models
-        //TODO: listen to proficiencyBonus and abilityModifier changes
+        attrs = attrs || {};
+
+        var spellModels = _.map(attrs.spells, SpellCollection.parseModel) || [];
+        this.set(SpellCastingModel.fields.SPELLS, new SpellCollection(spellModels));
+
+        var spellSlotsModel = new SpellSlotsModel(attrs.spellSlots || {});
+        this.set(SpellCastingModel.fields.SPELL_SLOTS, spellSlotsModel);
     },
 
     getAbility: function() {
@@ -30,17 +38,21 @@ var SpellCastingModel = Backbone.Model.extend({
         return this.get(SpellCastingModel.fields.FOCUS);
     },
 
-    getSpellAttackModifier: function() {
-        //TODO: proficiencyBonus + abilityModifier
-        return 2 + 0;
+    getSpellAttackModifier: function(proficiencyBonus, abilityModifier) {
+        return proficiencyBonus + abilityModifier
     },
 
     getSpells: function() {
         return this.get(SpellCastingModel.fields.SPELLS);
     },
 
-    getSpellSaveDC: function() {
-        return this.getSpellAttackModifier() + 8;
+    setSpells: function(spellModels) {
+        this.getSpells().reset(spellModels || []);
+        return this;
+    },
+
+    getSpellSaveDC: function(proficiencyBonus, abilityModifier) {
+        return 8 + this.getSpellAttackModifier(proficiencyBonus, abilityModifier);
     },
 
     getSpellsKnown: function() {
