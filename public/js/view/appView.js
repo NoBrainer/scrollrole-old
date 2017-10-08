@@ -6,7 +6,7 @@ var AppView = Backbone.View.extend({
     initialize: function() {},
 
     render: function() {
-        var html = templates.appView({ title: "CHARchitect" });
+        var html = templates.appView({ title: "Scroll Role" });
         this.$el.html(html);
         return this;
     }
