@@ -1,9 +1,29 @@
+var AppStateModel = require('./model/appStateModel');
+
 var Router = Backbone.Router.extend({
     initialize: function() {
-        //this.route(/^.*/, 'default', this.goDefault);
+        this.route(/^.*/, 'goDefault', this.goDefault);
+        this.route(/^home.*/, 'goHome', this.goHome);
+        this.route(/^builder.*/, 'goBuilder', this.goBuilder);
+        this.route(/^rules.*/, 'goRules', this.goRules);
     },
 
-    goDefault: function() {}
+    goBuilder: function() {
+        AppStateModel.setMode(AppStateModel.modes.BUILDER);
+    },
+
+    goDefault: function() {
+        this.navigate('home', { trigger: true, replace: false });
+    },
+
+    goHome: function() {
+        AppStateModel.setMode(AppStateModel.modes.HOME);
+    },
+
+    goRules: function() {
+        AppStateModel.setMode(AppStateModel.modes.RULES);
+    }
 });
 
-module.exports = Router;
+var singletonInstance = new Router();
+module.exports = singletonInstance;

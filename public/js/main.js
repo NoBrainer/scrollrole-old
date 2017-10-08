@@ -7,6 +7,10 @@ window.$ = $;
 window._ = _;
 window.Backbone = Backbone;
 
+// Require singletons to make sure they're initialized
+require('./router');
+require('./model/appStateModel');
+
 var AppView = require('./view/appView');
 var RulesConfigModel = require('./model/rules/rulesConfigModel');
 
