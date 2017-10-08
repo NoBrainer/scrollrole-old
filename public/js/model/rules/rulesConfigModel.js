@@ -71,6 +71,10 @@ var RulesConfigModel = Backbone.Model.extend({
         return this;
     },
 
+    getList: function(name) {
+        return this.getLists()[name];
+    },
+
     getLists: function() {
         return this.get(RulesConfigModel.fields.LISTS);
     },
@@ -78,6 +82,10 @@ var RulesConfigModel = Backbone.Model.extend({
     setLists: function(lists) {
         this.set(RulesConfigModel.fields.LISTS, lists);
         return this;
+    },
+
+    getObject: function(name) {
+        return this.getObjects()[name];
     },
 
     getObjects: function() {
@@ -159,7 +167,10 @@ function setupLists() {
 }
 
 function setupObjects() {
-    return loadAndParse('/resources/objects.yaml');
+    return loadAndParse('/resources/objects.yaml')
+        .then(function(json) {
+            return _.isObject(json) ? json.objects : {};
+        });
 }
 
 function setupRaces() {

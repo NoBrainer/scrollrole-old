@@ -8,7 +8,7 @@ var ChoiceModel = Backbone.Model.extend({
     defaults: {
         allowDuplicate: false,  //Boolean
         description: [],        //List of Strings
-        from: null,             //ListSelectorModel TODO: implement ListSelectorModel
+        from: null,             //ListSelectorModel
         name: null,             //String
         options: [],            //List of Strings/Models
         pick: null,             //Number
@@ -19,10 +19,21 @@ var ChoiceModel = Backbone.Model.extend({
     initialize: function(attrs, options) {
         attrs = attrs || {};
 
+        this.parseAttributes(attrs);
+    },
+
+    parseAttributes: function(attrs) {
+        // this.set(attrs);
+        this.set(ChoiceModel.fields.ALLOW_DUPLICATE, attrs.allowDuplicate);
+        this.set(ChoiceModel.fields.DESCRIPTION, attrs.description);
+        this.set(ChoiceModel.fields.NAME, attrs.name);
+        this.set(ChoiceModel.fields.PICK, attrs.pick);
+        this.set(ChoiceModel.fields.TYPE, attrs.type);
+
         if (attrs.from) {
-            this.parseFromList(attrs.from);
+            this.buildOptionsFromList(attrs.from);
         } else if (attrs.use) {
-            this.parseUseObject(attrs.use);
+            this.buildModelUsingObject(attrs.use);
         } else {
             this.parseOptions(attrs.options);
         }
@@ -47,7 +58,7 @@ var ChoiceModel = Backbone.Model.extend({
         }
     },
 
-    parseFromList: function(from) {
+    buildOptionsFromList: function(from) {
         var listSelectorModel = new ListSelectorModel(from);
         this.set(ChoiceModel.fields.FROM, listSelectorModel);
 
@@ -57,8 +68,25 @@ var ChoiceModel = Backbone.Model.extend({
         }, this));
     },
 
-    parseUseObject: function(use) {
-        //TODO: handle 'use'
+    buildModelUsingObject: function(use) {
+        // Parse from the model as soon as the setup has finished
+        AppStateModel.getInitialSetupPromise().done(_.bind(function() {
+            // Get attributes from the rules config
+            if (_.isObject(AppStateModel.getRulesConfig()) && _.isObject(AppStateModel.getRulesConfig().getObjects())) {
+                var attrs = AppStateModel.getRulesConfig().getObject(use) || {};
+
+                // Attributes in the original object override attributes in the 'use' object
+                var originalAttrsWithoutUse = _.reduce(this.attributes, function(memo, value, key) {
+                    if (key != ChoiceModel.fields.USE && !_.isEmpty(value)) {
+                        memo[key] = value;
+                    }
+                    return memo;
+                }, {});
+                attrs = _.extend({}, attrs, originalAttrsWithoutUse);
+
+                this.parseAttributes(attrs);
+            }
+        }, this));
     },
 
     getAllowDuplicate: function() {

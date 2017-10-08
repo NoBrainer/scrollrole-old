@@ -2,16 +2,9 @@ var AppStateModel = require('../../../model/appStateModel');
 
 var ListSelectorModel = Backbone.Model.extend({
     defaults: {
-        levels: null,   //List of Numbers
-        name: null,     //String
-        types: null     //List of Strings
-    },
-
-    initialize: function(attrs, options) {
-        attrs = attrs || [];
-
-        this.set(ListSelectorModel.fields.LEVELS, attrs.levels || []);
-        this.set(ListSelectorModel.fields.TYPES, attrs.types || []);
+        levels: [], //List of Numbers
+        name: null, //String
+        types: []   //List of Strings
     },
 
     getLevels: function() {
@@ -31,7 +24,7 @@ var ListSelectorModel = Backbone.Model.extend({
 
         // Get list from the rules config
         if (_.isObject(AppStateModel.getRulesConfig()) && _.isObject(AppStateModel.getRulesConfig().getLists())) {
-            list = AppStateModel.getRulesConfig().getLists()[this.getName()];
+            list = AppStateModel.getRulesConfig().getList(this.getName());
         }
 
         // Filter by levels
