@@ -1,3 +1,7 @@
+var AbilityScoreAdjustmentCollection = require('../collection/abilityScoreAdjustmentCollection');
+var FeatureCollection = require('../collection/featureCollection');
+var ProficiencyCollection = require('../collection/proficiencyCollection');
+
 var ChoiceModel = Backbone.Model.extend({
     defaults: {
         allowDuplicate: false,  //Boolean
@@ -13,8 +17,24 @@ var ChoiceModel = Backbone.Model.extend({
     initialize: function(attrs, options) {
         attrs = attrs || {};
 
-        //TODO: parse options into models based on the type
-        //TODO: query the ListSelectorModel to populate options
+        //TODO: handle 'from' and 'use'
+
+        var CollectionClass = null;
+        if (attrs.type === ChoiceModel.types.ABILITY_SCORE_ADJUSTMENT) {
+            CollectionClass = AbilityScoreAdjustmentCollection;
+        } else if (attrs.type === ChoiceModel.types.FEATURE) {
+            CollectionClass = FeatureCollection;
+        } else if (attrs.type === ChoiceModel.types.PROFICIENCY) {
+            CollectionClass = ProficiencyCollection;
+        }
+
+        if (CollectionClass) {
+            var models = _.map(attrs.options, CollectionClass.parseModel) || [];
+            this.set(ChoiceModel.fields.OPTIONS, new CollectionClass(models));
+        } else {
+            this.set(ChoiceModel.fields.TYPE, ChoiceModel.types.EQUIPMENT);
+            this.set(ChoiceModel.fields.OPTIONS, attrs.options);
+        }
     },
 
     getAllowDuplicate: function() {
@@ -35,6 +55,15 @@ var ChoiceModel = Backbone.Model.extend({
 
     getOptions: function() {
         return this.get(ChoiceModel.fields.OPTIONS);
+    },
+
+    setOptions: function(optionModels) {
+        if (this.getType() === ChoiceModel.types.EQUIPMENT) {
+            this.set(ChoiceModel.fields.EQUIPMENT, optionModels);
+        } else {
+            this.getOptions().reset(optionModels || []);
+        }
+        return this;
     },
 
     getPick: function() {
@@ -58,6 +87,13 @@ var ChoiceModel = Backbone.Model.extend({
         PICK: 'pick',
         TYPE: 'type',
         USE: 'use'
+    },
+
+    types: {
+        ABILITY_SCORE_ADJUSTMENT: 'abilityScoreAdjustment',
+        EQUIPMENT: 'equipment',
+        FEATURE: 'feature',
+        PROFICIENCY: 'proficiency'
     }
 });
 
