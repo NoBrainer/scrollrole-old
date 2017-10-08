@@ -2,6 +2,7 @@ var AbilityScoreAdjustmentCollection = require('../../collection/rules/parts/abi
 var ChoiceCollection = require('../../collection/rules/parts/choiceCollection');
 var FeatureCollection = require('../../collection/rules/parts/featureCollection');
 var ProficiencyCollection = require('../../collection/rules/parts/proficiencyCollection');
+var SubRaceCollection = require('../../collection/rules/parts/subRaceCollection');
 
 var RaceModel = Backbone.Model.extend({
     defaults: {
@@ -15,7 +16,7 @@ var RaceModel = Backbone.Model.extend({
         proficiencies: null,            //ProficiencyCollection
         size: null,                     //String
         speed: null,                    //Number
-        subraces: null                  //SubRaceCollection TODO
+        subraces: null                  //SubRaceCollection
     },
 
     initialize: function(attrs, options) {
@@ -34,6 +35,9 @@ var RaceModel = Backbone.Model.extend({
 
         var proficiencyModels = _.map(attrs.proficiencies, ProficiencyCollection.parseModel) || [];
         this.set(RaceModel.fields.PROFICIENCIES, new ProficiencyCollection(proficiencyModels));
+
+        var subRaceModels = _.map(attrs.subraces, SubRaceCollection.parseModel) || [];
+        this.set(RaceModel.fields.SUBRACES, new SubRaceCollection(subRaceModels));
     },
 
     getAbilityScoreAdjustments: function() {
@@ -98,6 +102,11 @@ var RaceModel = Backbone.Model.extend({
 
     getSubraces: function() {
         return this.get(RaceModel.fields.SUBRACES);
+    },
+
+    setSubraces: function(subraces) {
+        this.getSubraces().reset(subraces || []);
+        return this;
     }
 },{
     fields: {

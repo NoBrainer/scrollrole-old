@@ -31,7 +31,6 @@ var AppStateModel = Backbone.Model.extend({
     },
 
     setRulesConfig: function(rulesConfigModel) {
-        console.log(rulesConfigModel);//TODO:REMOVE
         this.set(AppStateModel.fields.RULES_CONFIG, rulesConfigModel);
         this.initialSetupDeferred.resolve(rulesConfigModel);
         return this;

@@ -140,7 +140,7 @@ races:
 - `proficiencies`: List of armor, weapon, tool, language, and skill proficiencies. (See:
 [Proficiency Object](#proficiency-object))
 - `choices`: List of race choices to be made at character creation. (See: [Choice Object](#choice-object))
-- `subraces`: List of possible subraces. Each subrace is a Race object but with less options.
+- `subraces`: List of possible subraces. (See: [Subrace Object](#subrace-object))
 
 
 ## GENERAL OBJECTS ##
@@ -263,6 +263,18 @@ Each Spell Object represents a spell that can be cast.
 
 - `name`: (REQUIRED) String
 - `level`: (REQUIRED) Number from 0 to 9. Level 0 is a cantrip.
+
+### Subrace Object
+Each Subrace Object represents a subrace. It is basically a race with less options.
+
+- `name`: (REQUIRED) String for the race name.
+- `description`: List of paragraph Strings for the race description.
+- `abilityScoreAdjustments`: List of ability score adjustments. (See:
+[Ability Score Adjustment Object](#ability-score-adjustment-object))
+- `features`: List of race features. (See: [Feature Object](#feature-object))
+- `proficiencies`: List of armor, weapon, tool, language, and skill proficiencies. (See:
+[Proficiency Object](#proficiency-object))
+- `choices`: List of race choices to be made at character creation. (See: [Choice Object](#choice-object))
 
 ### Unlockable Object
 Each Unlockable Object represents something that can be unlocked once a condition is met.
