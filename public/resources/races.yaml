@@ -35,24 +35,12 @@ races:
             proficiency bonus.
         shortDescription: x2 proficiency bonus + ADV on History checks involving origin of stonework
     proficiencies:
-      - name: Dwarven Combat Training
-        description:
-          - You gain proficiency with the battleaxe, handaxe, light hammer, and warhammer.
-        type: weapon
-        items:
-          - battleaxe
-          - handaxe
-          - light hammer
-          - warhammer
-      - name: Languages
-        description:
-          - >
-            You can speak, read, and write Common and Dwarvish. Dwarvish is full of hard consonants and guttural sounds,
-            and those characteristics spill over into whatever other language a dwarf might speak.
-        type: language
-        items:
-          - Common
-          - Dwarvish
+      - { type: language, name: Common }
+      - { type: language, name: Dwarvish }
+      - { type: weapon,   name: battleaxe }
+      - { type: weapon,   name: handaxe }
+      - { type: weapon,   name: light hammer }
+      - { type: weapon,   name: warhammer }
     choices:
       - name: Tool Proficiency
         description:
@@ -115,22 +103,9 @@ races:
             way, you gain the same benefit that a human does after 8 hours of sleep.
         shortDescription: long rest only takes 4 hours
     proficiencies:
-      - name: Keen Senses
-        description:
-          - You have proficiency in the Perception skill.
-        type: skill
-        items:
-          - perception
-      - name: Languages
-        description:
-          - >
-            You can speak, read, and write Common and Elvish. Elvish is fluid, with subtle intonations and intricate
-            grammar. Elven literature is rich and varied, and their songs and poems are famous among other races. Many
-            bards learn their language so they can add Elvish ballads to their repetoires.
-        type: language
-        items:
-          - Common
-          - Elvish
+      - { type: language, name: Common }
+      - { type: language, name: Elvish }
+      - { type: skill,    name: perception }
     subraces:
       - name: High Elf
         description:
@@ -142,15 +117,10 @@ races:
         abilityScoreAdjustments:
           - { attribute: INT, modifier: +1, name: Intelligence }
         proficiencies:
-          - name: Elf Weapon Training
-            description:
-              - You have proficiency with the longsword, shortsword, shortbow, and longbow.
-            type: weapon
-            items:
-              - longbow
-              - longsword
-              - shortbow
-              - shortsword
+          - { type: weapon, name: longbow }
+          - { type: weapon, name: longsword }
+          - { type: weapon, name: shortbow }
+          - { type: weapon, name: shortsword }
         choices:
           - name: Cantrip
             description:
@@ -225,17 +195,8 @@ races:
           - You can move through the space of any creature that is of a size larger than yours.
         shortDescription: can move through space of a larger creature
     proficiencies:
-      - name: Languages
-        description:
-          - >
-            You can speak, read, and write Common and Halfling. The Halfling language isn't secret, but halflings are
-            loath to share it with others. They write very little, so they don't have a rich body of literature. Their
-            oral tradition, however, is very strong. Almost all halflings speak Common to converse with the people in
-            whose lands they dwell or through which they are traveling.
-        type: language
-        items:
-          - Common
-          - Halfling
+      - { type: language, name: Common }
+      - { type: language, name: Halfling }
     subraces:
       - name: Lightfoot
         description:
@@ -271,15 +232,7 @@ races:
         in that range, your size is Medium.
     speed: 30
     proficiencies:
-      - name: languages
-        description:
-          - >
-            You can speak, read, and write Common and one extra language of your choice. Humans typically learn the
-            languages of other peoples they deal with, including obscure dialects. They are fond of sprinkling their
-            speech with words borrowed from other tongues: Orc curses, Elvish musical expressions, Dwarvish military
-            phrases, and so on.
-        items:
-          - Common
+      - { type: language, name: Common }
     choices:
       - name: Extra Language
         description:
@@ -342,16 +295,8 @@ races:
         description:
           - You have resistance to the damage type associated with your draconic ancestry.
     proficiencies:
-      - name: Languages
-        description:
-          - >
-            You can speak, read, and write Common and Draconic. Draconic is thought to be one of the oldest languages
-            and is often used in the study of magic. The language sounds harsh to most other creatures and includes
-            numerous hard consonants and sibilants.
-        type: language
-        items:
-          - Common
-          - Draconic
+      - { type: language, name: Common }
+      - { type: language, name: Draconic }
     choices:
       - name: Draconic Ancestry
         description:
@@ -400,15 +345,8 @@ races:
           - You have advantage on all Intelligence, Wisdom, and Charisma saving throws against magic.
         shortDescription: ADV on INT, WIS, & CHA saving throws vs magic
     proficiencies:
-      - name: Languages
-        description:
-          - >
-            You can speak, read, and write Common and Gnomish. The Gnomish language, which uses the Dwarvish script, is
-            renowned for its technical treatises and its catalogs of knowledge about the natural world.
-        type: language
-        items:
-          - Common
-          - Gnomish
+      - { type: language, name: Common }
+      - { type: language, name: Gnomish }
     subraces:
       - name: Rock Gnome
         description:
@@ -448,12 +386,7 @@ races:
                     When opened, this music box plays a single song at a moderate volume. The box stops playing when it
                     reaches the song's end or when it is closed.
         proficiencies:
-          - name: Tinker
-            description:
-              - You have proficiency with artisan's tools (tinker's tools).
-            type: tool
-            items:
-              - tinker's tools
+          - { type: tool, name: tinker's tools }
 
   ## HALF-ELF
   - name: Half-Elf
@@ -483,13 +416,8 @@ races:
           - You have advantage on saving throws against being charmed, and magic can't put you to sleep.
         shortDescription: ADV vs being charmed, immune to sleep magic
     proficiencies:
-      - name: Languages
-        description:
-          - You can speak, read, and write Common, Elvish, and one extra language of your choice.
-        type: language
-        items:
-          - Common
-          - Elvish
+      - { type: language, name: Common }
+      - { type: language, name: Elvish }
     choices:
       - name: Ability Score Adjustment
         description:
@@ -513,7 +441,6 @@ races:
           - { type: language, name: Deep Speech }
           - { type: language, name: Draconic }
           - { type: language, name: Dwarvish }
-          - { type: language, name: Elvish }
           - { type: language, name: Giant }
           - { type: language, name: Gnomish }
           - { type: language, name: Goblin }
@@ -586,21 +513,9 @@ races:
             additional time and add it to the extra damage of the critical hit.
         shortDescription: add another weapon damage dice to critical hit damage
     proficiencies:
-      - name: Menacing
-        description:
-          - You gain proficiency in the Intimidation skill.
-        type: skill
-        items:
-          - Intimidation
-      - name: Languages
-        description:
-          - >
-            You can speak, read, and write Common and Orc. Orc is a harsh, grating language with hard consonants. It has
-            no script of its own but is written in the Dwarvish script.
-        type: language
-        items:
-          - Common
-          - Orc
+      - { type: language, name: Common }
+      - { type: language, name: Orc }
+      - { type: skill,    name: intimidation }
 
   ## TIEFLING
   - name: Tiefling
@@ -639,10 +554,5 @@ races:
           thaumaturgy cantrip; at 3rd level can cast hellish rebuke once per long rest; at 5th level can
           cast darkness once per long rest
     proficiencies:
-      - name: Languages
-        description:
-          - You can speak, read, and write Common and Infernal.
-        type: language
-        items:
-          - Common
-          - Infernal
+      - { type: language, name: Common }
+      - { type: language, name: Infernal }

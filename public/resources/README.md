@@ -91,7 +91,6 @@ classes:
     spellCasting:
     choices:
     unlockables:
-    featureDescriptions:
 ```
 
 - `name`: (REQUIRED) String for the class name.
@@ -108,8 +107,6 @@ classes:
 - `choices`: List of class choices to be made at character creation. (See: [Choice Object](#choice-object))
 - `unlockables`: (REQUIRED) List of unlockable for later levels in the class. (See:
 [Unlockable Object](#unlockable-object))
-- `featureDescriptions`: List of feature descriptions (another place to put feature descriptions; useful for unlockables
-and choices)
 
 
 ## RACES ##
@@ -218,8 +215,6 @@ Each Feature Object represents any of the various background, class, or race fea
 - `name`: (REQUIRED) String
 - `description`: List of paragraph Strings
 - `shortDescription`: String abbreviation version of `description`
-- `choices`: List of Choice Objects available with this feature (See: [Choice Object](#choice-object))
-- `unlockables`: List of Unlockable Objects available with this feature (See: [Unlockable Object](#unlockable-object))
 
 ### List Selector Object
 Each List Selector Object represents a List query. It will query the List with the provided `name`. If additional fields
@@ -234,10 +229,8 @@ Each Proficiency Object represents being proficient in something. It can be a sk
 saving throw.
 
 - `name`: (REQUIRED) String
-- `description`: List of paragraph Strings
 - `type`: (REQUIRED) String for the proficiency type (`armor` | `language` | `saving throw` | `skill` | `tool` |
 `weapon`)
-- `items`: List of Strings
 
 ### Spellcasting Object
 The Spellcasting Object defines how spellcasting works.
