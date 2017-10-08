@@ -147,7 +147,7 @@ classes:
       - condition: { level: 4 }
         choices:
           - name: Ability Score Improvement 1
-            use: objects.abilityScoreImprovement
+            use: abilityScoreImprovement
       - condition: { level: 5 }
         proficiencyBonus: +3
         features:
@@ -174,7 +174,7 @@ classes:
       - condition: { level: 8 }
         choices:
           - name: Ability Score Improvement 2
-            use: objects.abilityScoreImprovement
+            use: abilityScoreImprovement
       - condition: { level: 9 }
         proficiencyBonus: +4
         features:
@@ -203,7 +203,7 @@ classes:
           - { name: Rage, count: 5, damage: +3 }
         choices:
           - name: Ability Score Improvement 3
-            use: objects.abilityScoreImprovement
+            use: abilityScoreImprovement
       - condition: { level: 13 }
         proficiencyBonus: +5
         features:
@@ -220,7 +220,7 @@ classes:
           - { name: Rage, count: 5, damage: +4 }
         choices:
           - name: Ability Score Improvement 4
-            use: objects.abilityScoreImprovement
+            use: abilityScoreImprovement
       - condition: { level: 17 }
         proficiencyBonus: +6
         features:
@@ -236,7 +236,7 @@ classes:
       - condition: { level: 19 }
         choices:
           - name: Ability Score Improvement 5
-            use: objects.abilityScoreImprovement
+            use: abilityScoreImprovement
       - condition: { level: 20 }
         features:
           - { name: Rage, count: unlimited, damage: +4 }
@@ -388,13 +388,13 @@ classes:
             choice at higher levels, as shown in the Cantrips Known column of the Bard table.
         type: feature
         pick: 2
-        from: { name: lists.spells, levels: [0] }
+        from: { name: spells, levels: [0] }
       - name: Spells Known
         description:
           - You know four 1st-level spells of your choice from the bard spell list.
         type: feature
         pick: 4
-        from: { name: lists.spells, levels: [1] }
+        from: { name: spells, levels: [1] }
     unlockables:
       - condition: { level: 2 }
         spellCasting:
@@ -505,7 +505,7 @@ classes:
           - name: Spells from Additional Magic Secrets
             type: spell
             pick: 2
-            from: { name: lists.spells, levels: [0, 1, 2, 3] }
+            from: { name: spells, levels: [0, 1, 2, 3] }
       - condition: { level: 14, feature: College of Lore }
         feature:
           - name: Peerless Skill

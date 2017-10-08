@@ -202,7 +202,7 @@ Example:
 ```yaml
 choices:
   - name: Ability Score Modifier 1
-    use: objects.abilityScoreImprovement
+    use: abilityScoreImprovement
 ```
 
 ### Condition Object
