@@ -17,7 +17,7 @@ var RulesConfigModel = require('./model/rules/rulesConfigModel');
 (function() {
     // Render the app view to the page
     var appView = new AppView();
-    $('.page-wrapper').html(appView.render().$el);
+    $('body').prepend(appView.render().$el);
 
     // Start the router after the setup
     RulesConfigModel.setup().always(_.bind(Backbone.history.start, Backbone.history));

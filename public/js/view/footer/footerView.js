@@ -1,7 +1,7 @@
 var templates = require('./footerView.html');
 
 var FooterView = Backbone.View.extend({
-    className: 'footer-view',
+    className: 'page-container footer-view',
 
     render: function() {
         var html = templates.footerView();

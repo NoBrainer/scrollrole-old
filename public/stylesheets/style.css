@@ -1,10 +1,45 @@
 body {
+  background-color: #404949;
+  color: #efefef;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  margin: 0;
 }
 a {
   color: #00B7FF;
 }
-.page-wrapper {
+.page-container {
   display: flex;
   justify-content: center;
+}
+.page-container > .wrapper {
+  display: flex;
+  max-width: 1000px;
+  width: 100%;
+}
+.container {
+  display: flex;
+}
+.header-view {
+  background-color: #404949;
+  color: #efefef;
+}
+.header-view .tabs {
+  display: flex;
+}
+.header-view .tab {
+  color: #efefef !important;
+  padding: 20px 15px;
+  text-decoration: none;
+}
+.header-view .tab.active {
+  background-color: #000000;
+}
+.content-view {
+  background-color: #dddddd;
+  color: #404949;
+  min-height: 500px;
+}
+.footer-view {
+  background-color: #404949;
+  color: #efefef;
 }
