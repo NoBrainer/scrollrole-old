@@ -1,36 +1,39 @@
-var AppStateModel = require('../model/appStateModel');
+var ContentView = require('./content/contentView');
+var FooterView = require('./footer/footerView');
+var HeaderView = require('./header/headerView');
 var templates = require('./appView.html');
 
 var AppView = Backbone.View.extend({
     className: 'app-view',
 
-    initialize: function() {
-        this.listenTo(AppStateModel, 'change:' + AppStateModel.fields.MODE, function(model, mode) {
-            this.render();
-        });
-    },
-
     render: function() {
         this.cleanup();
 
-        var title = "";
-        switch(AppStateModel.getMode()) {
-            case AppStateModel.modes.BUILDER:
-                title = "Character Builder"; break;
-            case AppStateModel.modes.RULES:
-                title = "Game Rules"; break;
-            case AppStateModel.modes.HOME:
-                title = "Home";
-        }
-
-        var html = templates.appView({ title: title });
+        var html = templates.appView();
         this.$el.html(html);
+
+        this.headerView = new HeaderView();
+        this.$('#header').html(this.headerView.render().$el);
+
+        this.contentView = new ContentView();
+        this.$('#content').html(this.contentView.render().$el);
+
+        this.footerView = new FooterView();
+        this.$('#footer').html(this.footerView.render().$el);
 
         return this;
     },
 
     cleanup: function() {
-        this.$el.empty();
+        if (this.headerView) {
+            this.headerView.remove();
+        }
+        if (this.contentView) {
+            this.contentView.remove();
+        }
+        if (this.footerView) {
+            this.footerView.remove();
+        }
     },
 
     remove: function() {
