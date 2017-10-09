@@ -23,6 +23,17 @@ a {
   background-color: #404949;
   color: #efefef;
 }
+.header-view .logo {
+  flex-direction: column;
+  display: flex;
+  justify-content: center;
+  padding-right: 30px;
+  font-size: 30px;
+}
+.header-view .logo a {
+  color: #efefef;
+  text-decoration: none;
+}
 .header-view .tabs {
   display: flex;
 }
