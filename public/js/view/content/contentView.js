@@ -24,8 +24,10 @@ var ContentView = Backbone.View.extend({
                 this.childView = new BuilderView(); break;
             case AppStateModel.modes.RULES:
                 this.childView = new RulesView(); break;
+            case AppStateModel.modes.HOME:
+                this.childView = new HomeView(); break;
             default:
-                this.childView = new HomeView();
+                return this;
         }
         this.$('.content-wrapper').html(this.childView.render().$el);
 

@@ -26,7 +26,7 @@ var HeaderView = Backbone.View.extend({
                 this.$('.tab.builder').addClass('active'); break;
             case AppStateModel.modes.RULES:
                 this.$('.tab.rules').addClass('active'); break;
-            default:
+            case AppStateModel.modes.HOME:
                 this.$('.tab.home').addClass('active');
         }
     }
