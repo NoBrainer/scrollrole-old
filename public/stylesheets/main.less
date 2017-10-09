@@ -16,7 +16,13 @@ p, h1, h2, h3, h4, h5, h6, ul {
   margin: 0;
 
   & + & {
-    margin-top: 10px;
+    margin-top: @padding-normal;
+  }
+}
+
+li {
+  & + & {
+    margin-top: @padding-small;
   }
 }
 
@@ -27,7 +33,7 @@ p, h1, h2, h3, h4, h5, h6, ul {
   > .wrapper {
     display: flex;
     max-width: 1000px;
-    padding: 0 10px;
+    padding: 0 @padding-normal;
     width: 100%;
   }
 }

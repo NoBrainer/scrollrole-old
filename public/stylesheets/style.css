@@ -83,6 +83,9 @@ ul + h6,
 ul + ul {
   margin-top: 10px;
 }
+li + li {
+  margin-top: 5px;
+}
 .page-container {
   display: flex;
   justify-content: center;
@@ -115,7 +118,7 @@ ul + ul {
   flex-wrap: wrap;
 }
 .header-view .tab {
-  padding: 20px 15px;
+  padding: 20px;
 }
 .header-view .tab.active {
   background-color: #000000;
@@ -139,6 +142,14 @@ ul + ul {
   background-color: #404949;
   color: #efefef;
 }
+.footer-view ul {
+  list-style: none;
+  padding: 0;
+}
+.footer-view li {
+  margin-left: 10px;
+  margin-top: 5px;
+}
 .footer-view .footer-wrapper {
   display: flex;
   flex-wrap: wrap;
@@ -148,7 +159,4 @@ ul + ul {
 }
 .footer-view .header {
   font-size: 15px;
-}
-.footer-view .row {
-  padding: 3px 3px 3px 6px;
 }

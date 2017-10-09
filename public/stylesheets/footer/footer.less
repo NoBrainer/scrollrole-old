@@ -2,20 +2,26 @@
   background-color: @footer-background;
   color: @footer-text-color;
 
+  ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  li {
+    margin-left: @padding-normal;
+    margin-top: @padding-small;
+  }
+
   .footer-wrapper {
     display: flex;
     flex-wrap: wrap;
   }
 
   .section {
-    padding: 20px;
+    padding: @padding-large;
   }
 
   .header {
     font-size: 15px;
-  }
-
-  .row {
-    padding: 3px 3px 3px 6px;
   }
 }
