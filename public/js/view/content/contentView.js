@@ -1,4 +1,7 @@
 var AppStateModel = require('../../model/appStateModel');
+var BuilderView = require('../../view/content/builder/builderView');
+var HomeView = require('../../view/content/home/homeView');
+var RulesView = require('../../view/content/rules/rulesView');
 var templates = require('./contentView.html');
 
 var ContentView = Backbone.View.extend({
@@ -13,38 +16,18 @@ var ContentView = Backbone.View.extend({
     render: function() {
         this.cleanup();
 
+        var html = templates.contentView();
+        this.$el.html(html);
+
         switch(AppStateModel.getMode()) {
             case AppStateModel.modes.BUILDER:
-                this.renderBuilder(); break;
+                this.childView = new BuilderView(); break;
             case AppStateModel.modes.RULES:
-                this.renderRules(); break;
+                this.childView = new RulesView(); break;
             default:
-                this.renderHome();
+                this.childView = new HomeView();
         }
-
-        return this;
-    },
-
-    renderBuilder: function() {
-        //TODO: use a subview instead
-        var html = templates.contentView({ title: 'Character Builder Content' });
-        this.$el.html(html);
-
-        return this;
-    },
-
-    renderHome: function() {
-        //TODO: use a subview instead
-        var html = templates.contentView({ title: 'Home Content' });
-        this.$el.html(html);
-
-        return this;
-    },
-
-    renderRules: function() {
-        //TODO: use a subview instead
-        var html = templates.contentView({ title: 'Rules Content' });
-        this.$el.html(html);
+        this.$('.content-wrapper').html(this.childView.render().$el);
 
         return this;
     },
