@@ -2,17 +2,16 @@
   background-color: @header-background;
   color: @header-text-color;
 
+  a {
+    text-decoration: none;
+  }
+
   .logo {
     flex-direction: column;
     display: flex;
     justify-content: center;
     padding-right: 30px;
     font-size: 30px;
-
-    a {
-      color: @header-text-color;
-      text-decoration: none;
-    }
   }
 
   .tabs {
@@ -21,9 +20,7 @@
   }
 
   .tab {
-    color: @header-text-color !important;
     padding: 20px 15px;
-    text-decoration: none;
 
     &.active {
       background-color: @header-background-active;

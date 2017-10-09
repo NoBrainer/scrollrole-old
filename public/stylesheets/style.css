@@ -5,7 +5,7 @@ body {
   margin: 0;
 }
 a {
-  color: #00B7FF;
+  color: #efefef;
 }
 p,
 h1,
@@ -100,6 +100,9 @@ ul + ul {
   background-color: #404949;
   color: #efefef;
 }
+.header-view a {
+  text-decoration: none;
+}
 .header-view .logo {
   flex-direction: column;
   display: flex;
@@ -107,25 +110,18 @@ ul + ul {
   padding-right: 30px;
   font-size: 30px;
 }
-.header-view .logo a {
-  color: #efefef;
-  text-decoration: none;
-}
 .header-view .tabs {
   display: flex;
   flex-wrap: wrap;
 }
 .header-view .tab {
-  color: #efefef !important;
   padding: 20px 15px;
-  text-decoration: none;
 }
 .header-view .tab.active {
   background-color: #000000;
 }
 .content-view {
   background-color: #dddddd;
-  color: #404949;
   min-height: 500px;
 }
 .content-view .content-wrapper {
@@ -141,9 +137,6 @@ ul + ul {
 }
 .footer-view {
   background-color: #404949;
-  color: #efefef;
-}
-.footer-view a {
   color: #efefef;
 }
 .footer-view .footer-wrapper {
