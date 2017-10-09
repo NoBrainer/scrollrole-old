@@ -43,6 +43,19 @@ a {
   background-color: #404949;
   color: #efefef;
 }
+.footer-view a {
+  color: #efefef;
+}
+.footer-view .footer-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+}
 .footer-view .section {
-  padding: 20px 15px;
+  padding: 20px;
+}
+.footer-view .header {
+  font-size: 15px;
+}
+.footer-view .row {
+  padding: 3px 3px 3px 6px;
 }
