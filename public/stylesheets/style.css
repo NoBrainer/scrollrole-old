@@ -14,6 +14,7 @@ a {
 .page-container > .wrapper {
   display: flex;
   max-width: 1000px;
+  padding: 0 10px;
   width: 100%;
 }
 .container {
@@ -36,6 +37,7 @@ a {
 }
 .header-view .tabs {
   display: flex;
+  flex-wrap: wrap;
 }
 .header-view .tab {
   color: #efefef !important;
@@ -49,6 +51,10 @@ a {
   background-color: #dddddd;
   color: #404949;
   min-height: 500px;
+}
+.content-view .content-wrapper {
+  padding-bottom: 10px;
+  padding-top: 10px;
 }
 .footer-view {
   background-color: #404949;
