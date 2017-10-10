@@ -5,6 +5,7 @@
   "devDependencies": {
     "browserify": "14.4.0",
     "browserify-compile-templates": "0.3.0",
+    "forever": "0.15.3",
     "jade": "1.11.0",
     "less": "2.7.2",
     "parallelshell": "2.0.0",
