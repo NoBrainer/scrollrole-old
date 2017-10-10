@@ -37,10 +37,10 @@ SOURCE_FILE=index.js
 user=developer
 pidfile=/var/run/$NAME.pid
 logfile=/home/developer/logs/$NAME.log
-forever_dir=/usr/lib/node_modules/forever-agent
+forever_dir=/usr/lib/node_modules/forever
 
 node=node
-forever=$forever_dir
+forever=forever
 sed=sed
 
 #export PATH=$PATH:/usr/local/node/bin

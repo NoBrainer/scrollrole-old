@@ -10,7 +10,7 @@ configuration.
 - `npm install package.json`
 
 
-## Build Scripts
+### Build Scripts
 Run these commands from the root of the project.
 - Watch and build all js/less/html:
     - `npm run watch`
@@ -24,10 +24,13 @@ Run these commands from the root of the project.
 
 
 ## Server Setup
-- Install `git` and `npm`:
+
+### 1. Install software and codebase
+- Install `git`, `npm`, and `forever`:
     ```
     sudo yum install git
     sudo yum install npm
+    sudo npm install forever -g
     ```
 - Clone the repository (to current directory):
   - `git clone https://github.com/NoBrainer/ScrollRole.git`
@@ -36,18 +39,34 @@ Run these commands from the root of the project.
 - Install the node packages:
   - `npm install -g`
 
+### 2. Make webapp service run at start-up
+The script is the file named `scrollrole` in the `ScrollRole` directory.
+- Deploy the script:
+  ```
+  sudo cp scrollrole /etc/rc.d/init.d
+  sudo chmod 0755 /etc/rc.d/init.d/scrollrole
+  ```
+- Run the service:
+  `sudo service scrollrole start`
+- Set it to run at start-up:
+  `sudo /sbin/chkconfig --level 345 scrollrole on`
+
 
 ## Deploying
-- Use git to fetch and pull from `ScrollRole` directory
+- Use git to fetch and pull from `ScrollRole` directory:
   ```
   git fetch
   git pull -f
   ```
-- Run the deploy script
+- Run the deploy script:
   - `npm run deploy`
-- Copy front-end to `public_html` directory (make this an alias)
+- Copy front-end to `public_html` directory (make this an alias):
   - `sudo rsync -r /path/to/ScrollRole/dist/public/ /path/to/public_html`
-- TODO: back-end
+- Restart the `scrollrole` app:
+  ```
+  sudo service scrollrole stop
+  sudo service scrollrole start
+  ```
 
 
 ## Resources
