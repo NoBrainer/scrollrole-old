@@ -38,6 +38,10 @@ Run these commands from the root of the project.
   - `cd ScrollRole`
 - Install the node packages:
   - `npm install -g`
+- Setup the config:
+  - `npm run exportConfig`
+- Edit the `config.js` file one directory above `ScrollRole` to set ports, etc.
+
 
 ### 2. Make webapp service run at start-up
 The script is the file named `scrollrole` in the `ScrollRole` directory.
