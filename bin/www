@@ -4,6 +4,22 @@
  * Module dependencies.
  */
 
+var defaultConfig = {
+    env: 'dev',
+    port: 3000
+};
+
+var config;
+try {
+    config = require('../../config');
+} catch(e1) {
+    try {
+        config = require('../config');
+    } catch(e2) {
+        config = defaultConfig;
+    }
+}
+
 var app = require('../app');
 var debug = require('debug')('scroll-role:server');
 var http = require('http');
@@ -12,7 +28,7 @@ var http = require('http');
  * Get port from environment and store in Express.
  */
 
-var port = normalizePort(process.env.PORT || '3000');
+var port = normalizePort(config ? config.port : '3000');
 app.set('port', port);
 
 /**
