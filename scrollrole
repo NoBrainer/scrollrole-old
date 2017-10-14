@@ -47,6 +47,11 @@ sed=sed
 export NODE_PATH=$NODE_PATH:/usr/lib/node_modules
 
 start() {
+  #TODO: fix the apache port forwarding so this isn't necessary
+  echo "Making sure ports are forwarded..."
+  iptables -t nat -A PREROUTING -i eth0 -p tcp --dport 80 -j REDIRECT --to-port 3000
+  service iptables save
+
   echo "Starting $NAME node instance: "
 
   if [ "$foreverid" == "" ]; then
