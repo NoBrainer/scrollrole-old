@@ -20,6 +20,8 @@ Run these commands from the root of the project.
     - `npm run start`
 - Build and deploy to the `dist` directory:
     - `npm run deploy`
+- Install the config file for overriding:
+    - `npm run installConfig`
 - For other scripts, check the package.json file.
 
 

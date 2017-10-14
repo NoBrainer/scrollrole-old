@@ -1,17 +1,18 @@
 #!/usr/bin/env node
 
-/**
- * Module dependencies.
- */
+var app = require('../app');
+var debug = require('debug')('scroll-role:server');
+var http = require('http');
 
 var defaultConfig = {
     env: 'dev',
     port: 3000
 };
 
+// Get the config from file or fallback to the default
 var config;
 try {
-    config = require('../../config');
+    config = require('../../scrollRoleConfig');
 } catch(e1) {
     try {
         config = require('../config');
@@ -20,27 +21,18 @@ try {
     }
 }
 
-var app = require('../app');
-var debug = require('debug')('scroll-role:server');
-var http = require('http');
-
-/**
- * Get port from environment and store in Express.
- */
-
-var port = normalizePort(config ? config.port : '3000');
+// Set the port from the config
+var port = normalizePort(config.port);
 app.set('port', port);
 
-/**
- * Create HTTP server.
- */
+// Set the environment from the config
+var env = normalizeEnv(config.env);
+app.set('env', env);
 
+// Create HTTP server.
 var server = http.createServer(app);
 
-/**
- * Listen on provided port, on all network interfaces.
- */
-
+// Listen on provided port, on all network interfaces.
 server.listen(port);
 server.on('error', onError);
 server.on('listening', onListening);
@@ -48,7 +40,6 @@ server.on('listening', onListening);
 /**
  * Normalize a port into a number, string, or false.
  */
-
 function normalizePort(val) {
     var port = parseInt(val, 10);
 
@@ -66,9 +57,20 @@ function normalizePort(val) {
 }
 
 /**
+ * Normalize the environment variable into either 'dev' or 'prod'.
+ */
+function normalizeEnv(val) {
+    var env = val || 'dev';
+
+    if (env !== 'dev' && env !== 'prod') {
+        env = 'dev';
+    }
+    return env;
+}
+
+/**
  * Event listener for HTTP server "error" event.
  */
-
 function onError(error) {
     if (error.syscall !== 'listen') {
         throw error;
@@ -94,7 +96,6 @@ function onError(error) {
 /**
  * Event listener for HTTP server "listening" event.
  */
-
 function onListening() {
     var addr = server.address();
     var bind = typeof addr === 'string' ? 'pipe ' + addr : 'port ' + addr.port;
