@@ -1,11 +1,13 @@
-var AbilityScoreAdjustmentCollection = require('../../../collection/rules/parts/abilityScoreAdjustmentCollection');
+var ExportedClass = module.exports = Backbone.Model.extend();
+
+var AdjustmentCollection = require('../../../collection/rules/parts/adjustmentCollection');
 var ChoiceCollection = require('../../../collection/rules/parts/choiceCollection');
 var FeatureCollection = require('../../../collection/rules/parts/featureCollection');
 var ProficiencyCollection = require('../../../collection/rules/parts/proficiencyCollection');
 
 var SubRaceModel = Backbone.Model.extend({
     defaults: {
-        abilityScoreAdjustments: null,  //AbilityScoreAdjustmentCollection
+        abilityScoreAdjustments: null,  //AdjustmentCollection
         choices: null,                  //ChoiceCollection
         description: [],                //List of Strings
         features: null,                 //FeatureCollection
@@ -16,27 +18,27 @@ var SubRaceModel = Backbone.Model.extend({
     initialize: function(attrs, options) {
         attrs = attrs || {};
 
-        var abilityScoreAdjustmentModels = _.map(attrs.abilityScoreAdjustments,
-                AbilityScoreAdjustmentCollection.parseModel) || [];
-        this.set(SubRaceModel.fields.ABILITY_SCORE_ADJUSTMENTS,
-                new AbilityScoreAdjustmentCollection(abilityScoreAdjustmentModels));
+        var adjustmentModels = _.map(attrs.abilityScoreAdjustments,
+                AdjustmentCollection.model) || [];
+        this.set(SubRaceModel.fields.ADJUSTMENTS,
+                new AdjustmentCollection(adjustmentModels));
 
-        var choiceModels = _.map(attrs.choices, ChoiceCollection.parseModel) || [];
+        var choiceModels = _.map(attrs.choices, ChoiceCollection.model) || [];
         this.set(SubRaceModel.fields.CHOICES, new ChoiceCollection(choiceModels));
 
-        var featureModels = _.map(attrs.features, FeatureCollection.parseModel) || [];
+        var featureModels = _.map(attrs.features, FeatureCollection.model) || [];
         this.set(SubRaceModel.fields.FEATURES, new FeatureCollection(featureModels));
 
-        var proficiencyModels = _.map(attrs.proficiencies, ProficiencyCollection.parseModel) || [];
+        var proficiencyModels = _.map(attrs.proficiencies, ProficiencyCollection.model) || [];
         this.set(SubRaceModel.fields.PROFICIENCIES, new ProficiencyCollection(proficiencyModels));
     },
 
-    getAbilityScoreAdjustments: function() {
-        return this.get(SubRaceModel.fields.ABILITY_SCORE_ADJUSTMENTS);
+    getAdjustments: function() {
+        return this.get(SubRaceModel.fields.ADJUSTMENTS);
     },
 
-    setAbilityScoreAdjustments: function(abilityScoreAdjustmentModels) {
-        this.getAbilityScoreAdjustments().reset(abilityScoreAdjustmentModels || []);
+    setAdjustments: function(adjustmentModels) {
+        this.getAdjustments().reset(adjustmentModels || []);
         return this;
     },
 
@@ -76,7 +78,7 @@ var SubRaceModel = Backbone.Model.extend({
     }
 },{
     fields: {
-        ABILITY_SCORE_ADJUSTMENTS: 'abilityScoreAdjustments',
+        ADJUSTMENTS: 'abilityScoreAdjustments',
         CHOICES: 'choices',
         DESCRIPTION: 'description',
         FEATURES: 'features',
@@ -85,4 +87,5 @@ var SubRaceModel = Backbone.Model.extend({
     }
 });
 
-module.exports = SubRaceModel;
+_.extend(ExportedClass, SubRaceModel);
+ExportedClass.prototype = SubRaceModel.prototype;

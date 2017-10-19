@@ -4,7 +4,7 @@ var HomeView = Backbone.View.extend({
     className: 'home-view',
 
     render: function() {
-        var html = templates.homeView();
+        var html = templates.scaffold();
         this.$el.html(html);
 
         return this;

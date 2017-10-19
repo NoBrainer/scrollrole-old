@@ -1,3 +1,4 @@
+var ExportedClass = module.exports = {};
 var yaml = require('js-yaml');
 
 var YamlParser = {
@@ -24,4 +25,4 @@ var YamlParser = {
     }
 };
 
-module.exports = YamlParser;
+_.extend(ExportedClass, YamlParser);

@@ -1,11 +1,10 @@
+var ExportedClass = module.exports = Backbone.Collection.extend();
+
 var FeatureModel = require('../../../model/rules/parts/featureModel');
 
 var FeatureCollection = Backbone.Collection.extend({
     model: FeatureModel
-},{
-    parseModel: function(attrs, options) {
-        return new FeatureModel(attrs, options);
-    }
 });
 
-module.exports = FeatureCollection;
+_.extend(ExportedClass, FeatureCollection);
+ExportedClass.prototype = FeatureCollection.prototype;

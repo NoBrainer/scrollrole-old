@@ -1,0 +1,32 @@
+<script type="text/template" id="scaffold">
+    <div class="content-card">
+        <div>
+            <%= this.actionBar(obj) %>
+            <%= this.editRow({ label: 'Name', className: 'name' }) %>
+            <%= this.editRow({ label: 'Description', className: 'description' }) %>
+            <%= this.editRow({ label: 'Hit Dice', className: 'hit-dice' }) %>
+            <%= this.editRow({ label: 'Base Hit Points', className: 'base-hp' }) %>
+            <%= this.editRow({ label: 'Proficiencies', className: 'proficiencies' }) %>
+            <%= this.editRow({ label: 'Proficiency Bonus', className: 'proficiency-bonus' }) %>
+            <%= this.editRow({ label: 'Starting Equipment', className: 'equipment' }) %>
+            <%= this.editRow({ label: 'Features', className: 'features' }) %>
+            <%= this.editRow({ label: 'Spells', className: 'spells' }) %>
+            <%= this.editRow({ label: 'Spell Casting', className: 'spell-casting' }) %>
+            <%= this.editRow({ label: 'Choices', className: 'choices' }) %>
+            <%= this.editRow({ label: 'Unlockables', className: 'unlockables' }) %>
+        </div>
+    </div>
+</script>
+
+<script type="text/template" id="actionBar">
+    <div class="action-bar">
+        <a class="action preview" href="#rules/classes/preview?name=<%- obj.name %>">Go Back</a>
+    </div>
+</script>
+
+<script type="text/template" id="editRow">
+    <div class="edit-row">
+        <div class="edit-row-title"><%- obj.label %>:</div>
+        <div class="<%- obj.className %>">TODO</div>
+    </div>
+</script>

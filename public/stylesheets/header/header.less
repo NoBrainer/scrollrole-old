@@ -1,6 +1,7 @@
 .header-view {
-  background-color: @header-background;
-  color: @header-text-color;
+  background-color: @background-header;
+  color: @text-color-header;
+  font-size: @font-size-header;
 
   a {
     text-decoration: none;
@@ -20,10 +21,18 @@
   }
 
   .tab {
+    margin-right: @padding-small;
     padding: @padding-large;
 
     &.active {
-      background-color: @header-background-active;
+      background-color: @background-header-active;
+    }
+    &:hover {
+      background-color: @background-header-hover;
+    }
+
+    &:last-child {
+      margin-right: 0;
     }
   }
 }

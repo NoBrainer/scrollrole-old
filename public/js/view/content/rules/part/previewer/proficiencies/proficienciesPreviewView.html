@@ -1,0 +1,15 @@
+<script type="text/template" id="scaffold">
+    <div class="preview-row-title">Proficiencies:</div>
+    <div class="preview-row-value">
+        <ul class="preview-list proficiency-list"></ul>
+    </div>
+</script>
+
+<script type="text/template" id="list">
+    <li class="preview-list-item proficiency-list-item">
+        <div>
+            <span class="preview-label proficiency-label"><%- obj.name %>:</span>
+            <span class="preview-item-text proficiency-item-text"><%- obj.listString %></span>
+        </div>
+    </li>
+</script>

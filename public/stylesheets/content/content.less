@@ -1,5 +1,5 @@
 .content-view {
-  background-color: @content-background;
+  background-color: @background-content;
   min-height: 500px;
 
   .content-wrapper {
@@ -8,10 +8,19 @@
   }
 
   .content-card {
-    background-color: @card-background;
-    color: @card-text-color;
+    background-color: @background-card;
+    color: @text-color-card;
     display: flex;
     flex-direction: column;
-    padding: @padding-normal;
+    padding: @padding-large;
+
+    p {
+      font-size: @font-size-text;
+      line-height: @line-height-text;
+    }
+  }
+
+  .rules-wrapper {
+    margin-top: @padding-normal;
   }
 }

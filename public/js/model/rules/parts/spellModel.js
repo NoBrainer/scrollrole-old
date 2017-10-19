@@ -1,3 +1,5 @@
+var ExportedClass = module.exports = Backbone.Model.extend();
+
 var SpellModel = Backbone.Model.extend({
     defaults: {
         level: null,//Number
@@ -18,4 +20,5 @@ var SpellModel = Backbone.Model.extend({
     }
 });
 
-module.exports = SpellModel;
+_.extend(ExportedClass, SpellModel);
+ExportedClass.prototype = SpellModel.prototype;

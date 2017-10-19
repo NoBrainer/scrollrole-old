@@ -9,7 +9,7 @@ var AppView = Backbone.View.extend({
     render: function() {
         this.cleanup();
 
-        var html = templates.appView();
+        var html = templates.scaffold();
         this.$el.html(html);
 
         this.headerView = new HeaderView();

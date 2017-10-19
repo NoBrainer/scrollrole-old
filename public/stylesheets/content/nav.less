@@ -1,0 +1,25 @@
+.navbar-view {
+  background-color: @background-navbar;
+  color: @text-color-navbar;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+
+  .nav-item {
+    font-size: @font-size-navbar;
+    margin-right: @padding-small;
+    padding: @padding-normal;
+    text-decoration: none;
+
+    &.active {
+      background-color: @background-navbar-active;
+    }
+    &:hover {
+      background-color: @background-navbar-hover;
+    }
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}

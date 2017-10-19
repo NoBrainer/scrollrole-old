@@ -1,4 +1,6 @@
-var AbilityScoreAdjustmentCollection = require('../../../collection/rules/parts/abilityScoreAdjustmentCollection');
+var ExportedClass = module.exports = Backbone.Model.extend();
+
+var AdjustmentCollection = require('../../../collection/rules/parts/adjustmentCollection');
 var AppStateModel = require('../../../model/appStateModel');
 var FeatureCollection = require('../../../collection/rules/parts/featureCollection');
 var ListSelectorModel = require('../../../model/rules/parts/listSelectorModel');
@@ -10,7 +12,7 @@ var ChoiceModel = Backbone.Model.extend({
         description: [],        //List of Strings
         from: null,             //ListSelectorModel
         name: null,             //String
-        options: [],            //List of Strings/Models
+        options: [],            //List of Strings/Collection of Models
         pick: null,             //Number
         type: null,             //String
         use: null               //String
@@ -41,8 +43,8 @@ var ChoiceModel = Backbone.Model.extend({
 
     parseOptions: function(choiceOptions) {
         var CollectionClass = null;
-        if (this.isTypeAbilityScoreAdjustment()) {
-            CollectionClass = AbilityScoreAdjustmentCollection;
+        if (this.isTypeAdjustment()) {
+            CollectionClass = AdjustmentCollection;
         } else if (this.isTypeFeature()) {
             CollectionClass = FeatureCollection;
         } else if (this.isTypeProficiency()) {
@@ -50,7 +52,7 @@ var ChoiceModel = Backbone.Model.extend({
         }
 
         if (CollectionClass) {
-            var models = _.map(choiceOptions, CollectionClass.parseModel) || [];
+            var models = _.map(choiceOptions, CollectionClass.model) || [];
             this.set(ChoiceModel.fields.OPTIONS, new CollectionClass(models));
         } else {
             this.set(ChoiceModel.fields.TYPE, ChoiceModel.types.EQUIPMENT);
@@ -126,8 +128,8 @@ var ChoiceModel = Backbone.Model.extend({
         return this.get(ChoiceModel.fields.TYPE);
     },
 
-    isTypeAbilityScoreAdjustment: function() {
-        return this.getType() === ChoiceModel.types.ABILITY_SCORE_ADJUSTMENT;
+    isTypeAdjustment: function() {
+        return this.getType() === ChoiceModel.types.ADJUSTMENT;
     },
 
     isTypeFeature: function() {
@@ -154,11 +156,12 @@ var ChoiceModel = Backbone.Model.extend({
     },
 
     types: {
-        ABILITY_SCORE_ADJUSTMENT: 'abilityScoreAdjustment',
+        ADJUSTMENT: 'abilityScoreAdjustment',
         EQUIPMENT: 'equipment',
         FEATURE: 'feature',
         PROFICIENCY: 'proficiency'
     }
 });
 
-module.exports = ChoiceModel;
+_.extend(ExportedClass, ChoiceModel);
+ExportedClass.prototype = ChoiceModel.prototype;

@@ -1,3 +1,5 @@
+var ExportedClass = module.exports = Backbone.Model.extend();
+
 var FeatureModel = Backbone.Model.extend({
     defaults: {
         description: [],        //List of Strings
@@ -24,4 +26,5 @@ var FeatureModel = Backbone.Model.extend({
     }
 });
 
-module.exports = FeatureModel;
+_.extend(ExportedClass, FeatureModel);
+ExportedClass.prototype = FeatureModel.prototype;

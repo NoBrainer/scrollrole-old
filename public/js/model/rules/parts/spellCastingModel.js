@@ -1,3 +1,5 @@
+var ExportedClass = module.exports = Backbone.Model.extend();
+
 var SpellCollection = require('../../../collection/rules/parts/spellCollection');
 var SpellSlotsModel = require('../../../model/rules/parts/spellSlotsModel');
 
@@ -15,7 +17,7 @@ var SpellCastingModel = Backbone.Model.extend({
     initialize: function(attrs, options) {
         attrs = attrs || {};
 
-        var spellModels = _.map(attrs.spells, SpellCollection.parseModel) || [];
+        var spellModels = _.map(attrs.spells, SpellCollection.model) || [];
         this.set(SpellCastingModel.fields.SPELLS, new SpellCollection(spellModels));
 
         var spellSlotsModel = new SpellSlotsModel(attrs.spellSlots || {});
@@ -74,4 +76,5 @@ var SpellCastingModel = Backbone.Model.extend({
     }
 });
 
-module.exports = SpellCastingModel;
+_.extend(ExportedClass, SpellCastingModel);
+ExportedClass.prototype = SpellCastingModel.prototype;

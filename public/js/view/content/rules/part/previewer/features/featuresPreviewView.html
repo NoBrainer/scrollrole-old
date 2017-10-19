@@ -1,0 +1,19 @@
+<script type="text/template" id="scaffold">
+    <% if (!obj.hideTitle) { %>
+        <div class="preview-row-title">Features:</div>
+    <% } %>
+    <div class="preview-row-value">
+        <ul class="preview-list feature-list"></ul>
+    </div>
+</script>
+
+<script type="text/template" id="featureRow">
+    <li class="preview-list-item feature-list-item">
+        <div class="container column">
+            <h4 class="preview-title feature-title"><%- obj.name %></h4>
+            <% _.each(obj.description, function(paragraph) { %>
+                <p><%- paragraph %></p>
+            <% }); %>
+        </div>
+    </li>
+</script>

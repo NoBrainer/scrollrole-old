@@ -1,3 +1,5 @@
+var ExportedClass = module.exports = Backbone.Model.extend();
+
 var AppStateModel = require('../appStateModel');
 var BackgroundCollection = require('../../collection/rules/backgroundCollection');
 var ClassCollection = require('../../collection/rules/classCollection');
@@ -16,13 +18,13 @@ var RulesConfigModel = Backbone.Model.extend({
     initialize: function(attrs, options) {
         attrs = attrs || {};
 
-        var backgroundModels = _.map(attrs.backgrounds, BackgroundCollection.parseModel) || [];
+        var backgroundModels = _.map(attrs.backgrounds, BackgroundCollection.model) || [];
         this.set(RulesConfigModel.fields.BACKGROUNDS, new BackgroundCollection(backgroundModels));
 
-        var classModels = _.map(attrs.classes, ClassCollection.parseModel) || [];
+        var classModels = _.map(attrs.classes, ClassCollection.model) || [];
         this.set(RulesConfigModel.fields.CLASSES, new ClassCollection(classModels));
 
-        var raceModels = _.map(attrs.races, RaceCollection.parseModel) || [];
+        var raceModels = _.map(attrs.races, RaceCollection.model) || [];
         this.set(RulesConfigModel.fields.RACES, new RaceCollection(raceModels));
     },
 
@@ -134,7 +136,7 @@ function setupBackgrounds() {
         .then(function(json) {
             var arr = _.isObject(json) ? json.backgrounds : json;
             arr = _.isArray(arr) ? arr : [];
-            return _.map(arr, BackgroundCollection.parseModel);
+            return _.map(arr, BackgroundCollection.model);
         });
 }
 
@@ -143,7 +145,7 @@ function setupClasses() {
         .then(function(json) {
             var arr = _.isObject(json) ? json.classes : json;
             arr = _.isArray(arr) ? arr : [];
-            return _.map(arr, ClassCollection.parseModel);
+            return _.map(arr, ClassCollection.model);
         });
 }
 
@@ -178,7 +180,7 @@ function setupRaces() {
         .then(function(json) {
             var arr = _.isObject(json) ? json.races : json;
             arr = _.isArray(arr) ? arr : [];
-            return _.map(arr, RaceCollection.parseModel);
+            return _.map(arr, RaceCollection.model);
         });
 }
 
@@ -194,4 +196,5 @@ function loadAndParse(pathToFile) {
     return deferred.promise();
 }
 
-module.exports = RulesConfigModel;
+_.extend(ExportedClass, RulesConfigModel);
+ExportedClass.prototype = RulesConfigModel.prototype;

@@ -1,4 +1,6 @@
-var AbilityScoreAdjustmentCollection = require('../../../collection/rules/parts/abilityScoreAdjustmentCollection');
+var ExportedClass = module.exports = Backbone.Model.extend();
+
+var AdjustmentCollection = require('../../../collection/rules/parts/adjustmentCollection');
 var ChoiceCollection = require('../../../collection/rules/parts/choiceCollection');
 var ConditionModel = require('./conditionModel');
 var FeatureCollection = require('../../../collection/rules/parts/featureCollection');
@@ -6,7 +8,7 @@ var ProficiencyCollection = require('../../../collection/rules/parts/proficiency
 
 var UnlockableModel = UnlockableModel = Backbone.Model.extend({
     defaults: {
-        abilityScoreAdjustments: null,  //AbilityScoreAdjustmentCollection
+        abilityScoreAdjustments: null,  //AdjustmentCollection
         choices: null,                  //ChoiceCollection
         condition: null,                //ConditionModel
         features: null,                 //FeatureCollection
@@ -17,12 +19,12 @@ var UnlockableModel = UnlockableModel = Backbone.Model.extend({
     initialize: function(attrs, options) {
         attrs = attrs || {};
 
-        var abilityScoreAdjustmentModels = _.map(attrs.abilityScoreAdjustments,
-            AbilityScoreAdjustmentCollection.parseModel) || [];
-        this.set(UnlockableModel.fields.ABILITY_SCORE_ADJUSTMENTS,
-            new AbilityScoreAdjustmentCollection(abilityScoreAdjustmentModels));
+        var adjustmentModels = _.map(attrs.abilityScoreAdjustments,
+            AdjustmentCollection.model) || [];
+        this.set(UnlockableModel.fields.ADJUSTMENTS,
+            new AdjustmentCollection(adjustmentModels));
 
-        var choiceModels = _.map(attrs.choices, ChoiceCollection.parseModel) || [];
+        var choiceModels = _.map(attrs.choices, ChoiceCollection.model) || [];
         this.set(UnlockableModel.fields.CHOICES, new ChoiceCollection(choiceModels));
 
         if (!_.isEmpty(attrs.condition)) {
@@ -30,19 +32,19 @@ var UnlockableModel = UnlockableModel = Backbone.Model.extend({
             this.set(UnlockableModel.fields.CONDITION, conditionModel);
         }
 
-        var featureModels = _.map(attrs.features, FeatureCollection.parseModel) || [];
+        var featureModels = _.map(attrs.features, FeatureCollection.model) || [];
         this.set(UnlockableModel.fields.FEATURES, new FeatureCollection(featureModels));
 
-        var proficiencyModels = _.map(attrs.proficiencies, ProficiencyCollection.parseModel) || [];
+        var proficiencyModels = _.map(attrs.proficiencies, ProficiencyCollection.model) || [];
         this.set(UnlockableModel.fields.PROFICIENCIES, new ProficiencyCollection(proficiencyModels));
     },
 
-    getAbilityScoreAdjustments: function() {
-        return this.get(UnlockableModel.fields.ABILITY_SCORE_ADJUSTMENTS);
+    getAdjustments: function() {
+        return this.get(UnlockableModel.fields.ADJUSTMENTS);
     },
 
-    setAbilityScoreAdjustments: function(abilityScoreAdjustmentModels) {
-        this.getAbilityScoreAdjustments().reset(abilityScoreAdjustmentModels || []);
+    setAdjustments: function(adjustmentModels) {
+        this.getAdjustments().reset(adjustmentModels || []);
         return this;
     },
 
@@ -82,7 +84,7 @@ var UnlockableModel = UnlockableModel = Backbone.Model.extend({
     }
 },{
     fields: {
-        ABILITY_SCORE_ADJUSTMENTS: 'abilityScoreAdjustments',
+        ADJUSTMENTS: 'abilityScoreAdjustments',
         CHOICES: 'choices',
         CONDITION: 'condition',
         FEATURES: 'features',
@@ -91,4 +93,5 @@ var UnlockableModel = UnlockableModel = Backbone.Model.extend({
     }
 });
 
-module.exports = UnlockableModel;
+_.extend(ExportedClass, UnlockableModel);
+ExportedClass.prototype = UnlockableModel.prototype;

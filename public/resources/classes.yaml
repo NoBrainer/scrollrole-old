@@ -242,8 +242,8 @@ classes:
           - { name: Rage, count: unlimited, damage: +4 }
           - name: Primal Champion
             abilityScoreAdjustments:
-              - { attribute: STR, modifier: +4 }
-              - { attribute: CON, modifier: +4 }
+              - { ability: STR, modifier: +4 }
+              - { ability: CON, modifier: +4 }
             description:
               - >
                 At 20th level, you embody the power of the wilds. Your Strength and Constitution scores increase by 4.

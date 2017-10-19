@@ -1,3 +1,5 @@
+var ExportedClass = module.exports = Backbone.Model.extend();
+
 var AppStateModel = require('../../../model/appStateModel');
 
 var ListSelectorModel = Backbone.Model.extend({
@@ -52,4 +54,5 @@ var ListSelectorModel = Backbone.Model.extend({
     }
 });
 
-module.exports = ListSelectorModel;
+_.extend(ExportedClass, ListSelectorModel);
+ExportedClass.prototype = ListSelectorModel.prototype;

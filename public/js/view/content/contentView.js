@@ -7,7 +7,7 @@ var templates = require('./contentView.html');
 var ContentView = Backbone.View.extend({
     className: 'page-container content-view',
 
-    initialize: function() {
+    initialize: function(options) {
         this.listenTo(AppStateModel, 'change:' + AppStateModel.fields.MODE, function(model, mode) {
             this.render();
         });
@@ -16,7 +16,7 @@ var ContentView = Backbone.View.extend({
     render: function() {
         this.cleanup();
 
-        var html = templates.contentView();
+        var html = templates.scaffold();
         this.$el.html(html);
 
         switch(AppStateModel.getMode()) {

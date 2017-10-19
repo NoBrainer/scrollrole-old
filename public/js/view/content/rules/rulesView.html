@@ -1,7 +1,18 @@
-<script type="text/template" id="rulesView">
-    <div class="wrapper rules-wrapper">
-        <div class="content-card">
-            This is where you will customize character-building rules. [UNDER CONSTRUCTION]
-        </div>
+<script type="text/template" id="scaffold">
+    <div id="rules-nav" class="container"></div>
+    <div class="wrapper rules-wrapper"></div>
+</script>
+
+<script type="text/template" id="introductionContent">
+    <div class="content-card">
+        <p>You can modify or create your own backgrounds, classes, and races.</p>
+        <p>
+            Everything will save automatically as you make changes. After you're happy, you can export your rules and
+            share them with your friends!
+        </p>
     </div>
+</script>
+
+<script type="text/template" id="singleCardContent">
+    <div class="content-card"><%- obj.text %></div>
 </script>

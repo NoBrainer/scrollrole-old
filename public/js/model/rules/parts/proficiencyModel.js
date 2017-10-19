@@ -1,3 +1,5 @@
+var ExportedClass = module.exports = Backbone.Model.extend();
+
 var ProficiencyModel = Backbone.Model.extend({
     defaults: {
         name: null, //String
@@ -15,7 +17,17 @@ var ProficiencyModel = Backbone.Model.extend({
     fields: {
         NAME: 'name',
         TYPE: 'type'
+    },
+
+    types: {
+        ARMOR: 'armor',
+        LANGUAGE: 'language',
+        SAVING_THROW: 'saving throw',
+        SKILL: 'skill',
+        TOOL: 'tool',
+        WEAPON: 'weapon'
     }
 });
 
-module.exports = ProficiencyModel;
+_.extend(ExportedClass, ProficiencyModel);
+ExportedClass.prototype = ProficiencyModel.prototype;

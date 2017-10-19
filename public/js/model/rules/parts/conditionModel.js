@@ -1,3 +1,5 @@
+var ExportedClass = module.exports = Backbone.Model.extend();
+
 var ProficiencyModel = require('./proficiencyModel');
 
 var ConditionModel = Backbone.Model.extend({
@@ -35,4 +37,5 @@ var ConditionModel = Backbone.Model.extend({
     }
 });
 
-module.exports = ConditionModel;
+_.extend(ExportedClass, ConditionModel);
+ExportedClass.prototype = ConditionModel.prototype;

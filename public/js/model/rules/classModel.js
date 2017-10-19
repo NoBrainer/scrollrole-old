@@ -1,3 +1,5 @@
+var ExportedClass = module.exports = Backbone.Model.extend();
+
 var ChoiceCollection = require('../../collection/rules/parts/choiceCollection');
 var FeatureCollection = require('../../collection/rules/parts/featureCollection');
 var ProficiencyCollection = require('../../collection/rules/parts/proficiencyCollection');
@@ -24,22 +26,22 @@ var ClassModel = Backbone.Model.extend({
     initialize: function(attrs, options) {
         attrs = attrs || {};
 
-        var choiceModels = _.map(attrs.choices, ChoiceCollection.parseModel) || [];
+        var choiceModels = _.map(attrs.choices, ChoiceCollection.model) || [];
         this.set(ClassModel.fields.CHOICES, new ChoiceCollection(choiceModels));
 
-        var featureModels = _.map(attrs.features, FeatureCollection.parseModel) || [];
+        var featureModels = _.map(attrs.features, FeatureCollection.model) || [];
         this.set(ClassModel.fields.FEATURES, new FeatureCollection(featureModels));
 
-        var proficiencyModels = _.map(attrs.proficiencies, ProficiencyCollection.parseModel) || [];
+        var proficiencyModels = _.map(attrs.proficiencies, ProficiencyCollection.model) || [];
         this.set(ClassModel.fields.PROFICIENCIES, new ProficiencyCollection(proficiencyModels));
 
         var spellCastingModel = new SpellCastingModel(attrs.spellCasting);
         this.set(ClassModel.fields.SPELL_CASTING, spellCastingModel);
 
-        var spellModels = _.map(attrs.spells, SpellCollection.parseModel) || [];
+        var spellModels = _.map(attrs.spells, SpellCollection.model) || [];
         this.set(ClassModel.fields.SPELLS, new SpellCollection(spellModels));
 
-        var unlockableModels = _.map(attrs.unlockables, UnlockableCollection.parseModel) || [];
+        var unlockableModels = _.map(attrs.unlockables, UnlockableCollection.model) || [];
         this.set(ClassModel.fields.UNLOCKABLES, new UnlockableCollection(unlockableModels));
     },
 
@@ -132,4 +134,5 @@ var ClassModel = Backbone.Model.extend({
     }
 });
 
-module.exports = ClassModel;
+_.extend(ExportedClass, ClassModel);
+ExportedClass.prototype = ClassModel.prototype;

@@ -1,18 +1,48 @@
-@body-background: #404949;
-@body-text-color: #efefef;
+// Colors
+@background-body: #404949;
+@text-color-body: #efefef;
 
-@header-background: @body-background;
-@header-text-color: @body-text-color;
-@header-background-active: #000000;
+@background-button: @background-body;
+@background-button-active: #000000;
+@background-button-hover: @background-button-active;
+@border-color-button: @background-button-active;
 
-@footer-background: @body-background;
-@footer-text-color: @body-text-color;
+@background-header: @background-body;
+@text-color-header: @text-color-body;
+@background-header-active: @background-button-active;
+@background-header-hover: @background-button-active;
 
-@content-background: #dddddd;
+@background-footer: @background-body;
+@text-color-footer: @text-color-body;
 
-@card-background: @body-background;
-@card-text-color: @body-text-color;
+@background-content: #dddddd;
 
+@background-card: @background-body;
+@text-color-card: @text-color-body;
+
+@background-navbar: @background-body;
+@text-color-navbar: @text-color-body;
+@background-navbar-active: @background-button-active;
+@background-navbar-hover: @background-button-active;
+
+@divider-color-preview: @text-color-body;
+
+@divider-color-edit: @text-color-body;
+
+// Spacing
 @padding-large: 20px;
 @padding-normal: 10px;
 @padding-small: 5px;
+
+// Font size & line height
+@font-size-text: 14px;
+@line-height-text: 18px;
+
+@font-size-header: 16px;
+
+@font-size-footer: @font-size-text;
+@line-height-footer: @line-height-text;
+
+@font-size-footer-header: @font-size-header;
+
+@font-size-navbar: 20px;

@@ -1,3 +1,5 @@
+var ExportedClass = module.exports = Backbone.Model.extend();
+
 var SpellSlotsModel = Backbone.Model.extend({
     defaults: {
         description: [],//List of Strings
@@ -66,4 +68,5 @@ var SpellSlotsModel = Backbone.Model.extend({
     }
 });
 
-module.exports = SpellSlotsModel;
+_.extend(ExportedClass, SpellSlotsModel);
+ExportedClass.prototype = SpellSlotsModel.prototype;

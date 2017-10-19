@@ -1,3 +1,5 @@
+var ExportedClass = module.exports = Backbone.Model.extend();
+
 var CharacterModel = Backbone.Model.extend({
     defaults: {
         backgroundModel: null,
@@ -34,4 +36,5 @@ var CharacterModel = Backbone.Model.extend({
     }
 });
 
-module.exports = CharacterModel;
+_.extend(ExportedClass, CharacterModel);
+ExportedClass.prototype = CharacterModel.prototype;

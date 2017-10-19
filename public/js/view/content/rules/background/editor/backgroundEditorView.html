@@ -1,0 +1,26 @@
+<script type="text/template" id="scaffold">
+    <div class="content-card">
+        <div>
+            <%= this.actionBar(obj) %>
+            <%= this.editRow({ label: 'Name', className: 'name' }) %>
+            <%= this.editRow({ label: 'Description', className: 'description' }) %>
+            <%= this.editRow({ label: 'Proficiencies', className: 'proficiencies' }) %>
+            <%= this.editRow({ label: 'Starting Equipment', className: 'equipment' }) %>
+            <%= this.editRow({ label: 'Features', className: 'features' }) %>
+            <%= this.editRow({ label: 'Choices', className: 'choices' }) %>
+        </div>
+    </div>
+</script>
+
+<script type="text/template" id="actionBar">
+    <div class="action-bar">
+        <a class="action preview" href="#rules/backgrounds/preview?name=<%- obj.name %>">Go Back</a>
+    </div>
+</script>
+
+<script type="text/template" id="editRow">
+    <div class="edit-row">
+        <div class="edit-row-title"><%- obj.label %>:</div>
+        <div class="<%- obj.className %>">TODO</div>
+    </div>
+</script>

@@ -1,0 +1,102 @@
+.section-view {
+  .action-bar {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .action {
+    border: 1px solid @border-color-button;
+    cursor: pointer;
+    display: flex;
+    margin-right: @padding-large;
+    padding: @padding-normal;
+
+    &:hover {
+      background-color: @background-button-hover;
+    }
+  }
+}
+
+.chooser-view {
+  .chooser-header {
+    display: flex;
+    margin-bottom: @padding-normal;
+  }
+
+  .chooser-list {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .chooser-option {
+    border: 1px solid @border-color-button;
+    cursor: pointer;
+    display: flex;
+    padding: @padding-normal;
+
+    &:hover {
+      background-color: @background-button-hover;
+    }
+  }
+}
+
+.editor-view {
+  .edit-row-title {
+    font-size: 16px;
+  }
+
+  .edit-row {
+    display: flex;
+    flex-direction: column;
+    font-size: @font-size-text;
+    line-height: @line-height-text;
+    margin: @padding-normal;
+
+    + .edit-row {
+      border-top: 2px solid @divider-color-edit;
+      padding-top: @padding-normal;
+    }
+  }
+}
+
+.previewer-view {
+  .preview-row-title {
+    font-size: 16px;
+  }
+
+  .preview-row-value {
+    margin-top: @padding-small;
+    margin-left: @padding-large;
+  }
+
+  .preview-row {
+    display: flex;
+    flex-direction: column;
+    font-size: @font-size-text;
+    line-height: @line-height-text;
+    margin: @padding-normal;
+
+    + .preview-row {
+      border-top: 2px solid @divider-color-preview;
+      padding-top: @padding-normal;
+    }
+  }
+
+  .preview-list {
+    margin: @padding-small 0 0 0;
+    padding: 0;
+  }
+
+  .preview-list-item:not(.equipment-list-item) {
+    display: flex;
+
+    + .preview-list-item {
+      border-top: 1px solid @divider-color-preview;
+      margin-top: @padding-normal;
+      padding-top: @padding-normal;
+    }
+  }
+}

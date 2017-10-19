@@ -14,7 +14,8 @@ h3,
 h4,
 h5,
 h6,
-ul {
+ul,
+ol {
   margin: 0;
 }
 p + p,
@@ -25,6 +26,7 @@ p + h4,
 p + h5,
 p + h6,
 p + ul,
+p + ol,
 h1 + p,
 h1 + h1,
 h1 + h2,
@@ -33,6 +35,7 @@ h1 + h4,
 h1 + h5,
 h1 + h6,
 h1 + ul,
+h1 + ol,
 h2 + p,
 h2 + h1,
 h2 + h2,
@@ -41,6 +44,7 @@ h2 + h4,
 h2 + h5,
 h2 + h6,
 h2 + ul,
+h2 + ol,
 h3 + p,
 h3 + h1,
 h3 + h2,
@@ -49,6 +53,7 @@ h3 + h4,
 h3 + h5,
 h3 + h6,
 h3 + ul,
+h3 + ol,
 h4 + p,
 h4 + h1,
 h4 + h2,
@@ -57,6 +62,7 @@ h4 + h4,
 h4 + h5,
 h4 + h6,
 h4 + ul,
+h4 + ol,
 h5 + p,
 h5 + h1,
 h5 + h2,
@@ -65,6 +71,7 @@ h5 + h4,
 h5 + h5,
 h5 + h6,
 h5 + ul,
+h5 + ol,
 h6 + p,
 h6 + h1,
 h6 + h2,
@@ -73,6 +80,7 @@ h6 + h4,
 h6 + h5,
 h6 + h6,
 h6 + ul,
+h6 + ol,
 ul + p,
 ul + h1,
 ul + h2,
@@ -80,7 +88,17 @@ ul + h3,
 ul + h4,
 ul + h5,
 ul + h6,
-ul + ul {
+ul + ul,
+ul + ol,
+ol + p,
+ol + h1,
+ol + h2,
+ol + h3,
+ol + h4,
+ol + h5,
+ol + h6,
+ol + ul,
+ol + ol {
   margin-top: 10px;
 }
 li + li {
@@ -99,9 +117,16 @@ li + li {
 .container {
   display: flex;
 }
+.container.row {
+  flex-direction: row;
+}
+.container.column {
+  flex-direction: column;
+}
 .header-view {
   background-color: #404949;
   color: #efefef;
+  font-size: 16px;
 }
 .header-view a {
   text-decoration: none;
@@ -118,29 +143,23 @@ li + li {
   flex-wrap: wrap;
 }
 .header-view .tab {
+  margin-right: 5px;
   padding: 20px;
 }
 .header-view .tab.active {
   background-color: #000000;
 }
-.content-view {
-  background-color: #dddddd;
-  min-height: 500px;
+.header-view .tab:hover {
+  background-color: #000000;
 }
-.content-view .content-wrapper {
-  padding-bottom: 10px;
-  padding-top: 10px;
-}
-.content-view .content-card {
-  background-color: #404949;
-  color: #efefef;
-  display: flex;
-  flex-direction: column;
-  padding: 10px;
+.header-view .tab:last-child {
+  margin-right: 0;
 }
 .footer-view {
   background-color: #404949;
   color: #efefef;
+  font-size: 14px;
+  line-height: 18px;
 }
 .footer-view ul {
   list-style: none;
@@ -158,5 +177,127 @@ li + li {
   padding: 20px;
 }
 .footer-view .header {
-  font-size: 15px;
+  font-size: 16px;
+}
+.content-view {
+  background-color: #dddddd;
+  min-height: 500px;
+}
+.content-view .content-wrapper {
+  padding-bottom: 10px;
+  padding-top: 10px;
+}
+.content-view .content-card {
+  background-color: #404949;
+  color: #efefef;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+.content-view .content-card p {
+  font-size: 14px;
+  line-height: 18px;
+}
+.content-view .rules-wrapper {
+  margin-top: 10px;
+}
+.navbar-view {
+  background-color: #404949;
+  color: #efefef;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.navbar-view .nav-item {
+  font-size: 20px;
+  margin-right: 5px;
+  padding: 10px;
+  text-decoration: none;
+}
+.navbar-view .nav-item.active {
+  background-color: #000000;
+}
+.navbar-view .nav-item:hover {
+  background-color: #000000;
+}
+.navbar-view .nav-item:last-child {
+  margin-right: 0;
+}
+.section-view .action-bar {
+  display: flex;
+  flex-direction: row;
+}
+.section-view .action {
+  border: 1px solid #000000;
+  cursor: pointer;
+  display: flex;
+  margin-right: 20px;
+  padding: 10px;
+}
+.section-view .action:hover {
+  background-color: #000000;
+}
+.chooser-view .chooser-header {
+  display: flex;
+  margin-bottom: 10px;
+}
+.chooser-view .chooser-list {
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.chooser-view .chooser-option {
+  border: 1px solid #000000;
+  cursor: pointer;
+  display: flex;
+  padding: 10px;
+}
+.chooser-view .chooser-option:hover {
+  background-color: #000000;
+}
+.editor-view .edit-row-title {
+  font-size: 16px;
+}
+.editor-view .edit-row {
+  display: flex;
+  flex-direction: column;
+  font-size: 14px;
+  line-height: 18px;
+  margin: 10px;
+}
+.editor-view .edit-row + .edit-row {
+  border-top: 2px solid #efefef;
+  padding-top: 10px;
+}
+.previewer-view .preview-row-title {
+  font-size: 16px;
+}
+.previewer-view .preview-row-value {
+  margin-top: 5px;
+  margin-left: 20px;
+}
+.previewer-view .preview-row {
+  display: flex;
+  flex-direction: column;
+  font-size: 14px;
+  line-height: 18px;
+  margin: 10px;
+}
+.previewer-view .preview-row + .preview-row {
+  border-top: 2px solid #efefef;
+  padding-top: 10px;
+}
+.previewer-view .preview-list {
+  margin: 5px 0 0 0;
+  padding: 0;
+}
+.previewer-view .preview-list-item:not(.equipment-list-item) {
+  display: flex;
+}
+.previewer-view .preview-list-item:not(.equipment-list-item) + .preview-list-item {
+  border-top: 1px solid #efefef;
+  margin-top: 10px;
+  padding-top: 10px;
 }

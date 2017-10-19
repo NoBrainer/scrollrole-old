@@ -115,6 +115,7 @@ backgrounds:
         description:
           - Choose any one feature from another background.
         type: feature
+        pick: 1
       - name: Skills
         description:
           - Choose any two skills.
@@ -124,7 +125,7 @@ backgrounds:
           - { type: skill, name: Acrobatics }
           - { type: skill, name: Animal Handling }
           - { type: skill, name: Arcana }
-          - { type: skill, name: Atheletics }
+          - { type: skill, name: Athletics }
           - { type: skill, name: Deception }
           - { type: skill, name: History }
           - { type: skill, name: Insight }

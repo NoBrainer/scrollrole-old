@@ -4,14 +4,14 @@ var templates = require('./headerView.html');
 var HeaderView = Backbone.View.extend({
     className: 'page-container header-view',
 
-    initialize: function() {
+    initialize: function(options) {
         this.listenTo(AppStateModel, 'change:' + AppStateModel.fields.MODE, function(model, mode) {
             this.selectTab();
         });
     },
 
     render: function() {
-        var html = templates.headerView();
+        var html = templates.scaffold();
         this.$el.html(html);
 
         this.selectTab();

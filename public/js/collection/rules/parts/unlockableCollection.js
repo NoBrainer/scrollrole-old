@@ -1,11 +1,10 @@
+var ExportedClass = module.exports = Backbone.Collection.extend();
+
 var UnlockableModel = require('../../../model/rules/parts/unlockableModel');
 
 var UnlockableCollection = Backbone.Collection.extend({
     model: UnlockableModel
-},{
-    parseModel: function(attrs, options) {
-        return new UnlockableModel(attrs, options);
-    }
 });
 
-module.exports = UnlockableCollection;
+_.extend(ExportedClass, UnlockableCollection);
+ExportedClass.prototype = UnlockableCollection.prototype;

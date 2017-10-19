@@ -1,11 +1,10 @@
+var ExportedClass = module.exports = Backbone.Collection.extend();
+
 var SpellModel = require('../../../model/rules/parts/spellModel');
 
 var SpellCollection = Backbone.Collection.extend({
     model: SpellModel
-},{
-    parseModel: function(attrs, options) {
-        return new SpellModel(attrs, options);
-    }
 });
 
-module.exports = SpellCollection;
+_.extend(ExportedClass, SpellCollection);
+ExportedClass.prototype = SpellCollection.prototype;

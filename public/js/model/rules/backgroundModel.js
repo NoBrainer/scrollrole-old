@@ -1,3 +1,5 @@
+var ExportedClass = module.exports = Backbone.Model.extend();
+
 var ChoiceCollection = require('../../collection/rules/parts/choiceCollection');
 var FeatureCollection = require('../../collection/rules/parts/featureCollection');
 var ProficiencyCollection = require('../../collection/rules/parts/proficiencyCollection');
@@ -16,13 +18,13 @@ var BackgroundModel = Backbone.Model.extend({
     initialize: function(attrs, options) {
         attrs = attrs || {};
 
-        var choiceModels = _.map(attrs.choices, ChoiceCollection.parseModel) || [];
+        var choiceModels = _.map(attrs.choices, ChoiceCollection.model) || [];
         this.set(BackgroundModel.fields.CHOICES, new ChoiceCollection(choiceModels));
 
-        var featureModels = _.map(attrs.features, FeatureCollection.parseModel) || [];
+        var featureModels = _.map(attrs.features, FeatureCollection.model) || [];
         this.set(BackgroundModel.fields.FEATURES, new FeatureCollection(featureModels));
 
-        var proficiencyModels = _.map(attrs.proficiencies, ProficiencyCollection.parseModel) || [];
+        var proficiencyModels = _.map(attrs.proficiencies, ProficiencyCollection.model) || [];
         this.set(BackgroundModel.fields.PROFICIENCIES, new ProficiencyCollection(proficiencyModels));
     },
 
@@ -80,4 +82,5 @@ var BackgroundModel = Backbone.Model.extend({
     }
 });
 
-module.exports = BackgroundModel;
+_.extend(ExportedClass, BackgroundModel);
+ExportedClass.prototype = BackgroundModel.prototype;
