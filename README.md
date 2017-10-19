@@ -66,8 +66,6 @@ The script is the file named `scrollrole` in the `ScrollRole` directory.
   ```
 - Run the deploy script:
   - `npm run deploy`
-- Copy front-end to `public_html` directory (make this an alias):
-  - `sudo rsync -r /path/to/ScrollRole/dist/public/ /path/to/public_html`
 - Restart the `scrollrole` app:
   ```
   sudo service scrollrole stop
