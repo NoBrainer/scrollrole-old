@@ -59,6 +59,10 @@ The script is the file named `scrollrole` in the `ScrollRole` directory.
 
 
 ## Deploying
+- Stop the `scrollrole` app:
+  ```
+  sudo service scrollrole stop
+  ```
 - Use git to fetch and pull from `ScrollRole` directory:
   ```
   git fetch
@@ -66,9 +70,8 @@ The script is the file named `scrollrole` in the `ScrollRole` directory.
   ```
 - Run the deploy script:
   - `npm run deploy`
-- Restart the `scrollrole` app:
+- Start the `scrollrole` app:
   ```
-  sudo service scrollrole stop
   sudo service scrollrole start
   ```
 
