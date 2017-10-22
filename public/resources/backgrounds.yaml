@@ -116,6 +116,7 @@ backgrounds:
           - Choose any one feature from another background.
         type: feature
         pick: 1
+        from: { name: backgroundFeatures }
       - name: Skills
         description:
           - Choose any two skills.

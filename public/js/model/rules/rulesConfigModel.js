@@ -18,13 +18,13 @@ var RulesConfigModel = Backbone.Model.extend({
     initialize: function(attrs, options) {
         attrs = attrs || {};
 
-        var backgroundModels = _.map(attrs.backgrounds, BackgroundCollection.model) || [];
+        var backgroundModels = _.map(attrs.backgrounds, BackgroundCollection.create) || [];
         this.set(RulesConfigModel.fields.BACKGROUNDS, new BackgroundCollection(backgroundModels));
 
-        var classModels = _.map(attrs.classes, ClassCollection.model) || [];
+        var classModels = _.map(attrs.classes, ClassCollection.create) || [];
         this.set(RulesConfigModel.fields.CLASSES, new ClassCollection(classModels));
 
-        var raceModels = _.map(attrs.races, RaceCollection.model) || [];
+        var raceModels = _.map(attrs.races, RaceCollection.create) || [];
         this.set(RulesConfigModel.fields.RACES, new RaceCollection(raceModels));
     },
 
@@ -136,7 +136,7 @@ function setupBackgrounds() {
         .then(function(json) {
             var arr = _.isObject(json) ? json.backgrounds : json;
             arr = _.isArray(arr) ? arr : [];
-            return _.map(arr, BackgroundCollection.model);
+            return _.map(arr, BackgroundCollection.create);
         });
 }
 
@@ -145,7 +145,7 @@ function setupClasses() {
         .then(function(json) {
             var arr = _.isObject(json) ? json.classes : json;
             arr = _.isArray(arr) ? arr : [];
-            return _.map(arr, ClassCollection.model);
+            return _.map(arr, ClassCollection.create);
         });
 }
 
@@ -158,6 +158,7 @@ function setupLists() {
             //Note: Not parsed into Models to be lightweight and simple
             var lists = json.lists;
             lists = {
+                backgroundFeatures: _.isArray(lists.backgroundFeatures) ? lists.backgroundFeatures : [],
                 equipment: _.isArray(lists.equipment) ? lists.equipment : [],
                 feats: _.isArray(lists.feats) ? lists.feats : [],
                 proficiencies: _.isArray(lists.proficiencies) ? lists.proficiencies : [],
@@ -180,7 +181,7 @@ function setupRaces() {
         .then(function(json) {
             var arr = _.isObject(json) ? json.races : json;
             arr = _.isArray(arr) ? arr : [];
-            return _.map(arr, RaceCollection.model);
+            return _.map(arr, RaceCollection.create);
         });
 }
 

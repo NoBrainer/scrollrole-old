@@ -17,7 +17,7 @@ var SpellCastingModel = Backbone.Model.extend({
     initialize: function(attrs, options) {
         attrs = attrs || {};
 
-        var spellModels = _.map(attrs.spells, SpellCollection.model) || [];
+        var spellModels = _.map(attrs.spells, SpellCollection.create) || [];
         this.set(SpellCastingModel.fields.SPELLS, new SpellCollection(spellModels));
 
         var spellSlotsModel = new SpellSlotsModel(attrs.spellSlots || {});

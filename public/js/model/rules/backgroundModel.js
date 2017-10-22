@@ -18,13 +18,13 @@ var BackgroundModel = Backbone.Model.extend({
     initialize: function(attrs, options) {
         attrs = attrs || {};
 
-        var choiceModels = _.map(attrs.choices, ChoiceCollection.model) || [];
+        var choiceModels = _.map(attrs.choices, ChoiceCollection.create) || [];
         this.set(BackgroundModel.fields.CHOICES, new ChoiceCollection(choiceModels));
 
-        var featureModels = _.map(attrs.features, FeatureCollection.model) || [];
+        var featureModels = _.map(attrs.features, FeatureCollection.create) || [];
         this.set(BackgroundModel.fields.FEATURES, new FeatureCollection(featureModels));
 
-        var proficiencyModels = _.map(attrs.proficiencies, ProficiencyCollection.model) || [];
+        var proficiencyModels = _.map(attrs.proficiencies, ProficiencyCollection.create) || [];
         this.set(BackgroundModel.fields.PROFICIENCIES, new ProficiencyCollection(proficiencyModels));
     },
 

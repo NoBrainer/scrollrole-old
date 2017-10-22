@@ -26,22 +26,22 @@ var ClassModel = Backbone.Model.extend({
     initialize: function(attrs, options) {
         attrs = attrs || {};
 
-        var choiceModels = _.map(attrs.choices, ChoiceCollection.model) || [];
+        var choiceModels = _.map(attrs.choices, ChoiceCollection.create) || [];
         this.set(ClassModel.fields.CHOICES, new ChoiceCollection(choiceModels));
 
-        var featureModels = _.map(attrs.features, FeatureCollection.model) || [];
+        var featureModels = _.map(attrs.features, FeatureCollection.create) || [];
         this.set(ClassModel.fields.FEATURES, new FeatureCollection(featureModels));
 
-        var proficiencyModels = _.map(attrs.proficiencies, ProficiencyCollection.model) || [];
+        var proficiencyModels = _.map(attrs.proficiencies, ProficiencyCollection.create) || [];
         this.set(ClassModel.fields.PROFICIENCIES, new ProficiencyCollection(proficiencyModels));
 
         var spellCastingModel = new SpellCastingModel(attrs.spellCasting);
         this.set(ClassModel.fields.SPELL_CASTING, spellCastingModel);
 
-        var spellModels = _.map(attrs.spells, SpellCollection.model) || [];
+        var spellModels = _.map(attrs.spells, SpellCollection.create) || [];
         this.set(ClassModel.fields.SPELLS, new SpellCollection(spellModels));
 
-        var unlockableModels = _.map(attrs.unlockables, UnlockableCollection.model) || [];
+        var unlockableModels = _.map(attrs.unlockables, UnlockableCollection.create) || [];
         this.set(ClassModel.fields.UNLOCKABLES, new UnlockableCollection(unlockableModels));
     },
 

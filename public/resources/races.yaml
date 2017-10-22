@@ -277,23 +277,6 @@ races:
       Dragonborn are taller and heavier than humans, standing well over 6 feet tall and averaging almost 250 pounds.
       Your size is Medium.
     speed: 30
-    features:
-      - name: Breath Weapon
-        description:
-          - >
-            You can use your action to exhave destructive energy. Your draconic ancestry determines the size, shape, and
-            damage type of the exhalation.
-          - >
-            When you use your breath weapon, each creature in the area of exhalation must
-            make a saving throw, the type of which is determined by your draconic ancestry. the DC for this saving throw
-            equals 8 + your Constitution modifier + your proficiency bonus. A creature takes 2d6 damage on a failed
-            save, and half as much damage on a successful one. The damage increases to 3d6 at 6th level, 4d6 at 11th
-            level, and 5d6 at 16th level.
-          - >
-            After you use your breath weapon, you can't use it again until you complete a short or long rest.
-      - name: Damage Resistance
-        description:
-          - You have resistance to the damage type associated with your draconic ancestry.
     proficiencies:
       - { type: language, name: Common }
       - { type: language, name: Draconic }
@@ -306,16 +289,86 @@ races:
         type: feature
         pick: 1
         options:
-          - { color: black,   damageType: acid,       breathWeapon: 5 by 30 ft line (DEX save) }
-          - { color: blue,    damageType: lightning,  breathWeapon: 5 by 30 ft line (DEX save) }
-          - { color: brass,   damageType: fire,       breathWeapon: 5 by 30 ft line (DEX save) }
-          - { color: bronze,  damageType: lightning,  breathWeapon: 5 by 30 ft line (DEX save) }
-          - { color: copper,  damageType: acid,       breathWeapon: 5 by 30 ft line (DEX save) }
-          - { color: gold,    damageType: fire,       breathWeapon: 15 ft cone (DEX save) }
-          - { color: green,   damageType: poison,     breathWeapon: 15 ft cone (CON save) }
-          - { color: red,     damageType: fire,       breathWeapon: 15 ft cone (DEX save) }
-          - { color: silver,  damageType: cold,       breathWeapon: 15 ft cone (CON save) }
-          - { color: white,   damageType: cold,       breathWeapon: 15 ft cone (CON save) }
+          - name: Draconic Ancestry - Black
+            description:
+              - >
+                Breath Weapon. You can use your action to exhale destructive energy. It deals 2d6 acid damage in a
+                5 by 30 ft line, or half as much on a DEX save. The DC for this saving throw equals 8 + your CON
+                modifier + your proficiency bonus. Damage increases by 1d6 at 6th, 11th, and 16th level.
+                You cannot use your breath weapon again until you finish a short or long rest.
+              - Damage Resistance. You have resistance to acid damage.
+          - name: Draconic Ancestry - Blue
+            description:
+              - >
+                Breath Weapon. You can use your action to exhale destructive energy. It deals 2d6 lightning damage in a
+                5 by 30 ft line, or half as much on a DEX save. The DC for this saving throw equals 8 + your CON
+                modifier + your proficiency bonus. Damage increases by 1d6 at 6th, 11th, and 16th level.
+                You cannot use your breath weapon again until you finish a short or long rest.
+              - Damage Resistance. You have resistance to lightning damage.
+          - name: Draconic Ancestry - Brass
+            description:
+              - >
+                Breath Weapon. You can use your action to exhale destructive energy. It deals 2d6 fire damage in a
+                5 by 30 ft line, or half as much on a DEX save. The DC for this saving throw equals 8 + your CON
+                modifier + your proficiency bonus. Damage increases by 1d6 at 6th, 11th, and 16th level.
+                You cannot use your breath weapon again until you finish a short or long rest.
+              - Damage Resistance. You have resistance to fire damage.
+          - name: Draconic Ancestry - Bronze
+            description:
+              - >
+                Breath Weapon. You can use your action to exhale destructive energy. It deals 2d6 lightning damage in a
+                5 by 30 ft line, or half as much on a DEX save. The DC for this saving throw equals 8 + your CON
+                modifier + your proficiency bonus. Damage increases by 1d6 at 6th, 11th, and 16th level.
+                You cannot use your breath weapon again until you finish a short or long rest.
+              - Damage Resistance. You have resistance to lightning damage.
+          - name: Draconic Ancestry - Copper
+            description:
+              - >
+                Breath Weapon. You can use your action to exhale destructive energy. It deals 2d6 acid damage in a
+                5 by 30 ft line, or half as much on a DEX save. The DC for this saving throw equals 8 + your CON
+                modifier + your proficiency bonus. Damage increases by 1d6 at 6th, 11th, and 16th level.
+                You cannot use your breath weapon again until you finish a short or long rest.
+              - Damage Resistance. You have resistance to acid damage.
+          - name: Draconic Ancestry - Gold
+            description:
+              - >
+                Breath Weapon. You can use your action to exhale destructive energy. It deals 2d6 fire damage in a
+                15 ft cone, or half as much on a DEX save. The DC for this saving throw equals 8 + your CON
+                modifier + your proficiency bonus. Damage increases by 1d6 at 6th, 11th, and 16th level.
+                You cannot use your breath weapon again until you finish a short or long rest.
+              - Damage Resistance. You have resistance to fire damage.
+          - name: Draconic Ancestry - Green
+            description:
+              - >
+                Breath Weapon. You can use your action to exhale destructive energy. It deals 2d6 poison damage in a
+                15 ft cone, or half as much on a CON save. The DC for this saving throw equals 8 + your CON
+                modifier + your proficiency bonus. Damage increases by 1d6 at 6th, 11th, and 16th level.
+                You cannot use your breath weapon again until you finish a short or long rest.
+              - Damage Resistance. You have resistance to poison damage.
+          - name: Draconic Ancestry - Red
+            description:
+              - >
+                Breath Weapon. You can use your action to exhale destructive energy. It deals 2d6 fire damage in a
+                15 ft cone, or half as much on a DEX save. The DC for this saving throw equals 8 + your CON
+                modifier + your proficiency bonus. Damage increases by 1d6 at 6th, 11th, and 16th level.
+                You cannot use your breath weapon again until you finish a short or long rest.
+              - Damage Resistance. You have resistance to fire damage.
+          - name: Draconic Ancestry - Silver
+            description:
+              - >
+                Breath Weapon. You can use your action to exhale destructive energy. It deals 2d6 cold damage in a
+                15 ft cone, or half as much on a CON save. The DC for this saving throw equals 8 + your CON
+                modifier + your proficiency bonus. Damage increases by 1d6 at 6th, 11th, and 16th level.
+                You cannot use your breath weapon again until you finish a short or long rest.
+              - Damage Resistance. You have resistance to cold damage.
+          - name: Draconic Ancestry - White
+            description:
+              - >
+                Breath Weapon. You can use your action to exhale destructive energy. It deals 2d6 cold damage in a
+                15 ft cone, or half as much on a CON save. The DC for this saving throw equals 8 + your CON
+                modifier + your proficiency bonus. Damage increases by 1d6 at 6th, 11th, and 16th level.
+                You cannot use your breath weapon again until you finish a short or long rest.
+              - Damage Resistance. You have resistance to cold damage.
 
   ## GNOME
   - name: Gnome

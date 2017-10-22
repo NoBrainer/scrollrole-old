@@ -20,11 +20,11 @@ var UnlockableModel = UnlockableModel = Backbone.Model.extend({
         attrs = attrs || {};
 
         var adjustmentModels = _.map(attrs.abilityScoreAdjustments,
-            AdjustmentCollection.model) || [];
+            AdjustmentCollection.create) || [];
         this.set(UnlockableModel.fields.ADJUSTMENTS,
             new AdjustmentCollection(adjustmentModels));
 
-        var choiceModels = _.map(attrs.choices, ChoiceCollection.model) || [];
+        var choiceModels = _.map(attrs.choices, ChoiceCollection.create) || [];
         this.set(UnlockableModel.fields.CHOICES, new ChoiceCollection(choiceModels));
 
         if (!_.isEmpty(attrs.condition)) {
@@ -32,10 +32,10 @@ var UnlockableModel = UnlockableModel = Backbone.Model.extend({
             this.set(UnlockableModel.fields.CONDITION, conditionModel);
         }
 
-        var featureModels = _.map(attrs.features, FeatureCollection.model) || [];
+        var featureModels = _.map(attrs.features, FeatureCollection.create) || [];
         this.set(UnlockableModel.fields.FEATURES, new FeatureCollection(featureModels));
 
-        var proficiencyModels = _.map(attrs.proficiencies, ProficiencyCollection.model) || [];
+        var proficiencyModels = _.map(attrs.proficiencies, ProficiencyCollection.create) || [];
         this.set(UnlockableModel.fields.PROFICIENCIES, new ProficiencyCollection(proficiencyModels));
     },
 
