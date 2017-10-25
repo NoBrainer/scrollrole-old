@@ -1,0 +1,28 @@
+<script type="text/template" id="scaffold">
+    <% if (!obj.hideTitle) { %>
+        <div class="preview-row-title">Spell Slots:</div>
+    <% } %>
+    <div class="preview-row-value">
+        <ul class="preview-list spell-slots-list"></ul>
+    </div>
+</script>
+
+<script type="text/template" id="descriptionRow">
+    <li class="preview-list-item spell-slots-list-item">
+        <div class="container column">
+            <h4 class="preview-title spell-slots-title">Description</h4>
+            <% _.each(obj.description, function(paragraph) { %>
+                <p><%- paragraph %></p>
+            <% }); %>
+        </div>
+    </li>
+</script>
+
+<script type="text/template" id="slotRow">
+    <li class="preview-list-item spell-slots-list-item">
+        <div class="container column">
+            <h4 class="preview-title spell-slots-title"><%- obj.title %></h4>
+            <p><%- obj.text %></p>
+        </div>
+    </li>
+</script>

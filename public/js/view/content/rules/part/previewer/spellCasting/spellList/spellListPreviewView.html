@@ -1,0 +1,17 @@
+<script type="text/template" id="scaffold">
+    <% if (!obj.hideTitle) { %>
+        <div class="preview-row-title">Spell List:</div>
+    <% } %>
+    <div class="preview-row-value">
+        <ul class="preview-list spell-list"></ul>
+    </div>
+</script>
+
+<script type="text/template" id="spellRow">
+    <li class="preview-list-item spell-list-item">
+        <div class="container column">
+            <h4 class="preview-title spell-title"><%- obj.name %></h4>
+            <p><%- obj.listString %></p>
+        </div>
+    </li>
+</script>

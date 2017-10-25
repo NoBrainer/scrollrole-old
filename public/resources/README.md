@@ -87,7 +87,6 @@ classes:
     proficiencyBonus:
     equipment:
     features:
-    spells:
     spellCasting:
     choices:
     unlockables:
@@ -102,7 +101,6 @@ classes:
 - `proficiencyBonus`: (REQUIRED) Number for the proficiency bonus.
 - `equipment`: List of starting equipment. Each piece of equipment is a String.
 - `features`: List of class features. (See: [Feature Object](#feature-object))
-- `spells`: List of spells. (See: [Spell Object](#spell-object))
 - `spellCasting`: Object defining how spellcasting works. (See: [Spellcasting Object](#spellcasting-object))
 - `choices`: List of class choices to be made at character creation. (See: [Choice Object](#choice-object))
 - `unlockables`: (REQUIRED) List of unlockable for later levels in the class. (See:
@@ -240,7 +238,7 @@ The Spellcasting Object defines how spellcasting works.
 - `focus`: String describing the spellcasting focus
 - `cantripsKnown`: Number of level 0 spells known
 - `spellsKnown`: Number of level 1+ spells known
-- `spells`: (REQUIRED) List of spells (See: [Spell Object](#spell-object))
+- `spellList`: (REQUIRED) List of spells (See: [Spell Object](#spell-object))
 - `spellSlots`: Object defining how many slots are available and how they work (See:
 [Spell Slots Object](#spell-slots-object))
 

@@ -3,19 +3,24 @@ var ExportedClass = module.exports = Backbone.Model.extend();
 var SpellSlotsModel = Backbone.Model.extend({
     defaults: {
         description: [],//List of Strings
-        L1: null,       //Number
-        L2: null,       //Number
-        L3: null,       //Number
-        L4: null,       //Number
-        L5: null,       //Number
-        L6: null,       //Number
-        L7: null,       //Number
-        L8: null,       //Number
-        L9: null        //Number
+        L1: 0,          //Number
+        L2: 0,          //Number
+        L3: 0,          //Number
+        L4: 0,          //Number
+        L5: 0,          //Number
+        L6: 0,          //Number
+        L7: 0,          //Number
+        L8: 0,          //Number
+        L9: 0           //Number
     },
 
     getDescription: function() {
         return this.get(SpellSlotsModel.fields.DESCRIPTION);
+    },
+
+    isEmpty: function() {
+        return _.isEmpty(this.getDescription()) && _.isEmpty(_.compact(_.union(this.getL1(), this.getL2(), this.getL3(),
+            this.getL4(), this.getL5(), this.getL5(), this.getL6(), this.getL7(), this.getL8(), this.getL9())));
     },
 
     getL1: function() {

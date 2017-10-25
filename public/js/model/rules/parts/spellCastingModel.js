@@ -9,7 +9,7 @@ var SpellCastingModel = Backbone.Model.extend({
         cantripsKnown: null,        //Number
         description: [],            //List of Strings
         focus: null,                //String
-        spells: null,               //SpellCollection
+        spellList: null,            //SpellCollection
         spellsKnown: null,          //Number
         spellSlots: null            //SpellSlotsModel
     },
@@ -17,8 +17,8 @@ var SpellCastingModel = Backbone.Model.extend({
     initialize: function(attrs, options) {
         attrs = attrs || {};
 
-        var spellModels = _.map(attrs.spells, SpellCollection.create) || [];
-        this.set(SpellCastingModel.fields.SPELLS, new SpellCollection(spellModels));
+        var spellModels = _.map(attrs.spellList, SpellCollection.create) || [];
+        this.set(SpellCastingModel.fields.SPELL_LIST, new SpellCollection(spellModels));
 
         var spellSlotsModel = new SpellSlotsModel(attrs.spellSlots || {});
         this.set(SpellCastingModel.fields.SPELL_SLOTS, spellSlotsModel);
@@ -36,6 +36,10 @@ var SpellCastingModel = Backbone.Model.extend({
         return this.get(SpellCastingModel.fields.DESCRIPTION);
     },
 
+    isEmpty: function() {
+        return this.getSpellList().isEmpty();
+    },
+
     getFocus: function() {
         return this.get(SpellCastingModel.fields.FOCUS);
     },
@@ -44,12 +48,12 @@ var SpellCastingModel = Backbone.Model.extend({
         return proficiencyBonus + abilityModifier
     },
 
-    getSpells: function() {
-        return this.get(SpellCastingModel.fields.SPELLS);
+    getSpellList: function() {
+        return this.get(SpellCastingModel.fields.SPELL_LIST);
     },
 
-    setSpells: function(spellModels) {
-        this.getSpells().reset(spellModels || []);
+    setSpellList: function(spellModels) {
+        this.getSpellList().reset(spellModels || []);
         return this;
     },
 
@@ -70,7 +74,7 @@ var SpellCastingModel = Backbone.Model.extend({
         CANTRIPS_KNOWN: 'cantripsKnown',
         DESCRIPTION: 'description',
         FOCUS: 'focus',
-        SPELLS: 'spells',
+        SPELL_LIST: 'spellList',
         SPELLS_KNOWN: 'spellsKnown',
         SPELL_SLOTS: 'spellSlots'
     }

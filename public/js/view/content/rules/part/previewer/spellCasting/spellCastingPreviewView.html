@@ -1,0 +1,35 @@
+<script type="text/template" id="scaffold">
+    <div class="preview-row-title">Spell Casting:</div>
+    <div class="preview-row-value">
+        <ul class="preview-list spell-casting-list"></ul>
+    </div>
+</script>
+
+<script type="text/template" id="textRow">
+    <li class="preview-list-item spell-casting-list-item">
+        <div class="container column">
+            <h4 class="preview-title spell-casting-title"><%- obj.title %></h4>
+            <p><%- obj.text %></p>
+        </div>
+    </li>
+</script>
+
+<script type="text/template" id="htmlRow">
+    <li class="preview-list-item spell-casting-list-item">
+        <div class="container column">
+            <h4 class="preview-title spell-casting-title"><%- obj.title %></h4>
+            <%= obj.contentHtml %>
+        </div>
+    </li>
+</script>
+
+<script type="text/template" id="descriptionRow">
+    <li class="preview-list-item spell-casting-list-item">
+        <div class="container column">
+            <h4 class="preview-title spell-casting-title">Description</h4>
+            <% _.each(obj.description, function(paragraph) { %>
+                <p><%- paragraph %></p>
+            <% }); %>
+        </div>
+    </li>
+</script>

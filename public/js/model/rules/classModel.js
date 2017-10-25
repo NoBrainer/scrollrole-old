@@ -4,7 +4,6 @@ var ChoiceCollection = require('../../collection/rules/parts/choiceCollection');
 var FeatureCollection = require('../../collection/rules/parts/featureCollection');
 var ProficiencyCollection = require('../../collection/rules/parts/proficiencyCollection');
 var SpellCastingModel = require('../../model/rules/parts/spellCastingModel');
-var SpellCollection = require('../../collection/rules/parts/spellCollection');
 var UnlockableCollection = require('../../collection/rules/parts/unlockableCollection');
 
 var ClassModel = Backbone.Model.extend({
@@ -19,7 +18,6 @@ var ClassModel = Backbone.Model.extend({
         proficiencies: null,    //ProficiencyCollection
         proficiencyBonus: null, //Number
         spellCasting: null,     //SpellCastingModel
-        spells: null,           //SpellCollection
         unlockables: null       //UnlockableCollection
     },
 
@@ -37,9 +35,6 @@ var ClassModel = Backbone.Model.extend({
 
         var spellCastingModel = new SpellCastingModel(attrs.spellCasting);
         this.set(ClassModel.fields.SPELL_CASTING, spellCastingModel);
-
-        var spellModels = _.map(attrs.spells, SpellCollection.create) || [];
-        this.set(ClassModel.fields.SPELLS, new SpellCollection(spellModels));
 
         var unlockableModels = _.map(attrs.unlockables, UnlockableCollection.create) || [];
         this.set(ClassModel.fields.UNLOCKABLES, new UnlockableCollection(unlockableModels));
@@ -100,15 +95,6 @@ var ClassModel = Backbone.Model.extend({
         return this.get(ClassModel.fields.SPELL_CASTING);
     },
 
-    getSpells: function() {
-        return this.get(ClassModel.fields.SPELLS);
-    },
-
-    setSpells: function(spellModels) {
-        this.getSpells().reset(spellModels || []);
-        return this;
-    },
-
     getUnlockables: function() {
         return this.get(ClassModel.fields.UNLOCKABLES);
     },
@@ -129,7 +115,6 @@ var ClassModel = Backbone.Model.extend({
         PROFICIENCIES: 'proficiencies',
         PROFICIENCY_BONUS: 'proficiencyBonus',
         SPELL_CASTING: 'spellCasting',
-        SPELLS: 'spells',
         UNLOCKABLES: 'unlockables'
     }
 });
