@@ -3,7 +3,7 @@ _ = require('underscore');
 var bodyParser = require('body-parser');
 var cookieParser = require('cookie-parser');
 var express = require('express');
-//var favicon = require('serve-favicon');
+var favicon = require('serve-favicon');
 var logger = require('morgan');
 var path = require('path');
 
@@ -18,8 +18,7 @@ app.set('views', path.join(__dirname, 'views'));
 // view engine setup
 app.set('view engine', 'jade');
 
-//TODO: uncomment when a favicon is in place
-//app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
+app.use(favicon(path.join(__dirname, 'public/resources/icons', 'favicon.png')));
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));

@@ -1,3 +1,4 @@
+@import (inline) '../../node_modules/font-awesome/css/font-awesome.min.css';
 @import 'variables';
 @import 'mixins';
 
@@ -49,8 +50,14 @@ li {
   }
 }
 
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@import 'loading/loading';
 @import 'header/header';
 @import 'footer/footer';
 @import 'content/content';
 @import 'content/nav';
-@import 'content/rules/background/backgroundContent';
+@import 'content/rules/section';

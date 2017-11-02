@@ -4,7 +4,7 @@ var DescriptionPreviewView = require('../../part/previewer/description/descripti
 var FeaturesPreviewView = require('../../part/previewer/features/featuresPreviewView');
 var PreviewerView = require('../../part/previewer/previewerView');
 var ProficienciesPreviewView = require('../../part/previewer/proficiencies/proficienciesPreviewView');
-// var SubracesPreviewView = require('../../part/preview/subraces/subracesPreviewView');
+var SubracesPreviewView = require('../../part/previewer/subraces/subracesPreviewView');
 var TextPreviewView = require('../../part/previewer/text/textPreviewView');
 
 var RacePreviewerView = PreviewerView.extend({
@@ -41,9 +41,8 @@ var RacePreviewerView = PreviewerView.extend({
                 { collection: this.model.getProficiencies() });
         this.populateView(ChoicesPreviewView, '#preview-choices',
                 { collection: this.model.getChoices() });
-        //TODO
-        // this.populateView(SubracesPreviewView, '#preview-subraces',
-        //         { collection: this.model.getSubraces() });
+        this.populateView(SubracesPreviewView, '#preview-subraces',
+            { collection: this.model.getSubraces() });
     }
 });
 

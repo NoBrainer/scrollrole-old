@@ -8,11 +8,15 @@
   }
 
   .logo {
-    flex-direction: column;
     display: flex;
+    flex-direction: column;
+    font-size: 30px;
     justify-content: center;
     padding-right: 30px;
-    font-size: 30px;
+
+    img {
+      height: 70px;
+    }
   }
 
   .tabs {
@@ -21,6 +25,8 @@
   }
 
   .tab {
+    align-items: center;
+    display: flex;
     margin-right: @padding-small;
     padding: @padding-large;
 

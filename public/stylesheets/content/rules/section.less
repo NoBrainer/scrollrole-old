@@ -72,6 +72,10 @@
     margin-left: @padding-large;
   }
 
+  .subraces-preview-view .preview-row-value {
+    margin-bottom: @padding-small;
+  }
+
   .preview-row {
     display: flex;
     flex-direction: column;
@@ -90,7 +94,11 @@
     padding: 0;
   }
 
-  .preview-list-item:not(.equipment-list-item) {
+  .unlockable-list .preview-list {
+    margin-bottom: @padding-small;
+  }
+
+  .preview-list-item:not(.equipment-list-item):not(.condition-list-item) {
     display: flex;
 
     + .preview-list-item {

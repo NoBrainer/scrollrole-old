@@ -7,6 +7,7 @@ var ProficienciesPreviewView = require('../../part/previewer/proficiencies/profi
 var ProficiencyBonusPreviewView = require('../../part/previewer/proficiencyBonus/proficiencyBonusPreviewView');
 var SpellCastingPreviewView = require('../../part/previewer/spellCasting/spellCastingPreviewView');
 var TextPreviewView = require('../../part/previewer/text/textPreviewView');
+var UnlockablesPreviewView = require('../../part/previewer/unlockables/unlockablesPreviewView');
 
 var ClassPreviewerView = PreviewerView.extend({
     className: PreviewerView.prototype.className + ' class-previewer-view',
@@ -42,10 +43,8 @@ var ClassPreviewerView = PreviewerView.extend({
             { model: this.model.getSpellCasting() });
         this.populateView(ChoicesPreviewView, '#preview-choices',
             { collection: this.model.getChoices() });
-        //TODO
-        // this.populateView(UnlockablesPreviewView, '#preview-unlockables',
-        //     { collection: this.model.getUnlockables() });
-        this.$('#preview-unlockables').append("Unlockables: TODO");
+        this.populateView(UnlockablesPreviewView, '#preview-unlockables',
+            { collection: this.model.getUnlockables() });
     }
 });
 
