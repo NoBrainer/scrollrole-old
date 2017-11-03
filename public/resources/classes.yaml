@@ -613,7 +613,7 @@ classes:
           - name: Bonus Proficiencies
             description:
               - When you join the College of Lore at 3rd level, you gain proficiency with three skills of your choice.
-            type: feature
+            type: proficiency
             pick: 3
             options:
               - { type: skill, name: Acrobatics }

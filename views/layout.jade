@@ -1,7 +1,20 @@
 doctype html
 html
     head
-        title= title
+        meta(charset='UTF-8')
+        meta(name='viewport' content='width=device-width, initial-scale=1.0')
+        title='ScrollRole'
+        link(rel='shortcut icon' href='/resources/icons/favicon.png' type='image/x-icon')
         link(rel='stylesheet', href='/stylesheets/style.css')
     body
-        block content
+        div(id='header')
+            div(class='page-container header-view')
+                div(class='wrapper header-wrapper')
+                    div(class='logo')
+                        a(href='/#home')
+                            img(src='/resources/icons/logo.svg' alt='ScrollRole logo')
+        div(id='content')
+            div(class='page-container content-view')
+                div(class='wrapper content-wrapper')
+                    div(class='content-card' style='width:100%; max-width:1000px;')
+                        block content
