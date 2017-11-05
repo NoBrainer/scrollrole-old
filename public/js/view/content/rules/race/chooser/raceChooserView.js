@@ -9,6 +9,7 @@ var RaceChooserView = ChooserView.extend({
 
         options.label = 'race';
         options.section = 'races';
+        options.pathToIcons = '/resources/icons/race/';
 
         ChooserView.prototype.initialize(options);
     },

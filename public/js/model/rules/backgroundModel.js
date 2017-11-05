@@ -2,6 +2,7 @@ var ExportedClass = module.exports = Backbone.Model.extend();
 
 var ChoiceCollection = require('../../collection/rules/parts/choiceCollection');
 var FeatureCollection = require('../../collection/rules/parts/featureCollection');
+var IconIdUtil = require('../../util/iconIdUtil');
 var ProficiencyCollection = require('../../collection/rules/parts/proficiencyCollection');
 
 var BackgroundModel = Backbone.Model.extend({
@@ -10,6 +11,7 @@ var BackgroundModel = Backbone.Model.extend({
         description: [],                //List of Strings
         equipment: [],                  //List of Strings
         features: null,                 //FeatureCollection
+        iconId: null,                   //String
         name: null,                     //String
         proficiencies: null,            //ProficiencyCollection
         suggestedCharacteristics: null  //SuggestedCharacteristicsModel
@@ -26,6 +28,9 @@ var BackgroundModel = Backbone.Model.extend({
 
         var proficiencyModels = _.map(attrs.proficiencies, ProficiencyCollection.create) || [];
         this.set(BackgroundModel.fields.PROFICIENCIES, new ProficiencyCollection(proficiencyModels));
+
+        this.setIconId(IconIdUtil.normalize(this.getIconId(), BackgroundModel.validIconIds,
+            BackgroundModel.defaultIconId, this.getName()));
     },
 
     getChoices: function() {
@@ -54,6 +59,15 @@ var BackgroundModel = Backbone.Model.extend({
         return this;
     },
 
+    getIconId: function() {
+        return this.get(BackgroundModel.fields.ICON_ID);
+    },
+
+    setIconId: function(iconId) {
+        this.set(BackgroundModel.fields.ICON_ID, iconId);
+        return this;
+    },
+
     getName: function() {
         return this.get(BackgroundModel.fields.NAME);
     },
@@ -76,10 +90,14 @@ var BackgroundModel = Backbone.Model.extend({
         DESCRIPTION: 'description',
         EQUIPMENT: 'equipment',
         FEATURES: 'features',
+        ICON_ID: 'iconId',
         NAME: 'name',
         PROFICIENCIES: 'proficiencies',
         SUGGESTED_CHARACTERISTICS: 'suggestedCharacteristics'
-    }
+    },
+
+    defaultIconId: 'custom',
+    validIconIds: ['acolyte']
 });
 
 _.extend(ExportedClass, BackgroundModel);

@@ -2,6 +2,7 @@ var ExportedClass = module.exports = Backbone.Model.extend();
 
 var ChoiceCollection = require('../../collection/rules/parts/choiceCollection');
 var FeatureCollection = require('../../collection/rules/parts/featureCollection');
+var IconIdUtil = require('../../util/iconIdUtil');
 var ProficiencyCollection = require('../../collection/rules/parts/proficiencyCollection');
 var SpellCastingModel = require('../../model/rules/parts/spellCastingModel');
 var UnlockableCollection = require('../../collection/rules/parts/unlockableCollection');
@@ -14,6 +15,7 @@ var ClassModel = Backbone.Model.extend({
         equipment: [],          //List of Strings
         features: null,         //FeatureCollection
         hitDice: null,          //String
+        iconId: null,           //String
         name: null,             //String
         proficiencies: null,    //ProficiencyCollection
         proficiencyBonus: null, //Number
@@ -38,6 +40,9 @@ var ClassModel = Backbone.Model.extend({
 
         var unlockableModels = _.map(attrs.unlockables, UnlockableCollection.create) || [];
         this.set(ClassModel.fields.UNLOCKABLES, new UnlockableCollection(unlockableModels));
+
+        this.setIconId(IconIdUtil.normalize(this.getIconId(), ClassModel.validIconIds, ClassModel.defaultIconId,
+            this.getName()));
     },
 
     getBaseHitPoints: function() {
@@ -72,6 +77,15 @@ var ClassModel = Backbone.Model.extend({
 
     getHitDice: function() {
         return this.get(ClassModel.fields.HIT_DICE);
+    },
+
+    getIconId: function() {
+        return this.get(ClassModel.fields.ICON_ID);
+    },
+
+    setIconId: function(iconId) {
+        this.set(ClassModel.fields.ICON_ID, iconId);
+        return this;
     },
 
     getName: function() {
@@ -111,12 +125,17 @@ var ClassModel = Backbone.Model.extend({
         EQUIPMENT: 'equipment',
         FEATURES: 'features',
         HIT_DICE: 'hitDice',
+        ICON_ID: 'iconId',
         NAME: 'name',
         PROFICIENCIES: 'proficiencies',
         PROFICIENCY_BONUS: 'proficiencyBonus',
         SPELL_CASTING: 'spellCasting',
         UNLOCKABLES: 'unlockables'
-    }
+    },
+
+    defaultIconId: 'custom',
+    validIconIds: ['barbarian', 'bard', 'cleric', 'druid', 'fighter', 'monk', 'paladin', 'ranger', 'rogue', 'sorcerer',
+        'warlock', 'wizard']
 });
 
 _.extend(ExportedClass, ClassModel);

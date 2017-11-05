@@ -8,6 +8,7 @@ var ChooserView = Backbone.View.extend({
 
         this.label = options.label;
         this.section = options.section;
+        this.pathToIcons = options.pathToIcons;
     },
 
     render: function() {
@@ -23,11 +24,21 @@ var ChooserView = Backbone.View.extend({
         var $list = this.$('.chooser-list');
 
         _.each(this.getModelNames(), _.bind(function(name) {
-            var html = templates.choice({ section: this.section, name: name });
+            var html = templates.choice({ section: this.section, name: name, iconPath: this.buildIconPath(name) });
             $list.append(html);
         }, this));
 
         //TODO: add "create new" option
+    },
+
+    buildIconPath: function(name) {
+        var model = this.getCollection().getModelByName(name);
+        if (_.isFunction(model.getIconId)) {
+            var iconId = model.getIconId();
+            return this.pathToIcons + iconId + '.png';
+        } else {
+            return null;
+        }
     },
 
     getCollection: function() {

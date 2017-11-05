@@ -132,7 +132,7 @@ var RulesConfigModel = Backbone.Model.extend({
 });
 
 function setupBackgrounds() {
-    return loadAndParse('/resources/backgrounds.yaml')
+    return loadAndParse('/resources/config/backgrounds.yaml')
         .then(function(json) {
             var arr = _.isObject(json) ? json.backgrounds : json;
             arr = _.isArray(arr) ? arr : [];
@@ -141,7 +141,7 @@ function setupBackgrounds() {
 }
 
 function setupClasses() {
-    return loadAndParse('/resources/classes.yaml')
+    return loadAndParse('/resources/config/classes.yaml')
         .then(function(json) {
             var arr = _.isObject(json) ? json.classes : json;
             arr = _.isArray(arr) ? arr : [];
@@ -150,7 +150,7 @@ function setupClasses() {
 }
 
 function setupLists() {
-    return loadAndParse('/resources/lists.yaml')
+    return loadAndParse('/resources/config/lists.yaml')
         .then(function(json) {
             if (!_.isObject(json) || _.isEmpty(json)) {
                 return json;
@@ -170,14 +170,14 @@ function setupLists() {
 }
 
 function setupObjects() {
-    return loadAndParse('/resources/objects.yaml')
+    return loadAndParse('/resources/config/objects.yaml')
         .then(function(json) {
             return _.isObject(json) ? json.objects : {};
         });
 }
 
 function setupRaces() {
-    return loadAndParse('/resources/races.yaml')
+    return loadAndParse('/resources/config/races.yaml')
         .then(function(json) {
             var arr = _.isObject(json) ? json.races : json;
             arr = _.isArray(arr) ? arr : [];

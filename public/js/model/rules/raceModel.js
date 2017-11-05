@@ -3,6 +3,7 @@ var ExportedClass = module.exports = Backbone.Model.extend();
 var AdjustmentCollection = require('../../collection/rules/parts/adjustmentCollection');
 var ChoiceCollection = require('../../collection/rules/parts/choiceCollection');
 var FeatureCollection = require('../../collection/rules/parts/featureCollection');
+var IconIdUtil = require('../../util/iconIdUtil');
 var ProficiencyCollection = require('../../collection/rules/parts/proficiencyCollection');
 var SubRaceCollection = require('../../collection/rules/parts/subRaceCollection');
 
@@ -14,6 +15,7 @@ var RaceModel = Backbone.Model.extend({
         choices: null,                  //ChoiceCollection
         description: [],                //List of Strings
         features: null,                 //FeatureCollection
+        iconId: null,                   //String
         name: null,                     //String
         proficiencies: null,            //ProficiencyCollection
         size: null,                     //String
@@ -40,6 +42,9 @@ var RaceModel = Backbone.Model.extend({
 
         var subRaceModels = _.map(attrs.subraces, SubRaceCollection.create) || [];
         this.set(RaceModel.fields.SUBRACES, new SubRaceCollection(subRaceModels));
+
+        this.setIconId(IconIdUtil.normalize(this.getIconId(), RaceModel.validIconIds, RaceModel.defaultIconId,
+            this.getName()));
     },
 
     getAdjustments: function() {
@@ -81,6 +86,15 @@ var RaceModel = Backbone.Model.extend({
         return this;
     },
 
+    getIconId: function() {
+        return this.get(RaceModel.fields.ICON_ID);
+    },
+
+    setIconId: function(iconId) {
+        this.set(RaceModel.fields.ICON_ID, iconId);
+        return this;
+    },
+
     getName: function() {
         return this.get(RaceModel.fields.NAME);
     },
@@ -118,12 +132,16 @@ var RaceModel = Backbone.Model.extend({
         CHOICES: 'choices',
         DESCRIPTION: 'description',
         FEATURES: 'features',
+        ICON_ID: 'iconId',
         NAME: 'name',
         PROFICIENCIES: 'proficiencies',
         SIZE: 'size',
         SPEED: 'speed',
         SUBRACES: 'subraces'
-    }
+    },
+
+    defaultIconId: 'custom',
+    validIconIds: ['dragonborn', 'dwarf', 'elf', 'gnome', 'half-elf', 'half-orc', 'halfling', 'human', 'tiefling']
 });
 
 _.extend(ExportedClass, RaceModel);
