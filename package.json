@@ -32,7 +32,16 @@
     "copyResources": "cp -r public/resources dist/public/",
     "predeploy": "npm run build && npm run setupDist && browserify --ignore-missing bin/www > dist/index.js",
     "deploy": "npm run copyCSS && npm run copyFonts && npm run copyHTML && npm run copyJS && npm run copyResources",
-    "installConfig": "cp config.js ../scrollRoleConfig.js"
+    "installConfig": "cp config.js ../scrollRoleConfig.js",
+    "prewatch-windows": "npm run build:font-windows",
+    "watch-windows": "parallelshell \"npm run watch:css-windows -s\" \"npm run watch:html-windows -s\" \"npm run watch:js-windows -s\"",
+    "watch:css-windows": "watch \"npm run build:css\" public/stylesheets",
+    "watch:html-windows": "watch \"npm run build:html\" views",
+    "watch:js-windows": "watch \"npm run build:js\" .",
+    "prebuild-windows": "npm run prebuild",
+    "build-windows": "npm run build:css && npm run build:font-windows && npm run build:html && npm run build:js",
+    "prebuild:font-windows": "RMDIR /S /Q public\\fonts && MKDIR public\\fonts",
+    "build:font-windows": "XCOPY /E /Y node_modules\\font-awesome\\fonts public\\fonts"
   },
   "dependencies": {
     "backbone": "1.3.3",

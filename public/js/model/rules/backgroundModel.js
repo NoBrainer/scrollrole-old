@@ -20,14 +20,13 @@ var BackgroundModel = Backbone.Model.extend({
     initialize: function(attrs, options) {
         attrs = attrs || {};
 
-        var choiceModels = _.map(attrs.choices, ChoiceCollection.create) || [];
-        this.set(BackgroundModel.fields.CHOICES, new ChoiceCollection(choiceModels));
+        var setupCollection = _.bind(function(fieldName, CollectionClass) {
+            this.set(fieldName, new CollectionClass(attrs[fieldName] || [], {parse: true}));
+        }, this);
 
-        var featureModels = _.map(attrs.features, FeatureCollection.create) || [];
-        this.set(BackgroundModel.fields.FEATURES, new FeatureCollection(featureModels));
-
-        var proficiencyModels = _.map(attrs.proficiencies, ProficiencyCollection.create) || [];
-        this.set(BackgroundModel.fields.PROFICIENCIES, new ProficiencyCollection(proficiencyModels));
+        setupCollection(BackgroundModel.fields.CHOICES, ChoiceCollection);
+        setupCollection(BackgroundModel.fields.FEATURES, FeatureCollection);
+        setupCollection(BackgroundModel.fields.PROFICIENCIES, ProficiencyCollection);
 
         this.setIconId(IconIdUtil.normalize(this.getIconId(), BackgroundModel.validIconIds,
             BackgroundModel.defaultIconId, this.getName()));

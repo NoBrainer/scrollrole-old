@@ -33,7 +33,11 @@ var FeaturesPreviewView = Backbone.View.extend({
     },
 
     renderFeature: function(featureModel) {
-        var html = templates.featureRow({ name: featureModel.getName(), description: featureModel.getDescription() });
+        var html = templates.featureRow({
+            name: featureModel.getName(),
+            description: featureModel.getDescription(),
+            value: featureModel.getValue()
+        });
         this.$('.feature-list').append(html);
     },
 

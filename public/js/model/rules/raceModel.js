@@ -26,22 +26,15 @@ var RaceModel = Backbone.Model.extend({
     initialize: function(attrs, options) {
         attrs = attrs || {};
 
-        var adjustmentModels = _.map(attrs.abilityScoreAdjustments,
-                AdjustmentCollection.create) || [];
-        this.set(RaceModel.fields.ADJUSTMENTS,
-                new AdjustmentCollection(adjustmentModels));
+        var setupCollection = _.bind(function(fieldName, CollectionClass) {
+            this.set(fieldName, new CollectionClass(attrs[fieldName] || [], {parse: true}));
+        }, this);
 
-        var choiceModels = _.map(attrs.choices, ChoiceCollection.create) || [];
-        this.set(RaceModel.fields.CHOICES, new ChoiceCollection(choiceModels));
-
-        var featureModels = _.map(attrs.features, FeatureCollection.create) || [];
-        this.set(RaceModel.fields.FEATURES, new FeatureCollection(featureModels));
-
-        var proficiencyModels = _.map(attrs.proficiencies, ProficiencyCollection.create) || [];
-        this.set(RaceModel.fields.PROFICIENCIES, new ProficiencyCollection(proficiencyModels));
-
-        var subRaceModels = _.map(attrs.subraces, SubRaceCollection.create) || [];
-        this.set(RaceModel.fields.SUBRACES, new SubRaceCollection(subRaceModels));
+        setupCollection(RaceModel.fields.ADJUSTMENTS, AdjustmentCollection);
+        setupCollection(RaceModel.fields.CHOICES, ChoiceCollection);
+        setupCollection(RaceModel.fields.FEATURES, FeatureCollection);
+        setupCollection(RaceModel.fields.PROFICIENCIES, ProficiencyCollection);
+        setupCollection(RaceModel.fields.SUBRACES, SubRaceCollection);
 
         this.setIconId(IconIdUtil.normalize(this.getIconId(), RaceModel.validIconIds, RaceModel.defaultIconId,
             this.getName()));

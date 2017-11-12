@@ -1,0 +1,2151 @@
+# Backgrounds
+backgrounds:
+
+  ## ACOLYTE
+  - name: Acolyte
+    description:
+      - >
+        You have spent your life in the service of a temple to a specific god or pantheon of gods. You act as an
+        intermediary between the realm of the holy and the mortal world, performing sacred rites and offering sacrifices
+        in order to conduct worshipers into the presence of the divine. You are not necessarily a cleric - performing
+        sacred rites is not the same thing as channeling divine power.
+      - >
+        Choose a god, a pantheon of gods, or some other quasi-divine being from among those listed in
+        "Fantasy-Historical Pantheons" or those specified by your GM, and work with your GM to detail the nature of your
+        religious service. Were you a lesser functionary in a temple, raised from childhood to assist the priests in the
+        sacred rites? Or were you a high priest who suddenly experienced a call to serve your god in a different way?
+        Perhaps you were the leader of a small cult outside of any established temple structure, or even an occult group
+        that served a fiendish master that you now deny.
+    proficiencies:
+      - { type: skill, name: Insight }
+      - { type: skill, name: Religion }
+    equipment:
+      - holy symbol
+      - prayer book or prayer wheel
+      - 5 sticks of incense
+      - vestments
+      - a set of common clothes
+      - a pouch containing 15gp
+    features:
+      - name: Shelter of the Faithful
+        description:
+          - >
+            As an acolyte, you command the respect of those who share your faith, and you can perform religious
+            ceremonies of your deity. You and your adventuring companions can expect to receive free healing and care at
+            a temple, shrine, or other established presence of your faith, though you must provide any material
+            components needed for spells. Those who share your religion will support you (but only you) at a modest
+            lifestyle.
+          - >
+            You might also have ties to a specific temple dedicated to your chosen deity or pantheon, and you have a
+            residence there. This could be the temple where you used to serve, if you remain on good terms with it, or a
+            temple where you have found a new home. While near your temple, you can call upon priests for assistance,
+            provided the assistance you ask for is not hazardous and you remain in good standing with your temple.
+    choices:
+      - name: Languages
+        type: proficiency
+        pick: 2
+        options:
+          - { type: language, name: Abyssal }
+          - { type: language, name: Celestial }
+          - { type: language, name: Deep Speech }
+          - { type: language, name: Draconic }
+          - { type: language, name: Dwarvish }
+          - { type: language, name: Elvish }
+          - { type: language, name: Giant }
+          - { type: language, name: Gnomish }
+          - { type: language, name: Goblin }
+          - { type: language, name: Halfling }
+          - { type: language, name: Infernal }
+          - { type: language, name: Orc }
+          - { type: language, name: Primordial }
+          - { type: language, name: Sylvan }
+          - { type: language, name: Undercommon }
+    suggestedCharacteristics:
+      description:
+        - Pick two personality traits, one ideal, one bond, and one flaw.
+      personalityTrait:
+        - I idolize a particular hero of my faith, and constantly refer to that person's deeds and example.
+        - I can find common ground between the fiercest enemies, empathizing with them and always working toward peace.
+        - I see omens in every event and action. The gods try to speak to us, we just need to listen.
+        - Nothing can shake my optimistic attitude.
+        - I quote (or misquote) sacred texts and proverbs in almost every situation.
+        - I am tolerant (or intolerant) of other faiths and respect (or condemn) the worship of other gods.
+        - I've enjoyed fine food, drink, and high society among my temple's elite. Rough living grates on me.
+        - >
+          I've spent so long in the temple that I have little practical experience dealing with people in the outside
+          world.
+      ideal:
+        - Tradition. The ancient traditions of worship and sacrifice must be preserved and upheld. (Lawful)
+        - Charity. I always try to help those in need, no matter what the personal cost. (Good)
+        - Change. We must help bring about the changes the gods are constantly working in the world. (Chaos)
+        - Power. I hope to one day rise to the top of my faith's religious hierarchy. (Lawful)
+        - >
+          Faith. I trust that my deity will guide my actions. I have faith that if I work hard, things will go well.
+          (Lawful)
+        - >
+          Aspiration. I seek to prove myself worthy of my god's favor by matching my actions against his or her
+          teachings. (Any)
+      bond:
+        - I would die to recover an ancient relic of my faith that was lost long ago.
+        - I will someday get revenge on the corrupt temple hierarchy who branded me a heretic.
+        - I owe my life to the priest who took me in when my parents died.
+        - Everything I do is for the common people.
+        - I will do anything to protect the temple where I served.
+        - I seek to preserve a sacred text that my enemies consider heretical and seek to destroy.
+      flaw:
+        - I judge others harshly, and myself even more severely.
+        - I put too much trust in those who wield power within my temple's hierarchy.
+        - My piety sometimes leads me to blindly trust those that profess faith in my god.
+        - I am inflexible in my thinking.
+        - I am suspicious of strangers and expect the worst of them.
+        - Once I pick a goal, I become obsessed with it to the detriment of everything else in my life.
+
+  ## CUSTOMIZED BACKGROUND
+  - name: Customized Background
+    description:
+      - >
+        You might want to tweak some of the features of a background so it better fits your character or campaign
+        setting. To customize a background, you can replace one feature with any other one, choose any two skills, and
+        choose a total of two tool proficiencies or languages from the sample backgrounds. You can either use the
+        equipment package from your background or spend coin on gear as described in the equipment section. (If you
+        spend coin, you can't also take the equipment package suggested for your class.) Finally, choose two personality
+        traits, one ideal, one bond, and one flaw. If you can't find a feature that matches your desired background,
+        work with your GM to create one.
+    choices:
+      - name: Features
+        description:
+          - Choose any one feature from another background.
+        type: feature
+        pick: 1
+        from: { name: backgroundFeatures }
+      - name: Skills
+        description:
+          - Choose any two skills.
+        type: proficiency
+        pick: 2
+        options:
+          - { type: skill, name: Acrobatics }
+          - { type: skill, name: Animal Handling }
+          - { type: skill, name: Arcana }
+          - { type: skill, name: Athletics }
+          - { type: skill, name: Deception }
+          - { type: skill, name: History }
+          - { type: skill, name: Insight }
+          - { type: skill, name: Intimidation }
+          - { type: skill, name: Investigation }
+          - { type: skill, name: Medicine }
+          - { type: skill, name: Nature }
+          - { type: skill, name: Perception }
+          - { type: skill, name: Performance }
+          - { type: skill, name: Persuasion }
+          - { type: skill, name: Religion }
+          - { type: skill, name: Sleight of Hand }
+          - { type: skill, name: Stealth }
+          - { type: skill, name: Survival }
+      - name: Tool Proficiencies or Languages
+        description:
+          - Choose a total of two tool proficiencies or languages.
+        type: proficiency
+        pick: 2
+        options:
+          - { type: language, name: Abyssal }
+          - { type: language, name: Celestial }
+          - { type: language, name: Deep Speech }
+          - { type: language, name: Draconic }
+          - { type: language, name: Dwarvish }
+          - { type: language, name: Elvish }
+          - { type: language, name: Giant }
+          - { type: language, name: Gnomish }
+          - { type: language, name: Goblin }
+          - { type: language, name: Halfling }
+          - { type: language, name: Infernal }
+          - { type: language, name: Orc }
+          - { type: language, name: Primordial }
+          - { type: language, name: Sylvan }
+          - { type: language, name: Undercommon }
+          - { type: tool,     name: Alchemist's supplies }
+          - { type: tool,     name: Brewer's supplies }
+          - { type: tool,     name: Calligrapher's supplies }
+          - { type: tool,     name: Carpenter's tools }
+          - { type: tool,     name: Cartographer's tools }
+          - { type: tool,     name: Cobbler's tools }
+          - { type: tool,     name: Cook's utensils }
+          - { type: tool,     name: Glassblower's tools }
+          - { type: tool,     name: Jeweler's tools }
+          - { type: tool,     name: Leatherworker's tools }
+          - { type: tool,     name: Mason's tools }
+          - { type: tool,     name: Painter's supplies }
+          - { type: tool,     name: Potter's tools }
+          - { type: tool,     name: Smith's tools }
+          - { type: tool,     name: Tinker's tools }
+          - { type: tool,     name: Weaver's tools }
+          - { type: tool,     name: Woodcarver's tools }
+          - { type: tool,     name: Disguise kit }
+          - { type: tool,     name: Forgery kit }
+          - { type: tool,     name: Dice set }
+          - { type: tool,     name: Playing card set }
+          - { type: tool,     name: Herbalism kit }
+          - { type: tool,     name: Bagpipes }
+          - { type: tool,     name: Drum }
+          - { type: tool,     name: Dulcimer }
+          - { type: tool,     name: Flute }
+          - { type: tool,     name: Lute }
+          - { type: tool,     name: Lyre }
+          - { type: tool,     name: Horn }
+          - { type: tool,     name: Pan flute }
+          - { type: tool,     name: Shawm }
+          - { type: tool,     name: Viol }
+          - { type: tool,     name: Navigator's tools }
+          - { type: tool,     name: Poisoner's kit }
+          - { type: tool,     name: Thieves' tools }
+          - { type: tool,     name: Vehicles (land or water) }
+
+# Classes
+classes:
+
+  ## BARBARIAN
+  - name: Barbarian
+    hitDice: 1d12
+    baseHitPoints: 12
+    proficiencies:
+      - { type: armor,          name: light armor }
+      - { type: armor,          name: medium armor }
+      - { type: armor,          name: shields }
+      - { type: weapon,         name: simple weapons }
+      - { type: weapon,         name: martial weapons }
+      - { type: saving throw,   name: STR }
+      - { type: saving throw,   name: CON }
+    equipment:
+      - explorer's pack
+      - 4 javelins
+    proficiencyBonus: +2
+    abilityScoreImprovementLevels: [4, 8, 12, 16, 19]
+    features:
+      - name: Rage
+        description:
+          - >
+            In battle, you fight with primal ferocity. On your turn, you can enter a rage as a bonus action.
+          - >
+            While raging, you gain the following benefits if you aren't wearing heavy armor:
+            (a) You have advantage on Strength checks and Strength saving throws;
+            (b) When you make a melee weapon attack using Strength, you gain a bonus to the damage roll that increases
+            as you gain levels as a barbarian, as shown in the Rage Damage column of the Barbarian table;
+            (c) You have resistance to bludgeoning, piercing, and slashing damage.
+          - >
+            If you are able to cast spells, you can't cast them or concentrate on them while raging.
+          - >
+            Your rage lasts for 1 minute. It ends early if you are knocked unconscious or if your turn ends and you
+            haven't attacked a hostile creature since your last turn or taken damage since then. You can also end your
+            rage on your turn as a bonus action.
+          - >
+            Once you have raged the number of times shown for your barbarian level in the Rages column of the Barbarian
+            table, you must finish a long rest before you can rage again.
+      - name: Rage Count
+        value: 2
+      - name: Rage Damage
+        value: '+2'
+      - name: Unarmored Defense
+        description:
+          - >
+            While you are not wearing any armor, your Armor Class equals 10 + your Dexterity modifier + your
+            Constitution modifier. You can use a shield and still gain this benefit.
+    choices:
+      - name: Skills
+        description:
+          - Choose two from Animal Handling, Athletics, Intimidation, Nature, Perception, and Survival.
+        type: proficiency
+        pick: 2
+        options:
+          - { type: skill, name: Animal Handling }
+          - { type: skill, name: Athletics }
+          - { type: skill, name: Intimidation }
+          - { type: skill, name: Nature }
+          - { type: skill, name: Perception }
+          - { type: skill, name: Survival }
+      - name: Equipment
+        type: equipment
+        pick: 1
+        options:
+          - greataxe
+          - any martial melee weapon
+      - name: Equipment
+        type: equipment
+        pick: 1
+        options:
+          - 2 handaxes
+          - any simple weapon
+    unlockables:
+      - condition: { level: 2 }
+        features:
+          - name: Reckless Attack
+            description:
+              - >
+                Starting at 2nd level, you can throw aside all concern for defense to attack with fierce desperation.
+                When you make your first attack on your turn, you can decide to attack recklessly. Doing so gives you
+                advantage on melee weapon attack rolls using Strength during this turn, but attack rolls against you
+                have advantage until your next turn.
+          - name: Danger Sense
+            description:
+              - >
+                At 2nd level, you gain an uncanny sense of when things nearby aren't as they should be, giving you an
+                edge when you dodge away from danger.
+              - >
+                You have advantage on Dexterity saving throws against effects that you can see, such as traps and
+                spells. To gain this benefit, you can't be blinded, deafened, or incapacitated.
+      - condition: { level: 3 }
+        features:
+          - name: Rage Count
+            value: 3
+        choices:
+          - name: Primal Path
+            description:
+              - >
+                At 3rd level, you choose a path that shapes the nature of your rage. Choose the Path of the Berserker or
+                the Path of the Totem Warrior, both detailed at the end of the class description. Your choice grants you
+                features at 3rd level and again at 6th, 10th, and 14th levels.
+            type: feature
+            pick: 1
+            options:
+              - name: Path of the Berserker
+                description:
+                  - >
+                    For some barbarians, rage is a means to an end - that end being violence. The Path of the Berserker
+                    is a path of untrammeled fury, slick with blood. As you enter the berserker's rage, you thrill in
+                    the chaos of battle, heedless of your own health or well-being.
+      - condition: { level: 3, feature: Path of the Berserker }
+        features:
+          - name: Frenzy
+            description:
+              - >
+                Starting when you choose this path at 3rd level, you can go into a frenzy when you rage. If
+                you do so, for the duration of your rage you can make a single melee weapon attack as a
+                bonus action on each of your turns after this one. When your rage ends, you suffer one level
+                of exhaustion (as described in appendix PH-A).
+      - condition: { level: 6, feature: Path of the Berserker }
+        features:
+          - name: Mindless Rage
+            description:
+              - >
+                Beginning at 6th level, you can't be charmed or frightened while raging. If you are charmed
+                or frightened when you enter your rage, the effect is suspended for the duration of the
+                rage.
+      - condition: { level: 10, feature: Path of the Berserker }
+        features:
+          - name: Intimidating Presence
+            description:
+              - >
+                Beginning at 10th level, you can use your action to frighten someone with your menacing
+                presence. When you do so, choose one creature that you can see within 30 feet of you. If the
+                creature can see or hear you, it must succeed a Wisdom saving throw (DC equal to 8 + your
+                proficiency bonus + your Charisma modifier) or be frightened of you until the end of your
+                next turn. On subsequent turns, you can use your action to extend the duration of this
+                effect on the frightened creature until the end of your next turn. This effect ends if the
+                creature ends its turn out of line of sight or more than 60 feet away from you.
+              - >
+                If the creature succeeds on its saving throw, you can't use this feature on that creature
+                again for 24 hours.
+      - condition: { level: 14, feature: Path of the Berserker }
+        features:
+          - name: Retaliation
+            description:
+              - >
+                Starting at 14th level, when you take damage from a creature that is within 5 feet of you,
+                you can use your reaction to make a melee weapon attack against that creature.
+      - condition: { level: 5 }
+        proficiencyBonus: +3
+        features:
+          - name: Extra Attack
+            description:
+              - >
+                Beginning at 5th level, you can attack twice, instead of once, whenever you take the Attack action on
+                your turn.
+          - name: Fast Movement
+            description:
+              - Starting at 5th level, your speed increases by 10 feet while you aren't wearing heavy armor.
+      - condition: { level: 6 }
+        features:
+          - name: Rage Count
+            value: 4
+      - condition: { level: 7 }
+        features:
+          - name: Feral Instinct
+            description:
+              - >
+                By 7th level, your instincts are so honed that you have advantage on initiative rolls.
+              - >
+                Additionally, if you are surprised at the beginning of combat and aren't incapacitated, you can act
+                normally on your first turn, but only if you enter your rage before doing anything else on that turn.
+      - condition: { level: 9 }
+        proficiencyBonus: +4
+        features:
+          - name: Rage Damage
+            value: '+3'
+          - name: Brutal Critical
+            description:
+              - >
+                Beginning at 9th level, you can roll one additional weapon damage die when determining the extra
+                damage for a critical hit with a melee attack.
+              - >
+                This increases to two additional dice at 13th level and three additional dice at 17th level.
+          - name: Brutal Critical Dice
+            value: 1
+      - condition: { level: 11 }
+        features:
+          - name: Relentless Rage
+            description:
+              - >
+                Starting at 11th level, your rage can keep you fighting despite grievous wounds. If you drop to 0 hit
+                points while you're raging and don't die outright, you can make a DC 10 Constitution saving throw. If
+                you succeed, you drop to 1 hit point instead.
+              - >
+                Each time you use this feature after the first, the DC increases by 5. When you finish a short or long
+                rest, the DC resets to 10.
+      - condition: { level: 12 }
+        features:
+          - name: Rage Count
+            value: 5
+      - condition: { level: 13 }
+        proficiencyBonus: +5
+        features:
+          - name: Brutal Critical Dice
+            value: 2
+      - condition: { level: 15 }
+        features:
+          - name: Persistent Rage
+            description:
+              - >
+                Beginning at 15th level, your rage is so fierce that it ends early only if you fall unconscious or if
+                you choose to end it.
+      - condition: { level: 16 }
+        features:
+          - name: Rage Damage
+            value: '+4'
+      - condition: { level: 17 }
+        proficiencyBonus: +6
+        features:
+          - name: Rage Count
+            value: 6
+          - name: Brutal Critical Dice
+            value: 3
+      - condition: { level: 18 }
+        features:
+          - name: Indomitable Might
+            description:
+              - >
+                Beginning at 18th level, if your total for a Strength check is less than your Strength score, you can
+                use that score in place of the total.
+      - condition: { level: 20 }
+        features:
+          - name: Rage Count
+            value: unlimited
+          - name: Primal Champion
+            abilityScoreAdjustments:
+              - { ability: STR, modifier: +4 }
+              - { ability: CON, modifier: +4 }
+            description:
+              - >
+                At 20th level, you embody the power of the wilds. Your Strength and Constitution scores increase by 4.
+                Your maximum for those scores is now 24.
+
+
+  ## BARD
+  - name: Bard
+    hitDice: 1d8
+    baseHitPoints: 8
+    proficiencies:
+      - { type: armor,        name: light armor }
+      - { type: weapon,       name: simple weapons }
+      - { type: weapon,       name: hand crossbows }
+      - { type: weapon,       name: longswords }
+      - { type: weapon,       name: rapiers }
+      - { type: weapon,       name: shortswords }
+      - { type: saving throw, name: DEX }
+      - { type: saving throw, name: CHA }
+    equipment:
+      - leather armor
+      - dagger
+    abilityScoreImprovementLevels: [4, 8, 12, 16, 19]
+    proficiencyBonus: +2
+    spellCasting:
+      description:
+        - >
+          You have learned to untangle and reshape the fabric of reality in harmony with your wishes and music. Your
+          spells are part of your vast repetoire, magic that can tune to different situations.
+        - >
+          The Spells Known column of the Bard table shows when you learn more bard spells of your choice. Each of these
+          spells must be of a level for which you have spell slots, as shown on the table. For instance, when you reach
+          3rd level in this class, you can learn one new spell of 1st or 2nd level.
+        - >
+          Additionally, when you gain a level in this class, you can choose one of the bard spells you know and replace
+          it with another spell from the bard spell list, which almost must be of a level for which you have spell
+          slots.
+      ability: CHA
+      focus: You can use a musical instrument as a spellcasting focus for your bard spells.
+      cantripsKnown: 2
+      spellsKnown: 4
+      spellList:
+        - { level: 0, name: Dancing Lights }
+        - { level: 0, name: Light }
+        - { level: 0, name: Mage Hand }
+        - { level: 0, name: Mending }
+        - { level: 0, name: Message }
+        - { level: 0, name: Minor Illusion }
+        - { level: 0, name: Prestidigitation }
+        - { level: 0, name: True Strike }
+        - { level: 0, name: Vicious Mockery }
+        - { level: 1, name: Animal Friendship }
+        - { level: 1, name: Bane }
+        - { level: 1, name: Charm Person }
+        - { level: 1, name: Comprehend Languages }
+        - { level: 1, name: Cure Wounds }
+        - { level: 1, name: Detect Magic }
+        - { level: 1, name: Disguise Self }
+        - { level: 1, name: Faerie Fire }
+        - { level: 1, name: Feather Fall }
+        - { level: 1, name: Healing Word }
+        - { level: 1, name: Heroism }
+        - { level: 1, name: Hideous Laughter }
+        - { level: 1, name: Identify }
+        - { level: 1, name: Illusory Script }
+        - { level: 1, name: Longstrider }
+        - { level: 1, name: Silent Image }
+        - { level: 1, name: Sleep }
+        - { level: 1, name: Speak with Animals }
+        - { level: 1, name: Thunderwave }
+        - { level: 1, name: Unseen Servant }
+        - { level: 2, name: Animal Messenger }
+        - { level: 2, name: Blindness/Deafness }
+        - { level: 2, name: Calm Emotions }
+        - { level: 2, name: Detect Thoughts }
+        - { level: 2, name: Enhance Ability }
+        - { level: 2, name: Enthrall }
+        - { level: 2, name: Heat Metal }
+        - { level: 2, name: Hold Person }
+        - { level: 2, name: Invisibility }
+        - { level: 2, name: Knock }
+        - { level: 2, name: Lesser Restoration }
+        - { level: 2, name: Locate Animals or Plants }
+        - { level: 2, name: Locate Object }
+        - { level: 2, name: Magic Mouth }
+        - { level: 2, name: See Invisibility }
+        - { level: 2, name: Shatter }
+        - { level: 2, name: Silence }
+        - { level: 2, name: Suggestion }
+        - { level: 2, name: Zone of Truth }
+        - { level: 3, name: Bestow Curse }
+        - { level: 3, name: Clairvoyance }
+        - { level: 3, name: Dispel Magic }
+        - { level: 3, name: Fear }
+        - { level: 3, name: Glyph of Warding }
+        - { level: 3, name: Hypnotic Pattern }
+        - { level: 3, name: Major Image }
+        - { level: 3, name: Nondetection }
+        - { level: 3, name: Plant Growth }
+        - { level: 3, name: Sending }
+        - { level: 3, name: Speak with Dead }
+        - { level: 3, name: Speak with Plants }
+        - { level: 3, name: Stinking Cloud }
+        - { level: 3, name: Tiny Hut }
+        - { level: 3, name: Tongues }
+        - { level: 4, name: Compulsion }
+        - { level: 4, name: Confusion }
+        - { level: 4, name: Dimension Door }
+        - { level: 4, name: Freedom of Movement }
+        - { level: 4, name: Greater Invisibility }
+        - { level: 4, name: Hallucinatory Terrain }
+        - { level: 4, name: Locate Creature }
+        - { level: 4, name: Polymorph }
+        - { level: 5, name: Animate Objects }
+        - { level: 5, name: Awaken }
+        - { level: 5, name: Dominate Person }
+        - { level: 5, name: Dream }
+        - { level: 5, name: Geas }
+        - { level: 5, name: Greater Restoration }
+        - { level: 5, name: Hold Monster }
+        - { level: 5, name: Legend Lore }
+        - { level: 5, name: Mass Cure Wounds }
+        - { level: 5, name: Mislead }
+        - { level: 5, name: Modify Memory }
+        - { level: 5, name: Planar Binding }
+        - { level: 5, name: Raise Dead }
+        - { level: 5, name: Scrying }
+        - { level: 5, name: Seeming }
+        - { level: 5, name: Teleportation Circle }
+        - { level: 6, name: Eyebite }
+        - { level: 6, name: Find the Path }
+        - { level: 6, name: Guards and Wards }
+        - { level: 6, name: Irresistible Dance }
+        - { level: 6, name: Mass Suggestion }
+        - { level: 6, name: Programmed Illusion }
+        - { level: 6, name: True Seeing }
+        - { level: 7, name: Arcane Sword }
+        - { level: 7, name: Etherealness }
+        - { level: 7, name: Forcecage }
+        - { level: 7, name: Magnificent Mansion }
+        - { level: 7, name: Mirage Arcane }
+        - { level: 7, name: Project Image }
+        - { level: 7, name: Regenerate }
+        - { level: 7, name: Resurrection }
+        - { level: 7, name: Symbol }
+        - { level: 7, name: Teleport }
+        - { level: 8, name: Dominate Monster }
+        - { level: 8, name: Feeblemind }
+        - { level: 8, name: Glibness }
+        - { level: 8, name: Mind Blank }
+        - { level: 8, name: Power Word Stun }
+        - { level: 9, name: Foresight }
+        - { level: 9, name: Power Word Kill }
+        - { level: 9, name: True Polymorph }
+      spellSlots:
+        description:
+          - >
+            To cast one of these spells, you must expend a slot of the spell's level or higher. You regain all expended
+            slots when you finish a long rest.
+        L1: 2
+    features:
+      - name: Spellcasting Ability
+        description:
+          - >
+            Charisma is your spellcasting ability for your bard spells. Your magic comes from the heart and soul you
+            pour into the performance of your music or oration. You use your Charisma whenever a spell refers to your
+            spellcasting ability. In addition, you use your Charisma modifier when setting the saving throw DC for a
+            bard spell you cast and when making an attack roll with one.
+      - name: Ritual Casting
+        description:
+          - You can cast any bard spell you know as a ritual if that spell has the ritual tag.
+      - name: Bardic Inspiration
+        description:
+          - >
+            You can inspire others through stirring words or music. To do so, you use a bonus action on your turn to
+            choose one creature other than yourself within 60 feet of you who can hear you. That creature gains one
+            Bardic Inspiration die, a d6.
+          - >
+            Once within the next 10 minutes, the creature can roll the die and add the number rolled to one ability
+            check, attack roll, or saving throw it makes. The creature can wait until after it rolls the d20 before
+            deciding to use the Bardic Inspiration die, but must decide before the GM says whether the roll succeeds
+            or fails. Once the Bardic Inspiration die is rolled, it is lost. A creature can have only one Bardic
+            Inspiration die at a time.
+          - >
+            You can use this feature a number of times equal to your Charisma modifier (a minimum of once). You
+            regain any expended uses when you finish a long rest.
+          - >
+            Your Bardic Inspiration die changes when you reach certain levels in this class. The die becomes a d8 at
+            5th level, a d10 at 10th level, and a d12 at 15th level.
+      - name: Bardic Inspiration Dice
+        value: 1d6
+    choices:
+      - name: Musical instruments
+        description:
+          - Three musical instruments of your choice
+        type: proficiency
+        pick: 3
+        options:
+          - { type: tool, name: Bagpipes }
+          - { type: tool, name: Drum }
+          - { type: tool, name: Dulcimer }
+          - { type: tool, name: Flute }
+          - { type: tool, name: Lute }
+          - { type: tool, name: Lyre }
+          - { type: tool, name: Horn }
+          - { type: tool, name: Pan flute }
+          - { type: tool, name: Shawm }
+          - { type: tool, name: Viol }
+      - name: Skills
+        description:
+          - Choose any three
+        type: proficiency
+        pick: 3
+        from: { name: proficiencies, types: [skill] }
+      - name: Equipment
+        type: equipment
+        pick: 1
+        options:
+          - rapier
+          - longsword
+          - any simple weapon
+      - name: Equipment
+        type: equipment
+        pick: 1
+        options:
+          - diplomat's pack
+          - entertainer's pack
+      - name: Equipment
+        type: equipment
+        pick: 1
+        options:
+          - lute
+          - any other musical instrument
+      - name: Cantrips
+        description:
+          - >
+            You know two cantrips of your choice from the bard spell list. You learn additional bard cantrips of your
+            choice at higher levels, as shown in the Cantrips Known column of the Bard table.
+        type: spell
+        pick: 2
+        options:
+          - Dancing Lights
+          - Light
+          - Mage Hand
+          - Mending
+          - Message
+          - Minor Illusion
+          - Prestidigitation
+          - True Strike
+          - Vicious Mockery
+      - name: Spells Known
+        description:
+          - You know four 1st-level spells of your choice from the bard spell list.
+        type: spell
+        pick: 4
+        options:
+          - Animal Friendship
+          - Bane
+          - Charm Person
+          - Comprehend Languages
+          - Cure Wounds
+          - Detect Magic
+          - Disguise Self
+          - Faerie Fire
+          - Feather Fall
+          - Healing Word
+          - Heroism
+          - Hideous Laughter
+          - Identify
+          - Illusory Script
+          - Longstrider
+          - Silent Image
+          - Sleep
+          - Speak with Animals
+          - Thunderwave
+          - Unseen Servant
+    unlockables:
+      - condition: { level: 2 }
+        spellCasting:
+          spellsKnown: 5
+          spellSlots: { L1: 3 }
+        features:
+          - name: Jack of All Trades
+            description:
+              - >
+                Starting at 2nd level, you can add half your proficiency bonus, rounded down, to any ability check you
+                make that doesn't already include your proficiency bonus.
+          - name: Song of Rest
+            description:
+              - >
+                Beginning at 2nd level, you can use soothing music or oration to help revitalize your wounded allies
+                during a short rest. If you or any friendly creatures who can hear your performance regain hit points
+                at the end of the short rest by spending one or more Hit Dice, each of those creatures regain extra hit
+                points equal to the bonus hit dice.
+              - >
+                The extra hit points increase when you reach certain levels in this class: to 1d8 at 9th level, to
+                1d10 at 13th level, and to 1d12 at 17th level.
+          - name: Song of Rest Bonus Hit Dice
+            value: 1d6
+      - condition: { level: 3 }
+        spellCasting:
+          spellsKnown: 6
+          spellSlots: { L1: 4, L2: 2 }
+        features:
+          - name: Expertise 1
+            description:
+              - >
+                At 3rd level, choose two of your skill proficiencies. Your proficiency bonus is doubled for any ability
+                check you make that uses either of the chosen proficiencies.
+              - >
+                At 10th level, you can choose another two skill proficiencies to gain this benefit.
+        choices:
+          - name: Bard College
+            description:
+              - >
+                At 3rd level, you delve into the advanced techniques of a bard college of your choice, such as the
+                College of Lore. Your choice grants you features at 3rd level and again at 6th and 14th level.
+            type: feature
+            pick: 1
+            options:
+              - name: College of Lore
+                description:
+                  - >
+                    Bards of the College of Lore know something about most things, collecting bits of knowledge from
+                    sources as diverse as scholarly tomes and peasant tales. Whether singing folk ballads in taverns or
+                    elaborate compositions in royal courts, these bards use their gifts to hold audiences spellbound.
+                    When the applause dies down, the audience members might find themselves questioning everything they
+                    held to be true, from their faith in the priesthood of the local temple to their loyalty to the
+                    king.
+                  - >
+                    The loyalty of these bards lies in the pursuit of beauty and truth, not in fealty to a monarch or
+                    following the tenets of a deity. A noble who keeps such a bard as a herald or advisor knows that the
+                    bard would rather be honest than politic.
+                  - >
+                    The college's members gather in libraries and sometimes in actual colleges, complete with classrooms
+                    and dormitories, to share their lore with one another. They also meet at festivals or affairs of
+                    state, where they can expose corruption, unravel lies, and poke fun at self-important figures of
+                    authority.
+      - condition: { level: 3, feature: College of Lore }
+        features:
+         - name: Cutting Words
+           description:
+             - >
+               Also at third level, you learn how to use your wit to distract, confuse, and otherwise sap the confidence
+               and competence of others. When a creature that you can see within 60 feet of you makes an attack roll, an
+               ability check, or a damage roll, you can use your reaction to expend one of your uses of Bardic
+               Inspiration, rolling a Bardic Inspiration die and subtracting the number rolled from the creature's roll.
+               You can choose to use this feature after the creature makes its roll, but before the GM determines
+               whether the attack roll or ability check succeeds or fails, or before the creature deals its damage. The
+               creature is immune if it can't hear you or if it's immune to being charmed.
+        choices:
+          - name: Bonus Proficiencies
+            description:
+              - When you join the College of Lore at 3rd level, you gain proficiency with three skills of your choice.
+            type: proficiency
+            pick: 3
+            from: { name: proficiencies, types: [skill] }
+      - condition: { level: 6, feature: College of Lore }
+        features:
+          - name: Additional Magic Secrets
+            description:
+              - >
+                At 6th level, you learn two spells of your choice from any class. A spell you choose must be of a level
+                you can cast, as shown on the Bard table, or a cantrip. The chosen spells count as bard spells for you
+                but don't count against the number of bard spells you know.
+        choices:
+          - name: Spells from Additional Magic Secrets
+            type: spell
+            pick: 2
+            from: { name: spells, levels: [0, 1, 2, 3] }
+      - condition: { level: 14, feature: College of Lore }
+        feature:
+          - name: Peerless Skill
+            description:
+              - >
+                Starting at 14th level, when you make an ability check, you can expend one use of Bardic Inspiration.
+                Roll a Bardic Inspiration die and add the number rolled to your ability check. You can choose to do so
+                after you roll the die for the ability check, but before the GM tells you whether you succeed or fail.
+      - condition: { level: 4 }
+        spellCasting:
+          cantripsKnown: 3
+          spellsKnown: 7
+          spellSlots: { L2: 3 }
+      - condition: { level: 5 }
+        proficiencyBonus: +3
+        spellCasting:
+          spellsKnown: 8
+          spellSlots: { L3: 2 }
+        features:
+          - name: Bardic Inspiration Dice
+            value: 1d8
+          - name: Font of Inspiration
+            description:
+              - >
+                Beginning when you reach 5th level, you regain all of your expended uses of Bardic Inspiration when
+                you finish a short or long rest.
+      - condition: { level: 6 }
+        spellCasting:
+          spellsKnown: 9
+          spellSlots: { L3: 3 }
+        features:
+          - name: Countercharm
+            description:
+              - >
+                At 6th level, you gain the ability to use musical notes or words of power to disrupt mind-influencing
+                effects. As an action, you can start a performance that lasts until the end of your next turn. During
+                that time, you and any friendly creatures within 30 feet of you have advantage on saving throws against
+                being frightened or charmed. A creature must be able to hear you to gain this benefit. The performance
+                ends early if you are incapacitated or silenced or if you voluntarily end it (no action required).
+      - condition: { level: 7 }
+        spellCasting:
+          spellsKnown: 10
+          spellSlots: { L4: 1 }
+      - condition: { level: 8 }
+        spellCasting:
+          spellsKnown: 11
+          spellSlots: { L4: 2 }
+      - condition: { level: 9 }
+        proficiencyBonus: +4
+        spellCasting:
+          spellsKnown: 12
+          spellSlots: { L4: 3, L5: 1 }
+        features:
+          - name: Song of Rest Bonus Hit Dice
+            value: 1d8
+      - condition: { level: 10 }
+        spellCasting:
+          cantripsKnown: 4
+          spellsKnown: 14
+          spellSlots: { L5: 2 }
+        features:
+          - name: Bardic Inspiration Dice
+            value: 1d10
+          - name: Expertise 2
+          #TODO: Turn all Magical Secrets into a 'choice'
+          - name: Magical Secrets 1
+            description:
+              - >
+                By 10th level, you have plundered magical knowledge from a wide spectrum of disciplines. Choose two
+                spells from any class, including this one. A spell you choose must be of a level you can cast, as shown
+                on the Bard table, or a cantrip.
+              - >
+                The chosen spells count as bard spells for you and are included in the number in the Spells Known column
+                of the Bard table.
+              - >
+                You learn two additional spells from any class at 14th level and again at 18th level.
+      - condition: { level: 11 }
+        spellCasting:
+          spellsKnown: 15
+          spellSlots: { L6: 1 }
+      - condition: { level: 13 }
+        proficiencyBonus: +5
+        spellCasting:
+          spellsKnown: 16
+          spellSlots: { L7: 1 }
+        features:
+          - name: Song of Rest Bonus Hit Dice
+            value: 1d10
+      - condition: { level: 14 }
+        spellCasting:
+          spellsKnown: 18
+        features:
+          #TODO: Turn all Magical Secrets into a 'choice'
+          - name: Magical Secrets 2
+      - condition: { level: 15 }
+        spellCasting:
+          spellsKnown: 19
+          spellSlots: { L8: 1 }
+        features:
+          - name: Bardic Inspiration Dice
+            value: 1d12
+      - condition: { level: 17 }
+        proficiencyBonus: +6
+        spellCasting:
+          spellsKnown: 20
+          spellSlots: { L9: 1 }
+        features:
+          - name: Song of Rest Bonus Hit Dice
+            value: 1d12
+      - condition: { level: 18 }
+        spellCasting:
+          spellsKnown: 22
+          spellSlots: { L5: 3 }
+        features:
+          #TODO: Turn all Magical Secrets into a 'choice'
+          - name: Magical Secrets 3
+      - condition: { level: 19 }
+        spellCasting:
+          spellSlots: { L6: 2 }
+      - condition: { level: 20 }
+        spellCasting:
+          spellSlots: { L7: 2 }
+        features:
+          - name: Superior Inspiration
+            description:
+              - >
+                At 20th level, when you roll initiative and have no uses of Bardic Inspiration left, you regain one
+                use.
+
+
+  ## CLERIC
+  - name: Cleric
+
+  ## DRUID
+  - name: Druid
+
+  ## FIGHTER
+  - name: Fighter
+
+  ## MONK
+  - name: Monk
+
+  ## PALADIN
+  - name: Paladin
+
+  ## RANGER
+  - name: Ranger
+
+  ## ROGUE
+  - name: Rogue
+
+  ## SORCERER
+  - name: Sorcerer
+
+  ## WARLOCK
+  - name: Warlock
+
+  ## WIZARD
+  - name: Wizard
+
+# Races
+races:
+
+  ## DWARF
+  - name: Dwarf
+    description:
+      - Your dwarf character has an assortment of inborn abilities, part and parcel of dwarven nature.
+    abilityScoreAdjustments:
+      - { ability: CON, modifier: +2 }
+    age: >
+      Dwarves mature at the same rate as humans, but they're considered young until they reach the age of 50. On
+      average, they live about 350 years.
+    alignment: >
+      Most dwarves are lawful, believing firmly in the benefits of a well-ordered society. They tend toward good as
+      well, with a strong sense of fair play and a belief that everyone deserves to share in the benefits of a just
+      order.
+    size: Dwarves stand between 4 and 5 feet tall and average about 150 pounds. Your size is Medium.
+    speed: 25
+    features:
+      - name: Darkvision
+        description:
+          - >
+            Accustomed to life underground, you have superior vision in dark and dim conditions. You can see in dim
+            light within 60 feet of you as if it were bright light, and in darkness as if it were dim light. You can't
+            discern color in darkness, only shades of gray.
+        shortDescription: darkvision 60ft
+      - name: Dwarven Resilience
+        description:
+          - You have advantage on saving throws against poison, and you have resistance against poison damage.
+        shortDescription: ADV on poison saving throws, resistance to poison
+      - name: Stonecunning
+        description:
+          - >
+            Whenever you make an Intelligence (History) check related to the origin of stonework, you are considered
+            proficient in the History skill and add double your proficiency bonus to the check, instead of your normal
+            proficiency bonus.
+        shortDescription: x2 proficiency bonus + ADV on History checks involving origin of stonework
+    proficiencies:
+      - { type: language, name: Common }
+      - { type: language, name: Dwarvish }
+      - { type: weapon,   name: battleaxe }
+      - { type: weapon,   name: handaxe }
+      - { type: weapon,   name: light hammer }
+      - { type: weapon,   name: warhammer }
+    choices:
+      - name: Tool Proficiency
+        description:
+          - >
+            You gain proficiency with the artisan's tool of your choice: smith's tools, brewer's supplies, or mason's
+            tools.
+        type: proficiency
+        pick: 1
+        options:
+          - { type: tool, name: smith's tools }
+          - { type: tool, name: brewer's supplies }
+          - { type: tool, name: mason's tools }
+    subraces:
+      - name: Hill Dwarf
+        description:
+          - As a hill dwarf, you have keen senses, deep intuition, and remarkable resilience.
+        abilityScoreAdjustments:
+          - { ability: WIS, modifier: +1 }
+        features:
+          - name: Dwarven Toughness
+            description:
+              - Your hit point maximum increases by 1, and it increases 1 every time you gain a level.
+            stat: hp
+            modifier: +1
+            per: level
+
+  ## ELF
+  - name: Elf
+    description:
+      - Your elf character has a variety of natural abilities, the result of thousands of years of elven refinement.
+    abilityScoreAdjustments:
+      - { ability: DEX, modifier: +2 }
+    age: >
+      Although elves reach physical maturity at about the same age as humans, the elven understanding of adulthood goes
+      beyond physical growth to encompass worldly experience. An elf typically claims adulthood and an adult name around
+      the age of 100 and can live to be 750 years old.
+    alignment: >
+      Elves love freedom, variety, and self-expression, so they lean strongly toward the gentler aspects of chaos. They
+      value and protect others' freedom as well as their own, and they are more often good than not.
+    size: Elves range from under 5 to over 6 feet tall and have slender builds. Your size is Medium.
+    speed: 30
+    features:
+      - name: Darkvision
+        description:
+          - >
+            Accustomed to twilit forests and the night sky, you have superior vision in dark and dim conditions. You can
+            see in dim light within 60 feet of you as if it were bright light, and in darkness as if it were dim light.
+            You can't discern color in darkness.
+        shortDescription: darkvision 60ft
+      - name: Fey Ancestry
+        description:
+          - You have advantage on saving throws against being charmed, and magic can't put you to sleep.
+        shortDescription: ADV vs being charmed, immune to sleep magic
+      - name: Trance
+        description:
+          - >
+            Elves don't need to sleep. Instead, they meditate deeply, remaining semiconscious, for 4 hours a day. (The
+            Common word for such meditation is "trance".) While meditating, you can dream after a fashion; such dreams
+            are actually mental exercises that have become reflexive through years of practice. After resting in this
+            way, you gain the same benefit that a human does after 8 hours of sleep.
+        shortDescription: long rest only takes 4 hours
+    proficiencies:
+      - { type: language, name: Common }
+      - { type: language, name: Elvish }
+      - { type: skill,    name: perception }
+    subraces:
+      - name: High Elf
+        description:
+          - >
+            As a high elf, you have a keen mind and a mastery of at least the basics of magic. In many fantasy gaming
+            worlds, there are two kinds of high elves. One type is haughty and reclusive, believing themselves to be
+            superior to non-elves and even other elves. The other type is more common and more friendly, and often
+            encountered among humans and other races.
+        abilityScoreAdjustments:
+          - { ability: INT, modifier: +1 }
+        proficiencies:
+          - { type: weapon, name: longbow }
+          - { type: weapon, name: longsword }
+          - { type: weapon, name: shortbow }
+          - { type: weapon, name: shortsword }
+        choices:
+          - name: Cantrip
+            description:
+              - >
+                You know one cantrip of your choice from the wizard spell list. Intelligence is your spellcasting
+                ability for it.
+            type: feature
+            pick: 1
+            options:
+              - { type: spell, level: 0, name: Acid Splash }
+              - { type: spell, level: 0, name: Chill Touch }
+              - { type: spell, level: 0, name: Dancing Lights }
+              - { type: spell, level: 0, name: Fire Bolt }
+              - { type: spell, level: 0, name: Light }
+              - { type: spell, level: 0, name: Mage Hand }
+              - { type: spell, level: 0, name: Mending }
+              - { type: spell, level: 0, name: Message }
+              - { type: spell, level: 0, name: Minor Illusion }
+              - { type: spell, level: 0, name: Poison Spray }
+              - { type: spell, level: 0, name: Prestidigitation }
+              - { type: spell, level: 0, name: Ray of Frost }
+              - { type: spell, level: 0, name: Shocking Grasp }
+              - { type: spell, level: 0, name: True Strike }
+          - name: Languages
+            description:
+              - You can speak, read, and write one extra language of your choice.
+            pick: 1
+            type: proficiency
+            options:
+              - { type: language, name: Abyssal }
+              - { type: language, name: Celestial }
+              - { type: language, name: Deep Speech }
+              - { type: language, name: Draconic }
+              - { type: language, name: Dwarvish }
+              - { type: language, name: Elvish }
+              - { type: language, name: Giant }
+              - { type: language, name: Gnomish }
+              - { type: language, name: Goblin }
+              - { type: language, name: Halfling }
+              - { type: language, name: Infernal }
+              - { type: language, name: Orc }
+              - { type: language, name: Primordial }
+              - { type: language, name: Sylvan }
+              - { type: language, name: Undercommon }
+
+  ## HALFLING
+  - name: Halfling
+    description:
+      - Your halfling character has a number of traits in common with all other halflings.
+    abilityScoreAdjustments:
+      - { ability: DEX, modifier: +2 }
+    age: A halfling reaches adulthood at the age of 20 and generally lives into the middle of his or her second century.
+    alignment: >
+      Most halflings are lawful good. As a rule, they are good-hearted and kind, hate to see others in pain, and have no
+      tolerance for oppression. They are also very orderly and traditional, leaning heavily on the support of their
+      community and the comfort of their old ways.
+    size: Halflings average about 3 feet tall and weigh 40 pounds. Your size is Small.
+    speed: 25
+    features:
+      - name: Lucky
+        description:
+          - >
+            When you roll a 1 on the d20 for an attack roll, ability check, or saving throw, you can reroll the die and
+            must use the new roll.
+        shortDescription: free d20 reroll for attack, ability check, or saving throw
+      - name: Brave
+        description:
+          - You have advantage on saving throws against being frightened.
+        shortDescription: ADV vs being frightened
+      - name: Halfling Nimbleness
+        description:
+          - You can move through the space of any creature that is of a size larger than yours.
+        shortDescription: can move through space of a larger creature
+    proficiencies:
+      - { type: language, name: Common }
+      - { type: language, name: Halfling }
+    subraces:
+      - name: Lightfoot
+        description:
+          - >
+            As a lightfoot halfling, you can easily hide from notice, even using other people as cover. You're inclined
+            to be affable and get along well with others. Lightfoots are more prone to wanderlust than other halflings,
+            and often dwell alongside other races or take up a nomadic life.
+        abilityScoreAdjustments:
+          - { ability: CHA, modifier: +1 }
+        features:
+          - name: Naturally Stealthy
+            description:
+              - >
+                You can attempt to hide even when you are obscured only by a creature that is at least one size larger
+                than you.
+
+  ## HUMAN
+  - name: Human
+    description:
+      - It's hard to make generalizations about humans, but your human character has these traits.
+    abilityScoreAdjustments:
+      - { ability: STR, modifier: +1 }
+      - { ability: DEX, modifier: +1 }
+      - { ability: CON, modifier: +1 }
+      - { ability: INT, modifier: +1 }
+      - { ability: WIS, modifier: +1 }
+      - { ability: CHA, modifier: +1 }
+    age: Humans reach adulthood in their late teens and live less than a century.
+    alignment: Humans tend toward no particular alignment. The best and the worst are found among them.
+    size:
+      - >
+        Humans vary widely in height and build, from barely 5 feet to well over 6 feet tall. Regardless of your position
+        in that range, your size is Medium.
+    speed: 30
+    proficiencies:
+      - { type: language, name: Common }
+    choices:
+      - name: Extra Language
+        description:
+          - >
+            You can speak, read, and write Common and one extra language of your choice. Humans typically learn the
+            languages of other peoples they deal with, including obscure dialects. They are fond of sprinkling their
+            speech with words borrowed from other tongues: Orc curses, Elvish musical expressions, Dwarvish military
+            phrases, and so on.
+        type: proficiency
+        pick: 1
+        options:
+          - { type: language, name: Abyssal }
+          - { type: language, name: Celestial }
+          - { type: language, name: Deep Speech }
+          - { type: language, name: Draconic }
+          - { type: language, name: Dwarvish }
+          - { type: language, name: Elvish }
+          - { type: language, name: Giant }
+          - { type: language, name: Gnomish }
+          - { type: language, name: Goblin }
+          - { type: language, name: Halfling }
+          - { type: language, name: Infernal }
+          - { type: language, name: Orc }
+          - { type: language, name: Primordial }
+          - { type: language, name: Sylvan }
+          - { type: language, name: Undercommon }
+
+  ## DRAGONBORN
+  - name: Dragonborn
+    description:
+      - Your draconic heritage manifests in a variety of traits you share with other dragonborn.
+    abilityScoreAdjustments:
+      - { ability: STR, modifier: +2 }
+      - { ability: CHA, modifier: +1 }
+    age: >
+      Young dragonborn grow quickly. They walk hours after hatching, attain the size and development of a 10-year-old
+      human child by the age of 3, and reach adulthood by 15. They live to be around 80.
+    alignment: >
+      Dragonborn tend to extremes, making a conscious choice for one side or the other in the cosmic war between good
+      and evil. Most dragonborn are good, but those who side with evil can be terrible villains.
+    size: >
+      Dragonborn are taller and heavier than humans, standing well over 6 feet tall and averaging almost 250 pounds.
+      Your size is Medium.
+    speed: 30
+    proficiencies:
+      - { type: language, name: Common }
+      - { type: language, name: Draconic }
+    choices:
+      - name: Draconic Ancestry
+        description:
+          - >
+            You have draconic ancestry. Choose one type of dragon from the Draconic Ancestry table. Your breath weapon
+            and damage resistance are determined by the dragon type, as shown in the table.
+        type: feature
+        pick: 1
+        options:
+          - name: Draconic Ancestry - Black
+            description:
+              - >
+                Breath Weapon. You can use your action to exhale destructive energy. It deals 2d6 acid damage in a
+                5 by 30 ft line, or half as much on a DEX save. The DC for this saving throw equals 8 + your CON
+                modifier + your proficiency bonus. Damage increases by 1d6 at 6th, 11th, and 16th level.
+                You cannot use your breath weapon again until you finish a short or long rest.
+              - Damage Resistance. You have resistance to acid damage.
+          - name: Draconic Ancestry - Blue
+            description:
+              - >
+                Breath Weapon. You can use your action to exhale destructive energy. It deals 2d6 lightning damage in a
+                5 by 30 ft line, or half as much on a DEX save. The DC for this saving throw equals 8 + your CON
+                modifier + your proficiency bonus. Damage increases by 1d6 at 6th, 11th, and 16th level.
+                You cannot use your breath weapon again until you finish a short or long rest.
+              - Damage Resistance. You have resistance to lightning damage.
+          - name: Draconic Ancestry - Brass
+            description:
+              - >
+                Breath Weapon. You can use your action to exhale destructive energy. It deals 2d6 fire damage in a
+                5 by 30 ft line, or half as much on a DEX save. The DC for this saving throw equals 8 + your CON
+                modifier + your proficiency bonus. Damage increases by 1d6 at 6th, 11th, and 16th level.
+                You cannot use your breath weapon again until you finish a short or long rest.
+              - Damage Resistance. You have resistance to fire damage.
+          - name: Draconic Ancestry - Bronze
+            description:
+              - >
+                Breath Weapon. You can use your action to exhale destructive energy. It deals 2d6 lightning damage in a
+                5 by 30 ft line, or half as much on a DEX save. The DC for this saving throw equals 8 + your CON
+                modifier + your proficiency bonus. Damage increases by 1d6 at 6th, 11th, and 16th level.
+                You cannot use your breath weapon again until you finish a short or long rest.
+              - Damage Resistance. You have resistance to lightning damage.
+          - name: Draconic Ancestry - Copper
+            description:
+              - >
+                Breath Weapon. You can use your action to exhale destructive energy. It deals 2d6 acid damage in a
+                5 by 30 ft line, or half as much on a DEX save. The DC for this saving throw equals 8 + your CON
+                modifier + your proficiency bonus. Damage increases by 1d6 at 6th, 11th, and 16th level.
+                You cannot use your breath weapon again until you finish a short or long rest.
+              - Damage Resistance. You have resistance to acid damage.
+          - name: Draconic Ancestry - Gold
+            description:
+              - >
+                Breath Weapon. You can use your action to exhale destructive energy. It deals 2d6 fire damage in a
+                15 ft cone, or half as much on a DEX save. The DC for this saving throw equals 8 + your CON
+                modifier + your proficiency bonus. Damage increases by 1d6 at 6th, 11th, and 16th level.
+                You cannot use your breath weapon again until you finish a short or long rest.
+              - Damage Resistance. You have resistance to fire damage.
+          - name: Draconic Ancestry - Green
+            description:
+              - >
+                Breath Weapon. You can use your action to exhale destructive energy. It deals 2d6 poison damage in a
+                15 ft cone, or half as much on a CON save. The DC for this saving throw equals 8 + your CON
+                modifier + your proficiency bonus. Damage increases by 1d6 at 6th, 11th, and 16th level.
+                You cannot use your breath weapon again until you finish a short or long rest.
+              - Damage Resistance. You have resistance to poison damage.
+          - name: Draconic Ancestry - Red
+            description:
+              - >
+                Breath Weapon. You can use your action to exhale destructive energy. It deals 2d6 fire damage in a
+                15 ft cone, or half as much on a DEX save. The DC for this saving throw equals 8 + your CON
+                modifier + your proficiency bonus. Damage increases by 1d6 at 6th, 11th, and 16th level.
+                You cannot use your breath weapon again until you finish a short or long rest.
+              - Damage Resistance. You have resistance to fire damage.
+          - name: Draconic Ancestry - Silver
+            description:
+              - >
+                Breath Weapon. You can use your action to exhale destructive energy. It deals 2d6 cold damage in a
+                15 ft cone, or half as much on a CON save. The DC for this saving throw equals 8 + your CON
+                modifier + your proficiency bonus. Damage increases by 1d6 at 6th, 11th, and 16th level.
+                You cannot use your breath weapon again until you finish a short or long rest.
+              - Damage Resistance. You have resistance to cold damage.
+          - name: Draconic Ancestry - White
+            description:
+              - >
+                Breath Weapon. You can use your action to exhale destructive energy. It deals 2d6 cold damage in a
+                15 ft cone, or half as much on a CON save. The DC for this saving throw equals 8 + your CON
+                modifier + your proficiency bonus. Damage increases by 1d6 at 6th, 11th, and 16th level.
+                You cannot use your breath weapon again until you finish a short or long rest.
+              - Damage Resistance. You have resistance to cold damage.
+
+  ## GNOME
+  - name: Gnome
+    description:
+      - Your gnome character has certain characteristics in common with all other gnomes.
+    abilityScoreAdjustments:
+      - { ability: INT, modifier: +2 }
+    age: >
+      Gnomes mature at the same rate humans do, and most are expected to settle down into an adult life by around age
+      40. They can live 350 to almost 500 years.
+    alignment: >
+      Gnomes are most often good. Those who tend toward law are sages, engineers, researchers, scholars, investigators,
+      or inventors. Those who tend toward chaos are minstrels, tricksters, wanderers, or fanciful jewelers. Gnomes are
+      good-hearted, and even the tricksters among them are more playful than vicious.
+    size: Gnomes are between 3 and 4 feet tall and average about 40 pounds. Your size is Small.
+    speed: 25
+    features:
+      - name: Darkvision
+        description:
+          - >
+            Accustomed to life underground, you have superior vision in dark and dim conditions. You can see in dim
+            light within 60 feet of you as if it were bright light, and in darkness as if it were dim light. You can't
+            discern color in darkness, only shades of gray.
+        shortDescription: darkvision 60ft
+      - name: Gnome Cunning
+        description:
+          - You have advantage on all Intelligence, Wisdom, and Charisma saving throws against magic.
+        shortDescription: ADV on INT, WIS, & CHA saving throws vs magic
+    proficiencies:
+      - { type: language, name: Common }
+      - { type: language, name: Gnomish }
+    subraces:
+      - name: Rock Gnome
+        description:
+          - As a rock gnome, you have a natural inventiveness and hardiness beyond that of other gnomes.
+        abilityScoreAdjustments:
+          - { ability: CON, modifier: +1 }
+        features:
+          - name: Artificer's Lore
+            description:
+              - >
+                Whenever you make an Intelligence (History) check related to magic items, alchemical objects, or
+                technological devices, you can add twice your proficiency bonus, instead of any proficiency bonus you
+                normally apply.
+          - name: Tinker
+            description:
+              - >
+                You have proficiency with artisan's tools (tinker's tools). Using these tools, you can spend 1 hour and
+                10gp worth of materials to construct a Tiny clockwork device (AC5, 1hp). The device ceases to function
+                after 24 hours (unless you spend 1 hour repairing it to keep the device functioning), or when you use
+                your action to dismantle it; at that time, you can reclaim the materials used to create it. You can have
+                up to three such devices active at one time.
+            options:
+              - name: Clockwork Toy
+                description:
+                  - >
+                    This toy is a clockwork animal, monster, or person, such as a frog, mouse, bird, dragon, or soldier.
+                    When placed on the ground, the toy moves 5 feet across the ground on each of your turns in a random
+                    direction. It makes noises as appropriate to the creature it represents.
+              - name: Fire Starter
+                description:
+                  - >
+                    The device produces a miniature flame, which you can use to light a candle, torch, or campfire.
+                    Using the device requires your action.
+              - name: Music Box
+                description:
+                  - >
+                    When opened, this music box plays a single song at a moderate volume. The box stops playing when it
+                    reaches the song's end or when it is closed.
+        proficiencies:
+          - { type: tool, name: tinker's tools }
+
+  ## HALF-ELF
+  - name: Half-Elf
+    description:
+      - Your half-elf character has some qualities in common with elves and some that are unique to half-elves.
+    abilityScoreAdjustments:
+      - { ability: CHA, modifier: +2 }
+    age: >
+      Half-elves mature at the same rate humans do and reach adulthood around the age of 20. They live much longer than
+      humans, however, often exceeding 180 years.
+    alignment: >
+      Half-elves share the chaotic bent of their elven heritage. They value both personal freedom and creative
+      expression, demonstrating neither love of leaders nor desire for followers. They chafe at rules, resent others'
+      demands and sometimes prove unreliable, or at least unpredictable.
+    size: Half-elves are about the same size as humans, ranging from 5 to 6 feet tall. Your size is Medium.
+    speed: 30
+    features:
+      - name: Darkvision
+        description:
+          - >
+            Thanks to your elf blood, you have superior vision in dark and dim conditions. You can see in dim light
+            within 60 feet of you as if it were bright light, and in darkness as if it were dim light. You can't discern
+            color in darkness, only shades of gray.
+        shortDescription: darkvision 60ft
+      - name: Fey Ancestry
+        description:
+          - You have advantage on saving throws against being charmed, and magic can't put you to sleep.
+        shortDescription: ADV vs being charmed, immune to sleep magic
+    proficiencies:
+      - { type: language, name: Common }
+      - { type: language, name: Elvish }
+    choices:
+      - name: Ability Score Adjustment
+        description:
+          - Two other ability scores of your choice increase by 1.
+        type: abilityScoreAdjustment
+        pick: 2
+        options:
+          - { ability: STR, modifier: +1 }
+          - { ability: DEX, modifier: +1 }
+          - { ability: CON, modifier: +1 }
+          - { ability: INT, modifier: +1 }
+          - { ability: WIS, modifier: +1 }
+      - name: Languages
+        description:
+          - You can speak, read, and write Common, Elvish, and one extra language of your choice.
+        type: proficiency
+        pick: 1
+        options:
+          - { type: language, name: Abyssal }
+          - { type: language, name: Celestial }
+          - { type: language, name: Deep Speech }
+          - { type: language, name: Draconic }
+          - { type: language, name: Dwarvish }
+          - { type: language, name: Giant }
+          - { type: language, name: Gnomish }
+          - { type: language, name: Goblin }
+          - { type: language, name: Halfling }
+          - { type: language, name: Infernal }
+          - { type: language, name: Orc }
+          - { type: language, name: Primordial }
+          - { type: language, name: Sylvan }
+          - { type: language, name: Undercommon }
+      - name: Skill Versatility
+        description:
+          - You gain proficiency in two skills of your choice.
+        type: proficiency
+        pick: 2
+        options:
+          - { type: skill, name: Acrobatics }
+          - { type: skill, name: Animal Handling }
+          - { type: skill, name: Arcana }
+          - { type: skill, name: Athletics }
+          - { type: skill, name: Deception }
+          - { type: skill, name: History }
+          - { type: skill, name: Insight }
+          - { type: skill, name: Intimidation }
+          - { type: skill, name: Investigation }
+          - { type: skill, name: Medicine }
+          - { type: skill, name: Nature }
+          - { type: skill, name: Perception }
+          - { type: skill, name: Performance }
+          - { type: skill, name: Persuasion }
+          - { type: skill, name: Religion }
+          - { type: skill, name: Sleight of Hand }
+          - { type: skill, name: Stealth }
+          - { type: skill, name: Survival }
+
+  ## HALF-ORC
+  - name: Half-Orc
+    description:
+      - Your half-orc character has certain traits deriving from your orc ancestry.
+    abilityScoreAdjustments:
+      - { ability: STR, modifier: +2 }
+      - { ability: CON, modifier: +1 }
+    age: >
+      Half-orcs mature a little faster than humans, reaching adulthood around age 14. They age noticeably faster and
+      rarely live longer than 75 years.
+    alignment: >
+      Half-orcs inherit tendency toward chaos from their orc parents and are not strongly inclined toward good.
+      Half-orcs raised among orcs and willing to live out their lives among them are usually evil.
+    size: >
+      Half-orcs are somewhat larger and bulkier than humans, and they range from 5 to well over 6 feet tall. Your size
+      is Medium.
+    speed: 30
+    features:
+      - name: Darkvision
+        description:
+          - >
+            Thanks to your orc blood, you have superior vision in dark and dim conditions. You can see in dim light
+            within 60 feet of you as if it were bright light, and in darkness as if it were dim light. You can't discern
+            color in darkness, only shades of gray.
+        shortDescription: darkvision 60ft
+      - name: Relentless Endurance
+        description:
+          - >
+            When you are reduced to 0 hit points but not killed outright, you can drop to 1 hit point instead. You can't
+            use this feature again until you finish a long rest.
+        shortDescription: drop to 1hp instead of 0 if not outright killed, once per long rest
+      - name: Savage Attacks
+        description:
+          - >
+            When you score a critical hit with a melee weapon attack, you can roll one of the weapon's damage dice one
+            additional time and add it to the extra damage of the critical hit.
+        shortDescription: add another weapon damage dice to critical hit damage
+    proficiencies:
+      - { type: language, name: Common }
+      - { type: language, name: Orc }
+      - { type: skill,    name: intimidation }
+
+  ## TIEFLING
+  - name: Tiefling
+    description:
+      - Tieflings share certain racial traits as a result of their infernal descent.
+    abilityScoreAdjustments:
+      - { ability: INT, modifier: +1 }
+      - { ability: CHA, modifier: +2 }
+    age: Tieflings mature at the same rate as humans but live a few years longer.
+    alignment: >
+      Tieflings might not have an innate tendency toward evil, but many of them end up there. Evil or not, an
+      independent nature inclines many tieflings toward a chaotic alignment.
+    size: >
+      Tieflings are about the same size and build as humans. Your size is Medium.
+    speed: 30
+    features:
+      - name: Darkvision
+        description:
+          - >
+            Thanks to your infernal heritage, you have superior vision in dark and dim conditions. You can see in dim
+            light within 60 feet of you as if it were bright light, and in darkness as if it were dim light. You can't
+            discern color in darkness, only shades of gray.
+        shortDescription: darkvision 60ft
+      - name: Hellish Resistance
+        description:
+          - You have resistance to fire damage.
+        shortDescription: resistance to fire damage
+      - name: Infernal Legacy
+        description:
+          - >
+            You know the thaumaturgy cantrip. When you reach 3rd level, you can cast the hellish rebuke spell as a
+            2nd-level spell once with this trait and regain the ability to do so when you finish a long rest. When you
+            reach 5th level, you can cast the darkness spell once with this trait and regain the ability to do so when
+            you finish a long rest. Charisma is your spellcasting ability for these spells.
+        shortDescription: >
+          thaumaturgy cantrip; at 3rd level can cast hellish rebuke once per long rest; at 5th level can
+          cast darkness once per long rest
+    proficiencies:
+      - { type: language, name: Common }
+      - { type: language, name: Infernal }
+
+# Lists
+lists:
+
+  backgroundFeatures:
+    - name: Shelter of the Faithful
+      description:
+        - >
+          As an acolyte, you command the respect of those who share your faith, and you can perform religious
+          ceremonies of your deity. You and your adventuring companions can expect to receive free healing and care at
+          a temple, shrine, or other established presence of your faith, though you must provide any material
+          components needed for spells. Those who share your religion will support you (but only you) at a modest
+          lifestyle.
+        - >
+          You might also have ties to a specific temple dedicated to your chosen deity or pantheon, and you have a
+          residence there. This could be the temple where you used to serve, if you remain on good terms with it, or a
+          temple where you have found a new home. While near your temple, you can call upon priests for assistance,
+          provided the assistance you ask for is not hazardous and you remain in good standing with your temple.
+
+  feats:
+    - name: Grappler
+      prerequisites:
+        - STR 13
+      description:
+        - >
+          You've developed the skills necessary to hold your own in close-quarters grappling. You gain the following
+          benefits:
+        - >
+          You have advantage on attack rolls against a creature you are grappling.
+        - >
+          You can use your action to try to pin a creature grappled by you. To do so, make another grapple check. If you
+          succeed, you and the creature are both restrained until the grapple ends.
+
+  proficiencies:
+    - { type: armor,        name: light }
+    - { type: armor,        name: medium }
+    - { type: armor,        name: heavy }
+    - { type: armor,        name: shields }
+    - { type: language,     name: Abyssal }
+    - { type: language,     name: Celestial }
+    - { type: language,     name: Common }
+    - { type: language,     name: Deep Speech }
+    - { type: language,     name: Draconic }
+    - { type: language,     name: Dwarvish }
+    - { type: language,     name: Elvish }
+    - { type: language,     name: Giant }
+    - { type: language,     name: Gnomish }
+    - { type: language,     name: Goblin }
+    - { type: language,     name: Halfling }
+    - { type: language,     name: Infernal }
+    - { type: language,     name: Orc }
+    - { type: language,     name: Primordial }
+    - { type: language,     name: Sylvan }
+    - { type: language,     name: Undercommon }
+    - { type: saving throw, name: CHA }
+    - { type: saving throw, name: CON }
+    - { type: saving throw, name: DEX }
+    - { type: saving throw, name: INT }
+    - { type: saving throw, name: STR }
+    - { type: saving throw, name: WIS }
+    - { type: skill,        name: "acrobatics" }
+    - { type: skill,        name: "animal handling" }
+    - { type: skill,        name: "arcana" }
+    - { type: skill,        name: "athletics" }
+    - { type: skill,        name: "deception" }
+    - { type: skill,        name: "history" }
+    - { type: skill,        name: "insight" }
+    - { type: skill,        name: "intimidation" }
+    - { type: skill,        name: "investigation" }
+    - { type: skill,        name: "medicine" }
+    - { type: skill,        name: "nature" }
+    - { type: skill,        name: "perception" }
+    - { type: skill,        name: "performance" }
+    - { type: skill,        name: "persuasion" }
+    - { type: skill,        name: "religion" }
+    - { type: skill,        name: "sleight of hand" }
+    - { type: skill,        name: "stealth" }
+    - { type: skill,        name: "survival" }
+    - { type: tool,         name: "alchemist's supplies",     tags: [artisan's tools] }
+    - { type: tool,         name: "brewer's supplies",        tags: [artisan's tools] }
+    - { type: tool,         name: "calligrapher's supplies",  tags: [artisan's tools] }
+    - { type: tool,         name: "carpenter's tools",        tags: [artisan's tools] }
+    - { type: tool,         name: "cartographer's tools",     tags: [artisan's tools] }
+    - { type: tool,         name: "cobbler's tools",          tags: [artisan's tools] }
+    - { type: tool,         name: "cook's utensils",          tags: [artisan's tools] }
+    - { type: tool,         name: "glassblower's tools",      tags: [artisan's tools] }
+    - { type: tool,         name: "jeweler's tools",          tags: [artisan's tools] }
+    - { type: tool,         name: "leatherworker's tools",    tags: [artisan's tools] }
+    - { type: tool,         name: "mason's tools",            tags: [artisan's tools] }
+    - { type: tool,         name: "painter's supplies",       tags: [artisan's tools] }
+    - { type: tool,         name: "potter's tools",           tags: [artisan's tools] }
+    - { type: tool,         name: "smith's tools",            tags: [artisan's tools] }
+    - { type: tool,         name: "tinker's tools",           tags: [artisan's tools] }
+    - { type: tool,         name: "weaver's tools",           tags: [artisan's tools] }
+    - { type: tool,         name: "woodcarver's tools",       tags: [artisan's tools] }
+    - { type: tool,         name: "disguise kit",             tags: [artisan's tools] }
+    - { type: tool,         name: "forgery kit",              tags: [artisan's tools] }
+    - { type: tool,         name: "dice set",                 tags: [gaming set] }
+    - { type: tool,         name: "playing card set",         tags: [gaming set] }
+    - { type: tool,         name: "bagpipes",                 tags: [musical instrument] }
+    - { type: tool,         name: "drum",                     tags: [musical instrument] }
+    - { type: tool,         name: "dulcimer",                 tags: [musical instrument] }
+    - { type: tool,         name: "flute",                    tags: [musical instrument] }
+    - { type: tool,         name: "lute",                     tags: [musical instrument] }
+    - { type: tool,         name: "lyre",                     tags: [musical instrument] }
+    - { type: tool,         name: "horn",                     tags: [musical instrument] }
+    - { type: tool,         name: "pan flute",                tags: [musical instrument] }
+    - { type: tool,         name: "shawm",                    tags: [musical instrument] }
+    - { type: tool,         name: "viol",                     tags: [musical instrument] }
+    - { type: tool,         name: "herbalism kit" }
+    - { type: tool,         name: "navigator's tools" }
+    - { type: tool,         name: "poisoner's kit" }
+    - { type: tool,         name: "thieves' tools" }
+    - { type: tool,         name: "vehicles (land)" }
+    - { type: tool,         name: "vehicles (water)" }
+    - { type: weapon,       name: "club",                     tags: [simple, melee] }
+    - { type: weapon,       name: "dagger",                   tags: [simple, melee] }
+    - { type: weapon,       name: "greatclub",                tags: [simple, melee] }
+    - { type: weapon,       name: "handaxe",                  tags: [simple, melee] }
+    - { type: weapon,       name: "javelin",                  tags: [simple, melee] }
+    - { type: weapon,       name: "light hammer",             tags: [simple, melee] }
+    - { type: weapon,       name: "mace",                     tags: [simple, melee] }
+    - { type: weapon,       name: "quarterstaff",             tags: [simple, melee] }
+    - { type: weapon,       name: "sickle",                   tags: [simple, melee] }
+    - { type: weapon,       name: "spear",                    tags: [simple, melee] }
+    - { type: weapon,       name: "crossbow, light",          tags: [simple, ranged] }
+    - { type: weapon,       name: "dart",                     tags: [simple, ranged] }
+    - { type: weapon,       name: "shortbow",                 tags: [simple, ranged] }
+    - { type: weapon,       name: "sling",                    tags: [simple, ranged] }
+    - { type: weapon,       name: "battleaxe",                tags: [martial, melee] }
+    - { type: weapon,       name: "flail",                    tags: [martial, melee] }
+    - { type: weapon,       name: "glaive",                   tags: [martial, melee] }
+    - { type: weapon,       name: "greataxe",                 tags: [martial, melee] }
+    - { type: weapon,       name: "greatsword",               tags: [martial, melee] }
+    - { type: weapon,       name: "halberd",                  tags: [martial, melee] }
+    - { type: weapon,       name: "lance",                    tags: [martial, melee] }
+    - { type: weapon,       name: "longsword",                tags: [martial, melee] }
+    - { type: weapon,       name: "maul",                     tags: [martial, melee] }
+    - { type: weapon,       name: "morningstar",              tags: [martial, melee] }
+    - { type: weapon,       name: "pike",                     tags: [martial, melee] }
+    - { type: weapon,       name: "rapier",                   tags: [martial, melee] }
+    - { type: weapon,       name: "scimitar",                 tags: [martial, melee] }
+    - { type: weapon,       name: "shortsword",               tags: [martial, melee] }
+    - { type: weapon,       name: "trident",                  tags: [martial, melee] }
+    - { type: weapon,       name: "war pick",                 tags: [martial, melee] }
+    - { type: weapon,       name: "warhammer",                tags: [martial, melee] }
+    - { type: weapon,       name: "whip",                     tags: [martial, melee] }
+    - { type: weapon,       name: "blowgun",                  tags: [martial, ranged] }
+    - { type: weapon,       name: "crossbow, hand",           tags: [martial, ranged] }
+    - { type: weapon,       name: "crossbow, heavy",          tags: [martial, ranged] }
+    - { type: weapon,       name: "longbow",                  tags: [martial, ranged] }
+    - { type: weapon,       name: "net",                      tags: [martial, ranged] }
+
+  languages:
+    #default { isExotic: false }
+    - { name: Common,       typicalSpeakers: [humans],              script: Common }
+    - { name: Dwarvish,     typicalSpeakers: [dwarves],             script: Dwarvish }
+    - { name: Elvish,       typicalSpeakers: [elves],               script: Elvish }
+    - { name: Giant,        typicalSpeakers: [ogres, giants],       script: Dwarvish }
+    - { name: Gnomish,      typicalSpeakers: [gnomes],              script: Dwarvish }
+    - { name: Goblin,       typicalSpeakers: [goblinoids],          script: Dwarvish }
+    - { name: Halfling,     typicalSpeakers: [halflings],           script: Common }
+    - { name: Orc,          typicalSpeakers: [orcs],                script: Dwarvish }
+    - { name: Abyssal,      typicalSpeakers: [demons],              script: Infernal,   isExotic: true }
+    - { name: Celestial,    typicalSpeakers: [celestials],          script: Celestial,  isExotic: true }
+    - { name: Draconic,     typicalSpeakers: [dragons, dragonborn], script: Draconic,   isExotic: true }
+    - { name: Deep Speech,  typicalSpeakers: [aboleths, cloakers],                      isExotic: true }
+    - { name: Infernal,     typicalSpeakers: [devils],              script: Infernal,   isExotic: true }
+    - { name: Primordial,   typicalSpeakers: [elementals],          script: Dwarvish,   isExotic: true }
+    - { name: Sylvan,       typicalSpeakers: [fey creatures],       script: Elvish,     isExotic: true }
+    - { name: Undercommon,  typicalSpeakers: [underworld traders],  script: Elvish,     isExotic: true }
+
+  #TODO: finish the list
+  spells:
+    - { level: 0, name: Dancing Lights }
+    - { level: 0, name: Light }
+    - { level: 0, name: Mage Hand }
+    - { level: 0, name: Mending }
+    - { level: 0, name: Message }
+    - { level: 0, name: Minor Illusion }
+    - { level: 0, name: Prestidigitation }
+    - { level: 0, name: True Strike }
+    - { level: 0, name: Vicious Mockery }
+    - { level: 1, name: Animal Friendship }
+    - { level: 1, name: Bane }
+    - { level: 1, name: Charm Person }
+    - { level: 1, name: Comprehend Languages }
+    - { level: 1, name: Cure Wounds }
+    - { level: 1, name: Detect Magic }
+    - { level: 1, name: Disguise Self }
+    - { level: 1, name: Faerie Fire }
+    - { level: 1, name: Feather Fall }
+    - { level: 1, name: Healing Word }
+    - { level: 1, name: Heroism }
+    - { level: 1, name: Hideous Laughter }
+    - { level: 1, name: Identify }
+    - { level: 1, name: Illusory Script }
+    - { level: 1, name: Longstrider }
+    - { level: 1, name: Silent Image }
+    - { level: 1, name: Sleep }
+    - { level: 1, name: Speak with Animals }
+    - { level: 1, name: Thunderwave }
+    - { level: 1, name: Unseen Servant }
+    - { level: 2, name: Animal Messenger }
+    - { level: 2, name: Blindness/Deafness }
+    - { level: 2, name: Calm Emotions }
+    - { level: 2, name: Detect Thoughts }
+    - { level: 2, name: Enhance Ability }
+    - { level: 2, name: Enthrall }
+    - { level: 2, name: Heat Metal }
+    - { level: 2, name: Hold Person }
+    - { level: 2, name: Invisibility }
+    - { level: 2, name: Knock }
+    - { level: 2, name: Lesser Restoration }
+    - { level: 2, name: Locate Animals or Plants }
+    - { level: 2, name: Locate Object }
+    - { level: 2, name: Magic Mouth }
+    - { level: 2, name: See Invisibility }
+    - { level: 2, name: Shatter }
+    - { level: 2, name: Silence }
+    - { level: 2, name: Suggestion }
+    - { level: 2, name: Zone of Truth }
+    - { level: 3, name: Bestow Curse }
+    - { level: 3, name: Clairvoyance }
+    - { level: 3, name: Dispel Magic }
+    - { level: 3, name: Fear }
+    - { level: 3, name: Glyph of Warding }
+    - { level: 3, name: Hypnotic Pattern }
+    - { level: 3, name: Major Image }
+    - { level: 3, name: Nondetection }
+    - { level: 3, name: Plant Growth }
+    - { level: 3, name: Sending }
+    - { level: 3, name: Speak with Dead }
+    - { level: 3, name: Speak with Plants }
+    - { level: 3, name: Stinking Cloud }
+    - { level: 3, name: Tiny Hut }
+    - { level: 3, name: Tongues }
+    - { level: 4, name: Compulsion }
+    - { level: 4, name: Confusion }
+    - { level: 4, name: Dimension Door }
+    - { level: 4, name: Freedom of Movement }
+    - { level: 4, name: Greater Invisibility }
+    - { level: 4, name: Hallucinatory Terrain }
+    - { level: 4, name: Locate Creature }
+    - { level: 4, name: Polymorph }
+    - { level: 5, name: Animate Objects }
+    - { level: 5, name: Awaken }
+    - { level: 5, name: Dominate Person }
+    - { level: 5, name: Dream }
+    - { level: 5, name: Geas }
+    - { level: 5, name: Greater Restoration }
+    - { level: 5, name: Hold Monster }
+    - { level: 5, name: Legend Lore }
+    - { level: 5, name: Mass Cure Wounds }
+    - { level: 5, name: Mislead }
+    - { level: 5, name: Modify Memory }
+    - { level: 5, name: Planar Binding }
+    - { level: 5, name: Raise Dead }
+    - { level: 5, name: Scrying }
+    - { level: 5, name: Seeming }
+    - { level: 5, name: Teleportation Circle }
+    - { level: 6, name: Eyebite }
+    - { level: 6, name: Find the Path }
+    - { level: 6, name: Guards and Wards }
+    - { level: 6, name: Irresistible Dance }
+    - { level: 6, name: Mass Suggestion }
+    - { level: 6, name: Programmed Illusion }
+    - { level: 6, name: True Seeing }
+    - { level: 7, name: Arcane Sword }
+    - { level: 7, name: Etherealness }
+    - { level: 7, name: Forcecage }
+    - { level: 7, name: Magnificent Mansion }
+    - { level: 7, name: Mirage Arcane }
+    - { level: 7, name: Project Image }
+    - { level: 7, name: Regenerate }
+    - { level: 7, name: Resurrection }
+    - { level: 7, name: Symbol }
+    - { level: 7, name: Teleport }
+    - { level: 8, name: Dominate Monster }
+    - { level: 8, name: Feeblemind }
+    - { level: 8, name: Glibness }
+    - { level: 8, name: Mind Blank }
+    - { level: 8, name: Power Word Stun }
+    - { level: 9, name: Foresight }
+    - { level: 9, name: Power Word Kill }
+    - { level: 9, name: True Polymorph }
+
+  armor:
+    #default { strengthReq: 0, stealthDisadv: false }
+    - { name: "padded",          type: "light",  cost:    "5gp", weight:  "8 lb", baseAC: 11, modifier: "DEX",                 stealthDisadv: true }
+    - { name: "leather",         type: "light",  cost:   "10gp", weight: "10 lb", baseAC: 11, modifier: "DEX" }
+    - { name: "studded leather", type: "light",  cost:   "45gp", weight: "13 lb", baseAC: 12, modifier: "DEX" }
+    - { name: "hide",            type: "medium", cost:   "10gp", weight: "12 lb", baseAC: 12, modifier: "DEX", maxModifier: 2 }
+    - { name: "chain shirt",     type: "medium", cost:   "50gp", weight: "20 lb", baseAC: 13, modifier: "DEX", maxModifier: 2 }
+    - { name: "scale mail",      type: "medium", cost:   "50gp", weight: "45 lb", baseAC: 14, modifier: "DEX", maxModifier: 2, stealthDisadv: true }
+    - { name: "breastplate",     type: "medium", cost:  "400gp", weight: "20 lb", baseAC: 14, modifier: "DEX", maxModifier: 2 }
+    - { name: "half plate",      type: "medium", cost:  "750gp", weight: "40 lb", baseAC: 15, modifier: "DEX", maxModifier: 2, stealthDisadv: true }
+    - { name: "ring mail",       type: "heavy",  cost:   "30gp", weight: "40 lb", baseAC: 14,                                  stealthDisadv: true }
+    - { name: "chain mail",      type: "heavy",  cost:   "75gp", weight: "55 lb", baseAC: 16,                                  stealthDisadv: true, strengthReq: 13 }
+    - { name: "splint",          type: "heavy",  cost:  "200gp", weight: "60 lb", baseAC: 17,                                  stealthDisadv: true, strengthReq: 15 }
+    - { name: "plate",           type: "heavy",  cost: "1500gp", weight: "65 lb", baseAC: 18,                                  stealthDisadv: true, strengthReq: 15 }
+    - { name: "shield",          type: "shield", cost:   "10gp", weight:  "6 lb", baseAC: +2 }
+
+  weapons:
+    #default { weight: "0 lb" }
+    - { name: "club",           tags: [simple, melee, light],                                     cost:  "1sp", weight:  "2 lb",   damage: 1d4,  damageType: bludgeoning }
+    - { name: "dagger",         tags: [simple, melee, light, finesse, thrown],                    cost:  "2gp", weight:  "1 lb",   damage: 1d4,  damageType: piercing,     range: "20/60" }
+    - { name: "greatclub",      tags: [simple, melee, two-handed],                                cost:  "2sp", weight: "10 lb",   damage: 1d8,  damageType: bludgeoning }
+    - { name: "handaxe",        tags: [simple, melee, light, thrown],                             cost:  "5gp", weight:  "2 lb",   damage: 1d6,  damageType: slashing,     range: "20/60" }
+    - { name: "javelin",        tags: [simple, melee, thrown],                                    cost:  "5sp", weight:  "2 lb",   damage: 1d6,  damageType: piercing,     range: "30/120" }
+    - { name: "light hammer",   tags: [simple, melee, light, thrown],                             cost:  "2gp", weight:  "2 lb",   damage: 1d4,  damageType: bludgeoning,  range: "20/60" }
+    - { name: "mace",           tags: [simple, melee],                                            cost:  "5gp", weight:  "4 lb",   damage: 1d6,  damageType: bludgeoning }
+    - { name: "quarterstaff",   tags: [simple, melee, versatile],                                 cost:  "2sp", weight:  "4 lb",   damage: 1d6,  damageType: bludgeoning,                  versatileDamage: 1d8 }
+    - { name: "sickle",         tags: [simple, melee, light],                                     cost:  "1gp", weight:  "2 lb",   damage: 1d4,  damageType: slashing }
+    - { name: "spear",          tags: [simple, melee, thrown, versatile],                         cost:  "1gp", weight:  "3 lb",   damage: 1d6,  damageType: piercing,     range: "20/60", versatileDamage: 1d8 }
+    - { name: "crossbow, light",tags: [simple, ranged, ammunition, loading, two-handed],          cost: "25gp", weight:  "5 lb",   damage: 1d8,  damageType: piercing,     range: "80/320" }
+    - { name: "dart",           tags: [simple, ranged, finesse, thrown],                          cost:  "5cp", weight:  "0.25 lb",damage: 1d4,  damageType: piercing,     range: "20/60" }
+    - { name: "shortbow",       tags: [simple, ranged, ammunition, two-handed],                   cost: "25gp", weight:  "2 lb",   damage: 1d6,  damageType: piercing,     range: "80/320" }
+    - { name: "sling",          tags: [simple, ranged, ammunition],                               cost:  "1sp",                    damage: 1d4,  damageType: bludgeoning,  range: "30/120" }
+    - { name: "battleaxe",      tags: [martial, melee, versatile],                                cost: "10gp", weight:  "4 lb",   damage: 1d8,  damageType: slashing,                     versatileDamage: 1d10 }
+    - { name: "flail",          tags: [martial, melee],                                           cost: "10gp", weight:  "2 lb",   damage: 1d4,  damageType: bludgeoning }
+    - { name: "glaive",         tags: [martial, melee, heavy, reach, two-handed],                 cost: "20gp", weight:  "6 lb",   damage: 1d10, damageType: slashing }
+    - { name: "greataxe",       tags: [martial, melee, heavy, two-handed],                        cost: "30gp", weight:  "7 lb",   damage: 1d12, damageType: slashing }
+    - { name: "greatsword",     tags: [martial, melee, heavy, two-handed],                        cost: "50gp", weight:  "6 lb",   damage: 2d6,  damageType: slashing }
+    - { name: "halberd",        tags: [martial, melee, heavy, reach, two-handed],                 cost: "20gp", weight:  "6 lb",   damage: 1d10, damageType: slashing }
+    - { name: "lance",          tags: [martial, melee, reach, special],                           cost: "10gp", weight:  "6 lb",   damage: 1d12, damageType: piercing }
+    - { name: "longsword",      tags: [martial, melee, versatile],                                cost: "15gp", weight:  "3 lb",   damage: 1d8,  damageType: slashing,                     versatileDamage: 1d10 }
+    - { name: "maul",           tags: [martial, melee, heavy, two-handed],                        cost: "10gp", weight: "10 lb",   damage: 2d6,  damageType: bludgeoning }
+    - { name: "morningstar",    tags: [martial, melee],                                           cost: "15gp", weight:  "4 lb",   damage: 1d8,  damageType: piercing }
+    - { name: "pike",           tags: [martial, melee, heavy, reach, two-handed],                 cost:  "5gp", weight: "18 lb",   damage: 1d10, damageType: piercing }
+    - { name: "rapier",         tags: [martial, melee, finesse],                                  cost: "25gp", weight:  "2 lb",   damage: 1d8,  damageType: piercing }
+    - { name: "scimitar",       tags: [martial, melee, finesse, light],                           cost: "25gp", weight:  "3 lb",   damage: 1d6,  damageType: slashing }
+    - { name: "shortsword",     tags: [martial, melee, finesse, light],                           cost: "10gp", weight:  "2 lb",   damage: 1d6,  damageType: piercing }
+    - { name: "trident",        tags: [martial, melee, thrown, versatile],                        cost:  "5gp", weight:  "4 lb",   damage: 1d6,  damageType: piercing,     range: "20/60", versatileDamage: 1d8 }
+    - { name: "war pick",       tags: [martial, melee],                                           cost:  "5gp", weight:  "2 lb",   damage: 1d8,  damageType: piercing }
+    - { name: "warhammer",      tags: [martial, melee, versatile],                                cost: "15gp", weight:  "2 lb",   damage: 1d8,  damageType: bludgeoning,                  versatileDamage: 1d10 }
+    - { name: "whip",           tags: [martial, melee, finesse, reach],                           cost:  "2gp", weight:  "3 lb",   damage: 1d4,  damageType: slashing }
+    - { name: "blowgun",        tags: [martial, ranged, ammunition, loading],                     cost: "10gp", weight:  "1 lb",   damage: 1,    damageType: piercing,     range: "25/100" }
+    - { name: "crossbow, hand", tags: [martial, ranged, ammunition, light, loading],              cost: "75gp", weight:  "3 lb",   damage: 1d6,  damageType: piercing,     range: "30/120" }
+    - { name: "crossbow, heavy",tags: [martial, ranged, ammunition, heavy, loading, two-handed],  cost: "50gp", weight: "18 lb",   damage: 1d10, damageType: piercing,     range: "100/400" }
+    - { name: "longbow",        tags: [martial, ranged, ammunition, heavy, two-handed],           cost: "50gp", weight:  "2 lb",   damage: 1d8,  damageType: piercing,     range: "150/600" }
+    - { name: "net",            tags: [martial, ranged, special, thrown],                         cost:  "1gp", weight:  "3 lb",   damage: 0,                              range: "5/15" }
+
+  tools:
+    #default { weight: "0 lb" }
+    - { name: alchemist's supplies,     tags: [artisan's tools],    cost: "50gp", weight:  "8 lb" }
+    - { name: brewer's supplies,        tags: [artisan's tools],    cost: "20gp", weight:  "9 lb" }
+    - { name: calligrapher's supplies,  tags: [artisan's tools],    cost: "10gp", weight:  "5 lb" }
+    - { name: carpenter's tools,        tags: [artisan's tools],    cost:  "8gp", weight:  "6 lb" }
+    - { name: cartographer's tools,     tags: [artisan's tools],    cost: "15gp", weight:  "6 lb" }
+    - { name: cobbler's tools,          tags: [artisan's tools],    cost:  "5gp", weight:  "5 lb" }
+    - { name: cook's utensils,          tags: [artisan's tools],    cost:  "1gp", weight:  "8 lb" }
+    - { name: glassblower's tools,      tags: [artisan's tools],    cost: "30gp", weight:  "5 lb" }
+    - { name: jeweler's tools,          tags: [artisan's tools],    cost: "25gp", weight:  "2 lb" }
+    - { name: leatherworker's tools,    tags: [artisan's tools],    cost:  "5gp", weight:  "5 lb" }
+    - { name: mason's tools,            tags: [artisan's tools],    cost: "10gp", weight:  "8 lb" }
+    - { name: painter's supplies,       tags: [artisan's tools],    cost: "10gp", weight:  "5 lb" }
+    - { name: potter's tools,           tags: [artisan's tools],    cost: "10gp", weight:  "3 lb" }
+    - { name: smith's tools,            tags: [artisan's tools],    cost: "20gp", weight:  "8 lb" }
+    - { name: tinker's tools,           tags: [artisan's tools],    cost: "50gp", weight: "10 lb" }
+    - { name: weaver's tools,           tags: [artisan's tools],    cost:  "1gp", weight:  "5 lb" }
+    - { name: woodcarver's tools,       tags: [artisan's tools],    cost:  "1gp", weight:  "5 lb" }
+    - { name: disguise kit,             tags: [artisan's tools],    cost: "25gp", weight:  "3 lb" }
+    - { name: forgery kit,              tags: [artisan's tools],    cost: "15gp", weight:  "5 lb" }
+    - { name: dice set,                 tags: [gaming set],         cost:  "1sp" }
+    - { name: playing card set,         tags: [gaming set],         cost:  "5sp" }
+    - { name: herbalism kit,                                        cost:  "5gp", weight:  "3 lb" }
+    - { name: bagpipes,                 tags: [musical instrument], cost: "30gp", weight:  "6 lb" }
+    - { name: drum,                     tags: [musical instrument], cost: "6gp",  weight:  "3 lb" }
+    - { name: dulcimer,                 tags: [musical instrument], cost: "25gp", weight: "10 lb" }
+    - { name: flute,                    tags: [musical instrument], cost:  "2gp", weight:  "1 lb" }
+    - { name: lute,                     tags: [musical instrument], cost: "35gp", weight:  "2 lb" }
+    - { name: lyre,                     tags: [musical instrument], cost: "30gp", weight:  "2 lb" }
+    - { name: horn,                     tags: [musical instrument], cost:  "3gp", weight:  "2 lb" }
+    - { name: pan flute,                tags: [musical instrument], cost: "12gp", weight:  "2 lb" }
+    - { name: shawm,                    tags: [musical instrument], cost:  "2gp", weight:  "1 lb" }
+    - { name: viol,                     tags: [musical instrument], cost: "30gp", weight:  "1 lb" }
+    - { name: navigator's tools,                                    cost: "25gp", weight:  "2 lb" }
+    - { name: poisoner's kit,                                       cost: "50gp", weight:  "2 lb" }
+    - { name: thieves' tools,                                       cost: "25gp", weight:  "1 lb" }
+    - { name: vehicles (land),                                      cost:    "*", weight:     "*" }
+    - { name: vehicles (water),                                     cost:    "*", weight:     "*" }
+
+  equipmentPacks:
+    - name: burglar's pack
+      items:
+        - { name: "backpack" }
+        - { name: "ball bearings",          amount: "bag of 1000" }
+        - { name: "string",                 amount: "10ft" }
+        - { name: "bell" }
+        - { name: "candles",                amount: "5" }
+        - { name: "crowbar" }
+        - { name: "hammer" }
+        - { name: "pitons",                 amount: "10" }
+        - { name: "lantern, hooded" }
+        - { name: "oil",                    amount: "2 flasks" }
+        - { name: "rations",                amount: "5 days" }
+        - { name: "tinderbox" }
+        - { name: "waterskin" }
+        - { name: "rope, hempen",           amount: "50ft" }
+    - name: diplomat's pack
+      items:
+        - { name: "chest" }
+        - { name: "cases, maps or scrolls", amount: "2" }
+        - { name: "clothes, fine",          amount: "1 set" }
+        - { name: "ink",                    amount: "1 ounce bottle" }
+        - { name: "ink pen" }
+        - { name: "lamp" }
+        - { name: "oil",                    amount: "2 flasks" }
+        - { name: "paper",                  amount: "5 sheets" }
+        - { name: "perfume",                amount: "1 vial" }
+        - { name: "sealing wax" }
+        - { name: "soap" }
+    - name: dungeoneer's pack
+      items:
+        - { name: "backpack" }
+        - { name: "crowbar" }
+        - { name: "hammer" }
+        - { name: "pitons",                 amount: "10" }
+        - { name: "torches",                amount: "10" }
+        - { name: "tinderbox" }
+        - { name: "rations",                amount: "10 days" }
+        - { name: "waterskin" }
+        - { name: "rope, hempen",           amount: "50ft" }
+    - name: entertainer's pack
+      items:
+        - { name: "backpack" }
+        - { name: "bedroll" }
+        - { name: "clothes, costume",       amount: "2 sets" }
+        - { name: "candles",                amount: "5" }
+        - { name: "rations",                amount: "5 days" }
+        - { name: "waterskin" }
+        - { name: "disguise kit" }
+    - name: explorer's pack
+      items:
+        - { name: "backpack" }
+        - { name: "bedroll" }
+        - { name: "mess kit" }
+        - { name: "tinderbox" }
+        - { name: "torches",                amount: "10" }
+        - { name: "rations",                amount: "10 days" }
+        - { name: "waterskin" }
+        - { name: "rope, hempen",           amount: "50ft" }
+    - name: priest's pack
+      items:
+        - { name: "backpack" }
+        - { name: "blanket" }
+        - { name: "candles",                amount: "10" }
+        - { name: "tinderbox" }
+        - { name: "alms box" }
+        - { name: "incense",                amount: "2 blocks" }
+        - { name: "censer" }
+        - { name: "vestments" }
+        - { name: "rations",                amount: "2 days" }
+        - { name: "waterskin" }
+    - name: scholar's pack
+      items:
+        - { name: "backpack" }
+        - { name: "book of lore" }
+        - { name: "ink",                    amount: "1 ounce bottle" }
+        - { name: "ink pen" }
+        - { name: "parchment",              amount: "10 sheets" }
+        - { name: "little bag of sand" }
+        - { name: "small knife" }
+
+  gear:
+   #default { weight: "0 lb", per: "1" }
+    - { name: "abacus",                             cost:    "2gp", weight:  "2 lb" }
+    - { name: "acid",                               cost:   "25gp", weight:  "1 lb",   per: "1 vial" }
+    - { name: "alchemist's fire",                   cost:   "50gp", weight:  "1 lb",   per: "1 flask" }
+    - { name: "arrows",                             cost:    "1gp", weight:  "1 lb",   per: "20" }
+    - { name: "blowgun needles",                    cost:    "1gp", weight:  "1 lb",   per: "50" }
+    - { name: "crossbow bolts",                     cost:    "1gp", weight:  "1.5 lb", per: "20" }
+    - { name: "sling bullets",                      cost:    "4cp", weight:  "1.5 lb", per: "20" }
+    - { name: "antitoxin",                          cost:   "50gp",                    per: "1 vial" }
+    - { name: "crystal (arcane focus)",             cost:   "10gp", weight:  "1 lb" }
+    - { name: "orb (arcane focus)",                 cost:   "20gp", weight:  "3 lb" }
+    - { name: "rod (arcane focus)",                 cost:   "10gp", weight:  "2 lb" }
+    - { name: "staff (arcane focus)",               cost:    "5gp", weight:  "4 lb" }
+    - { name: "wand (arcane focus)",                cost:   "10gp", weight:  "1 lb" }
+    - { name: "backpack",                           cost:    "2gp", weight:  "5 lb" }
+    - { name: "ball bearings",                      cost:    "1gp", weight:  "2 lb",   per: "bag of 1000" }
+    - { name: "barrel",                             cost:    "2gp", weight: "70 lb" }
+    - { name: "basket",                             cost:    "4sp", weight:  "2 lb" }
+    - { name: "bedroll",                            cost:    "1gp", weight:  "7 lb" }
+    - { name: "bell",                               cost:    "1gp" }
+    - { name: "blanket",                            cost:    "5sp", weight:  "3 lb" }
+    - { name: "block and tackle",                   cost:    "1gp", weight:  "5 lb" }
+    - { name: "book",                               cost:  "25gp",  weight:  "5 lb" }
+    - { name: "bottle, glass",                      cost:    "2gp", weight:  "2 lb" }
+    - { name: "bucket",                             cost:    "5cp", weight:  "2 lb" }
+    - { name: "caltrops",                           cost:    "1gp", weight:  "2 lb",   per: "bag of 20" }
+    - { name: "candle",                             cost:    "1cp" }
+    - { name: "case, crossbow bolt",                cost:    "1gp", weight:  "1 lb" }
+    - { name: "case, map or scroll",                cost:    "1gp", weight:  "1 lb" }
+    - { name: "chain",                              cost:    "5gp", weight: "10 lb",   per: "10ft" }
+    - { name: "chalk",                              cost:    "1cp",                    per: "1 piece" }
+    - { name: "chest",                              cost:    "5gp", weight: "25 lb" }
+    - { name: "climber's kit",                      cost:   "25gp", weight: "12 lb" }
+    - { name: "clothes, common",                    cost:    "5sp", weight:  "3 lb",   per: "1 set" }
+    - { name: "clothes, costume",                   cost:    "5gp", weight:  "4 lb",   per: "1 set" }
+    - { name: "clothes, fine",                      cost:   "15gp", weight:  "6 lb",   per: "1 set" }
+    - { name: "clothes, traveler's",                cost:    "2gp", weight:  "4 lb",   per: "1 set" }
+    - { name: "component pouch",                    cost:   "25gp", weight:  "2 lb" }
+    - { name: "crowbar",                            cost:    "2gp", weight:  "5 lb" }
+    - { name: "sprig of mistletoe (druidic focus)", cost:    "1gp" }
+    - { name: "totem (druidic focus)",              cost:    "1gp" }
+    - { name: "wooden staff (druidic focus)",       cost:    "5gp", weight:  "4 lb" }
+    - { name: "yew wand (druidic focus)",           cost:   "10gp", weight:  "1 lb" }
+    - { name: "fishing tackle",                     cost:    "1gp", weight:  "4 lb" }
+    - { name: "flask or tankard",                   cost:    "2cp", weight:  "1 lb" }
+    - { name: "grappling hook",                     cost:    "2gp", weight:  "4 lb" }
+    - { name: "hammer",                             cost:    "1gp", weight:  "3 lb" }
+    - { name: "hammer, sledge",                     cost:    "2gp", weight: "10 lb" }
+    - { name: "healer's kit",                       cost:    "5gp", weight:  "3 lb" }
+    - { name: "amulet (holy symbol)",               cost:    "5gp", weight:  "1 lb" }
+    - { name: "emblem (holy symbol)",               cost:    "5gp" }
+    - { name: "reliquary (holy symbol)",            cost:    "5gp", weight:  "2 lb" }
+    - { name: "holy water",                         cost:   "25gp", weight:  "1 lb",   per: "1 flask" }
+    - { name: "hourglass",                          cost:   "25gp", weight:  "1 lb" }
+    - { name: "hunting trap",                       cost:    "5gp", weight: "25 lb" }
+    - { name: "ink",                                cost:   "10gp",                    per: "1 ounce bottle" }
+    - { name: "ink pen",                            cost:    "2cp" }
+    - { name: "jug or pitcher",                     cost:    "2cp", weight:  "4 lb" }
+    - { name: "ladder (10ft)",                      cost:    "1sp", weight: "25 lb" }
+    - { name: "lamp",                               cost:    "5sp", weight:  "1 lb" }
+    - { name: "lantern, bullseye",                  cost:   "10gp", weight:  "2 lb" }
+    - { name: "lantern, hooded",                    cost:    "5gp", weight:  "2 lb" }
+    - { name: "lock",                               cost:   "10gp", weight:  "1 lb" }
+    - { name: "magnifying glass",                   cost:  "100gp" }
+    - { name: "manacles",                           cost:    "2gp", weight:  "6 lb" }
+    - { name: "mess kit",                           cost:    "2sp", weight:  "1 lb" }
+    - { name: "mirror, steel",                      cost:    "5gp", weight:  "0.5 lb" }
+    - { name: "oil",                                cost:    "1sp", weight:  "1 lb",   per: "1 flask" }
+    - { name: "paper",                              cost:    "2sp",                    per: "1 sheet" }
+    - { name: "parchment",                          cost:    "2sp",                    per: "1 sheet" }
+    - { name: "perfume",                            cost:    "5gp",                    per: "1 vial" }
+    - { name: "pick, miner's",                      cost:    "2gp", weight: "10 lb" }
+    - { name: "piton",                              cost:    "5gp", weight:  "0.25 lb" }
+    - { name: "poison, basic",                      cost:  "100gp",                    per: "1 vial" }
+    - { name: "pole (10ft)",                        cost:    "5cp", weight:  "7 lb" }
+    - { name: "pot, iron",                          cost:    "2gp", weight: "10 lb" }
+    - { name: "potion of healing",                  cost:   "50gp", weight:  "0.5 lb" }
+    - { name: "pouch",                              cost:    "5sp", weight:  "1 lb" }
+    - { name: "quiver",                             cost:    "1gp", weight:  "1 lb" }
+    - { name: "ram, portable",                      cost:    "4gp", weight: "35 lb" }
+    - { name: "rations",                            cost:    "5sp", weight:  "2 lb",   per: "1 day" }
+    - { name: "robes",                              cost:    "1gp", weight:  "4 lb" }
+    - { name: "rope, hempen",                       cost:    "1gp", weight: "10 lb",   per: "50ft" }
+    - { name: "sack",                               cost:    "1cp", weight:  "0.5 lb" }
+    - { name: "scale, merchant's",                  cost:    "5gp", weight:  "3 lb" }
+    - { name: "sealing wax",                        cost:    "5sp" }
+    - { name: "shovel",                             cost:    "2gp", weight:  "5 lb" }
+    - { name: "signal whistle",                     cost:    "5cp" }
+    - { name: "signet ring",                        cost:    "5gp" }
+    - { name: "soap",                               cost:    "2cp" }
+    - { name: "spellbook",                          cost:   "50gp", weight:  "3 lb" }
+    - { name: "spikes, iron",                       cost:    "1gp", weight:  "5 lb",   per: "10" }
+    - { name: "spyglass",                           cost: "1000gp", weight:  "1 lb" }
+    - { name: "tent, two-person",                   cost:    "2gp", weight: "20 lb" }
+    - { name: "tinderbox",                          cost:    "5sp", weight:  "1 lb" }
+    - { name: "torch",                              cost:    "1cp", weight:  "1 lb" }
+    - { name: "vial",                               cost:    "1gp" }
+    - { name: "waterskin",                          cost:    "2sp", weight:  "5 lb" }
+    - { name: "whetstone",                          cost:    "1cp", weight:  "1 lb" }

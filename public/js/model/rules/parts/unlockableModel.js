@@ -5,6 +5,7 @@ var ChoiceCollection = require('../../../collection/rules/parts/choiceCollection
 var ConditionModel = require('./conditionModel');
 var FeatureCollection = require('../../../collection/rules/parts/featureCollection');
 var ProficiencyCollection = require('../../../collection/rules/parts/proficiencyCollection');
+var SpellCastingModel = require('../../../model/rules/parts/spellCastingModel');
 
 var UnlockableModel = UnlockableModel = Backbone.Model.extend({
     defaults: {
@@ -12,49 +13,39 @@ var UnlockableModel = UnlockableModel = Backbone.Model.extend({
         choices: null,                  //ChoiceCollection
         condition: null,                //ConditionModel
         features: null,                 //FeatureCollection
+        proficiencyBonus: null,         //Number
         proficiencies: null,            //ProficiencyCollection
-        speed: null                     //Number
+        speed: null,                    //Number
+        spellCasting: null              //SpellCastingModel
     },
 
     initialize: function(attrs, options) {
         attrs = attrs || {};
 
-        var adjustmentModels = _.map(attrs.abilityScoreAdjustments,
-            AdjustmentCollection.create) || [];
-        this.set(UnlockableModel.fields.ADJUSTMENTS,
-            new AdjustmentCollection(adjustmentModels));
+        var conditionModel = new ConditionModel(attrs.condition);
+        this.set(UnlockableModel.fields.CONDITION, conditionModel);
 
-        var choiceModels = _.map(attrs.choices, ChoiceCollection.create) || [];
-        this.set(UnlockableModel.fields.CHOICES, new ChoiceCollection(choiceModels));
+        var setupCollection = _.bind(function(fieldName, CollectionClass) {
+            this.set(fieldName, new CollectionClass(attrs[fieldName] || [], {parse: true}));
+        }, this);
 
-        if (!_.isEmpty(attrs.condition)) {
-            var conditionModel = new ConditionModel(attrs.condition);
-            this.set(UnlockableModel.fields.CONDITION, conditionModel);
+        setupCollection(UnlockableModel.fields.ADJUSTMENTS, AdjustmentCollection);
+        setupCollection(UnlockableModel.fields.CHOICES, ChoiceCollection);
+        setupCollection(UnlockableModel.fields.FEATURES, FeatureCollection);
+        setupCollection(UnlockableModel.fields.PROFICIENCIES, ProficiencyCollection);
+
+        if (attrs.spellCasting && !_.isEmpty(attrs.spellCasting)) {
+            var spellCastingModel = new SpellCastingModel(attrs.spellCasting);
+            this.set(UnlockableModel.fields.SPELL_CASTING, spellCastingModel);
         }
-
-        var featureModels = _.map(attrs.features, FeatureCollection.create) || [];
-        this.set(UnlockableModel.fields.FEATURES, new FeatureCollection(featureModels));
-
-        var proficiencyModels = _.map(attrs.proficiencies, ProficiencyCollection.create) || [];
-        this.set(UnlockableModel.fields.PROFICIENCIES, new ProficiencyCollection(proficiencyModels));
     },
 
     getAdjustments: function() {
         return this.get(UnlockableModel.fields.ADJUSTMENTS);
     },
 
-    setAdjustments: function(adjustmentModels) {
-        this.getAdjustments().reset(adjustmentModels || []);
-        return this;
-    },
-
     getChoices: function() {
         return this.get(UnlockableModel.fields.CHOICES);
-    },
-
-    setChoices: function(choiceModels) {
-        this.getChoices().reset(choiceModels || []);
-        return this;
     },
 
     getCondition: function() {
@@ -65,22 +56,20 @@ var UnlockableModel = UnlockableModel = Backbone.Model.extend({
         return this.get(UnlockableModel.fields.FEATURES);
     },
 
-    setFeatures: function(featureModels) {
-        this.getFeatures().reset(featureModels || []);
-        return this;
-    },
-
     getProficiencies: function() {
         return this.get(UnlockableModel.fields.PROFICIENCIES);
     },
 
-    setProficiencies: function(proficiencyModels) {
-        this.getProficiencies().reset(proficiencyModels || []);
-        return this;
+    getProficiencyBonus: function() {
+        return this.get(UnlockableModel.fields.PROFICIENCY_BONUS);
     },
 
     getSpeed: function() {
         return this.get(UnlockableModel.fields.SPEED);
+    },
+
+    getSpellCasting: function() {
+        return this.get(UnlockableModel.fields.SPELL_CASTING);
     }
 },{
     fields: {
@@ -89,7 +78,9 @@ var UnlockableModel = UnlockableModel = Backbone.Model.extend({
         CONDITION: 'condition',
         FEATURES: 'features',
         PROFICIENCIES: 'proficiencies',
-        SPEED: 'speed'
+        PROFICIENCY_BONUS: 'proficiencyBonus',
+        SPEED: 'speed',
+        SPELL_CASTING: 'spellCasting'
     }
 });
 

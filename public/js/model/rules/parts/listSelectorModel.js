@@ -24,9 +24,11 @@ var ListSelectorModel = Backbone.Model.extend({
     buildList: function() {
         var list = [];
 
-        // Get list from the rules config
-        if (_.isObject(AppStateModel.getRulesConfig()) && _.isObject(AppStateModel.getRulesConfig().getLists())) {
-            list = AppStateModel.getRulesConfig().getList(this.getName());
+        var collection = AppStateModel.getRulesConfig().getCollection(this.getName());
+        if (!collection) {
+            return list;
+        } else {
+            list = collection.toJSON(); //TODO: generic filtering in the collection
         }
 
         // Filter by levels

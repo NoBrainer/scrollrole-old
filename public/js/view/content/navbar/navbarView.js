@@ -8,8 +8,7 @@ var NavView = Backbone.View.extend({
         options = options || {};
 
         var list = options.list || ['NO NAV ITEMS DEFINED'];
-        var models = _.map(list, NavItemCollection.create);
-        this.collection = new NavItemCollection(models);
+        this.collection = new NavItemCollection(list, {parse: true});
 
         this.listenTo(this.collection, 'change reset', this.render);
     },

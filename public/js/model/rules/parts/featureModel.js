@@ -4,7 +4,8 @@ var FeatureModel = Backbone.Model.extend({
     defaults: {
         description: [],        //List of Strings
         name: null,             //String
-        shortDescription: null  //String
+        shortDescription: null, //String
+        value: null             //String|Number
     },
 
     getDescription: function() {
@@ -17,12 +18,17 @@ var FeatureModel = Backbone.Model.extend({
 
     getShortDescription: function() {
         return this.get(FeatureModel.fields.SHORT_DESCRIPTION);
+    },
+
+    getValue: function() {
+        return this.get(FeatureModel.fields.VALUE);
     }
 },{
     fields: {
         DESCRIPTION: 'description',
         NAME: 'name',
-        SHORT_DESCRIPTION: 'shortDescription'
+        SHORT_DESCRIPTION: 'shortDescription',
+        VALUE: 'value'
     }
 });
 

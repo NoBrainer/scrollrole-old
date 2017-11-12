@@ -21,7 +21,9 @@ var SpellSlotsPreviewView = Backbone.View.extend({
     },
 
     renderDescriptionRow: function() {
-        var html = templates.descriptionRow({ description: this.getModel().getDescription() });
+        var paragraphs = this.getModel().getDescription();
+        if (!paragraphs || _.isEmpty(paragraphs)) return;
+        var html = templates.descriptionRow({ description: paragraphs });
         this.$('.spell-slots-list').append(html);
     },
 
