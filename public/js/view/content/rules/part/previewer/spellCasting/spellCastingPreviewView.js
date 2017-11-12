@@ -40,13 +40,15 @@ var SpellCastingPreviewView = Backbone.View.extend({
     },
 
     renderDescriptionRow: function() {
-        var html = templates.descriptionRow({ description: this.getModel().getDescription() });
+        var paragraphs = this.getModel().getDescription();
+        if (!paragraphs || _.isEmpty(paragraphs)) return;
+        var html = templates.descriptionRow({ description: paragraphs });
         this.$('.spell-casting-list').append(html);
     },
 
     renderSpellSlots: function() {
         var spellSlotsModel = this.getModel().getSpellSlots();
-        if (spellSlotsModel.isEmpty()) return;
+        if (!spellSlotsModel || spellSlotsModel.isEmpty()) return;
 
         var view = new SpellSlotsPreviewView({ model: spellSlotsModel, hideTitle: true });
         var html = templates.htmlRow({ title: 'Spell Slots', contentHtml: view.render().$el.html() });
@@ -56,7 +58,7 @@ var SpellCastingPreviewView = Backbone.View.extend({
 
     renderSpellList: function() {
         var spellCollection = this.getModel().getSpellList();
-        if (_.isEmpty(spellCollection)) return;
+        if (!spellCollection || spellCollection.isEmpty()) return;
 
         var view = new SpellListPreviewView({ collection: spellCollection, hideTitle: true });
         var html = templates.htmlRow({ title: 'Spell List', contentHtml: view.render().$el.html() });

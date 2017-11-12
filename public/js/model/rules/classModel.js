@@ -9,40 +9,42 @@ var UnlockableCollection = require('../../collection/rules/parts/unlockableColle
 
 var ClassModel = Backbone.Model.extend({
     defaults: {
-        baseHitPoints: null,    //Number
-        choices: null,          //ChoiceCollection
-        description: [],        //List of Strings
-        equipment: [],          //List of Strings
-        features: null,         //FeatureCollection
-        hitDice: null,          //String
-        iconId: null,           //String
-        name: null,             //String
-        proficiencies: null,    //ProficiencyCollection
-        proficiencyBonus: null, //Number
-        spellCasting: null,     //SpellCastingModel
-        unlockables: null       //UnlockableCollection
+        abilityScoreImprovementLevels: [],  //Array
+        baseHitPoints: null,                //Number
+        choices: null,                      //ChoiceCollection
+        description: [],                    //List of Strings
+        equipment: [],                      //List of Strings
+        features: null,                     //FeatureCollection
+        hitDice: null,                      //String
+        iconId: null,                       //String
+        name: null,                         //String
+        proficiencies: null,                //ProficiencyCollection
+        proficiencyBonus: null,             //Number
+        spellCasting: null,                 //SpellCastingModel
+        unlockables: null                   //UnlockableCollection
     },
 
     initialize: function(attrs, options) {
         attrs = attrs || {};
 
-        var choiceModels = _.map(attrs.choices, ChoiceCollection.create) || [];
-        this.set(ClassModel.fields.CHOICES, new ChoiceCollection(choiceModels));
+        var setupCollection = _.bind(function(fieldName, CollectionClass) {
+            this.set(fieldName, new CollectionClass(attrs[fieldName] || [], {parse: true}));
+        }, this);
 
-        var featureModels = _.map(attrs.features, FeatureCollection.create) || [];
-        this.set(ClassModel.fields.FEATURES, new FeatureCollection(featureModels));
-
-        var proficiencyModels = _.map(attrs.proficiencies, ProficiencyCollection.create) || [];
-        this.set(ClassModel.fields.PROFICIENCIES, new ProficiencyCollection(proficiencyModels));
+        setupCollection(ClassModel.fields.CHOICES, ChoiceCollection);
+        setupCollection(ClassModel.fields.FEATURES, FeatureCollection);
+        setupCollection(ClassModel.fields.PROFICIENCIES, ProficiencyCollection);
+        setupCollection(ClassModel.fields.UNLOCKABLES, UnlockableCollection);
 
         var spellCastingModel = new SpellCastingModel(attrs.spellCasting);
         this.set(ClassModel.fields.SPELL_CASTING, spellCastingModel);
 
-        var unlockableModels = _.map(attrs.unlockables, UnlockableCollection.create) || [];
-        this.set(ClassModel.fields.UNLOCKABLES, new UnlockableCollection(unlockableModels));
-
         this.setIconId(IconIdUtil.normalize(this.getIconId(), ClassModel.validIconIds, ClassModel.defaultIconId,
             this.getName()));
+    },
+
+    getASILevels: function() {
+        return this.get(ClassModel.fields.ASI_LEVELS);
     },
 
     getBaseHitPoints: function() {
@@ -119,6 +121,7 @@ var ClassModel = Backbone.Model.extend({
     }
 },{
     fields: {
+        ASI_LEVELS: 'abilityScoreImprovementLevels',
         BASE_HIT_POINTS: 'baseHitPoints',
         CHOICES: 'choices',
         DESCRIPTION: 'description',

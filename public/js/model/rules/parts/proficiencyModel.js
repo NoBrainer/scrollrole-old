@@ -3,11 +3,16 @@ var ExportedClass = module.exports = Backbone.Model.extend();
 var ProficiencyModel = Backbone.Model.extend({
     defaults: {
         name: null, //String
+        tags: [],   //List of Strings
         type: null  //String
     },
 
     getName: function() {
         return this.get(ProficiencyModel.fields.NAME);
+    },
+
+    getTags: function() {
+        return this.get(ProficiencyModel.fields.TAGS);
     },
 
     getType: function() {
@@ -16,6 +21,7 @@ var ProficiencyModel = Backbone.Model.extend({
 },{
     fields: {
         NAME: 'name',
+        TAGS: 'tags',
         TYPE: 'type'
     },
 

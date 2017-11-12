@@ -2,10 +2,10 @@ var ExportedClass = module.exports = Backbone.Model.extend();
 
 var AppStateModel = Backbone.Model.extend({
     defaults: {
-        mode: null,
-        rulesConfig: null,
-        section: null,
-        tab: null
+        mode: null,         //String
+        rulesConfig: null,  //RulesConfigModel
+        section: null,      //String
+        tab: null           //String
     },
 
     initialize: function(attrs, options) {

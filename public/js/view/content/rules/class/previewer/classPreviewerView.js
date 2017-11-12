@@ -16,8 +16,8 @@ var ClassPreviewerView = PreviewerView.extend({
         options = options || {};
 
         options.section = 'classes';
-        options.rowIds = ['name', 'description', 'hit-dice', 'base-hp', 'proficiencies', 'proficiency-bonus',
-            'equipment', 'features', 'spell-casting', 'choices', 'unlockables'];
+        options.rowIds = ['name', 'description', 'hit-dice', 'base-hp', 'proficiencies', 'asi-levels',
+            'proficiency-bonus', 'equipment', 'features', 'spell-casting', 'choices', 'unlockables'];
 
         PreviewerView.prototype.initialize.call(this, options);
     },
@@ -35,6 +35,8 @@ var ClassPreviewerView = PreviewerView.extend({
             { collection: this.model.getProficiencies() });
         this.populateView(ProficiencyBonusPreviewView, '#preview-proficiency-bonus',
             { value: this.model.getProficiencyBonus() });
+        this.populateView(TextPreviewView, '#preview-asi-levels',
+            { label: 'Ability Score Improvement Levels', text: this.model.getASILevels().toString().replace(/,/g, ', ') });
         this.populateView(EquipmentPreviewView, '#preview-equipment',
             { equipment: this.model.getEquipment() });
         this.populateView(FeaturesPreviewView, '#preview-features',

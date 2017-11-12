@@ -17,8 +17,7 @@ var SpellCastingModel = Backbone.Model.extend({
     initialize: function(attrs, options) {
         attrs = attrs || {};
 
-        var spellModels = _.map(attrs.spellList, SpellCollection.create) || [];
-        this.set(SpellCastingModel.fields.SPELL_LIST, new SpellCollection(spellModels));
+        this.set(SpellCastingModel.fields.SPELL_LIST, new SpellCollection(attrs.spellList || [], {parse: true}));
 
         var spellSlotsModel = new SpellSlotsModel(attrs.spellSlots || {});
         this.set(SpellCastingModel.fields.SPELL_SLOTS, spellSlotsModel);
@@ -37,7 +36,7 @@ var SpellCastingModel = Backbone.Model.extend({
     },
 
     isEmpty: function() {
-        return this.getSpellList().isEmpty();
+        return this.getSpellList().isEmpty() && this.getSpellSlots().isEmpty() && !this.getCantripsKnown() && !this.getSpellsKnown();
     },
 
     getFocus: function() {
