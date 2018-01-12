@@ -36,7 +36,7 @@ var ClassModel = Backbone.Model.extend({
         setupCollection(ClassModel.fields.PROFICIENCIES, ProficiencyCollection);
         setupCollection(ClassModel.fields.UNLOCKABLES, UnlockableCollection);
 
-        var spellCastingModel = new SpellCastingModel(attrs.spellCasting);
+        var spellCastingModel = new SpellCastingModel(attrs.spellCasting, {className: this.getName()});
         this.set(ClassModel.fields.SPELL_CASTING, spellCastingModel);
 
         this.setIconId(IconIdUtil.normalize(this.getIconId(), ClassModel.validIconIds, ClassModel.defaultIconId,

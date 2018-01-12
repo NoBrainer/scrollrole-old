@@ -1,5 +1,6 @@
 var ExportedClass = module.exports = Backbone.Model.extend();
 
+var AppStateModel = require('../../appStateModel');
 var SpellCollection = require('../../../collection/rules/parts/spellCollection');
 var SpellSlotsModel = require('../../../model/rules/parts/spellSlotsModel');
 
@@ -16,8 +17,17 @@ var SpellCastingModel = Backbone.Model.extend({
 
     initialize: function(attrs, options) {
         attrs = attrs || {};
+        options = options || {};
 
-        this.set(SpellCastingModel.fields.SPELL_LIST, new SpellCollection(attrs.spellList || [], {parse: true}));
+        var spellList = attrs.spellList || [];
+        this.set(SpellCastingModel.fields.SPELL_LIST, new SpellCollection(spellList, {parse: true}));
+
+        // If we didn't provide a non-empty spell list, look up the list for the class
+        if (_.isEmpty(spellList) && options.className) {
+            AppStateModel.getInitialSetupPromise().done(_.bind(function() {
+                this.setSpellList(AppStateModel.getRulesConfig().getSpellsForClass(options.className));
+            }, this));
+        }
 
         var spellSlotsModel = new SpellSlotsModel(attrs.spellSlots || {});
         this.set(SpellCastingModel.fields.SPELL_SLOTS, spellSlotsModel);

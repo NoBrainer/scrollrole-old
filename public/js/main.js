@@ -7,6 +7,19 @@ window.$ = $;
 window._ = _;
 window.Backbone = Backbone;
 
+// Setup the global config
+var Config;
+try {
+    Config = require('../../../scrollRoleConfig');
+} catch(e1) {
+    try {
+        Config = require('../../config');
+    } catch(e2) {
+        Config = { env: 'dev', port: 3000 };
+    }
+}
+window.Config = Config;
+
 // Require singletons to make sure they're initialized
 require('./router');
 require('./model/appStateModel');

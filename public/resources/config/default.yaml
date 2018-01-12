@@ -229,7 +229,7 @@ classes:
             While raging, you gain the following benefits if you aren't wearing heavy armor:
             (a) You have advantage on Strength checks and Strength saving throws;
             (b) When you make a melee weapon attack using Strength, you gain a bonus to the damage roll that increases
-            as you gain levels as a barbarian, as shown in the Rage Damage column of the Barbarian table;
+            as you gain levels as a barbarian;
             (c) You have resistance to bludgeoning, piercing, and slashing damage.
           - >
             If you are able to cast spells, you can't cast them or concentrate on them while raging.
@@ -238,8 +238,7 @@ classes:
             haven't attacked a hostile creature since your last turn or taken damage since then. You can also end your
             rage on your turn as a bonus action.
           - >
-            Once you have raged the number of times shown for your barbarian level in the Rages column of the Barbarian
-            table, you must finish a long rest before you can rage again.
+            Once you have used all of your rages, you must finish a long rest before you can rage again.
       - name: Rage Count
         value: 2
       - name: Rage Damage
@@ -472,9 +471,9 @@ classes:
           You have learned to untangle and reshape the fabric of reality in harmony with your wishes and music. Your
           spells are part of your vast repetoire, magic that can tune to different situations.
         - >
-          The Spells Known column of the Bard table shows when you learn more bard spells of your choice. Each of these
-          spells must be of a level for which you have spell slots, as shown on the table. For instance, when you reach
-          3rd level in this class, you can learn one new spell of 1st or 2nd level.
+          As you gain levels, you may gain more Spells Known to learn more bard spells of your choice. Each of these
+          spells must be of a level for which you have spell slots. For instance, when you reach 3rd level in this
+          class, you can learn one new spell of 1st or 2nd level.
         - >
           Additionally, when you gain a level in this class, you can choose one of the bard spells you know and replace
           it with another spell from the bard spell list, which almost must be of a level for which you have spell
@@ -483,119 +482,6 @@ classes:
       focus: You can use a musical instrument as a spellcasting focus for your bard spells.
       cantripsKnown: 2
       spellsKnown: 4
-      spellList:
-        - { level: 0, name: Dancing Lights }
-        - { level: 0, name: Light }
-        - { level: 0, name: Mage Hand }
-        - { level: 0, name: Mending }
-        - { level: 0, name: Message }
-        - { level: 0, name: Minor Illusion }
-        - { level: 0, name: Prestidigitation }
-        - { level: 0, name: True Strike }
-        - { level: 0, name: Vicious Mockery }
-        - { level: 1, name: Animal Friendship }
-        - { level: 1, name: Bane }
-        - { level: 1, name: Charm Person }
-        - { level: 1, name: Comprehend Languages }
-        - { level: 1, name: Cure Wounds }
-        - { level: 1, name: Detect Magic }
-        - { level: 1, name: Disguise Self }
-        - { level: 1, name: Faerie Fire }
-        - { level: 1, name: Feather Fall }
-        - { level: 1, name: Healing Word }
-        - { level: 1, name: Heroism }
-        - { level: 1, name: Hideous Laughter }
-        - { level: 1, name: Identify }
-        - { level: 1, name: Illusory Script }
-        - { level: 1, name: Longstrider }
-        - { level: 1, name: Silent Image }
-        - { level: 1, name: Sleep }
-        - { level: 1, name: Speak with Animals }
-        - { level: 1, name: Thunderwave }
-        - { level: 1, name: Unseen Servant }
-        - { level: 2, name: Animal Messenger }
-        - { level: 2, name: Blindness/Deafness }
-        - { level: 2, name: Calm Emotions }
-        - { level: 2, name: Detect Thoughts }
-        - { level: 2, name: Enhance Ability }
-        - { level: 2, name: Enthrall }
-        - { level: 2, name: Heat Metal }
-        - { level: 2, name: Hold Person }
-        - { level: 2, name: Invisibility }
-        - { level: 2, name: Knock }
-        - { level: 2, name: Lesser Restoration }
-        - { level: 2, name: Locate Animals or Plants }
-        - { level: 2, name: Locate Object }
-        - { level: 2, name: Magic Mouth }
-        - { level: 2, name: See Invisibility }
-        - { level: 2, name: Shatter }
-        - { level: 2, name: Silence }
-        - { level: 2, name: Suggestion }
-        - { level: 2, name: Zone of Truth }
-        - { level: 3, name: Bestow Curse }
-        - { level: 3, name: Clairvoyance }
-        - { level: 3, name: Dispel Magic }
-        - { level: 3, name: Fear }
-        - { level: 3, name: Glyph of Warding }
-        - { level: 3, name: Hypnotic Pattern }
-        - { level: 3, name: Major Image }
-        - { level: 3, name: Nondetection }
-        - { level: 3, name: Plant Growth }
-        - { level: 3, name: Sending }
-        - { level: 3, name: Speak with Dead }
-        - { level: 3, name: Speak with Plants }
-        - { level: 3, name: Stinking Cloud }
-        - { level: 3, name: Tiny Hut }
-        - { level: 3, name: Tongues }
-        - { level: 4, name: Compulsion }
-        - { level: 4, name: Confusion }
-        - { level: 4, name: Dimension Door }
-        - { level: 4, name: Freedom of Movement }
-        - { level: 4, name: Greater Invisibility }
-        - { level: 4, name: Hallucinatory Terrain }
-        - { level: 4, name: Locate Creature }
-        - { level: 4, name: Polymorph }
-        - { level: 5, name: Animate Objects }
-        - { level: 5, name: Awaken }
-        - { level: 5, name: Dominate Person }
-        - { level: 5, name: Dream }
-        - { level: 5, name: Geas }
-        - { level: 5, name: Greater Restoration }
-        - { level: 5, name: Hold Monster }
-        - { level: 5, name: Legend Lore }
-        - { level: 5, name: Mass Cure Wounds }
-        - { level: 5, name: Mislead }
-        - { level: 5, name: Modify Memory }
-        - { level: 5, name: Planar Binding }
-        - { level: 5, name: Raise Dead }
-        - { level: 5, name: Scrying }
-        - { level: 5, name: Seeming }
-        - { level: 5, name: Teleportation Circle }
-        - { level: 6, name: Eyebite }
-        - { level: 6, name: Find the Path }
-        - { level: 6, name: Guards and Wards }
-        - { level: 6, name: Irresistible Dance }
-        - { level: 6, name: Mass Suggestion }
-        - { level: 6, name: Programmed Illusion }
-        - { level: 6, name: True Seeing }
-        - { level: 7, name: Arcane Sword }
-        - { level: 7, name: Etherealness }
-        - { level: 7, name: Forcecage }
-        - { level: 7, name: Magnificent Mansion }
-        - { level: 7, name: Mirage Arcane }
-        - { level: 7, name: Project Image }
-        - { level: 7, name: Regenerate }
-        - { level: 7, name: Resurrection }
-        - { level: 7, name: Symbol }
-        - { level: 7, name: Teleport }
-        - { level: 8, name: Dominate Monster }
-        - { level: 8, name: Feeblemind }
-        - { level: 8, name: Glibness }
-        - { level: 8, name: Mind Blank }
-        - { level: 8, name: Power Word Stun }
-        - { level: 9, name: Foresight }
-        - { level: 9, name: Power Word Kill }
-        - { level: 9, name: True Polymorph }
       spellSlots:
         description:
           - >
@@ -679,7 +565,7 @@ classes:
         description:
           - >
             You know two cantrips of your choice from the bard spell list. You learn additional bard cantrips of your
-            choice at higher levels, as shown in the Cantrips Known column of the Bard table.
+            choice at higher levels.
         type: spell
         pick: 2
         options:
@@ -800,16 +686,13 @@ classes:
             pick: 3
             from: { name: proficiencies, types: [skill] }
       - condition: { level: 6, feature: College of Lore }
-        features:
-          - name: Additional Magic Secrets
+        choices:
+          - name: Additional Magical Secrets
             description:
               - >
                 At 6th level, you learn two spells of your choice from any class. A spell you choose must be of a level
-                you can cast, as shown on the Bard table, or a cantrip. The chosen spells count as bard spells for you
-                but don't count against the number of bard spells you know.
-        choices:
-          - name: Spells from Additional Magic Secrets
-            type: spell
+                you can cast or a cantrip. The chosen spells count as bard spells for you but don't count against the
+                number of bard spells you know.
             pick: 2
             from: { name: spells, levels: [0, 1, 2, 3] }
       - condition: { level: 14, feature: College of Lore }
@@ -876,18 +759,19 @@ classes:
           - name: Bardic Inspiration Dice
             value: 1d10
           - name: Expertise 2
-          #TODO: Turn all Magical Secrets into a 'choice'
+        choices:
           - name: Magical Secrets 1
             description:
               - >
                 By 10th level, you have plundered magical knowledge from a wide spectrum of disciplines. Choose two
-                spells from any class, including this one. A spell you choose must be of a level you can cast, as shown
-                on the Bard table, or a cantrip.
+                spells from any class, including this one. A spell you choose must be of a level you can cast or a
+                cantrip.
               - >
-                The chosen spells count as bard spells for you and are included in the number in the Spells Known column
-                of the Bard table.
+                The chosen spells count as bard spells for you and are included in the number in the Spells Known.
               - >
                 You learn two additional spells from any class at 14th level and again at 18th level.
+            pick: 2
+            from: { name: spells, levels: [0, 1, 2, 3, 4, 5] }
       - condition: { level: 11 }
         spellCasting:
           spellsKnown: 15
@@ -903,9 +787,16 @@ classes:
       - condition: { level: 14 }
         spellCasting:
           spellsKnown: 18
-        features:
-          #TODO: Turn all Magical Secrets into a 'choice'
+        choices:
           - name: Magical Secrets 2
+            description:
+              - >
+                Choose two spells from any class, including this one. A spell you choose must be of a level you can cast
+                or a cantrip.
+              - >
+                The chosen spells count as bard spells for you and are included in the number in the Spells Known.
+            pick: 2
+            from: { name: spells, levels: [0, 1, 2, 3, 4, 5, 6, 7] }
       - condition: { level: 15 }
         spellCasting:
           spellsKnown: 19
@@ -925,9 +816,16 @@ classes:
         spellCasting:
           spellsKnown: 22
           spellSlots: { L5: 3 }
-        features:
-          #TODO: Turn all Magical Secrets into a 'choice'
+        choices:
           - name: Magical Secrets 3
+            description:
+              - >
+                Choose two spells from any class, including this one. A spell you choose must be of a level you can cast
+                or a cantrip.
+              - >
+                The chosen spells count as bard spells for you and are included in the number in the Spells Known.
+            pick: 2
+            from: { name: spells }
       - condition: { level: 19 }
         spellCasting:
           spellSlots: { L6: 2 }
@@ -1259,8 +1157,8 @@ races:
       - name: Draconic Ancestry
         description:
           - >
-            You have draconic ancestry. Choose one type of dragon from the Draconic Ancestry table. Your breath weapon
-            and damage resistance are determined by the dragon type, as shown in the table.
+            You have draconic ancestry. Choose one Draconic Ancestry. Your breath weapon and damage resistance are
+            determined by the dragon type.
         type: feature
         pick: 1
         options:
@@ -1756,120 +1654,326 @@ lists:
     - { name: Sylvan,       typicalSpeakers: [fey creatures],       script: Elvish,     isExotic: true }
     - { name: Undercommon,  typicalSpeakers: [underworld traders],  script: Elvish,     isExotic: true }
 
-  #TODO: finish the list
   spells:
-    - { level: 0, name: Dancing Lights }
-    - { level: 0, name: Light }
-    - { level: 0, name: Mage Hand }
-    - { level: 0, name: Mending }
-    - { level: 0, name: Message }
-    - { level: 0, name: Minor Illusion }
-    - { level: 0, name: Prestidigitation }
-    - { level: 0, name: True Strike }
-    - { level: 0, name: Vicious Mockery }
-    - { level: 1, name: Animal Friendship }
-    - { level: 1, name: Bane }
-    - { level: 1, name: Charm Person }
-    - { level: 1, name: Comprehend Languages }
-    - { level: 1, name: Cure Wounds }
-    - { level: 1, name: Detect Magic }
-    - { level: 1, name: Disguise Self }
-    - { level: 1, name: Faerie Fire }
-    - { level: 1, name: Feather Fall }
-    - { level: 1, name: Healing Word }
-    - { level: 1, name: Heroism }
-    - { level: 1, name: Hideous Laughter }
-    - { level: 1, name: Identify }
-    - { level: 1, name: Illusory Script }
-    - { level: 1, name: Longstrider }
-    - { level: 1, name: Silent Image }
-    - { level: 1, name: Sleep }
-    - { level: 1, name: Speak with Animals }
-    - { level: 1, name: Thunderwave }
-    - { level: 1, name: Unseen Servant }
-    - { level: 2, name: Animal Messenger }
-    - { level: 2, name: Blindness/Deafness }
-    - { level: 2, name: Calm Emotions }
-    - { level: 2, name: Detect Thoughts }
-    - { level: 2, name: Enhance Ability }
-    - { level: 2, name: Enthrall }
-    - { level: 2, name: Heat Metal }
-    - { level: 2, name: Hold Person }
-    - { level: 2, name: Invisibility }
-    - { level: 2, name: Knock }
-    - { level: 2, name: Lesser Restoration }
-    - { level: 2, name: Locate Animals or Plants }
-    - { level: 2, name: Locate Object }
-    - { level: 2, name: Magic Mouth }
-    - { level: 2, name: See Invisibility }
-    - { level: 2, name: Shatter }
-    - { level: 2, name: Silence }
-    - { level: 2, name: Suggestion }
-    - { level: 2, name: Zone of Truth }
-    - { level: 3, name: Bestow Curse }
-    - { level: 3, name: Clairvoyance }
-    - { level: 3, name: Dispel Magic }
-    - { level: 3, name: Fear }
-    - { level: 3, name: Glyph of Warding }
-    - { level: 3, name: Hypnotic Pattern }
-    - { level: 3, name: Major Image }
-    - { level: 3, name: Nondetection }
-    - { level: 3, name: Plant Growth }
-    - { level: 3, name: Sending }
-    - { level: 3, name: Speak with Dead }
-    - { level: 3, name: Speak with Plants }
-    - { level: 3, name: Stinking Cloud }
-    - { level: 3, name: Tiny Hut }
-    - { level: 3, name: Tongues }
-    - { level: 4, name: Compulsion }
-    - { level: 4, name: Confusion }
-    - { level: 4, name: Dimension Door }
-    - { level: 4, name: Freedom of Movement }
-    - { level: 4, name: Greater Invisibility }
-    - { level: 4, name: Hallucinatory Terrain }
-    - { level: 4, name: Locate Creature }
-    - { level: 4, name: Polymorph }
-    - { level: 5, name: Animate Objects }
-    - { level: 5, name: Awaken }
-    - { level: 5, name: Dominate Person }
-    - { level: 5, name: Dream }
-    - { level: 5, name: Geas }
-    - { level: 5, name: Greater Restoration }
-    - { level: 5, name: Hold Monster }
-    - { level: 5, name: Legend Lore }
-    - { level: 5, name: Mass Cure Wounds }
-    - { level: 5, name: Mislead }
-    - { level: 5, name: Modify Memory }
-    - { level: 5, name: Planar Binding }
-    - { level: 5, name: Raise Dead }
-    - { level: 5, name: Scrying }
-    - { level: 5, name: Seeming }
-    - { level: 5, name: Teleportation Circle }
-    - { level: 6, name: Eyebite }
-    - { level: 6, name: Find the Path }
-    - { level: 6, name: Guards and Wards }
-    - { level: 6, name: Irresistible Dance }
-    - { level: 6, name: Mass Suggestion }
-    - { level: 6, name: Programmed Illusion }
-    - { level: 6, name: True Seeing }
-    - { level: 7, name: Arcane Sword }
-    - { level: 7, name: Etherealness }
-    - { level: 7, name: Forcecage }
-    - { level: 7, name: Magnificent Mansion }
-    - { level: 7, name: Mirage Arcane }
-    - { level: 7, name: Project Image }
-    - { level: 7, name: Regenerate }
-    - { level: 7, name: Resurrection }
-    - { level: 7, name: Symbol }
-    - { level: 7, name: Teleport }
-    - { level: 8, name: Dominate Monster }
-    - { level: 8, name: Feeblemind }
-    - { level: 8, name: Glibness }
-    - { level: 8, name: Mind Blank }
-    - { level: 8, name: Power Word Stun }
-    - { level: 9, name: Foresight }
-    - { level: 9, name: Power Word Kill }
-    - { level: 9, name: True Polymorph }
+    - { level: 0, name: Acid Splash,                    classes: [Sorcerer, Wizard] }
+    - { level: 0, name: Chill Touch,                    classes: [Sorcerer, Warlock, Wizard] }
+    - { level: 0, name: Dancing Lights,                 classes: [Bard, Sorcerer, Wizard] }
+    - { level: 0, name: Druidcraft,                     classes: [Druid] }
+    - { level: 0, name: Eldritch Blast,                 classes: [Warlock] }
+    - { level: 0, name: Fire Bolt,                      classes: [Sorcerer, Wizard] }
+    - { level: 0, name: Guidance,                       classes: [Cleric, Druid] }
+    - { level: 0, name: Light,                          classes: [Bard, Cleric, Sorcerer, Wizard] }
+    - { level: 0, name: Mage Hand,                      classes: [Bard, Sorcerer, Warlock, Wizard] }
+    - { level: 0, name: Mending,                        classes: [Bard, Cleric, Druid, Sorcerer, Wizard] }
+    - { level: 0, name: Message,                        classes: [Bard, Sorcerer, Wizard] }
+    - { level: 0, name: Minor Illusion,                 classes: [Bard, Sorcerer, Warlock, Wizard] }
+    - { level: 0, name: Poison Spray,                   classes: [Druid, Sorcerer, Warlock, Wizard] }
+    - { level: 0, name: Prestidigitation,               classes: [Bard, Sorcerer, Warlock, Wizard] }
+    - { level: 0, name: Produce Flame,                  classes: [Druid] }
+    - { level: 0, name: Ray of Frost,                   classes: [Sorcerer, Wizard] }
+    - { level: 0, name: Resistance,                     classes: [Cleric, Druid] }
+    - { level: 0, name: Sacred Flame,                   classes: [Cleric] }
+    - { level: 0, name: Shillelagh,                     classes: [Druid] }
+    - { level: 0, name: Shocking Grasp,                 classes: [Sorcerer, Wizard] }
+    - { level: 0, name: Spare the Dying,                classes: [Cleric] }
+    - { level: 0, name: Thaumaturgy,                    classes: [Cleric] }
+    - { level: 0, name: True Strike,                    classes: [Bard, Sorcerer, Warlock, Wizard] }
+    - { level: 0, name: Vicious Mockery,                classes: [Bard] }
+    - { level: 1, name: Alarm,                          classes: [Ranger, Wizard] }
+    - { level: 1, name: Animal Friendship,              classes: [Bard, Druid, Ranger] }
+    - { level: 1, name: Bane,                           classes: [Bard, Cleric] }
+    - { level: 1, name: Bless,                          classes: [Cleric, Paladin] }
+    - { level: 1, name: Burning Hands,                  classes: [Sorcerer, Wizard] }
+    - { level: 1, name: Charm Person,                   classes: [Bard, Druid, Sorcerer, Warlock, Wizard] }
+    - { level: 1, name: Color Spray,                    classes: [Sorcerer, Wizard] }
+    - { level: 1, name: Command,                        classes: [Cleric, Paladin] }
+    - { level: 1, name: Comprehend Languages,           classes: [Bard, Sorcerer, Warlock, Wizard] }
+    - { level: 1, name: Create or Destroy Water,        classes: [Cleric, Druid] }
+    - { level: 1, name: Cure Wounds,                    classes: [Bard, Cleric, Druid, Paladin, Ranger] }
+    - { level: 1, name: Detect Evil and Good,           classes: [Cleric, Paladin] }
+    - { level: 1, name: Detect Magic,                   classes: [Bard, Cleric, Druid, Paladin, Ranger, Sorcerer, Wizard] }
+    - { level: 1, name: Detect Poison and Disease,      classes: [Cleric, Druid, Paladin, Ranger] }
+    - { level: 1, name: Disguise Self,                  classes: [Bard, Sorcerer, Wizard] }
+    - { level: 1, name: Divine Favor,                   classes: [Paladin] }
+    - { level: 1, name: Entangle,                       classes: [Druid] }
+    - { level: 1, name: Expeditious Retreat,            classes: [Sorcerer, Warlock, Wizard] }
+    - { level: 1, name: Faerie Fire,                    classes: [Bard, Druid] }
+    - { level: 1, name: False Life,                     classes: [Sorcerer, Wizard] }
+    - { level: 1, name: Feather Fall,                   classes: [Bard, Sorcerer, Wizard] }
+    - { level: 1, name: Find Familiar,                  classes: [Wizard] }
+    - { level: 1, name: Floating Disk,                  classes: [Wizard] }
+    - { level: 1, name: Fog Cloud,                      classes: [Druid, Ranger, Sorcerer, Wizard] }
+    - { level: 1, name: Goodberry,                      classes: [Druid, Ranger] }
+    - { level: 1, name: Grease,                         classes: [Wizard] }
+    - { level: 1, name: Guiding Bolt,                   classes: [Cleric] }
+    - { level: 1, name: Healing Word,                   classes: [Bard, Cleric, Druid] }
+    - { level: 1, name: Hellish Rebuke,                 classes: [Warlock] }
+    - { level: 1, name: Heroism,                        classes: [Bard, Paladin] }
+    - { level: 1, name: Hideous Laughter,               classes: [Bard, Wizard] }
+    - { level: 1, name: Hunter's Mark,                  classes: [Ranger] }
+    - { level: 1, name: Identify,                       classes: [Bard, Wizard] }
+    - { level: 1, name: Illusory Script,                classes: [Bard, Warlock, Wizard] }
+    - { level: 1, name: Inflict Wounds,                 classes: [Cleric] }
+    - { level: 1, name: Jump,                           classes: [Druid, Ranger, Sorcerer, Wizard] }
+    - { level: 1, name: Longstrider,                    classes: [Bard, Druid, Ranger, Wizard] }
+    - { level: 1, name: Mage Armor,                     classes: [Sorcerer, Wizard] }
+    - { level: 1, name: Magic Missile,                  classes: [Sorcerer, Wizard] }
+    - { level: 1, name: Protection from Evil and Good,  classes: [Cleric, Paladin, Warlock, Wizard] }
+    - { level: 1, name: Purify Food and Drink,          classes: [Cleric, Druid, Paladin] }
+    - { level: 1, name: Sanctuary,                      classes: [Cleric] }
+    - { level: 1, name: Shield,                         classes: [Sorcerer, Wizard] }
+    - { level: 1, name: Shield of Faith,                classes: [Cleric, Paladin] }
+    - { level: 1, name: Silent Image,                   classes: [Bard, Sorcerer, Wizard] }
+    - { level: 1, name: Sleep,                          classes: [Bard, Sorcerer, Wizard] }
+    - { level: 1, name: Speak with Animals,             classes: [Bard, Druid, Ranger] }
+    - { level: 1, name: Thunderwave,                    classes: [Bard, Druid, Sorcerer, Wizard] }
+    - { level: 1, name: Unseen Servant,                 classes: [Bard, Warlock, Wizard] }
+    - { level: 2, name: Acid Arrow,                     classes: [Wizard] }
+    - { level: 2, name: Aid,                            classes: [Cleric, Paladin] }
+    - { level: 2, name: Alter Self,                     classes: [Sorcerer, Wizard] }
+    - { level: 2, name: Animal Messenger,               classes: [Bard, Druid, Ranger] }
+    - { level: 2, name: Arcane Lock,                    classes: [Wizard] }
+    - { level: 2, name: Arcanist's Magic Aura,          classes: [Wizard] }
+    - { level: 2, name: Augury,                         classes: [Cleric] }
+    - { level: 2, name: Barkskin,                       classes: [Druid, Ranger] }
+    - { level: 2, name: Blindness/Deafness,             classes: [Bard, Cleric, Sorcerer, Wizard] }
+    - { level: 2, name: Blur,                           classes: [Sorcerer, Wizard] }
+    - { level: 2, name: Branding Smite,                 classes: [Paladin] }
+    - { level: 2, name: Calm Emotions,                  classes: [Bard, Cleric] }
+    - { level: 2, name: Continual Flame,                classes: [Cleric, Wizard] }
+    - { level: 2, name: Darkness,                       classes: [Sorcerer, Warlock, Wizard] }
+    - { level: 2, name: Darkvision,                     classes: [Druid, Ranger, Sorcerer, Wizard] }
+    - { level: 2, name: Detect Thoughts,                classes: [Bard, Sorcerer, Wizard] }
+    - { level: 2, name: Enhance Ability,                classes: [Bard, Cleric, Druid, Sorcerer] }
+    - { level: 2, name: Enlarge/Reduce,                 classes: [Sorcerer, Wizard] }
+    - { level: 2, name: Enthrall,                       classes: [Bard, Warlock] }
+    - { level: 2, name: Find Steed,                     classes: [Paladin] }
+    - { level: 2, name: Find Traps,                     classes: [Cleric, Druid, Ranger] }
+    - { level: 2, name: Flame Blade,                    classes: [Druid] }
+    - { level: 2, name: Flaming Sphere,                 classes: [Druid, Wizard] }
+    - { level: 2, name: Gentle Repose,                  classes: [Cleric, Wizard] }
+    - { level: 2, name: Gust of Wind,                   classes: [Druid, Sorcerer, Wizard] }
+    - { level: 2, name: Heat Metal,                     classes: [Bard, Druid] }
+    - { level: 2, name: Hold Person,                    classes: [Bard, Cleric, Druid, Sorcerer, Warlock, Wizard] }
+    - { level: 2, name: Invisibility,                   classes: [Bard, Sorcerer, Warlock, Wizard] }
+    - { level: 2, name: Knock,                          classes: [Bard, Sorcerer, Wizard] }
+    - { level: 2, name: Lesser Restoration,             classes: [Bard, Cleric, Druid, Paladin, Ranger] }
+    - { level: 2, name: Levitate,                       classes: [Sorcerer, Wizard] }
+    - { level: 2, name: Locate Animals or Plants,       classes: [Bard, Druid, Ranger] }
+    - { level: 2, name: Locate Object,                  classes: [Bard, Cleric, Druid, Paladin, Ranger, Wizard] }
+    - { level: 2, name: Magic Mouth,                    classes: [Bard, Wizard] }
+    - { level: 2, name: Magic Weapon,                   classes: [Paladin, Wizard] }
+    - { level: 2, name: Mirror Image,                   classes: [Sorcerer, Warlock, Wizard] }
+    - { level: 2, name: Misty Step,                     classes: [Sorcerer, Warlock, Wizard] }
+    - { level: 2, name: Moonbeam,                       classes: [Druid] }
+    - { level: 2, name: Pass without Trace,             classes: [Druid, Ranger] }
+    - { level: 2, name: Prayer of Healing,              classes: [Cleric] }
+    - { level: 2, name: Protection from Poison,         classes: [Cleric, Druid, Paladin, Ranger] }
+    - { level: 2, name: Ray of Enfeeblement,            classes: [Warlock, Wizard] }
+    - { level: 2, name: Rope Trick,                     classes: [Wizard] }
+    - { level: 2, name: Scorching Ray,                  classes: [Sorcerer, Wizard] }
+    - { level: 2, name: See Invisibility,               classes: [Bard, Sorcerer, Wizard] }
+    - { level: 2, name: Shatter,                        classes: [Bard, Sorcerer, Warlock, Wizard] }
+    - { level: 2, name: Silence,                        classes: [Bard, Cleric, Ranger] }
+    - { level: 2, name: Spider Climb,                   classes: [Sorcerer, Warlock, Wizard] }
+    - { level: 2, name: Spike Growth,                   classes: [Druid, Ranger] }
+    - { level: 2, name: Spiritual Weapon,               classes: [Cleric] }
+    - { level: 2, name: Suggestion,                     classes: [Bard, Sorcerer, Warlock, Wizard] }
+    - { level: 2, name: Warding Bond,                   classes: [Cleric] }
+    - { level: 2, name: Web,                            classes: [Sorcerer, Wizard] }
+    - { level: 2, name: Zone of Truth,                  classes: [Bard, Cleric, Paladin] }
+    - { level: 3, name: Animate Dead,                   classes: [Cleric, Wizard] }
+    - { level: 3, name: Beacon of Hope,                 classes: [Cleric] }
+    - { level: 3, name: Bestow Curse,                   classes: [Bard, Cleric, Wizard] }
+    - { level: 3, name: Blink,                          classes: [Sorcerer, Wizard] }
+    - { level: 3, name: Call Lightning,                 classes: [Druid] }
+    - { level: 3, name: Clairvoyance,                   classes: [Bard, Cleric, Sorcerer, Wizard] }
+    - { level: 3, name: Conjure Animals,                classes: [Druid, Ranger] }
+    - { level: 3, name: Counterspell,                   classes: [Sorcerer, Warlock, Wizard] }
+    - { level: 3, name: Create Food and Water,          classes: [Cleric, Paladin] }
+    - { level: 3, name: Daylight,                       classes: [Cleric, Druid, Paladin, Ranger, Sorcerer] }
+    - { level: 3, name: Dispel Magic,                   classes: [Bard, Cleric, Druid, Paladin, Sorcerer, Warlock, Wizard] }
+    - { level: 3, name: Fear,                           classes: [Bard, Sorcerer, Warlock, Wizard] }
+    - { level: 3, name: Fireball,                       classes: [Sorcerer, Wizard] }
+    - { level: 3, name: Fly,                            classes: [Sorcerer, Warlock, Wizard] }
+    - { level: 3, name: Gaseous Form,                   classes: [Sorcerer, Warlock, Wizard] }
+    - { level: 3, name: Glyph of Warding,               classes: [Bard, Cleric, Wizard] }
+    - { level: 3, name: Haste,                          classes: [Sorcerer, Wizard] }
+    - { level: 3, name: Hypnotic Pattern,               classes: [Bard, Sorcerer, Warlock, Wizard] }
+    - { level: 3, name: Lightning Bolt,                 classes: [Sorcerer, Wizard] }
+    - { level: 3, name: Magic Circle,                   classes: [Cleric, Paladin, Warlock, Wizard] }
+    - { level: 3, name: Major Image,                    classes: [Bard, Sorcerer, Warlock, Wizard] }
+    - { level: 3, name: Mass Healing Word,              classes: [Cleric] }
+    - { level: 3, name: Meld into Stone,                classes: [Cleric, Druid] }
+    - { level: 3, name: Nondetection,                   classes: [Bard, Ranger, Wizard] }
+    - { level: 3, name: Phantom Steed,                  classes: [Wizard] }
+    - { level: 3, name: Plant Growth,                   classes: [Bard, Druid, Ranger] }
+    - { level: 3, name: Protection from Energy,         classes: [Cleric, Druid, Ranger, Sorcerer, Wizard] }
+    - { level: 3, name: Remove Curse,                   classes: [Cleric, Paladin, Warlock, Wizard] }
+    - { level: 3, name: Revivify,                       classes: [Cleric, Paladin] }
+    - { level: 3, name: Sending,                        classes: [Bard, Cleric, Wizard] }
+    - { level: 3, name: Sleet Storm,                    classes: [Druid, Sorcerer, Wizard] }
+    - { level: 3, name: Slow,                           classes: [Sorcerer, Wizard] }
+    - { level: 3, name: Speak with Dead,                classes: [Bard, Cleric] }
+    - { level: 3, name: Speak with Plants,              classes: [Bard, Druid, Ranger] }
+    - { level: 3, name: Spirit Guardians,               classes: [Cleric] }
+    - { level: 3, name: Stinking Cloud,                 classes: [Bard, Sorcerer, Wizard] }
+    - { level: 3, name: Tiny Hut,                       classes: [Bard, Wizard] }
+    - { level: 3, name: Tongues,                        classes: [Bard, Cleric, Sorcerer, Warlock, Wizard] }
+    - { level: 3, name: Vampiric Touch,                 classes: [Warlock, Wizard] }
+    - { level: 3, name: Water Breathing,                classes: [Druid, Ranger, Sorcerer, Wizard] }
+    - { level: 3, name: Water Walk,                     classes: [Cleric, Druid, Ranger, Sorcerer] }
+    - { level: 3, name: Wind Wall,                      classes: [Druid, Ranger] }
+    - { level: 4, name: Arcane Eye,                     classes: [Wizard] }
+    - { level: 4, name: Banishment,                     classes: [Cleric, Paladin, Sorcerer, Warlock, Wizard] }
+    - { level: 4, name: Black Tentacles,                classes: [Wizard] }
+    - { level: 4, name: Blight,                         classes: [Druid, Sorcerer, Warlock, Wizard] }
+    - { level: 4, name: Compulsion,                     classes: [Bard] }
+    - { level: 4, name: Confusion,                      classes: [Bard, Druid, Sorcerer, Wizard] }
+    - { level: 4, name: Conjure Minor Elementals,       classes: [Druid, Wizard] }
+    - { level: 4, name: Conjure Woodland Beings,        classes: [Druid, Ranger] }
+    - { level: 4, name: Control Water,                  classes: [Cleric, Druid, Wizard] }
+    - { level: 4, name: Death Ward,                     classes: [Cleric, Paladin] }
+    - { level: 4, name: Dimension Door,                 classes: [Bard, Sorcerer, Warlock, Wizard] }
+    - { level: 4, name: Divination,                     classes: [Cleric] }
+    - { level: 4, name: Dominate Beast,                 classes: [Druid, Sorcerer] }
+    - { level: 4, name: Fabricate,                      classes: [Wizard] }
+    - { level: 4, name: Faithful Hound,                 classes: [Wizard] }
+    - { level: 4, name: Fire Shield,                    classes: [Wizard] }
+    - { level: 4, name: Freedom of Movement,            classes: [Bard, Cleric, Druid, Ranger] }
+    - { level: 4, name: Giant Insect,                   classes: [Druid] }
+    - { level: 4, name: Greater Invisibility,           classes: [Bard, Sorcerer, Wizard] }
+    - { level: 4, name: Guardian of Faith,              classes: [Cleric] }
+    - { level: 4, name: Hallucinatory Terrain,          classes: [Bard, Druid, Warlock, Wizard] }
+    - { level: 4, name: Ice Storm,                      classes: [Druid, Sorcerer, Wizard] }
+    - { level: 4, name: Locate Creature,                classes: [Bard, Cleric, Druid, Paladin, Ranger, Wizard] }
+    - { level: 4, name: Phantasmal Killer,              classes: [Wizard] }
+    - { level: 4, name: Polymorph,                      classes: [Bard, Druid, Sorcerer, Wizard] }
+    - { level: 4, name: Private Sanctum,                classes: [Wizard] }
+    - { level: 4, name: Resilient Sphere,               classes: [Wizard] }
+    - { level: 4, name: Secret Chest,                   classes: [Wizard] }
+    - { level: 4, name: Stone Shape,                    classes: [Cleric, Druid, Wizard] }
+    - { level: 4, name: Stoneskin,                      classes: [Druid, Ranger, Sorcerer, Wizard] }
+    - { level: 4, name: Wall of Fire,                   classes: [Druid, Sorcerer, Wizard] }
+    - { level: 5, name: Animate Objects,                classes: [Bard, Sorcerer, Wizard] }
+    - { level: 5, name: Antilife Shell,                 classes: [Druid] }
+    - { level: 5, name: Arcane Hand,                    classes: [Wizard] }
+    - { level: 5, name: Awaken,                         classes: [Bard, Druid] }
+    - { level: 5, name: Cloudkill,                      classes: [Sorcerer, Wizard] }
+    - { level: 5, name: Commune,                        classes: [Cleric] }
+    - { level: 5, name: Commune with Nature,            classes: [Druid, Ranger] }
+    - { level: 5, name: Cone of Cold,                   classes: [Sorcerer, Wizard] }
+    - { level: 5, name: Conjure Elemental,              classes: [Druid, Wizard] }
+    - { level: 5, name: Contact Other Plane,            classes: [Warlock, Wizard] }
+    - { level: 5, name: Contagion,                      classes: [Cleric, Druid] }
+    - { level: 5, name: Creation,                       classes: [Sorcerer, Wizard] }
+    - { level: 5, name: Dispel Evil and Good,           classes: [Cleric, Paladin] }
+    - { level: 5, name: Dominate Person,                classes: [Bard, Sorcerer, Wizard] }
+    - { level: 5, name: Dream,                          classes: [Bard, Warlock, Wizard] }
+    - { level: 5, name: Flame Strike,                   classes: [Cleric] }
+    - { level: 5, name: Geas,                           classes: [Bard, Cleric, Druid, Paladin, Wizard] }
+    - { level: 5, name: Greater Restoration,            classes: [Bard, Cleric, Druid] }
+    - { level: 5, name: Hallow,                         classes: [Cleric] }
+    - { level: 5, name: Hold Monster,                   classes: [Bard, Sorcerer, Warlock, Wizard] }
+    - { level: 5, name: Insect Plague,                  classes: [Cleric, Druid, Sorcerer] }
+    - { level: 5, name: Legend Lore,                    classes: [Bard, Cleric, Wizard] }
+    - { level: 5, name: Mass Cure Wounds,               classes: [Bard, Cleric, Druid] }
+    - { level: 5, name: Mislead,                        classes: [Bard, Wizard] }
+    - { level: 5, name: Modify Memory,                  classes: [Bard, Wizard] }
+    - { level: 5, name: Passwall,                       classes: [Wizard] }
+    - { level: 5, name: Planar Binding,                 classes: [Bard, Cleric, Druid, Wizard] }
+    - { level: 5, name: Raise Dead,                     classes: [Bard, Cleric, Paladin] }
+    - { level: 5, name: Reincarnate,                    classes: [Druid] }
+    - { level: 5, name: Scrying,                        classes: [Bard, Cleric, Druid, Warlock, Wizard] }
+    - { level: 5, name: Seeming,                        classes: [Bard, Sorcerer, Wizard] }
+    - { level: 5, name: Telekinesis,                    classes: [Sorcerer, Wizard] }
+    - { level: 5, name: Telepathic Bond,                classes: [Wizard] }
+    - { level: 5, name: Teleportation Circle,           classes: [Bard, Sorcerer, Wizard] }
+    - { level: 5, name: Tree Stride,                    classes: [Druid, Ranger] }
+    - { level: 5, name: Wall of Force,                  classes: [Wizard] }
+    - { level: 5, name: Wall of Stone,                  classes: [Druid, Sorcerer, Wizard] }
+    - { level: 6, name: Blade Barrier,                  classes: [Cleric] }
+    - { level: 6, name: Chain Lightning,                classes: [Sorcerer, Wizard] }
+    - { level: 6, name: Circle of Death,                classes: [Sorcerer, Warlock, Wizard] }
+    - { level: 6, name: Conjure Fey,                    classes: [Druid, Warlock] }
+    - { level: 6, name: Contingency,                    classes: [Wizard] }
+    - { level: 6, name: Create Undead,                  classes: [Cleric, Warlock, Wizard] }
+    - { level: 6, name: Disintegrate,                   classes: [Sorcerer, Wizard] }
+    - { level: 6, name: Eyebite,                        classes: [Bard, Sorcerer, Warlock, Wizard] }
+    - { level: 6, name: Find the Path,                  classes: [Bard, Cleric, Druid] }
+    - { level: 6, name: Flesh to Stone,                 classes: [Warlock, Wizard] }
+    - { level: 6, name: Forbiddance,                    classes: [Cleric] }
+    - { level: 6, name: Freezing Sphere,                classes: [Wizard] }
+    - { level: 6, name: Globe of Invulnerability,       classes: [Sorcerer, Wizard] }
+    - { level: 6, name: Guards and Wards,               classes: [Bard, Wizard] }
+    - { level: 6, name: Harm,                           classes: [Cleric] }
+    - { level: 6, name: Heal,                           classes: [Cleric, Druid] }
+    - { level: 6, name: Heroes' Feast,                  classes: [Cleric, Druid] }
+    - { level: 6, name: Instant Summons,                classes: [Wizard] }
+    - { level: 6, name: Irresistible Dance,             classes: [Bard, Wizard] }
+    - { level: 6, name: Magic Jar,                      classes: [Wizard] }
+    - { level: 6, name: Mass Suggestion,                classes: [Bard, Sorcerer, Warlock, Wizard] }
+    - { level: 6, name: Move Earth,                     classes: [Druid, Sorcerer, Wizard] }
+    - { level: 6, name: Planar Ally,                    classes: [Cleric] }
+    - { level: 6, name: Programmed Illusion,            classes: [Bard, Wizard] }
+    - { level: 6, name: Sunbeam,                        classes: [Druid, Sorcerer, Wizard] }
+    - { level: 6, name: Transport via Plants,           classes: [Druid] }
+    - { level: 6, name: True Seeing,                    classes: [Bard, Cleric, Sorcerer, Warlock, Wizard] }
+    - { level: 6, name: Wall of Ice,                    classes: [Wizard] }
+    - { level: 6, name: Wall of Thorns,                 classes: [Druid] }
+    - { level: 6, name: Wind Walk,                      classes: [Druid] }
+    - { level: 6, name: Word of Recall,                 classes: [Cleric] }
+    - { level: 7, name: Arcane Sword,                   classes: [Bard, Wizard] }
+    - { level: 7, name: Conjure Celestial,              classes: [Cleric] }
+    - { level: 7, name: Delayed Blast Fireball,         classes: [Sorcerer, Wizard] }
+    - { level: 7, name: Divine Word,                    classes: [Cleric] }
+    - { level: 7, name: Etherealness,                   classes: [Bard, Cleric, Sorcerer, Warlock, Wizard] }
+    - { level: 7, name: Finger of Death,                classes: [Sorcerer, Warlock, Wizard] }
+    - { level: 7, name: Fire Storm,                     classes: [Cleric, Druid, Sorcerer] }
+    - { level: 7, name: Forcecage,                      classes: [Bard, Warlock, Wizard] }
+    - { level: 7, name: Magnificent Mansion,            classes: [Bard, Wizard] }
+    - { level: 7, name: Mirage Arcane,                  classes: [Bard, Druid, Wizard] }
+    - { level: 7, name: Plane Shift,                    classes: [Cleric, Druid, Sorcerer, Warlock, Wizard] }
+    - { level: 7, name: Prismatic Spray,                classes: [Sorcerer, Wizard] }
+    - { level: 7, name: Project Image,                  classes: [Bard, Wizard] }
+    - { level: 7, name: Regenerate,                     classes: [Bard, Cleric, Druid] }
+    - { level: 7, name: Resurrection,                   classes: [Bard, Cleric] }
+    - { level: 7, name: Reverse Gravity,                classes: [Druid, Sorcerer, Wizard] }
+    - { level: 7, name: Sequester,                      classes: [Wizard] }
+    - { level: 7, name: Simulacrum,                     classes: [Wizard] }
+    - { level: 7, name: Symbol,                         classes: [Bard, Cleric, Wizard] }
+    - { level: 7, name: Teleport,                       classes: [Bard, Sorcerer, Wizard] }
+    - { level: 8, name: Animal Shapes,                  classes: [Druid] }
+    - { level: 8, name: Antimagic Field,                classes: [Cleric, Wizard] }
+    - { level: 8, name: Antipathy/Sympathy,             classes: [Druid, Wizard] }
+    - { level: 8, name: Clone,                          classes: [Wizard] }
+    - { level: 8, name: Control Weather,                classes: [Cleric, Druid, Wizard] }
+    - { level: 8, name: Demiplane,                      classes: [Warlock, Wizard] }
+    - { level: 8, name: Dominate Monster,               classes: [Bard, Sorcerer, Warlock, Wizard] }
+    - { level: 8, name: Earthquake,                     classes: [Cleric, Druid, Sorcerer] }
+    - { level: 8, name: Feeblemind,                     classes: [Bard, Druid, Warlock, Wizard] }
+    - { level: 8, name: Glibness,                       classes: [Bard, Warlock] }
+    - { level: 8, name: Holy Aura,                      classes: [Cleric] }
+    - { level: 8, name: Incendiary Cloud,               classes: [Sorcerer, Wizard] }
+    - { level: 8, name: Maze,                           classes: [Wizard] }
+    - { level: 8, name: Mind Blank,                     classes: [Bard, Wizard] }
+    - { level: 8, name: Power Word Stun,                classes: [Bard, Sorcerer, Warlock, Wizard] }
+    - { level: 8, name: Sunburst,                       classes: [Druid, Sorcerer, Wizard] }
+    - { level: 9, name: Astral Projection,              classes: [Cleric, Warlock, Wizard] }
+    - { level: 9, name: Foresight,                      classes: [Bard, Druid, Warlock, Wizard] }
+    - { level: 9, name: Gate,                           classes: [Cleric, Sorcerer, Wizard] }
+    - { level: 9, name: Imprisonment,                   classes: [Warlock, Wizard] }
+    - { level: 9, name: Mass Heal,                      classes: [Cleric] }
+    - { level: 9, name: Meteor Swarm,                   classes: [Sorcerer, Wizard] }
+    - { level: 9, name: Power Word Kill,                classes: [Bard, Sorcerer, Warlock, Wizard] }
+    - { level: 9, name: Prismatic Wall,                 classes: [Wizard] }
+    - { level: 9, name: Shapechange,                    classes: [Druid, Wizard] }
+    - { level: 9, name: Storm of Vengeance,             classes: [Druid] }
+    - { level: 9, name: Time Stop,                      classes: [Sorcerer, Wizard] }
+    - { level: 9, name: True Polymorph,                 classes: [Bard, Warlock, Wizard] }
+    - { level: 9, name: True Resurrection,              classes: [Cleric, Druid] }
+    - { level: 9, name: Weird,                          classes: [Wizard] }
+    - { level: 9, name: Wish,                           classes: [Sorcerer, Wizard] }
 
   armor:
     #default { strengthReq: 0, stealthDisadv: false }
