@@ -25,7 +25,7 @@ var Router = Backbone.Router.extend({
     },
 
     goDefault: function() {
-        this.navigate('home', { trigger: true, replace: false });
+        this.navigate(AppStateModel.modes.HOME, { trigger: true, replace: false });
     },
 
     goHome: function(tab, section, params) {

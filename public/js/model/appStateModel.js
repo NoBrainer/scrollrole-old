@@ -79,8 +79,8 @@ var AppStateModel = Backbone.Model.extend({
         MODE: 'mode',
         OPTIONS: 'options',
         RULES_CONFIG: 'rulesConfig',
-        TAB: 'tab',
-        SECTION: 'section'
+        SECTION: 'section',
+        TAB: 'tab'
     },
 
     modes: {

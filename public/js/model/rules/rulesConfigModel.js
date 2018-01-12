@@ -213,6 +213,11 @@ var RulesConfigModel = Backbone.Model.extend({
         return this;
     },
 
+    getSpellsForClass: function(className) {
+        var spellCollection = this.getSpells();
+        return spellCollection.getModelsByClass(className);
+    },
+
     getTools: function() {
         return this.get(RulesConfigModel.fields.TOOLS);
     },

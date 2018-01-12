@@ -1,4 +1,5 @@
 var AdjustmentsPreviewView = require('../adjustments/adjustmentsPreviewView');
+var ChoiceModel = require('../../../../../../model/rules/parts/choiceModel');
 var FeaturesPreviewView = require('../features/featuresPreviewView');
 var templates = require('./choicesPreviewView.html');
 
@@ -23,13 +24,14 @@ var ChoicesPreviewView = Backbone.View.extend({
     renderChoice: function(choiceModel) {
         //TODO: handle Dragonborn Draconic Ancestry
         switch(choiceModel.getType()) {
-            case 'abilityScoreAdjustment':
+            case ChoiceModel.types.ADJUSTMENT:
                 this.renderFancyChoice(choiceModel, AdjustmentsPreviewView); break;
-            case 'feature':
+            case ChoiceModel.types.FEATURE:
                 this.renderFancyChoice(choiceModel, FeaturesPreviewView); break;
-            case 'proficiency':
+            case ChoiceModel.types.PROFICIENCY:
+            case ChoiceModel.types.SPELL:
                 this.renderBasicChoice(choiceModel); break;
-            case 'equipment':
+            case ChoiceModel.types.EQUIPMENT:
                 this.renderEquipmentChoice(choiceModel); break;
         }
     },

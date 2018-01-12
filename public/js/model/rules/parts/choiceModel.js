@@ -5,6 +5,7 @@ var AppStateModel = require('../../../model/appStateModel');
 var FeatureCollection = require('../../../collection/rules/parts/featureCollection');
 var ListSelectorModel = require('../../../model/rules/parts/listSelectorModel');
 var ProficiencyCollection = require('../../../collection/rules/parts/proficiencyCollection');
+var SpellCollection = require('../../../collection/rules/parts/spellCollection');
 
 var ChoiceModel = Backbone.Model.extend({
     defaults: {
@@ -46,6 +47,8 @@ var ChoiceModel = Backbone.Model.extend({
             CollectionClass = FeatureCollection;
         } else if (this.isTypeProficiency()) {
             CollectionClass = ProficiencyCollection;
+        } else if (this.isTypeSpell()) {
+            CollectionClass = SpellCollection;
         }
 
         if (CollectionClass) {
@@ -100,7 +103,7 @@ var ChoiceModel = Backbone.Model.extend({
     },
 
     getType: function() {
-        return this.get(ChoiceModel.fields.TYPE);
+        return this.isTypeSpell() ? ChoiceModel.types.SPELL : this.get(ChoiceModel.fields.TYPE);
     },
 
     isTypeAdjustment: function() {
@@ -113,6 +116,11 @@ var ChoiceModel = Backbone.Model.extend({
 
     isTypeProficiency: function() {
         return this.getType() === ChoiceModel.types.PROFICIENCY;
+    },
+
+    isTypeSpell: function() {
+        // Since the spell items don't have a type, we need to check for its type by the 'from'
+        return _.isObject(this.getFrom()) && this.getFrom().getName() === 'spells';
     },
 
     getUse: function() {
@@ -134,7 +142,8 @@ var ChoiceModel = Backbone.Model.extend({
         ADJUSTMENT: 'abilityScoreAdjustment',
         EQUIPMENT: 'equipment',
         FEATURE: 'feature',
-        PROFICIENCY: 'proficiency'
+        PROFICIENCY: 'proficiency',
+        SPELL: 'spell'
     }
 });
 
