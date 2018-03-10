@@ -30,6 +30,7 @@ var ChoicesPreviewView = Backbone.View.extend({
                 this.renderFancyChoice(choiceModel, FeaturesPreviewView); break;
             case ChoiceModel.types.PROFICIENCY:
             case ChoiceModel.types.SPELL:
+            case ChoiceModel.types.TOOL:
                 this.renderBasicChoice(choiceModel); break;
             case ChoiceModel.types.EQUIPMENT:
                 this.renderEquipmentChoice(choiceModel); break;

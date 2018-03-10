@@ -6,6 +6,7 @@ var FeatureCollection = require('../../../collection/rules/parts/featureCollecti
 var ListSelectorModel = require('../../../model/rules/parts/listSelectorModel');
 var ProficiencyCollection = require('../../../collection/rules/parts/proficiencyCollection');
 var SpellCollection = require('../../../collection/rules/parts/spellCollection');
+var ToolCollection = require('../../../collection/rules/parts/toolCollection');
 
 var ChoiceModel = Backbone.Model.extend({
     defaults: {
@@ -49,6 +50,8 @@ var ChoiceModel = Backbone.Model.extend({
             CollectionClass = ProficiencyCollection;
         } else if (this.isTypeSpell()) {
             CollectionClass = SpellCollection;
+        } else if (this.isTypeTool()) {
+            CollectionClass = ToolCollection;
         }
 
         if (CollectionClass) {
@@ -103,7 +106,7 @@ var ChoiceModel = Backbone.Model.extend({
     },
 
     getType: function() {
-        return this.isTypeSpell() ? ChoiceModel.types.SPELL : this.get(ChoiceModel.fields.TYPE);
+        return this.get(ChoiceModel.fields.TYPE);
     },
 
     isTypeAdjustment: function() {
@@ -119,8 +122,11 @@ var ChoiceModel = Backbone.Model.extend({
     },
 
     isTypeSpell: function() {
-        // Since the spell items don't have a type, we need to check for its type by the 'from'
-        return _.isObject(this.getFrom()) && this.getFrom().getName() === 'spells';
+        return this.getType() === ChoiceModel.types.SPELL;
+    },
+
+    isTypeTool: function() {
+        return this.getType() === ChoiceModel.types.TOOL;
     },
 
     getUse: function() {
@@ -143,7 +149,8 @@ var ChoiceModel = Backbone.Model.extend({
         EQUIPMENT: 'equipment',
         FEATURE: 'feature',
         PROFICIENCY: 'proficiency',
-        SPELL: 'spell'
+        SPELL: 'spell',
+        TOOL: 'tool'
     }
 });
 
