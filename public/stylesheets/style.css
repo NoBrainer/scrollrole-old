@@ -8,9 +8,14 @@ body {
   color: #efefef;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
   margin: 0;
+  overflow-y: scroll;
 }
 a {
   color: #efefef;
+}
+p {
+  font-size: 14px;
+  line-height: 18px;
 }
 p,
 h1,
@@ -109,24 +114,62 @@ ol + ol {
 li + li {
   margin-top: 5px;
 }
-.page-container {
+.g_pageContainer {
   display: flex;
-  justify-content: center;
-}
-.page-container > .wrapper {
-  display: flex;
+  justify-content: flex-start;
+  margin: 0 auto;
   max-width: 1000px;
-  padding: 0 10px;
   width: 100%;
 }
-.container {
+.g_pageContainer + .g_pageContainer {
+  margin-top: 10px;
+}
+.g_container {
   display: flex;
 }
-.container.row {
+.g_container.row {
   flex-direction: row;
 }
-.container.column {
+.g_container.column {
   flex-direction: column;
+}
+.g_section {
+  width: 100%;
+}
+.g_actionBar {
+  display: flex;
+  flex-direction: row;
+}
+.g_action {
+  border: 1px solid #000000;
+  cursor: pointer;
+  display: flex;
+  margin-right: 20px;
+  padding: 10px;
+}
+.g_action:hover {
+  background-color: #000000;
+}
+.g_sectionRow {
+  display: flex;
+  flex-direction: column;
+  font-size: 14px;
+  line-height: 18px;
+  margin-top: 20px;
+}
+.g_sectionRow + .g_sectionRow {
+  border-top: 2px solid #efefef;
+  padding-top: 20px;
+}
+.g_card {
+  background-color: #404949;
+  color: #efefef;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+.g_card + .g_card {
+  margin-top: 10px;
 }
 @keyframes spin {
   0% {
@@ -136,7 +179,7 @@ li + li {
     transform: rotate(360deg);
   }
 }
-.loading-view {
+.loadingView {
   bottom: 0;
   display: flex;
   flex-direction: row;
@@ -146,7 +189,7 @@ li + li {
   right: 0;
   top: 0;
 }
-.loading-view .overlay {
+.loadingView .overlay {
   background-color: #000000;
   bottom: 0;
   left: 0;
@@ -155,12 +198,12 @@ li + li {
   right: 0;
   top: 0;
 }
-.loading-view .loading-wrapper {
+.loadingView .wrapper {
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
-.loading-view .loading-content {
+.loadingView .content {
   align-items: center;
   background-color: #000000;
   border-radius: 10px;
@@ -171,29 +214,30 @@ li + li {
   padding: 20px;
   position: relative;
 }
-.loading-view .text {
+.loadingView .text {
   margin-bottom: 10px;
   padding-right: 5px;
 }
-.loading-view .d20 {
+.loadingView .d20 {
   animation: spin 3s linear infinite;
   width: 100px;
 }
-.loading-view .close {
+.loadingView .close {
   cursor: pointer;
   position: absolute;
   right: 10px;
   top: 10px;
 }
-.header-view {
+.headerView {
   background-color: #404949;
   color: #efefef;
   font-size: 16px;
+  padding: 0 10px;
 }
-.header-view a {
+.headerView a {
   text-decoration: none;
 }
-.header-view .logo {
+.headerView .logo {
   display: flex;
   flex-direction: column;
   font-size: 30px;
@@ -201,189 +245,148 @@ li + li {
   padding-left: 10px;
   padding-right: 30px;
 }
-.header-view .logo img {
+.headerView .logo img {
   height: 70px;
 }
-.header-view .tabs {
+.headerView .tabs {
   display: flex;
   flex-wrap: wrap;
 }
-.header-view .tabs.vertical {
+.headerView .tabs.vertical {
   flex-direction: column;
   width: 100%;
 }
-.header-view .tabs.vertical .tab {
+.headerView .tabs.vertical .tab {
   margin-right: 0;
 }
-.header-view .tab {
+.headerView .tab {
   align-items: center;
   display: flex;
   margin-right: 5px;
   padding: 20px;
 }
-.header-view .tab.active {
+.headerView .tab.active {
   background-color: #000000;
 }
-.header-view .tab:hover {
+.headerView .tab:hover {
   background-color: #000000;
 }
-.header-view .tab:last-child {
+.headerView .tab:last-child {
   margin-right: 0;
 }
-.footer-view {
+.footerView {
   background-color: #404949;
   color: #efefef;
+  flex-wrap: wrap;
   font-size: 14px;
   line-height: 18px;
+  padding: 0 10px;
 }
-.footer-view ul {
+.footerView ul {
   list-style: none;
   padding: 0;
 }
-.footer-view li {
+.footerView li {
   margin-left: 10px;
   margin-top: 5px;
 }
-.footer-view .footer-wrapper {
-  display: flex;
-  flex-wrap: wrap;
-}
-.footer-view .section {
+.footerView .section {
   padding: 20px;
 }
-.footer-view .header {
+.footerView .header {
   font-size: 16px;
 }
-.content-view {
-  background-color: #dddddd;
-  min-height: 500px;
-}
-.content-view .content-wrapper {
-  padding-bottom: 10px;
-  padding-top: 10px;
-}
-.content-view .content-card {
-  background-color: #404949;
-  color: #efefef;
-  display: flex;
-  flex-direction: column;
-  padding: 20px;
-}
-.content-view .content-card p {
-  font-size: 14px;
-  line-height: 18px;
-}
-.content-view .rules-wrapper {
-  margin-top: 10px;
-}
-.navbar-view {
-  background-color: #404949;
-  color: #efefef;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-}
-.navbar-view .nav-item {
-  font-size: 20px;
-  margin-right: 5px;
-  padding: 10px;
-  text-decoration: none;
-}
-.navbar-view .nav-item.active {
-  background-color: #000000;
-}
-.navbar-view .nav-item:hover {
-  background-color: #000000;
-}
-.navbar-view .nav-item:last-child {
-  margin-right: 0;
-}
-.section-view .action-bar {
-  display: flex;
-  flex-direction: row;
-}
-.section-view .action {
-  border: 1px solid #000000;
-  cursor: pointer;
-  display: flex;
-  margin-right: 20px;
-  padding: 10px;
-}
-.section-view .action:hover {
-  background-color: #000000;
-}
-.chooser-view .chooser-header {
+.chooserView .chooserHeader {
   display: flex;
   margin-bottom: 10px;
 }
-.chooser-view .chooser-list {
+.chooserView .chooserList {
   display: flex;
   flex-direction: column;
   list-style: none;
   margin: 0;
   padding: 0;
 }
-.chooser-view .chooser-option {
+.chooserView .chooserOption {
   align-items: center;
   border: 1px solid #000000;
   cursor: pointer;
   display: flex;
   padding: 10px;
 }
-.chooser-view .chooser-option:hover {
+.chooserView .chooserOption:hover {
   background-color: #000000;
 }
-.chooser-view .chooser-icon {
+.chooserView .chooserIcon {
   height: 32px;
   margin-right: 5px;
   width: 32px;
 }
-.editor-view .edit-row-title {
-  font-size: 16px;
+.contentView {
+  background-color: #dddddd;
+  justify-content: center;
+  max-width: calc(100% -  20px);
+  min-height: 500px;
+  padding: 10px;
 }
-.editor-view .edit-row {
+.navbarView {
+  background-color: #404949;
+  color: #efefef;
   display: flex;
-  flex-direction: column;
-  font-size: 14px;
-  line-height: 18px;
-  margin: 10px;
+  flex-direction: row;
+  flex-wrap: wrap;
 }
-.editor-view .edit-row + .edit-row {
-  border-top: 2px solid #efefef;
-  padding-top: 10px;
+.navbarView .navItem {
+  font-size: 20px;
+  margin-right: 5px;
+  padding: 10px;
+  text-decoration: none;
 }
-.previewer-view .preview-row-title {
+.navbarView .navItem.active {
+  background-color: #000000;
+}
+.navbarView .navItem:hover {
+  background-color: #000000;
+}
+.navbarView .navItem:last-child {
+  margin-right: 0;
+}
+.builderView {
+  width: 100%;
+}
+.rulesView {
+  width: 100%;
+}
+.editorView .editRowTitle {
   font-size: 16px;
 }
-.previewer-view .preview-row-value {
+.editorView .editRow {
+  border-color: #efefef;
+}
+.previewerView .previewRowTitle {
+  font-size: 16px;
+}
+.previewerView .previewRowValue {
   margin-top: 5px;
   margin-left: 20px;
 }
-.previewer-view .subraces-preview-view .preview-row-value {
+.previewerView .subracesPreviewView .previewRowValue {
   margin-bottom: 5px;
 }
-.previewer-view .preview-row {
-  display: flex;
-  flex-direction: column;
-  font-size: 14px;
-  line-height: 18px;
-  margin: 10px;
+.previewerView .previewRow {
+  border-color: #efefef;
 }
-.previewer-view .preview-row + .preview-row {
-  border-top: 2px solid #efefef;
-  padding-top: 10px;
-}
-.previewer-view .preview-list {
+.previewerView .previewList {
   margin: 5px 0 0 0;
   padding: 0;
 }
-.previewer-view .unlockable-list .preview-list {
+.previewerView .unlockableList .previewList {
   margin-bottom: 5px;
 }
-.previewer-view .preview-list-item:not(.equipment-list-item):not(.condition-list-item) {
+.previewerView .previewListItem:not(.equipmentListItem):not(.conditionListItem) {
   display: flex;
 }
-.previewer-view .preview-list-item:not(.equipment-list-item):not(.condition-list-item) + .preview-list-item {
+.previewerView .previewListItem:not(.equipmentListItem):not(.conditionListItem) + .previewListItem {
   border-top: 1px solid #efefef;
   margin-top: 10px;
   padding-top: 10px;

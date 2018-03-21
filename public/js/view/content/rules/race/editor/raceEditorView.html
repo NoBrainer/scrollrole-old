@@ -1,31 +1,29 @@
 <script type="text/template" id="scaffold">
-    <div class="content-card">
-        <div>
-            <%= this.actionBar(obj) %>
-            <%= this.editRow({ label: 'Name', className: 'name' }) %>
-            <%= this.editRow({ label: 'Description', className: 'description' }) %>
-            <%= this.editRow({ label: 'Ability Score Adjustments', className: 'adjustments' }) %>
-            <%= this.editRow({ label: 'Age', className: 'age' }) %>
-            <%= this.editRow({ label: 'Alignment', className: 'alignment' }) %>
-            <%= this.editRow({ label: 'Size', className: 'size' }) %>
-            <%= this.editRow({ label: 'Speed', className: 'speed' }) %>
-            <%= this.editRow({ label: 'Features', className: 'features' }) %>
-            <%= this.editRow({ label: 'Proficiencies', className: 'proficiencies' }) %>
-            <%= this.editRow({ label: 'Choices', className: 'choices' }) %>
-            <%= this.editRow({ label: 'Subraces', className: 'subraces' }) %>
-        </div>
+    <div class="g_card">
+        <%= this.actionBar(obj) %>
+        <%= this.editRow({ label: 'Name', className: 'name' }) %>
+        <%= this.editRow({ label: 'Description', className: 'description' }) %>
+        <%= this.editRow({ label: 'Ability Score Adjustments', className: 'adjustments' }) %>
+        <%= this.editRow({ label: 'Age', className: 'age' }) %>
+        <%= this.editRow({ label: 'Alignment', className: 'alignment' }) %>
+        <%= this.editRow({ label: 'Size', className: 'size' }) %>
+        <%= this.editRow({ label: 'Speed', className: 'speed' }) %>
+        <%= this.editRow({ label: 'Features', className: 'features' }) %>
+        <%= this.editRow({ label: 'Proficiencies', className: 'proficiencies' }) %>
+        <%= this.editRow({ label: 'Choices', className: 'choices' }) %>
+        <%= this.editRow({ label: 'Subraces', className: 'subraces' }) %>
     </div>
 </script>
 
 <script type="text/template" id="actionBar">
-    <div class="action-bar">
-        <a class="action preview" href="#rules/races/preview?name=<%- obj.name %>">Go Back</a>
+    <div class="g_actionBar">
+        <a class="g_action preview" href="#rules/races/preview?name=<%- obj.name %>">Go Back</a>
     </div>
 </script>
 
 <script type="text/template" id="editRow">
-    <div class="edit-row">
-        <div class="edit-row-title"><%- obj.label %>:</div>
+    <div class="g_sectionRow editRow">
+        <div class="editRowTitle"><%- obj.label %>:</div>
         <div class="<%- obj.className %>">TODO</div>
     </div>
 </script>

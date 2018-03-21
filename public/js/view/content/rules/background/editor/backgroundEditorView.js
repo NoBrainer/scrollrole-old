@@ -1,7 +1,7 @@
 var templates = require('./backgroundEditorView.html');
 
 var BackgroundEditorView = Backbone.View.extend({
-    className: 'editor-view background-editor-view',
+    className: 'editorView backgroundEditorView',
 
     initialize: function(options) {
         options = options || {};

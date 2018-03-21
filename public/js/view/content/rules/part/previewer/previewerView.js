@@ -1,7 +1,7 @@
 var templates = require('./previewerView.html');
 
 var PreviewerView = Backbone.View.extend({
-    className: 'previewer-view',
+    className: 'previewerView',
 
     initialize: function(options) {
         options = options || {};

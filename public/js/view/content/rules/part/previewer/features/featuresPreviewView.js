@@ -3,7 +3,7 @@ var FeatureModel = require('../../../../../../model/rules/parts/featureModel');
 var templates = require('./featuresPreviewView.html');
 
 var FeaturesPreviewView = Backbone.View.extend({
-    className: 'features-preview-view',
+    className: 'featuresPreviewView',
 
     initialize: function(options) {
         options = options || {};
@@ -38,7 +38,7 @@ var FeaturesPreviewView = Backbone.View.extend({
             description: featureModel.getDescription(),
             value: featureModel.getValue()
         });
-        this.$('.feature-list').append(html);
+        this.$('.featureList').append(html);
     },
 
     getCollection: function() {

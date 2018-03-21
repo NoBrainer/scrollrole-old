@@ -2,10 +2,9 @@ var AppStateModel = require('../../model/appStateModel');
 var BuilderView = require('../../view/content/builder/builderView');
 var HomeView = require('../../view/content/home/homeView');
 var RulesView = require('../../view/content/rules/rulesView');
-var templates = require('./contentView.html');
 
 var ContentView = Backbone.View.extend({
-    className: 'page-container content-view',
+    className: 'g_pageContainer contentView',
 
     initialize: function(options) {
         this.listenTo(AppStateModel, 'change:' + AppStateModel.fields.MODE, function(model, mode) {
@@ -15,9 +14,7 @@ var ContentView = Backbone.View.extend({
 
     render: function() {
         this.cleanup();
-
-        var html = templates.scaffold();
-        this.$el.html(html);
+        this.$el.empty();
 
         switch(AppStateModel.getMode()) {
             case AppStateModel.modes.BUILDER:
@@ -29,7 +26,7 @@ var ContentView = Backbone.View.extend({
             default:
                 return this;
         }
-        this.$('.content-wrapper').html(this.childView.render().$el);
+        this.$el.html(this.childView.render().$el);
 
         return this;
     },

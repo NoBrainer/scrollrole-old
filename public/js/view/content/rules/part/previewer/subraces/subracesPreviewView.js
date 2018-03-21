@@ -7,7 +7,7 @@ var TextPreviewView = require('../text/textPreviewView');
 var templates = require('./subracesPreviewView.html');
 
 var SubracesPreviewView = Backbone.View.extend({
-    className: 'subraces-preview-view',
+    className: 'subracesPreviewView',
 
     initialize: function(options) {
         options = options || {};
@@ -27,8 +27,8 @@ var SubracesPreviewView = Backbone.View.extend({
     },
 
     renderSubrace: function(subraceModel) {
-        this.$('.subrace-list').append(templates.subraceRow());
-        var $container = this.$('.subrace-list-item:last .container');
+        this.$('.subraceList').append(templates.subraceRow());
+        var $container = this.$('.subraceListItem:last .g_container');
 
         this.renderName($container, subraceModel.getName());
         this.renderDescription($container, subraceModel.getDescription());

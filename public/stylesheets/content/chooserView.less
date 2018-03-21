@@ -1,0 +1,32 @@
+.chooserView {
+  .chooserHeader {
+    display: flex;
+    margin-bottom: @padding-normal;
+  }
+
+  .chooserList {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .chooserOption {
+    align-items: center;
+    border: 1px solid @border-color-button;
+    cursor: pointer;
+    display: flex;
+    padding: @padding-normal;
+
+    &:hover {
+      background-color: @background-button-hover;
+    }
+  }
+
+  .chooserIcon {
+    height: 32px;
+    margin-right: @padding-small;
+    width: 32px;
+  }
+}

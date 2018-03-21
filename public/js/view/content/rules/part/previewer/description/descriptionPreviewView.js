@@ -1,7 +1,7 @@
 var templates = require('./descriptionPreviewView.html');
 
 var DescriptionPreviewView = Backbone.View.extend({
-    className: 'description-preview-view',
+    className: 'descriptionPreviewView',
 
     initialize: function(options) {
         options = options || {};

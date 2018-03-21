@@ -1,7 +1,7 @@
 var templates = require('./adjustmentsPreviewView.html');
 
 var AdjustmentsPreviewView = Backbone.View.extend({
-    className: 'adjustments-preview-view',
+    className: 'adjustmentsPreviewView',
 
     initialize: function(options) {
         options = options || {};

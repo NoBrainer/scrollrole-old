@@ -1,7 +1,7 @@
 var templates = require('./conditionPreviewView.html');
 
 var ConditionPreviewView = Backbone.View.extend({
-    className: 'condition-preview-view',
+    className: 'conditionPreviewView',
 
     initialize: function(options) {
         options = options || {};
@@ -23,7 +23,7 @@ var ConditionPreviewView = Backbone.View.extend({
     renderConditionRow: function(label, text) {
         if (!text) return;
         var html = templates.conditionRow({ label: label, text: text });
-        this.$('.condition-list').append(html);
+        this.$('.conditionList').append(html);
     },
 
     getModel: function() {

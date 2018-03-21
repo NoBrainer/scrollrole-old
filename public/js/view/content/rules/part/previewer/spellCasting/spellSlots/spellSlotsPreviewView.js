@@ -1,7 +1,7 @@
 var templates = require('./spellSlotsPreviewView.html');
 
 var SpellSlotsPreviewView = Backbone.View.extend({
-    className: 'spell-slots-preview-view',
+    className: 'spellSlotsPreviewView',
 
     initialize: function(options) {
         options = options || {};
@@ -24,7 +24,7 @@ var SpellSlotsPreviewView = Backbone.View.extend({
         var paragraphs = this.getModel().getDescription();
         if (!paragraphs || _.isEmpty(paragraphs)) return;
         var html = templates.descriptionRow({ description: paragraphs });
-        this.$('.spell-slots-list').append(html);
+        this.$('.spellSlotsList').append(html);
     },
 
     renderSlotRows: function() {
@@ -42,7 +42,7 @@ var SpellSlotsPreviewView = Backbone.View.extend({
     renderSlotRow: function(level, numSlots) {
         if (_.isEmpty(level) || numSlots < 1) return;
         var html = templates.slotRow({ title: level, text: numSlots });
-        this.$('.spell-slots-list').append(html);
+        this.$('.spellSlotsList').append(html);
     },
 
     getModel: function() {

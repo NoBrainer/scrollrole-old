@@ -1,7 +1,7 @@
 var TextPreviewView = require('../text/textPreviewView');
 
 var ProficiencyBonusPreviewView = TextPreviewView.extend({
-    className: TextPreviewView.prototype.className + ' proficiency-bonus-preview-view',
+    className: TextPreviewView.prototype.className + ' proficiencyBonusPreviewView',
 
     initialize: function(options) {
         options = options || {};

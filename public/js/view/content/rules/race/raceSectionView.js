@@ -4,7 +4,7 @@ var RaceEditorView = require('./editor/raceEditorView');
 var RacePreviewerView = require('./previewer/racePreviewerView');
 
 var RaceSectionView = Backbone.View.extend({
-    className: 'section-view race-section-view',
+    className: 'g_section raceSectionView',
 
     initialize: function(options) {
         options = options || {};

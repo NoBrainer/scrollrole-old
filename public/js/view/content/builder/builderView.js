@@ -1,7 +1,7 @@
 var templates = require('./builderView.html');
 
 var BuilderView = Backbone.View.extend({
-    className: 'builder-view',
+    className: 'builderView',
 
     render: function() {
         var html = templates.scaffold();

@@ -1,7 +1,7 @@
 var templates = require('./chooserView.html');
 
 var ChooserView = Backbone.View.extend({
-    className: 'chooser-view',
+    className: 'chooserView',
 
     initialize: function(options) {
         options = options || {};
@@ -21,7 +21,7 @@ var ChooserView = Backbone.View.extend({
     },
 
     renderChoices: function() {
-        var $list = this.$('.chooser-list');
+        var $list = this.$('.chooserList');
 
         _.each(this.getModelNames(), _.bind(function(name) {
             var html = templates.choice({ section: this.section, name: name, iconPath: this.buildIconPath(name) });

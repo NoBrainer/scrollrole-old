@@ -4,7 +4,7 @@ var FeaturesPreviewView = require('../features/featuresPreviewView');
 var templates = require('./choicesPreviewView.html');
 
 var ChoicesPreviewView = Backbone.View.extend({
-    className: 'choices-preview-view',
+    className: 'choicesPreviewView',
 
     initialize: function(options) {
         options = options || {};
@@ -53,11 +53,11 @@ var ChoicesPreviewView = Backbone.View.extend({
             pick: choiceModel.getPick(),
             listString: listString
         });
-        this.$('.choice-list').append(html);
+        this.$('.choiceList').append(html);
     },
 
     renderFancyChoice: function(choiceModel, PreviewViewClass, collection) {
-        var $choiceList = this.$('.choice-list');
+        var $choiceList = this.$('.choiceList');
         var previewView = new PreviewViewClass({
             collection: collection || choiceModel.getOptions(),
             hideTitle: true
@@ -71,9 +71,9 @@ var ChoicesPreviewView = Backbone.View.extend({
         $choiceList.append(html);
 
         if (previewView.isEmpty()) {
-            $choiceList.find('.preview-nested-container').html("No options");
+            $choiceList.find('.previewNestedContainer').html("No options");
         } else {
-            $choiceList.find('.preview-nested-container').html(previewView.render().el);
+            $choiceList.find('.previewNestedContainer').html(previewView.render().el);
         }
     },
 
@@ -93,7 +93,7 @@ var ChoicesPreviewView = Backbone.View.extend({
             pick: choiceModel.getPick(),
             listString: listString
         });
-        this.$('.choice-list').append(html);
+        this.$('.choiceList').append(html);
     },
 
     getCollection: function() {

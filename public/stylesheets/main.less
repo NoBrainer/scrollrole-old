@@ -7,10 +7,16 @@ body {
   color: @text-color-body;
   font: @font-size-text "Lucida Grande", Helvetica, Arial, sans-serif;
   margin: 0;
+  overflow-y: scroll;
 }
 
 a {
   color: @text-color-body;
+}
+
+p {
+  font-size: @font-size-text;
+  line-height: @line-height-text;
 }
 
 p, h1, h2, h3, h4, h5, h6, ul, ol {
@@ -27,19 +33,19 @@ li {
   }
 }
 
-.page-container {
+.g_pageContainer {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
+  margin: 0 auto;
+  max-width: 1000px;
+  width: 100%;
 
-  > .wrapper {
-    display: flex;
-    max-width: 1000px;
-    padding: 0 @padding-normal;
-    width: 100%;
+  & + & {
+    margin-top: @padding-normal;
   }
 }
 
-.container {
+.g_container {
   display: flex;
 
   &.row {
@@ -50,14 +56,62 @@ li {
   }
 }
 
+.g_section {
+  width: 100%;
+}
+
+.g_actionBar {
+  display: flex;
+  flex-direction: row;
+}
+
+.g_action {
+  border: 1px solid @border-color-button;
+  cursor: pointer;
+  display: flex;
+  margin-right: @padding-large;
+  padding: @padding-normal;
+
+  &:hover {
+    background-color: @background-button-hover;
+  }
+}
+
+.g_sectionRow {
+  display: flex;
+  flex-direction: column;
+  font-size: @font-size-text;
+  line-height: @line-height-text;
+  margin-top: @padding-large;
+
+  + .g_sectionRow {
+    border-top: 2px solid @divider-color-default;
+    padding-top: @padding-large;
+  }
+}
+
+.g_card {
+  background-color: @background-card;
+  color: @text-color-card;
+  display: flex;
+  flex-direction: column;
+  padding: @padding-large;
+
+  + .g_card {
+    margin-top: @padding-normal;
+  }
+}
+
 @keyframes spin {
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
 }
 
-@import 'loading/loading';
-@import 'header/header';
-@import 'footer/footer';
-@import 'content/content';
-@import 'content/nav';
-@import 'content/rules/section';
+@import 'loading/loadingView';
+@import 'header/headerView';
+@import 'footer/footerView';
+@import 'content/chooserView';
+@import 'content/contentView';
+@import 'content/navbarView';
+@import 'content/builder/builderView';
+@import 'content/rules/rulesView';

@@ -2,7 +2,7 @@ var LoadingView = require('../loading/loadingView');
 var templates = require('./footerView.html');
 
 var FooterView = Backbone.View.extend({
-    className: 'page-container footer-view',
+    className: 'g_pageContainer footerView',
 
     events: {
         'click .d20-span': 'onClickD20'

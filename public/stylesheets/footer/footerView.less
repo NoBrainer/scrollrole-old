@@ -1,8 +1,10 @@
-.footer-view {
+.footerView {
   background-color: @background-footer;
   color: @text-color-footer;
+  flex-wrap: wrap;
   font-size: @font-size-footer;
   line-height: @line-height-footer;
+  padding: 0 @padding-normal;
 
   ul {
     list-style: none;
@@ -12,11 +14,6 @@
   li {
     margin-left: @padding-normal;
     margin-top: @padding-small;
-  }
-
-  .footer-wrapper {
-    display: flex;
-    flex-wrap: wrap;
   }
 
   .section {

@@ -3,7 +3,7 @@ var SpellSlotsPreviewView = require('./spellSlots/spellSlotsPreviewView');
 var templates = require('./spellCastingPreviewView.html');
 
 var SpellCastingPreviewView = Backbone.View.extend({
-    className: 'spell-casting-preview-view',
+    className: 'spellCastingPreviewView',
 
     initialize: function(options) {
         options = options || {};
@@ -31,7 +31,7 @@ var SpellCastingPreviewView = Backbone.View.extend({
     renderTextRow: function(title, text) {
         if (_.isEmpty(title) || _.isEmpty(text)) return;
         var html = templates.textRow({ title: title, text: text });
-        this.$('.spell-casting-list').append(html);
+        this.$('.spellCastingList').append(html);
     },
 
     renderNumberRow: function(title, number) {
@@ -43,7 +43,7 @@ var SpellCastingPreviewView = Backbone.View.extend({
         var paragraphs = this.getModel().getDescription();
         if (!paragraphs || _.isEmpty(paragraphs)) return;
         var html = templates.descriptionRow({ description: paragraphs });
-        this.$('.spell-casting-list').append(html);
+        this.$('.spellCastingList').append(html);
     },
 
     renderSpellSlots: function() {
@@ -52,7 +52,7 @@ var SpellCastingPreviewView = Backbone.View.extend({
 
         var view = new SpellSlotsPreviewView({ model: spellSlotsModel, hideTitle: true });
         var html = templates.htmlRow({ title: 'Spell Slots', contentHtml: view.render().$el.html() });
-        this.$('.spell-casting-list').append(html);
+        this.$('.spellCastingList').append(html);
         this.childViews.push(view);
     },
 
@@ -62,7 +62,7 @@ var SpellCastingPreviewView = Backbone.View.extend({
 
         var view = new SpellListPreviewView({ collection: spellCollection, hideTitle: true });
         var html = templates.htmlRow({ title: 'Spell List', contentHtml: view.render().$el.html() });
-        this.$('.spell-casting-list').append(html);
+        this.$('.spellCastingList').append(html);
         this.childViews.push(view);
     },
 

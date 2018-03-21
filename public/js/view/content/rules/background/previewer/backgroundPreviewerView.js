@@ -7,7 +7,7 @@ var ProficienciesPreviewView = require('../../part/previewer/proficiencies/profi
 var TextPreviewView = require('../../part/previewer/text/textPreviewView');
 
 var BackgroundPreviewerView = PreviewerView.extend({
-    className: PreviewerView.prototype.className + ' background-previewer-view',
+    className: PreviewerView.prototype.className + ' backgroundPreviewerView',
 
     initialize: function(options) {
         options = options || {};

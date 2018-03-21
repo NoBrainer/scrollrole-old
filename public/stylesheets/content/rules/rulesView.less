@@ -1,0 +1,51 @@
+.rulesView {
+  width: 100%;
+}
+
+.editorView {
+  .editRowTitle {
+    font-size: @font-size-header;
+  }
+
+  .editRow {
+    border-color: @divider-color-edit;
+  }
+}
+
+.previewerView {
+  .previewRowTitle {
+    font-size: @font-size-header;
+  }
+
+  .previewRowValue {
+    margin-top: @padding-small;
+    margin-left: @padding-large;
+  }
+
+  .subracesPreviewView .previewRowValue {
+    margin-bottom: @padding-small;
+  }
+
+  .previewRow {
+    border-color: @divider-color-preview;
+  }
+
+  .previewList {
+    margin: @padding-small 0 0 0;
+    padding: 0;
+  }
+
+  .unlockableList .previewList {
+    margin-bottom: @padding-small;
+  }
+
+  .previewListItem:not(.equipmentListItem):not(.conditionListItem) {
+    display: flex;
+
+    + .previewListItem {
+      border-top: 1px solid @divider-color-preview;
+      margin-top: @padding-normal;
+      padding-top: @padding-normal;
+    }
+  }
+}

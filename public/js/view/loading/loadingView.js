@@ -1,7 +1,7 @@
 var templates = require('./loadingView.html');
 
 var LoadingView = Backbone.View.extend({
-    className: 'loading-view',
+    className: 'loadingView',
 
     events: {
         'click .close': 'hide'

@@ -10,7 +10,7 @@ var TextPreviewView = require('../../part/previewer/text/textPreviewView');
 var UnlockablesPreviewView = require('../../part/previewer/unlockables/unlockablesPreviewView');
 
 var ClassPreviewerView = PreviewerView.extend({
-    className: PreviewerView.prototype.className + ' class-previewer-view',
+    className: PreviewerView.prototype.className + ' classPreviewerView',
 
     initialize: function(options) {
         options = options || {};

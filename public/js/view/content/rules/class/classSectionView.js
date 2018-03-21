@@ -4,7 +4,7 @@ var ClassEditorView = require('./editor/classEditorView');
 var ClassPreviewerView = require('./previewer/classPreviewerView');
 
 var ClassSectionView = Backbone.View.extend({
-    className: 'section-view class-section-view',
+    className: 'g_section classSectionView',
 
     initialize: function(options) {
         options = options || {};

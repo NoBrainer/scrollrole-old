@@ -2,7 +2,7 @@ var AppStateModel = require('../../../../../model/appStateModel');
 var ChooserView = require('../../part/chooser/chooserView');
 
 var RaceChooserView = ChooserView.extend({
-    className: ChooserView.prototype.className + ' race-chooser-view',
+    className: ChooserView.prototype.className + ' raceChooserView',
 
     initialize: function(options) {
         options = options || {};

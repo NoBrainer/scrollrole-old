@@ -1,7 +1,7 @@
 var templates = require('./classEditorView.html');
 
 var ClassEditorView = Backbone.View.extend({
-    className: 'editor-view class-editor-view',
+    className: 'editorView classEditorView',
 
     initialize: function(options) {
         options = options || {};

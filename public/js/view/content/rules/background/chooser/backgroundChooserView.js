@@ -2,7 +2,7 @@ var AppStateModel = require('../../../../../model/appStateModel');
 var ChooserView = require('../../part/chooser/chooserView');
 
 var BackgroundChooserView = ChooserView.extend({
-    className: ChooserView.prototype.className + ' background-chooser-view',
+    className: ChooserView.prototype.className + ' backgroundChooserView',
 
     initialize: function(options) {
         options = options || {};

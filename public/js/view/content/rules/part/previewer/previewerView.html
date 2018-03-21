@@ -1,21 +1,19 @@
 <script type="text/template" id="scaffold">
-    <div class="content-card">
-        <div>
-            <%= this.actionBar(obj) %>
-            <% _.each(obj.rowIds, _.bind(function(id) { %>
-                <%= this.placeholder({ id: id }) %>
-            <% }, this)) %>
-        </div>
+    <div class="g_card">
+        <%= this.actionBar(obj) %>
+        <% _.each(obj.rowIds, _.bind(function(id) { %>
+            <%= this.placeholder({ id: id }) %>
+        <% }, this)) %>
     </div>
 </script>
 
 <script type="text/template" id="actionBar">
-    <div class="action-bar">
-        <a class="action choose" href="#rules/<%- obj.section %>/choose">Go Back</a>
-        <a class="action edit" href="#rules/<%- obj.section %>/edit?name=<%- obj.name %>">Edit</a>
+    <div class="g_actionBar">
+        <a class="g_action choose" href="#rules/<%- obj.section %>/choose">Go Back</a>
+        <a class="g_action edit" href="#rules/<%- obj.section %>/edit?name=<%- obj.name %>">Edit</a>
     </div>
 </script>
 
 <script type="text/template" id="placeholder">
-    <div class="preview-row" id="preview-<%- obj.id %>"></div>
+    <div class="g_sectionRow previewRow" id="preview-<%- obj.id %>"></div>
 </script>

@@ -1,17 +1,17 @@
 <script type="text/template" id="scaffold">
-    <div class="content-card">
-        <h3 class="chooser-header">Select a <%- obj.label %>:</h3>
-        <ul class="chooser-list"></ul>
+    <div class="g_card">
+        <h3 class="chooserHeader">Select a <%- obj.label %>:</h3>
+        <ul class="chooserList"></ul>
     </div>
 </script>
 
 <script type="text/template" id="choice">
-    <li class="container">
-        <a class="chooser-option" href="#rules/<%- obj.section %>/preview?name=<%- obj.name %>">
+    <li class="g_container">
+        <a class="chooserOption" href="#rules/<%- obj.section %>/preview?name=<%- obj.name %>">
             <% if (obj.iconPath) { %>
-                <img class="chooser-icon" src="<%- obj.iconPath %>">
+                <img class="chooserIcon" src="<%- obj.iconPath %>">
             <% } %>
-            <span class="chooser-label"><%- obj.name %></span>
+            <span class="chooserLabel"><%- obj.name %></span>
         </a>
     </li>
 </script>

@@ -8,7 +8,7 @@ var SubracesPreviewView = require('../../part/previewer/subraces/subracesPreview
 var TextPreviewView = require('../../part/previewer/text/textPreviewView');
 
 var RacePreviewerView = PreviewerView.extend({
-    className: PreviewerView.prototype.className + ' background-previewer-view',
+    className: PreviewerView.prototype.className + ' backgroundPreviewerView',
 
     initialize: function(options) {
         options = options || {};

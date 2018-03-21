@@ -1,16 +1,16 @@
 <script type="text/template" id="scaffold">
     <% if (!obj.hideTitle) { %>
-        <div class="preview-row-title">Spell List:</div>
+        <div class="previewRowTitle">Spell List:</div>
     <% } %>
-    <div class="preview-row-value">
-        <ul class="preview-list spell-list"></ul>
+    <div class="previewRowValue">
+        <ul class="previewList spellList"></ul>
     </div>
 </script>
 
 <script type="text/template" id="spellRow">
-    <li class="preview-list-item spell-list-item">
-        <div class="container column">
-            <h4 class="preview-title spell-title"><%- obj.name %></h4>
+    <li class="previewListItem spellListItem">
+        <div class="g_container column">
+            <h4 class="previewTitle spellTitle"><%- obj.name %></h4>
             <p><%- obj.listString %></p>
         </div>
     </li>

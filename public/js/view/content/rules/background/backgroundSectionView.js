@@ -4,7 +4,7 @@ var BackgroundEditorView = require('./editor/backgroundEditorView');
 var BackgroundPreviewerView = require('./previewer/backgroundPreviewerView');
 
 var BackgroundSectionView = Backbone.View.extend({
-    className: 'section-view background-section-view',
+    className: 'g_section backgroundSectionView',
 
     initialize: function(options) {
         options = options || {};

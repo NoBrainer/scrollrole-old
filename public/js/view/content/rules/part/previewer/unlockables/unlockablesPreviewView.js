@@ -9,7 +9,7 @@ var TextPreviewView = require('../text/textPreviewView');
 var templates = require('./unlockablesPreviewView.html');
 
 var UnlockablesPreviewView = Backbone.View.extend({
-    className: 'unlockables-preview-view',
+    className: 'unlockablesPreviewView',
 
     initialize: function(options) {
         options = options || {};
@@ -29,8 +29,8 @@ var UnlockablesPreviewView = Backbone.View.extend({
     },
 
     renderUnlockable: function(unlockableModel) {
-        this.$('.unlockable-list').append(templates.unlockableRow());
-        var $container = this.$('.unlockable-list-item:last .container');
+        this.$('.unlockableList').append(templates.unlockableRow());
+        var $container = this.$('.unlockableListItem:last .g_container');
 
         this.renderCondition($container, unlockableModel.getCondition());
         this.renderProficiencyBonus($container, unlockableModel.getProficiencyBonus());

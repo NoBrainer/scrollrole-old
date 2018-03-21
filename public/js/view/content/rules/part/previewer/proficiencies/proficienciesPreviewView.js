@@ -1,7 +1,7 @@
 var templates = require('./proficienciesPreviewView.html');
 
 var ProficienciesPreviewView = Backbone.View.extend({
-    className: 'proficiencies-preview-view',
+    className: 'proficienciesPreviewView',
 
     initialize: function(options) {
         options = options || {};
@@ -33,7 +33,7 @@ var ProficienciesPreviewView = Backbone.View.extend({
         }, "");
 
         var html = templates.list({ name: name, listString: listString });
-        this.$('.proficiency-list').append(html);
+        this.$('.proficiencyList').append(html);
     },
 
     getCollection: function() {

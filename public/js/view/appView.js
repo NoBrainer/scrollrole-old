@@ -4,7 +4,7 @@ var HeaderView = require('./header/headerView');
 var templates = require('./appView.html');
 
 var AppView = Backbone.View.extend({
-    className: 'app-view',
+    className: 'appView',
 
     render: function() {
         this.cleanup();

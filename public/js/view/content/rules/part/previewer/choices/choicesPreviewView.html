@@ -1,46 +1,46 @@
 <script type="text/template" id="scaffold">
-    <div class="preview-row-title">Choices:</div>
-    <div class="preview-row-value">
-        <ul class="preview-list choice-list"></ul>
+    <div class="previewRowTitle">Choices:</div>
+    <div class="previewRowValue">
+        <ul class="previewList choiceList"></ul>
     </div>
 </script>
 
 <script type="text/template" id="basicChoiceRow">
-    <li class="preview-list-item choice-list-item">
-        <div class="container column">
-            <h4 class="preview-title choice-title"><%- obj.name %></h4>
+    <li class="previewListItem choiceListItem">
+        <div class="g_container column">
+            <h4 class="previewTitle choiceTitle"><%- obj.name %></h4>
             <div>
                 <% _.each(obj.description, function(paragraph) { %>
                     <p><%- paragraph %></p>
                 <% }); %>
             </div>
             <div>
-                <span class="preview-label choice-label">Type:</span>
-                <span class="preview-item-text choice-item-text"><%- obj.type %></span>
+                <span class="previewLabel choiceLabel">Type:</span>
+                <span class="previewItemText choiceItemText"><%- obj.type %></span>
             </div>
             <div>
-                <span class="preview-label choice-label">Pick <%- obj.pick %> from:</span>
-                <span class="preview-item-text choice-item-text"><%- obj.listString %></span>
+                <span class="previewLabel choiceLabel">Pick <%- obj.pick %> from:</span>
+                <span class="previewItemText choiceItemText"><%- obj.listString %></span>
             </div>
         </div>
     </li>
 </script>
 
 <script type="text/template" id="fancyChoiceRow">
-    <li class="preview-list-item choice-list-item">
-        <div class="container column">
-            <h4 class="choice-title"><%- obj.name %></h4>
+    <li class="previewListItem choiceListItem">
+        <div class="g_container column">
+            <h4 class="choiceTitle"><%- obj.name %></h4>
             <div>
                 <% _.each(obj.description, function(paragraph) { %>
                     <p><%- paragraph %></p>
                 <% }); %>
             </div>
             <div>
-                <span class="preview-label choice-label">Type:</span>
-                <span class="preview-item-text choice-item-text"><%- obj.type %></span>
+                <span class="previewLabel choiceLabel">Type:</span>
+                <span class="previewItemText choiceItemText"><%- obj.type %></span>
             </div>
-            <div class="preview-label choice-label">Pick <%- obj.pick %> from:</div>
-            <div class="preview-nested-container"></div>
+            <div class="previewLabel choiceLabel">Pick <%- obj.pick %> from:</div>
+            <div class="previewNestedContainer"></div>
         </div>
     </li>
 </script>

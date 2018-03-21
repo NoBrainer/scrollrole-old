@@ -1,7 +1,7 @@
 var templates = require('./textPreviewView.html');
 
 var TextPreviewView = Backbone.View.extend({
-    className: 'text-preview-view',
+    className: 'textPreviewView',
 
     initialize: function(options) {
         options = options || {};

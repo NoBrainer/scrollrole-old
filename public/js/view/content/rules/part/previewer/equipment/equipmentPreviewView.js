@@ -1,7 +1,7 @@
 var templates = require('./equipmentPreviewView.html');
 
 var EquipmentPreviewView = Backbone.View.extend({
-    className: 'equipment-preview-view',
+    className: 'equipmentPreviewView',
 
     initialize: function(options) {
         options = options || {};
@@ -15,7 +15,7 @@ var EquipmentPreviewView = Backbone.View.extend({
 
         _.each(this.getEquipment(), _.bind(function(item) {
             var html = templates.listItem({ name: item });
-            this.$('.equipment-list').append(html);
+            this.$('.equipmentList').append(html);
         }, this));
 
         return this;

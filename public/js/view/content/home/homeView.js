@@ -1,7 +1,7 @@
 var templates = require('./homeView.html');
 
 var HomeView = Backbone.View.extend({
-    className: 'home-view',
+    className: 'homeView',
 
     render: function() {
         var html = templates.scaffold({ lastUpdated: Config.lastUpdated || '?' });

@@ -2,7 +2,7 @@ var NavItemCollection = require('../../../collection/nav/navItemCollection');
 var templates = require('./navbarView.html');
 
 var NavView = Backbone.View.extend({
-    className: 'navbar-view',
+    className: 'navbarView',
 
     initialize: function(options) {
         options = options || {};

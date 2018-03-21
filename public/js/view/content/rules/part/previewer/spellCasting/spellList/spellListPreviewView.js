@@ -1,7 +1,7 @@
 var templates = require('./spellListPreviewView.html');
 
 var SpellListPreviewView = Backbone.View.extend({
-    className: 'spell-list-preview-view',
+    className: 'spellListPreviewView',
 
     initialize: function(options) {
         options = options || {};
@@ -46,7 +46,7 @@ var SpellListPreviewView = Backbone.View.extend({
             return memo;
         }, "");
         var html = templates.spellRow({ name: name, listString: listString });
-        this.$('.spell-list').append(html);
+        this.$('.spellList').append(html);
     },
 
     getCollection: function() {

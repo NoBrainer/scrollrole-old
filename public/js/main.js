@@ -29,13 +29,15 @@ var LoadingView = require('./view/loading/loadingView');
 var RulesConfigModel = require('./model/rules/rulesConfigModel');
 
 (function() {
+    var $body = $('body');
+
     // Render the loading mask
-    $('body').prepend(LoadingView.render().el);
+    $body.prepend(LoadingView.render().el);
     LoadingView.show();
 
     // Render the app view to the page
     var appView = new AppView();
-    $('body').prepend(appView.render().$el);
+    $body.prepend(appView.render().$el);
 
     // Start the router and hide the loading mask after the setup
     RulesConfigModel.setup()

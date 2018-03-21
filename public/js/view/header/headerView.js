@@ -2,7 +2,7 @@ var AppStateModel = require('../../model/appStateModel');
 var templates = require('./headerView.html');
 
 var HeaderView = Backbone.View.extend({
-    className: 'page-container header-view',
+    className: 'g_pageContainer headerView',
 
     initialize: function(options) {
         this.minHorizontalWidth = 300;
@@ -61,7 +61,7 @@ var HeaderView = Backbone.View.extend({
         Backbone.View.prototype.remove.apply(this, arguments);
     }
 },{
-    RESIZE_EVENT: 'resize.header'
+    RESIZE_EVENT: 'resize.headerView'
 });
 
 module.exports = HeaderView;

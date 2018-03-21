@@ -1,12 +1,13 @@
 var AppStateModel = require('../../../model/appStateModel');
-var BackgroundContentView = require('./background/backgroundSectionView');
-var ClassContentView = require('./class/classSectionView');
+var BackgroundSectionView = require('./background/backgroundSectionView');
+var ClassSectionView = require('./class/classSectionView');
+var IntroductionSectionView = require('./introduction/introductionSectionView');
 var NavView = require('../navbar/navbarView');
-var RaceContentView = require('./race/raceSectionView');
+var RaceSectionView = require('./race/raceSectionView');
 var templates = require('./rulesView.html');
 
 var RulesView = Backbone.View.extend({
-    className: 'rules-view',
+    className: 'rulesView',
 
     initialize: function(options) {
         options = options || {};
@@ -38,7 +39,7 @@ var RulesView = Backbone.View.extend({
         this.cleanupNavView();
 
         this.navView = new NavView({ list: this.tabList });
-        this.$('#rules-nav').html(this.navView.render().el);
+        this.$('#rulesNav').html(this.navView.render().el);
 
         this.activateTab();
 
@@ -64,18 +65,19 @@ var RulesView = Backbone.View.extend({
 
         switch(tab) {
             case RulesView.tabs.INTRODUCTION:
-                content = templates.introductionContent();
+                this.childView = new IntroductionSectionView();
+                content = this.childView.render().el;
                 break;
             case RulesView.tabs.BACKGROUNDS:
-                this.childView = new BackgroundContentView();
+                this.childView = new BackgroundSectionView();
                 content = this.childView.render().el;
                 break;
             case RulesView.tabs.CLASSES:
-                this.childView = new ClassContentView();
+                this.childView = new ClassSectionView();
                 content = this.childView.render().el;
                 break;
             case RulesView.tabs.RACES:
-                this.childView = new RaceContentView();
+                this.childView = new RaceSectionView();
                 content = this.childView.render().el;
                 break;
             default:
