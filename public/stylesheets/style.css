@@ -233,6 +233,7 @@ li + li {
   color: #efefef;
   font-size: 16px;
   padding: 0 10px;
+  width: calc(100% -  20px);
 }
 .headerView a {
   text-decoration: none;
@@ -251,10 +252,10 @@ li + li {
 .headerView .tabs {
   display: flex;
   flex-wrap: wrap;
+  width: 100%;
 }
 .headerView .tabs.vertical {
   flex-direction: column;
-  width: 100%;
 }
 .headerView .tabs.vertical .tab {
   margin-right: 0;
@@ -281,6 +282,7 @@ li + li {
   font-size: 14px;
   line-height: 18px;
   padding: 0 10px;
+  width: calc(100% -  20px);
 }
 .footerView ul {
   list-style: none;

@@ -3,6 +3,7 @@
   color: @text-color-header;
   font-size: @font-size-header;
   padding: 0 @padding-normal;
+  width: calc(~"100% - " @padding-normal*2);
 
   a {
     text-decoration: none;
@@ -24,10 +25,10 @@
   .tabs {
     display: flex;
     flex-wrap: wrap;
+    width: 100%;
 
     &.vertical {
       flex-direction: column;
-      width: 100%;
 
       .tab {
         margin-right: 0;
