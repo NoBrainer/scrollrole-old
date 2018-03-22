@@ -8,6 +8,7 @@ body {
   color: #efefef;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
   margin: 0;
+  overflow-x: hidden;
   overflow-y: scroll;
 }
 a {
@@ -231,6 +232,7 @@ li + li {
 .headerView {
   background-color: #404949;
   color: #efefef;
+  display: flex;
   font-size: 16px;
   padding: 0 10px;
   width: calc(100% -  20px);
@@ -241,10 +243,12 @@ li + li {
 .headerView .logo {
   display: flex;
   flex-direction: column;
-  font-size: 30px;
+  flex-basis: 215px;
+  flex-grow: 0;
+  flex-shrink: 0;
   justify-content: center;
   padding-left: 10px;
-  padding-right: 30px;
+  padding-right: 10px;
 }
 .headerView .logo img {
   height: 70px;

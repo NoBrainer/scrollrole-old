@@ -63,6 +63,7 @@ The script is the file named `scrollrole` in the `ScrollRole` directory.
   ```
   sudo service scrollrole stop
   ```
+- Update the `lastUpdated` in `scrollRoleConfig.js`
 - Use git to fetch and pull from `ScrollRole` directory:
   ```
   git fetch

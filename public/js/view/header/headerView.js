@@ -6,7 +6,7 @@ var HeaderView = Backbone.View.extend({
 
     initialize: function(options) {
         this.minHorizontalWidth = 300;
-        this.resizeFrequency = 50;
+        this.resizeFrequency = 250;
 
         this.listenTo(AppStateModel, 'change:' + AppStateModel.fields.MODE, function(model, mode) {
             this.selectTab();
@@ -48,7 +48,7 @@ var HeaderView = Backbone.View.extend({
                 setTimeout(onResize, this.resizeFrequency);
             }
         }, this);
-        $(window).on(HeaderView.RESIZE_EVENT, _.debounce(onResize, this.resizeFrequency));
+        $(window).on(HeaderView.RESIZE_EVENT, _.throttle(onResize, this.resizeFrequency));
         onResize();
     },
 
