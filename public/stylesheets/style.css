@@ -319,6 +319,7 @@ li + li {
   cursor: pointer;
   display: flex;
   padding: 10px;
+  text-decoration: none;
 }
 .chooserView .chooserOption:hover {
   background-color: #000000;
