@@ -16,8 +16,7 @@ var PreloadUtil = {
 
 var ICON_FILES = [
     'resources/icons/icons.svg',
-    'resources/icons/miscellaneous/d20.png',
-    'resources/icons/miscellaneous/homebrew.png'
+    'resources/icons/miscellaneous/d20.png'
 ];
 
 _.extend(ExportedClass, PreloadUtil);

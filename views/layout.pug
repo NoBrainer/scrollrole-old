@@ -1,0 +1,21 @@
+doctype html
+html
+    head
+        meta(charset='UTF-8')
+        meta(name='viewport' content='width=device-width, initial-scale=1.0')
+        title='ScrollRole'
+        link(rel='shortcut icon' href='/resources/icons/favicon.png' type='image/x-icon')
+        link(rel='stylesheet', href='/css/style.min.css')
+    body
+        div(id='header')
+            div(class='g_pageContainer headerView')
+                div(class='wrapper')
+                    div(class='logo')
+                        a(href='/#home')
+                            img(src='/resources/icons/logo.svg' alt='ScrollRole logo')
+        div(id='content')
+            div(class='g_pageContainer contentView')
+                div(class='g_pageContainer')
+                    div(class='g_section')
+                        div(class='g_card')
+                            block content
