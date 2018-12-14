@@ -36,8 +36,13 @@ var RaceModel = Backbone.Model.extend({
         setupCollection(RaceModel.fields.PROFICIENCIES, ProficiencyCollection);
         setupCollection(RaceModel.fields.SUBRACES, SubRaceCollection);
 
-        this.setIconId(IconIdUtil.normalize(this.getIconId(), RaceModel.validIconIds, RaceModel.defaultIconId,
-            this.getName()));
+        this.set(this.parse(attrs, options));
+    },
+
+    parse: function(attrs, options) {
+        attrs = attrs || {};
+        attrs[RaceModel.fields.ICON_ID] = IconIdUtil.normalize(attrs[RaceModel.fields.ICON_ID], RaceModel.defaultIconId);
+        return attrs;
     },
 
     getAdjustments: function() {
@@ -133,8 +138,7 @@ var RaceModel = Backbone.Model.extend({
         SUBRACES: 'subraces'
     },
 
-    defaultIconId: 'custom',
-    validIconIds: ['dragonborn', 'dwarf', 'elf', 'gnome', 'half-elf', 'half-orc', 'halfling', 'human', 'tiefling']
+    defaultIconId: 'race-custom'
 });
 
 _.extend(ExportedClass, RaceModel);

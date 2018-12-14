@@ -5,21 +5,20 @@ configuration.
 
 
 ## Dev Environment Setup
-- Install npm and node
+- Install git, npm, and node
 - Download this repository
-- `npm install package.json`
 
 
 ### Build Scripts
 Run these commands from the root of the project.
-- Watch and build all js/less/html:
+- Download libraries:
+    - `npm install`
+- Build all js/css, watch for changes, start the ExpressJS app, restart on change:
     - `npm run watch`
-- Build all js/less/html:
+- Build all js/css:
     - `npm run build`
 - Start the ExpressJS app:
     - `npm run start`
-- Build and deploy to the `dist` directory:
-    - `npm run deploy`
 - Install the config file for overriding:
     - `npm run installConfig`
 - For other scripts, check the package.json file.
@@ -40,8 +39,8 @@ Run these commands from the root of the project.
   - `cd ScrollRole`
 - Install the node packages:
   - `npm install -g`
-- Setup the config:
-  - `npm run exportConfig`
+- Install the config file:
+  - `npm run install:config`
 - Edit the `config.js` file one directory above `ScrollRole` to set ports, etc.
 
 
@@ -69,8 +68,8 @@ The script is the file named `scrollrole` in the `ScrollRole` directory.
   git fetch
   git pull -f
   ```
-- Run the deploy script:
-  - `npm run deploy`
+- Run the build script:
+  - `npm run build`
 - Start the `scrollrole` app:
   ```
   sudo service scrollrole start

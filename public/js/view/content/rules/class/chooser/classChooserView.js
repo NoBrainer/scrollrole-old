@@ -9,7 +9,6 @@ var ClassChooserView = ChooserView.extend({
 
         options.label = 'class';
         options.section = 'classes';
-        options.pathToIcons = '/resources/icons/class/';
 
         ChooserView.prototype.initialize(options);
     },

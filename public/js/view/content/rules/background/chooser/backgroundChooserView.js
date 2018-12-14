@@ -9,7 +9,6 @@ var BackgroundChooserView = ChooserView.extend({
 
         options.label = 'background';
         options.section = 'backgrounds';
-        options.pathToIcons = '/resources/icons/background/';
 
         ChooserView.prototype.initialize(options);
     },

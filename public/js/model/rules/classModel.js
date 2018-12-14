@@ -39,8 +39,13 @@ var ClassModel = Backbone.Model.extend({
         var spellCastingModel = new SpellCastingModel(attrs.spellCasting, {className: this.getName()});
         this.set(ClassModel.fields.SPELL_CASTING, spellCastingModel);
 
-        this.setIconId(IconIdUtil.normalize(this.getIconId(), ClassModel.validIconIds, ClassModel.defaultIconId,
-            this.getName()));
+        this.set(this.parse(attrs, options));
+    },
+
+    parse: function(attrs, options) {
+        attrs = attrs || {};
+        attrs[ClassModel.fields.ICON_ID] = IconIdUtil.normalize(attrs[ClassModel.fields.ICON_ID], ClassModel.defaultIconId);
+        return attrs;
     },
 
     getASILevels: function() {
@@ -136,9 +141,7 @@ var ClassModel = Backbone.Model.extend({
         UNLOCKABLES: 'unlockables'
     },
 
-    defaultIconId: 'custom',
-    validIconIds: ['barbarian', 'bard', 'cleric', 'druid', 'fighter', 'monk', 'paladin', 'ranger', 'rogue', 'sorcerer',
-        'warlock', 'wizard']
+    defaultIconId: 'class-custom'
 });
 
 _.extend(ExportedClass, ClassModel);

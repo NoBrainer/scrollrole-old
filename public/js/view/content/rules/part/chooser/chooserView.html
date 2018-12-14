@@ -9,7 +9,9 @@
     <li class="g_container">
         <a class="chooserOption" href="#rules/<%- obj.section %>/preview?name=<%- obj.name %>">
             <% if (obj.iconPath) { %>
-                <img class="chooserIcon" src="<%- obj.iconPath %>">
+                <svg class="g_icon">
+                    <use xlink:href="<%- obj.iconPath %>"></use>
+                </svg>
             <% } %>
             <span class="chooserLabel"><%- obj.name %></span>
         </a>

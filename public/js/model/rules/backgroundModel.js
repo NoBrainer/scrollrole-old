@@ -28,8 +28,14 @@ var BackgroundModel = Backbone.Model.extend({
         setupCollection(BackgroundModel.fields.FEATURES, FeatureCollection);
         setupCollection(BackgroundModel.fields.PROFICIENCIES, ProficiencyCollection);
 
-        this.setIconId(IconIdUtil.normalize(this.getIconId(), BackgroundModel.validIconIds,
-            BackgroundModel.defaultIconId, this.getName()));
+        this.set(this.parse(attrs, options));
+    },
+
+    parse: function(attrs, options) {
+        attrs = attrs || {};
+        attrs[BackgroundModel.fields.ICON_ID] = IconIdUtil.normalize(attrs[BackgroundModel.fields.ICON_ID],
+            BackgroundModel.defaultIconId);
+        return attrs;
     },
 
     getChoices: function() {
@@ -95,8 +101,7 @@ var BackgroundModel = Backbone.Model.extend({
         SUGGESTED_CHARACTERISTICS: 'suggestedCharacteristics'
     },
 
-    defaultIconId: 'custom',
-    validIconIds: ['acolyte']
+    defaultIconId: 'background-custom'
 });
 
 _.extend(ExportedClass, BackgroundModel);

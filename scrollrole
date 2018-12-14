@@ -30,7 +30,6 @@
 # Source function library.
 . /etc/init.d/functions
 
-#TODO: get this working with ScrollRole/dist/index.js
 NAME=scrollrole
 SOURCE_DIR=/home/developer/ScrollRole/bin
 SOURCE_FILE=www

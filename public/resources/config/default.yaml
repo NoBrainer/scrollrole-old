@@ -3,6 +3,7 @@ backgrounds:
 
   ## ACOLYTE
   - name: Acolyte
+    iconId: background-acolyte
     description:
       - >
         You have spent your life in the service of a temple to a specific god or pantheon of gods. You act as an
@@ -87,6 +88,7 @@ backgrounds:
 
   ## CUSTOMIZED BACKGROUND
   - name: Customized Background
+    iconId: background-custom
     description:
       - >
         You might want to tweak some of the features of a background so it better fits your character or campaign
@@ -121,6 +123,7 @@ classes:
 
   ## BARBARIAN
   - name: Barbarian
+    iconId: class-barbarian
     hitDice: 1d12
     baseHitPoints: 12
     proficiencies:
@@ -365,6 +368,7 @@ classes:
 
   ## BARD
   - name: Bard
+    iconId: class-bard
     hitDice: 1d8
     baseHitPoints: 8
     proficiencies:
@@ -721,39 +725,50 @@ classes:
 
   ## CLERIC
   - name: Cleric
+    iconId: class-cleric
 
   ## DRUID
   - name: Druid
+    iconId: class-druid
 
   ## FIGHTER
   - name: Fighter
+    iconId: class-fighter
 
   ## MONK
   - name: Monk
+    iconId: class-monk
 
   ## PALADIN
   - name: Paladin
+    iconId: class-paladin
 
   ## RANGER
   - name: Ranger
+    iconId: class-ranger
 
   ## ROGUE
   - name: Rogue
+    iconId: class-rogue
 
   ## SORCERER
   - name: Sorcerer
+    iconId: class-sorcerer
 
   ## WARLOCK
   - name: Warlock
+    iconId: class-warlock
 
   ## WIZARD
   - name: Wizard
+    iconId: class-wizard
 
 # Races
 races:
 
   ## DWARF
   - name: Dwarf
+    iconId: race-dwarf
     description:
       - Your dwarf character has an assortment of inborn abilities, part and parcel of dwarven nature.
     abilityScoreAdjustments:
@@ -821,6 +836,7 @@ races:
 
   ## ELF
   - name: Elf
+    iconId: race-elf
     description:
       - Your elf character has a variety of natural abilities, the result of thousands of years of elven refinement.
     abilityScoreAdjustments:
@@ -905,6 +921,7 @@ races:
 
   ## HALFLING
   - name: Halfling
+    iconId: race-halfling
     description:
       - Your halfling character has a number of traits in common with all other halflings.
     abilityScoreAdjustments:
@@ -952,6 +969,7 @@ races:
 
   ## HUMAN
   - name: Human
+    iconId: race-human
     description:
       - It's hard to make generalizations about humans, but your human character has these traits.
     abilityScoreAdjustments:
@@ -984,6 +1002,7 @@ races:
 
   ## DRAGONBORN
   - name: Dragonborn
+    iconId: race-dragonborn
     description:
       - Your draconic heritage manifests in a variety of traits you share with other dragonborn.
     abilityScoreAdjustments:
@@ -1094,6 +1113,7 @@ races:
 
   ## GNOME
   - name: Gnome
+    iconId: race-gnome
     description:
       - Your gnome character has certain characteristics in common with all other gnomes.
     abilityScoreAdjustments:
@@ -1165,6 +1185,7 @@ races:
 
   ## HALF-ELF
   - name: Half-Elf
+    iconId: race-half-elf
     description:
       - Your half-elf character has some qualities in common with elves and some that are unique to half-elves.
     abilityScoreAdjustments:
@@ -1220,6 +1241,7 @@ races:
 
   ## HALF-ORC
   - name: Half-Orc
+    iconId: race-half-orc
     description:
       - Your half-orc character has certain traits deriving from your orc ancestry.
     abilityScoreAdjustments:
@@ -1262,6 +1284,7 @@ races:
 
   ## TIEFLING
   - name: Tiefling
+    iconId: race-tiefling
     description:
       - Tieflings share certain racial traits as a result of their infernal descent.
     abilityScoreAdjustments:
