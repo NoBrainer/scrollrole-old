@@ -37,7 +37,7 @@ Run these commands from the root of the project.
 - Install nodejs & npm
     ```
     # Add yum repository:
-    curl -sL https://rpm.nodesource.com/setup_6.x | sudo -E bash -
+    curl -sL https://rpm.nodesource.com/setup_10.x | sudo -E bash -
     # Install:
     sudo yum install -y nodejs
     # Verify versions:

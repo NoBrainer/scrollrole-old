@@ -6,7 +6,8 @@
     "parallelshell needs to stay at 3.0.1, because 3.0.2 is bugged",
     "use git bash for npm scripts: npm config set script-shell \"C:\\Program Files\\Git\\bin\\bash.exe\"",
     "unset git bash for npm scripts: npm config delete script-shell",
-    "TODO: modify kill:server to use port from config"
+    "TODO: modify kill:server to use port from config",
+    "Note: acorn is installed to prevent some error when running npm install"
   ],
   "devDependencies": {
     "browserify": "16.2.3",
@@ -53,6 +54,7 @@
     "watch:server": "npm run kill:server && nodemon --watch api --watch app.js ./bin/www"
   },
   "dependencies": {
+    "acorn": "6.0.4",
     "backbone": "1.3.3",
     "body-parser": "1.18.3",
     "cookie-parser": "1.4.3",
