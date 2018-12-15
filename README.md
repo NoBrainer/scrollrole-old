@@ -44,6 +44,10 @@ Run these commands from the root of the project.
     node -v
     npm -v
     ```
+- Install forver
+    ```
+    sudo npm install forever -g
+    ```
 - Clone the repository (to current directory):
   - `git clone https://github.com/NoBrainer/ScrollRole.git`
 - Change directories:

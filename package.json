@@ -32,6 +32,7 @@
     "startForever": "forever start bin/www",
     "stopForever": "forever stopall",
     "----------------------------------------------------------": "",
+    "prebuild": "npm install -s",
     "build:all": "npm run build:css && npm run build:js",
     "build:css": "lessc public/css/main.less > build/public/css/style.css",
     "build:js": "browserify -t browserify-compile-templates --extension=.html public/js/main.js > build/public/js/bundle.js",
@@ -58,10 +59,10 @@
     "debug": "4.1.0",
     "express": "4.16.4",
     "font-awesome": "4.7.0",
+    "jade": "1.11.0",
     "jquery": "3.3.1",
     "js-yaml": "3.12.0",
     "morgan": "1.9.1",
-    "pug": "2.0.3",
     "serve-favicon": "2.5.0",
     "underscore": "1.9.1"
   }
