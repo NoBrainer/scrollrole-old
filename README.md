@@ -5,8 +5,8 @@ configuration.
 
 
 ## Dev Environment Setup
-- Install git, npm, and node
-- Download this repository
+- Install git (see Server Setup for commands)
+- Install nodejs & npm (see Server Setup for commands)
 
 
 ### Build Scripts
@@ -20,18 +20,29 @@ Run these commands from the root of the project.
 - Start the ExpressJS app:
     - `npm run start`
 - Install the config file for overriding:
-    - `npm run installConfig`
+    - `npm run install:config`
 - For other scripts, check the package.json file.
 
 
 ## Server Setup
 
 ### 1. Install software and codebase
-- Install `git`, `npm`, and `forever`:
+- Install git
     ```
-    sudo yum install git
-    sudo yum install npm
-    sudo npm install forever -g
+    # Install:
+    sudo yum install -y git
+    # Verify version:
+    git --version
+    ```
+- Install nodejs & npm
+    ```
+    # Add yum repository:
+    curl -sL https://rpm.nodesource.com/setup_6.x | sudo -E bash -
+    # Install:
+    sudo yum install -y nodejs
+    # Verify versions:
+    node -v
+    npm -v
     ```
 - Clone the repository (to current directory):
   - `git clone https://github.com/NoBrainer/ScrollRole.git`
