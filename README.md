@@ -94,5 +94,5 @@ The script is the file named `scrollrole` in the `ScrollRole` directory.
 ## Resources
 - 5e D&D SRD
 - font-awesome
-- npm
+- game-icons.net
 - YAML
