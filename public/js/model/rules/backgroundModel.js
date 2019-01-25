@@ -20,6 +20,8 @@ var BackgroundModel = Backbone.Model.extend({
     initialize: function(attrs, options) {
         attrs = attrs || {};
 
+        this.set(this.parse(attrs, options));
+
         var setupCollection = _.bind(function(fieldName, CollectionClass) {
             this.set(fieldName, new CollectionClass(attrs[fieldName] || [], {parse: true}));
         }, this);
@@ -27,8 +29,6 @@ var BackgroundModel = Backbone.Model.extend({
         setupCollection(BackgroundModel.fields.CHOICES, ChoiceCollection);
         setupCollection(BackgroundModel.fields.FEATURES, FeatureCollection);
         setupCollection(BackgroundModel.fields.PROFICIENCIES, ProficiencyCollection);
-
-        this.set(this.parse(attrs, options));
     },
 
     parse: function(attrs, options) {

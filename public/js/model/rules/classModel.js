@@ -27,6 +27,8 @@ var ClassModel = Backbone.Model.extend({
     initialize: function(attrs, options) {
         attrs = attrs || {};
 
+        this.set(this.parse(attrs, options));
+
         var setupCollection = _.bind(function(fieldName, CollectionClass) {
             this.set(fieldName, new CollectionClass(attrs[fieldName] || [], {parse: true}));
         }, this);
@@ -38,8 +40,6 @@ var ClassModel = Backbone.Model.extend({
 
         var spellCastingModel = new SpellCastingModel(attrs.spellCasting, {className: this.getName()});
         this.set(ClassModel.fields.SPELL_CASTING, spellCastingModel);
-
-        this.set(this.parse(attrs, options));
     },
 
     parse: function(attrs, options) {

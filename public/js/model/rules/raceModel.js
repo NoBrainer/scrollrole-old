@@ -26,6 +26,8 @@ var RaceModel = Backbone.Model.extend({
     initialize: function(attrs, options) {
         attrs = attrs || {};
 
+        this.set(this.parse(attrs, options));
+
         var setupCollection = _.bind(function(fieldName, CollectionClass) {
             this.set(fieldName, new CollectionClass(attrs[fieldName] || [], {parse: true}));
         }, this);
@@ -35,8 +37,6 @@ var RaceModel = Backbone.Model.extend({
         setupCollection(RaceModel.fields.FEATURES, FeatureCollection);
         setupCollection(RaceModel.fields.PROFICIENCIES, ProficiencyCollection);
         setupCollection(RaceModel.fields.SUBRACES, SubRaceCollection);
-
-        this.set(this.parse(attrs, options));
     },
 
     parse: function(attrs, options) {
