@@ -8,16 +8,7 @@ window._ = _;
 window.Backbone = Backbone;
 
 // Setup the global config
-var Config;
-try {
-    Config = require('../../../scrollRoleConfig');
-} catch(e1) {
-    try {
-        Config = require('../../config');
-    } catch(e2) {
-        Config = { env: 'dev', port: 3000 };
-    }
-}
+var Config = require('../../scripts/readConfig');
 window.Config = Config;
 
 // Require singletons to make sure they're initialized
@@ -28,6 +19,7 @@ var AppView = require('./view/appView');
 var LoadingView = require('./view/loading/loadingView');
 var PreloadUtil = require('./util/preloadUtil');
 var RulesConfigModel = require('./model/rules/rulesConfigModel');
+var SvgUtil = require('./util/svgUtil');
 
 (function() {
     var $body = $('body');
@@ -42,6 +34,9 @@ var RulesConfigModel = require('./model/rules/rulesConfigModel');
     // Render the app view to the page
     var appView = new AppView();
     $body.prepend(appView.render().$el);
+
+    // Setup the SVGs inline
+    SvgUtil.setup();
 
     // Start the router and hide the loading mask after the setup
     RulesConfigModel.setup()
