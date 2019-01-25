@@ -41,7 +41,7 @@
     "build:js": "browserify -t browserify-compile-templates --extension=.html public/js/main.js > build/public/js/bundle.js",
     "postbuild:js": "terser build/public/js/bundle.js -o build/public/js/bundle.min.js && node scripts/message 'JS done!'",
     "prebuild:svg": "node scripts/message 'Building SVG...' && mkdirp build/public/resources",
-    "build:svg": "svgstore --inline -o build/public/resources/icons.svg public/resources/icons/**.svg",
+    "build:svg": "svgstore --inline -o build/public/resources/icons.svg public/resources/icons/**/*.svg",
     "postbuild:svg": "node scripts/message 'SVG done!'",
     "--- WATCH SCRIPTS---------------------------------------------------------": "",
     "watch:all": "parallelshell \"npm run watch:css -s\" \"npm run watch:js -s\" \"npm run watch:server -s\" \"npm run watch:svg -s\"",
