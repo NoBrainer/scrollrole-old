@@ -8,7 +8,6 @@ var ChooserView = Backbone.View.extend({
 
         this.label = options.label;
         this.section = options.section;
-        this.pathToIcons = options.pathToIcons || '/resources/icons/icons.svg';
     },
 
     render: function() {
@@ -34,7 +33,7 @@ var ChooserView = Backbone.View.extend({
     buildIconPath: function(name) {
         var model = this.getCollection().getModelByName(name);
         if (_.isFunction(model.getIconId)) {
-            return this.pathToIcons + '#' + model.getIconId();
+            return '#' + model.getIconId();
         } else {
             return null;
         }

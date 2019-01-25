@@ -17,7 +17,6 @@ require('./model/appStateModel');
 
 var AppView = require('./view/appView');
 var LoadingView = require('./view/loading/loadingView');
-var PreloadUtil = require('./util/preloadUtil');
 var RulesConfigModel = require('./model/rules/rulesConfigModel');
 var SvgUtil = require('./util/svgUtil');
 
@@ -27,9 +26,6 @@ var SvgUtil = require('./util/svgUtil');
     // Render the loading mask
     $body.prepend(LoadingView.render().el);
     LoadingView.show();
-
-    // Preload icons
-    PreloadUtil.preloadIcons();
 
     // Render the app view to the page
     var appView = new AppView();
