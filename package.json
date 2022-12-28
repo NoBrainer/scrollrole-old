@@ -50,7 +50,7 @@
     "watch:server": "npm run kill:server -s && nodemon -q --watch api --watch app.js ./bin/www",
     "watch:svg": "watch \"npm run build:svg -s\" public/resources/icons",
     "--- MISCELLANEOUS SCRIPTS-------------------------------------------------": "",
-    "install:config": "copyfiles -f webappConfig.js ../",
+    "install:config": "copyfiles -f scrollRoleConfig.js ../",
     "kill:all": "node scripts/killAll",
     "kill:server": "node scripts/killServer"
   },
